@@ -16,6 +16,6 @@
 	protectHFS = true
 	protectNTFS = true
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [receive]
 	fsckObjects = true
