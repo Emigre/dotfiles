@@ -1,3 +1,40 @@
+" Vundle
+" ------
+" https://github.com/gmarik/Vundle.vim
+"
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins;
+"                     append `!` to auto-approve removal"
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'sickill/vim-monokai'
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'groenewege/vim-less'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'svermeulen/vim-easyclip'
+Plugin 'Shougo/neocomplcache.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" -------------------------------------
+
 " basic config
 set autoread
 set ruler
@@ -156,14 +193,8 @@ command! -nargs=? -range=% Space2Tab call IndentConvert(<line1>,<line2>,0,<q-arg
 command! -nargs=? -range=% Tab2Space call IndentConvert(<line1>,<line2>,1,<q-args>)
 command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q-args>)
 
-" pathogen.vim
-" ------------
-" https://github.com/tpope/vim-pathogen
- execute pathogen#infect()
-
 " nerdtree.vim
 " ------------
-" https://github.com/scrooloose/nerdtree
 map <C-n> :NERDTreeToggle <CR>
 map <C-o> :NERDTreeFind<CR>
 let g:NERDTreeChDirMode=0
@@ -172,7 +203,6 @@ let NERDTreeIgnore = ['^\.git$']
 
 " ctrlp.vim
 " ---------
-" https://github.com/kien/ctrlp.vim
 if exists("g:ctrl_user_command")
     unlet g:ctrlp_user_command
 endif
@@ -198,8 +228,6 @@ let g:ctrlp_show_hidden = 1
 
 " bufexplorer.vim
 " ---------------
-" https://github.com/jlanzarotta/bufexplorer
-
 " Open Buffexplorer
 if has("win32") || has("win16")
   nnoremap <silent> ` :BufExplorer<CR> " Windows
@@ -297,24 +325,13 @@ nnoremap <Leader>49 :49b<CR>
 
 nnoremap <Leader>50 :50b<CR>
 
-" vim-less
-" --------
-" https://github.com/groenewege/vim-less
-
 " nerdcommenter
 " -------------
-" https://github.com/scrooloose/nerdcommenter
 filetype plugin on
-
-" vim-easyclip
-" ------------
-" https://github.com/svermeulen/vim-easyclip
 
 " neocomplcache
 " -------------
-" https://github.com/Shougo/neocomplcache.vim
-
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note - This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
