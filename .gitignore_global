@@ -1,0 +1,4 @@
+# git config --global core.excludesfile ~/.gitignore_global
+*.sublime-project
+*.sublime-workspace
+.ctrlp

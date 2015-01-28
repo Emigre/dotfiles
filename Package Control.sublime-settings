@@ -1,0 +1,30 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
+	"installed_packages":
+	[
+		"AngularJS",
+		"Backbone.js",
+		"Backbone.Marionette",
+		"Bootstrap 3 Snippets",
+		"EditorConfig",
+		"Ember.js Snippets",
+		"Emmet",
+		"Foundation 5 Snippets",
+		"Handlebars",
+		"JavaScript & NodeJS Snippets",
+		"JavaScript Patterns",
+		"jQuery",
+		"LESS",
+		"Package Control",
+		"Sass",
+		"Underscorejs snippets",
+		"Wrap Plus"
+	]
+}

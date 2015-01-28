@@ -1,0 +1,21 @@
+[user]
+  name = Gaspar Rey
+  email = info@gasparrey.com
+[alias]
+  l = log --pretty=format:\"%C(dim green)%h %ad%Creset %C(cyan)%an%Creset%C(auto)%d%Creset %s\" --date=short --graph --all -15
+  lo = log --oneline --graph --all --decorate -15
+  ll = log --oneline --graph --all --decorate
+  lf = log --format=fuller
+  f = "!git fetch; git l -10"
+  p = "!git push; git l -10"
+[color]
+  ui = true
+[core]
+  editor = mvim
+  excludesfile = /Users/gasparrey/.gitignore_global
+	protectHFS = true
+	protectNTFS = true
+[credential]
+  helper = osxkeychain
+[receive]
+	fsckObjects = true
