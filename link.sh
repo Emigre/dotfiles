@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# System files
+# System conficguration
 ln -f -s ~/Dropbox/dotfiles/.bash_profile ~/.bash_profile
+ln -f -s ~/Dropbox/dotfiles/config ~/.ssh/config
+
+# Git configuration
 ln -f -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/Dropbox/dotfiles/.gitignore_global ~/.gitignore_global
+
+# Other configuration files
 ln -f -s ~/Dropbox/dotfiles/.npmrc ~/.npmrc
 ln -f -s ~/Dropbox/dotfiles/.vimrc ~/.vimrc
 
