@@ -12,7 +12,7 @@
   ui = true
 [core]
   editor = mvim
-  excludesfile = /Users/gasparrey/.gitignore_global
+  excludesfile = ~/.gitignore_global
   protectHFS = true
   protectNTFS = true
 [credential]
