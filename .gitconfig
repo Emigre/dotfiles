@@ -7,8 +7,8 @@
   ll = log --oneline --graph --all --decorate
   lf = log --format=fuller
   f = "!git fetch; git l -10"
+  p = "!git push; git l -10"
   pl = "!git pull; git l -10"
-  ps = "!git push; git l -10"
 [color]
   ui = true
 [core]
