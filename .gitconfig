@@ -7,11 +7,15 @@
   lf = log --format=fuller
   co = checkout
   c = commit
+  cm = commit -m
+  d = diff
+  ds = diff --staged
   s = status
   m = merge
-  f = "!git fetch; git l -10"
-  p = "!git push; git l -10"
-  pl = "!git pull; git l -10"
+  a = "!git add . && git status"
+  f = "!git fetch && git l -10"
+  p = "!git push && git l -10"
+  pl = "!git pull && git l -10"
 [color]
   ui = true
 [core]
