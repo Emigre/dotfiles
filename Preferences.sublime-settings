@@ -38,7 +38,8 @@
 		"build",
 		"bin",
 		".hg",
-		"CVS"
+		"CVS",
+		"tmp"
 	],
 	"ignored_packages":
 	[
