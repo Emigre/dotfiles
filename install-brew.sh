@@ -8,3 +8,4 @@ brew install sqlite
 brew install mysql
 brew install python3
 brew install macvim
+brew install pandoc
