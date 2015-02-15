@@ -1,4 +1,6 @@
-# Install Xcode
+#!/bin/bash
+
+# To install Xcode:
 # https://developer.apple.com/xcode/
 
 brew tap caskroom/fonts

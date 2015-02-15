@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p ~/.vim
 mkdir -p ~/.vim/backups
 mkdir -p ~/.vim/colors

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 brew install caskroom/cask/brew-cask
 brew install node
 brew install git

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 npm install bower -g
 npm install ember-cli -g
 npm install generator-angular -g
