@@ -17,3 +17,4 @@ npm install mocha -g
 npm install npm-check-updates -g
 npm install phantomjs -g
 npm install yo -g
+npm install less -g

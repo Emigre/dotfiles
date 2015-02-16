@@ -11,3 +11,4 @@ brew install mysql
 brew install python3
 brew install macvim
 brew install pandoc
+brew install nginx
