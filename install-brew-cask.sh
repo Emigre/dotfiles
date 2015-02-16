@@ -13,6 +13,3 @@ brew cask install caffeine
 brew cask install vlc
 brew cask install the-unarchiver
 brew cask install java
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install vagrant-manager
