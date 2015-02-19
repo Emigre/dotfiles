@@ -6,13 +6,13 @@
   l = "!git ll -15"
   lf = log --format=fuller
   co = checkout
+  cm = "!git commit -m "
   b = branch
-  c = "!git commit -m "
   d = diff
   ds = diff --staged
   s = status
   m = merge
-  a = add
+  a = "!git add ."
   f = "!git fetch && git l -10"
   p = "!git push && git l -10"
   pl = "!git pull && git l -10"
