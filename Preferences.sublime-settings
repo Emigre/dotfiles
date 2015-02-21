@@ -35,7 +35,6 @@
 		".gradle",
 		"venv",
 		"__pycache__",
-		"build",
 		"bin",
 		".hg",
 		"CVS",
