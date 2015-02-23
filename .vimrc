@@ -26,6 +26,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'Shougo/neocomplcache.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
