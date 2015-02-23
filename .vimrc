@@ -230,14 +230,14 @@ let g:ctrlp_show_hidden = 1
 " ---------------
 " Open Buffexplorer
 if has("win32") || has("win16")
-  nnoremap <silent> ` :BufExplorer<CR> " Windows
+  nnoremap <silent> <space> :BufExplorer<CR> " Windows
 else
-  nnoremap <silent> § :BufExplorer<CR>
+  nnoremap <silent> <space> :BufExplorer<CR>
 endif
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
-nmap <leader>- :bp <BAR> bd #<CR>
+nmap § :bp <BAR> bd #<CR>
 
 " Wipe out inactive buffers from the buffer list
 function! DeleteInactiveBufs()
@@ -257,7 +257,7 @@ function! DeleteInactiveBufs()
 endfunction
 command! Bdi :call DeleteInactiveBufs()
 
-nmap <leader>= :Bdi<CR>
+nmap <leader><space> :Bdi<CR>
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
