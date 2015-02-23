@@ -1,7 +1,4 @@
 {
-	"in_process_packages":
-	[
-	],
 	"installed_packages":
 	[
 		"AngularJS",
@@ -17,7 +14,6 @@
 		"JavaScript Patterns",
 		"jQuery",
 		"LESS",
-		"Package Control",
 		"Sass",
 		"Underscorejs snippets",
 		"Wrap Plus"
