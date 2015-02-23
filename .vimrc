@@ -60,6 +60,16 @@ autocmd BufWritePre * :%s/\s\+$//e
 " maps
 map £ #
 
+" Disable cursor keys
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+nnoremap <Left>  <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up>    <NOP>
+nnoremap <Down>  <NOP>
+
 " Clear search highlight (to show again press n)
 nnoremap <esc> :noh<CR>
 
