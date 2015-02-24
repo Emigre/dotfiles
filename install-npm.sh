@@ -18,3 +18,4 @@ npm install npm-check-updates -g
 npm install phantomjs -g
 npm install yo -g
 npm install less -g
+npm install divshot-cli -g
