@@ -10,6 +10,7 @@ alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias python='python3'
 alias pip='pip3'
+alias httpa='http -v --session=a'
 # PostgreSQL
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -m fast'
