@@ -2,6 +2,23 @@
 	"close_sidebar_if_opened": false,
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,
+    // folder_exclude_patterns and file_exclude_patterns control which files
+    // are listed in folders on the side bar. These can also be set on a per-
+    // project basis.
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".tmp",
+		".sass-cache",
+		".gradle",
+		"venv",
+		"__pycache__",
+		"bin",
+		".hg",
+		"CVS",
+		"tmp"
+	],
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -26,19 +43,25 @@
 		"*.sublime-workspace",
 		"*.sublime-project"
 	],
-	"folder_exclude_patterns":
-	[
-		".svn",
-		".git",
-		".tmp",
-		".sass-cache",
-		".gradle",
-		"venv",
-		"__pycache__",
-		"bin",
-		".hg",
-		"CVS",
-		"tmp"
+	// These files will still show up in the side bar, but won't be included in
+	// Goto Anything or Find in Files
+	"binary_file_patterns": [
+		"build/*",
+		"node_modules/*",
+		"bower_components/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
 	],
 	"ignored_packages":
 	[
