@@ -9,6 +9,7 @@
 	[
 		".svn",
 		".git",
+		".divshot-cache",
 		".tmp",
 		".sass-cache",
 		".gradle",
