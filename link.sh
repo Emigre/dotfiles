@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# System conficguration
+# System configuration
 ln -f -s ~/Dropbox/dotfiles/.bash_profile ~/.bash_profile
 ln -f -s ~/Dropbox/dotfiles/config ~/.ssh/config
 
 # Git configuration
 ln -f -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/Dropbox/dotfiles/.gitignore_global ~/.gitignore_global
+
+# Git completion
+ln -f -s ~/Dropbox/dotfiles/.git-completion.bash ~/.git-completion.bash
 
 # Other configuration files
 ln -f -s ~/Dropbox/dotfiles/.npmrc ~/.npmrc
