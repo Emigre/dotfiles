@@ -74,10 +74,10 @@ set t_kd=OB
 set t_kr=OC
 set t_kl=OD
 
-nnoremap <silent> <ESC>OA <Nop>
-nnoremap <silent> <ESC>OB <Nop>
-nnoremap <silent> <ESC>OC <Nop>
-nnoremap <silent> <ESC>OD <Nop>
+nnoremap <silent> <ESC>OA k
+nnoremap <silent> <ESC>OB j
+nnoremap <silent> <ESC>OC l
+nnoremap <silent> <ESC>OD h
 
 " Use tab key to switch windows and current file path
 nnoremap <Tab> <C-W>W
