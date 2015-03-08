@@ -211,7 +211,7 @@ map <C-n> :NERDTreeToggle <CR>
 map <C-o> :NERDTreeFind<CR>
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['^\.git$']
+let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$', '^\.tmp$']
 
 " ctrlp.vim
 " ---------
