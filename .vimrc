@@ -238,6 +238,8 @@ endif
 " Show hidden files
 let g:ctrlp_show_hidden = 1
 
+nmap <leader>= :CtrlPClearCache<CR>
+
 " bufexplorer.vim
 " ---------------
 " Open Buffexplorer
