@@ -60,16 +60,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " maps
 map £ #
 
-" Disable cursor keys
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-nnoremap <Left>  <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Up>    <NOP>
-nnoremap <Down>  <NOP>
-
 " Clear search highlight (to show again press n)
 nnoremap <esc> :noh<CR>
 
@@ -77,6 +67,17 @@ nnoremap <esc> :noh<CR>
 noremap <C-S> :write<CR>
 vnoremap <C-S> <C-C>:write<CR>
 inoremap <C-S> <C-O>:write<CR>
+
+" Fix arrow keys that display A B C D
+set t_ku=OA
+set t_kd=OB
+set t_kr=OC
+set t_kl=OD
+
+nnoremap <silent> <ESC>OA <Nop>
+nnoremap <silent> <ESC>OB <Nop>
+nnoremap <silent> <ESC>OC <Nop>
+nnoremap <silent> <ESC>OD <Nop>
 
 " Use tab key to switch windows and current file path
 nnoremap <Tab> <C-W>W
@@ -246,10 +247,6 @@ else
   nnoremap <silent> <space> :BufExplorer<CR>
 endif
 
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nmap § :bp <BAR> bd #<CR>
-
 " Wipe out inactive buffers from the buffer list
 function! DeleteInactiveBufs()
     let tablist = []
@@ -268,7 +265,7 @@ function! DeleteInactiveBufs()
 endfunction
 command! Bdi :call DeleteInactiveBufs()
 
-nmap <leader><space> :Bdi<CR>
+nmap <leader>- :Bdi<CR>
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
