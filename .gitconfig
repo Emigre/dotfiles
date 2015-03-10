@@ -19,7 +19,7 @@
 [color]
   ui = true
 [core]
-  editor = mvim
+  editor = vim
   excludesfile = ~/.gitignore_global
   protectHFS = true
   protectNTFS = true
