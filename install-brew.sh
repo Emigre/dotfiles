@@ -10,7 +10,6 @@ brew install sqlite
 brew install mysql
 brew install python3
 brew install vim
-brew install macvim
 brew install pandoc
 brew install nginx
 brew install tree
