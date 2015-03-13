@@ -79,8 +79,10 @@ nnoremap <silent> <ESC>OB j
 nnoremap <silent> <ESC>OC l
 nnoremap <silent> <ESC>OD h
 
+" Use tab key to switch windows and current file path
+nnoremap <Tab>  <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
-nnoremap <Tab> :b#<CR>
+nnoremap § :b#<CR>
 
 " Font and font size
 " https://github.com/andreberg/Meslo-Font
