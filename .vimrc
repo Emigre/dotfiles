@@ -213,14 +213,14 @@ map <C-n> :NERDTreeToggle <CR>
 map <C-o> :NERDTreeFind<CR>
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$', '^\.tmp$']
+let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$']
 
 " ctrlp.vim
 " ---------
 if exists("g:ctrl_user_command")
     unlet g:ctrlp_user_command
 endif
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/lib/*,*/bower_components/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/lib/*,*/bower_components/*
 " Change the default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -281,61 +281,15 @@ nnoremap <Leader>f :bn<CR>
 nnoremap <Leader>g :e#<CR>
 
 " go to buffer 1, 2, 3, etc
-nnoremap <Leader><Leader>1 :1b<CR>
-nnoremap <Leader><Leader>2 :2b<CR>
-nnoremap <Leader><Leader>3 :3b<CR>
-nnoremap <Leader><Leader>4 :4b<CR>
-nnoremap <Leader><Leader>5 :5b<CR>
-nnoremap <Leader<Leader>>6 :6b<CR>
-nnoremap <Leader><Leader>7 :7b<CR>
-nnoremap <Leader><Leader>8 :8b<CR>
-nnoremap <Leader><Leader>9 :9b<CR>
-
-nnoremap <Leader>10 :10b<CR>
-nnoremap <Leader>11 :11b<CR>
-nnoremap <Leader>12 :12b<CR>
-nnoremap <Leader>13 :13b<CR>
-nnoremap <Leader>14 :14b<CR>
-nnoremap <Leader>15 :15b<CR>
-nnoremap <Leader>16 :16b<CR>
-nnoremap <Leader>17 :17b<CR>
-nnoremap <Leader>18 :18b<CR>
-nnoremap <Leader>19 :19b<CR>
-
-nnoremap <Leader>20 :20b<CR>
-nnoremap <Leader>21 :21b<CR>
-nnoremap <Leader>22 :22b<CR>
-nnoremap <Leader>23 :23b<CR>
-nnoremap <Leader>24 :24b<CR>
-nnoremap <Leader>25 :25b<CR>
-nnoremap <Leader>26 :26b<CR>
-nnoremap <Leader>27 :27b<CR>
-nnoremap <Leader>28 :28b<CR>
-nnoremap <Leader>29 :29b<CR>
-
-nnoremap <Leader>30 :30b<CR>
-nnoremap <Leader>31 :31b<CR>
-nnoremap <Leader>32 :32b<CR>
-nnoremap <Leader>33 :33b<CR>
-nnoremap <Leader>34 :34b<CR>
-nnoremap <Leader>35 :35b<CR>
-nnoremap <Leader>36 :36b<CR>
-nnoremap <Leader>37 :37b<CR>
-nnoremap <Leader>38 :38b<CR>
-nnoremap <Leader>39 :39b<CR>
-
-nnoremap <Leader>40 :40b<CR>
-nnoremap <Leader>41 :41b<CR>
-nnoremap <Leader>42 :42b<CR>
-nnoremap <Leader>43 :43b<CR>
-nnoremap <Leader>44 :44b<CR>
-nnoremap <Leader>45 :45b<CR>
-nnoremap <Leader>46 :46b<CR>
-nnoremap <Leader>47 :47b<CR>
-nnoremap <Leader>48 :48b<CR>
-nnoremap <Leader>49 :49b<CR>
-
-nnoremap <Leader>50 :50b<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
 
 " nerdcommenter
 " -------------
