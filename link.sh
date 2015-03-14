@@ -20,7 +20,7 @@ ln -f -s ~/Dropbox/dotfiles/.vimrc.nerdtree ~/.vimrc.nerdtree
 ln -f -s ~/Dropbox/dotfiles/.vimrc.ctrlp ~/.vimrc.ctrlp
 ln -f -s ~/Dropbox/dotfiles/.vimrc.bufexplorer ~/.vimrc.bufexplorer
 ln -f -s ~/Dropbox/dotfiles/.vimrc.nerdcommenter ~/.vimrc.nerdcommenter
-ln -f -s ~/Dropbox/dotfiles/.vimrc.neocomplcache ~/.vimrc.neocomplcache
+ln -f -s ~/Dropbox/dotfiles/.vimrc.ultisnips ~/.vimrc.ultisnips
 
 # Sublime Text
 ln -f -s ~/Dropbox/dotfiles/Default.sublime-theme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default.sublime-theme

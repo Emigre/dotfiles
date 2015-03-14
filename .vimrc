@@ -4,4 +4,4 @@ source ~/.vimrc.nerdtree
 source ~/.vimrc.ctrlp
 source ~/.vimrc.bufexplorer
 source ~/.vimrc.nerdcommenter
-source ~/.vimrc.neocomplcache
+source ~/.vimrc.ultisnips

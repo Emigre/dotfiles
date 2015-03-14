@@ -26,8 +26,18 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'groenewege/vim-less'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'svermeulen/vim-easyclip'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'jordwalke/AutoComplPop'
+Plugin 'SirVer/ultisnips'
+Plugin 'Emigre/vim-snippets'
+Plugin 'Emigre/VimCompleteLikeAModernEditor'
+
+    " Place snippets in ~/.vim/myUltiSnippets/
+
+    " Put this in your .vimrc
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
