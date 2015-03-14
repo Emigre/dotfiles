@@ -1,0 +1,26 @@
+" ctrlp.vim
+" ---------
+if exists("g:ctrl_user_command")
+    unlet g:ctrlp_user_command
+endif
+set wildignore+=*/tmp/*,*/dist/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/lib/*,*/bower_components/*
+" Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" When invoked, unless a starting directory is specified, CtrlP will set its local working directory according to this variable
+let g:ctrlp_working_path_mode = 'ra'
+" use "filename search" by default
+let g:ctrlp_by_filename = 1
+
+" CtrlP root markers (_ctrlp or .ctrlp files)
+" https://coderwall.com/p/5xv7sq
+if has("win32") || has("win16")
+  let g:ctrlp_root_markers = ['_ctrlp']
+else
+  let g:ctrlp_root_markers = ['.ctrlp']
+endif
+
+" Show hidden files
+let g:ctrlp_show_hidden = 1
+
+nmap <leader>= :CtrlPClearCache<CR>
