@@ -9,8 +9,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " When invoked, unless a starting directory is specified, CtrlP will set its local working directory according to this variable
 let g:ctrlp_working_path_mode = 'ra'
-" use "filename search" by default
-let g:ctrlp_by_filename = 1
 
 " CtrlP root markers (_ctrlp or .ctrlp files)
 " https://coderwall.com/p/5xv7sq
