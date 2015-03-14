@@ -220,7 +220,7 @@ let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$']
 if exists("g:ctrl_user_command")
     unlet g:ctrlp_user_command
 endif
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/lib/*,*/bower_components/*
+set wildignore+=*/tmp/*,*/dist/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/lib/*,*/bower_components/*
 " Change the default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
