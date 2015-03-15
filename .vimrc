@@ -5,4 +5,3 @@ source ~/.vimrc.ctrlp
 source ~/.vimrc.bufexplorer
 source ~/.vimrc.nerdcommenter
 source ~/.vimrc.ultisnips
-source ~/.vimrc.indentline
