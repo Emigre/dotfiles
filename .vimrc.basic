@@ -27,11 +27,6 @@ map £ #
 " Clear search highlight (to show again press n)
 nnoremap <esc> :noh<CR>
 
-" Use CTRL-S for saving, also in Insert mode
-noremap <C-S> :write<CR>
-vnoremap <C-S> <C-C>:write<CR>
-inoremap <C-S> <C-O>:write<CR>
-
 " Fix arrow keys that display A B C D
 set t_ku=OA
 set t_kd=OB
