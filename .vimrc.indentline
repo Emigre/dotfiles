@@ -1,0 +1,5 @@
+let g:indentLine_color_term = 239
+let g:indentLine_char = '⋮'
+set list
+set listchars=tab:\|\ "
+highlight SpecialKey ctermbg=none ctermfg=238
