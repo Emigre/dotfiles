@@ -7,6 +7,7 @@
 export PATH="/usr/local/bin:$HOME/.node/bin:$PATH"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
+alias tree='clear; tree -C '
 alias python='python3'
 alias pip='pip3'
 alias httpa='http -v --session=a'
