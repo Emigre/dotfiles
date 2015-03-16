@@ -12,7 +12,7 @@
   ds = diff --staged
   s = status
   m = merge
-  a = "!git add .; git commit -m "
+  a = add
   f = "!git fetch && git l -10"
   p = "!git push && git l -10"
   pl = "!git pull && git l -10"
