@@ -25,23 +25,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 map £ #
 
 " Clear search highlight (to show again press n)
-nnoremap <esc> :noh<CR>
+nnoremap <silent> ` :noh<CR>
 
 " Fix arrow keys that display A B C D
-set t_ku=OA
-set t_kd=OB
-set t_kr=OC
-set t_kl=OD
+" nnoremap <silent> OA k
+" nnoremap <silent> OB j
+" nnoremap <silent> OC l
+" nnoremap <silent> OD h
 
-nnoremap <silent> <ESC>OA k
-nnoremap <silent> <ESC>OB j
-nnoremap <silent> <ESC>OC l
-nnoremap <silent> <ESC>OD h
-
-" Use tab key to switch windows and current file path
+" Switch windows and current file path
 nnoremap § <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
-nnoremap <Tab> :b#<CR>
+nnoremap <silent> <Tab> :b#<CR>
 
 " Font and font size
 " https://github.com/andreberg/Meslo-Font
