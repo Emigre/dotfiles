@@ -13,3 +13,4 @@ brew install vim
 brew install pandoc
 brew install nginx
 brew install tree
+brew install mercurial
