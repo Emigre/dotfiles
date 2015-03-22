@@ -98,6 +98,9 @@ autocmd! GUIEnter * set vb t_vb=
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 
+" tell vim to use an undo file
+set undofile
+
 " Centralize backups, swapfiles and undo history
 " To create directories for backups, colors, swaps and undo.
 " $ cd ~/.vim ; mkdir backups ; mkdir colors ; mkdir swaps; mkdir undo;
