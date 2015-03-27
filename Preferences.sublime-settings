@@ -4,7 +4,7 @@
 		"build/*",
 		"node_modules/*",
 		"bower_components/*",
-		".tmp/*"
+		".tmp/*",
 		"*.jpg",
 		"*.jpeg",
 		"*.png",
