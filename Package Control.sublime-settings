@@ -9,18 +9,21 @@
 		"Backbone.Marionette",
 		"Bootstrap 3 Snippets",
 		"EditorConfig",
-		"Ember.js Snippets",
+		"ember-snippets-for-sublime-text-2",
 		"Emmet",
 		"FindKeyConflicts",
-		"Foundation 5 Snippets",
 		"Handlebars",
-		"JavaScript & NodeJS Snippets",
-		"JavaScript Patterns",
 		"jQuery",
 		"LESS",
 		"Package Control",
 		"Sass",
+		"sublime-customized-packages",
 		"Underscorejs snippets",
 		"Wrap Plus"
+	],
+	"repositories":
+	[
+		"https://github.com/Emigre/sublime-customized-packages",
+		"https://github.com/Emigre/ember-snippets-for-sublime-text-2"
 	]
 }

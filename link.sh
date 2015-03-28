@@ -29,3 +29,5 @@ ln -f -s ~/Dropbox/dotfiles/Default\ \(OSX\).sublime-keymap ~/Library/Applicatio
 ln -f -s ~/Dropbox/dotfiles/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 ln -f -s ~/Dropbox/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 ln -f -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/JavaScript
+ln -f -s ~/Dropbox/dotfiles/JSON.tmLanguage ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/JavaScript/JSON.tmLanguage
