@@ -5,9 +5,7 @@
 	"installed_packages":
 	[
 		"AngularJS",
-		"Backbone.js",
-		"Backbone.Marionette",
-		"Bootstrap 3 Snippets",
+		"bs3-sublime-plugin",
 		"EditorConfig",
 		"ember-snippets-for-sublime-text-2",
 		"Emmet",
@@ -17,13 +15,14 @@
 		"LESS",
 		"Package Control",
 		"Sass",
+		"ST2-Backbone.Marionette",
 		"sublime-customized-packages",
-		"Underscorejs snippets",
+		"Sublime-Text-2-Backbone.js-package",
+		"sublime-underscorejs-snippets",
 		"Wrap Plus"
 	],
 	"repositories":
 	[
-		"https://github.com/Emigre/sublime-customized-packages",
-		"https://github.com/Emigre/ember-snippets-for-sublime-text-2"
+		"https://github.com/Emigre/"
 	]
 }
