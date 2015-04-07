@@ -33,6 +33,7 @@ Plugin 'Emigre/vim-snippets'
 Plugin 'Emigre/VimCompleteLikeAModernEditor'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'ap/vim-buftabline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

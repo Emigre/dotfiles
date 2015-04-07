@@ -25,24 +25,7 @@ function! DeleteInactiveBufs()
 endfunction
 command! Bdi :call DeleteInactiveBufs()
 
-nmap <leader>- :Bdi<CR>
-
-" Mappings to access buffers (don't use "\p" because a
-" delay before pressing "p" would accidentally paste).
-" \l       : list buffers
-" \b \f \g : go back/forward/last-used
-nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>g :e#<CR>
-
-" go to buffer 1, 2, 3, etc
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
+nmap <C-C> :Bdi<CR>
+nmap <C-X> :bd!<CR>
+nnoremap <C-K> :bp<CR>
+nnoremap <C-J> :bn<CR>
