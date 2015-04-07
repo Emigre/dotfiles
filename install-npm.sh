@@ -20,3 +20,5 @@ npm install yo -g
 npm install less -g
 npm install divshot-cli -g
 npm install http-server -g
+npm install cordova -g
+npm install ionic -g
