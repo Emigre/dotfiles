@@ -19,3 +19,4 @@ npm install phantomjs -g
 npm install yo -g
 npm install less -g
 npm install divshot-cli -g
+npm install http-server -g
