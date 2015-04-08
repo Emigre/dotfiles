@@ -25,7 +25,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 map £ #
 
 " Clear search highlight (to show again press n)
-nnoremap <silent> ` :noh<CR>
+nnoremap <silent> § :noh<CR>
 
 " Fix arrow keys that display A B C D
 " nnoremap <silent> OA k
@@ -34,7 +34,7 @@ nnoremap <silent> ` :noh<CR>
 " nnoremap <silent> OD h
 
 " Switch windows and current file path
-nnoremap § <C-W>W
+nnoremap <C-H> <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> <Tab> :b#<CR>
 
