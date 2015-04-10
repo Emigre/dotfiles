@@ -25,7 +25,8 @@ function! DeleteInactiveBufs()
 endfunction
 command! Bdi :call DeleteInactiveBufs()
 
-nmap <C-C> :Bdi<CR>
-nmap <C-X> :bd!<CR>
-nnoremap <C-K> :bp<CR>
-nnoremap <C-J> :bn<CR>
+nmap <silent> <C-C> :Bdi<CR>
+nmap <silent> <C-X> :bd!<CR>
+nnoremap <silent> <C-K> :bp<CR>
+nnoremap <silent> <C-J> :bn<CR>
+nnoremap <silent> <Tab> :bn<CR>

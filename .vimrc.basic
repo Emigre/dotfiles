@@ -34,9 +34,9 @@ nnoremap <silent> § :noh<CR>
 " nnoremap <silent> OD h
 
 " Switch windows and current file path
-nnoremap <Tab> <C-W>W
+nnoremap <silent> <C-H> <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
-nnoremap <silent> <C-H> :b#<CR>
+nnoremap <silent> <C-L> :b#<CR>
 
 " Font and font size
 " https://github.com/andreberg/Meslo-Font
