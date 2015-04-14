@@ -3,6 +3,9 @@
 # To install Xcode:
 # https://developer.apple.com/xcode/
 
+# To install Eclipse
+# https://www.eclipse.org/downloads/
+
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew cask install sublime-text3
