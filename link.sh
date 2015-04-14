@@ -26,7 +26,7 @@ ln -f -s ~/Dropbox/dotfiles/.vimrc.indentline ~/.vimrc.indentline
 ln -f -s ~/Dropbox/dotfiles/.vimrc.buftabline ~/.vimrc.buftabline
 
 # Sublime Text
-ln -f -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+ln -f -s ~/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
