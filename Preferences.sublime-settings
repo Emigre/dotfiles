@@ -63,12 +63,12 @@
 	"font_face": "Meslo LG M",
 	"ignored_packages":
 	[
-		"Vintage",
+		"Java",
 		"Python",
+		"Ruby",
 		"C++",
 		"JavaScript",
-		"Ruby",
-		"Java"
+		"Vintage"
 	],
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
