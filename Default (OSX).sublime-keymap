@@ -7,6 +7,13 @@
 	{ "keys": ["super+ctrl+left"], "command": "focus_side_bar" },
 	{ "keys": ["super+ctrl+right"], "command": "focus_group", "args": { "group": 0 } },
 	{ "keys": ["alt+q"], "command": "wrap_lines_plus" },
-	{ "keys": ["super+]"], "command": "next_view_in_stack" },
-	{ "keys": ["super+["], "command": "prev_view_in_stack" }
+	{ "keys": ["ctrl+]"], "command": "next_view_in_stack" },
+	{ "keys": ["ctrl+["], "command": "prev_view_in_stack" },
+	{ "keys": ["alt+super+up"], "command": "move_caret_top" },
+	{ "keys": ["alt+super+down"], "command": "move_caret_bottom" },
+	{ "keys": ["alt+up"], "command": "move_caret_back", "args": { "nlines": 3}  },
+	{ "keys": ["alt+down"], "command": "move_caret_forward", "args": { "nlines": 3} },
+	{ "keys": ["alt+shift+up"], "command": "move_caret_back", "args": { "nlines": 9}  },
+	{ "keys": ["alt+shift+down"], "command": "move_caret_forward", "args": { "nlines": 9} },
+	{ "keys": ["alt+super+/"], "command": "move_caret_middle" }
 ]

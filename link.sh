@@ -40,6 +40,7 @@ ln -f -s ~/Dropbox/dotfiles/Default.sublime-theme ~/Library/Application\ Support
 ln -f -s ~/Dropbox/dotfiles/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
 ln -f -s ~/Dropbox/dotfiles/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 ln -f -s ~/Dropbox/dotfiles/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -f -s ~/Dropbox/dotfiles/MoveCaret.py ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/MoveCaret.py
 ln -f -s ~/Dropbox/dotfiles/sublime/C++/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/C++/
 ln -f -s ~/Dropbox/dotfiles/sublime/CSS/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/CSS/
 ln -f -s ~/Dropbox/dotfiles/sublime/Java/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Java/
