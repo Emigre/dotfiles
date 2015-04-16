@@ -14,3 +14,4 @@ brew install pandoc
 brew install nginx
 brew install tree
 brew install mercurial
+brew install tomcat
