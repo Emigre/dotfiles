@@ -12,10 +12,11 @@ alias python='python3'
 alias pip='pip3'
 alias httpa='http -v --session=a'
 # PostgreSQL
-alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -m fast'
-alias pg-status='pg_ctl status'
-alias pg-restart='pg_ctl reload'
+export PGDATA='/usr/local/var/postgres'
+alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
+alias pg_stop='pg_ctl stop -m fast'
+alias pg_status='pg_ctl status'
+alias pg_reload='pg_ctl reload'
 # git completion
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then
