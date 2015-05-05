@@ -22,3 +22,5 @@ npm install divshot-cli -g
 npm install http-server -g
 npm install cordova -g
 npm install ionic -g
+npm install n -g
+n latest
