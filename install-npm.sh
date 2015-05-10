@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Add this to .npmrc:
+# prefix=~/.node
+
 npm install bower -g
 npm install ember-cli -g
 npm install generator-angular -g
