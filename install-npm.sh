@@ -15,6 +15,7 @@ npm install generator-karma -g
 npm install generator-mocha -g
 npm install generator-webapp -g
 npm install grunt-cli -g
+npm install gulp -g
 npm install karma-cli -g
 npm install mocha -g
 npm install npm-check-updates -g
