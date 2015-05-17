@@ -1,6 +1,5 @@
 #!/bin/bash
 
-brew install caskroom/cask/brew-cask
 brew install node
 brew install git
 brew install httpie
@@ -15,3 +14,10 @@ brew install nginx
 brew install tree
 brew install mercurial
 brew install tomcat
+
+brew tap homebrew/games
+brew install frotz
+
+brew tap caskroom/cask
+brew install brew-cask
+
