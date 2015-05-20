@@ -16,6 +16,8 @@
   f = "!git fetch && git l -10"
   p = "!git push && git l -10"
   pl = "!git pull && git l -10"
+# Delete local branches that have been deleted on the remote
+  clean = "!f() { echo "git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -d"; }; f"
 [color]
   ui = true
 [core]
