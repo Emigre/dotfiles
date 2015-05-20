@@ -11,6 +11,7 @@ alias tree='tree -C'
 alias python='python3'
 alias pip='pip3'
 alias httpa='http -v --session=a'
+alias clean-git="git branch -l | sed 's/* master//' > /tmp/gitlocal.txt && git branch -r  | sed 's/origin\///' > /tmp/gitremote.txt && grep -Fxv -f /tmp/gitremote.txt /tmp/gitlocal.txt | xargs git branch -d"
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
 alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
