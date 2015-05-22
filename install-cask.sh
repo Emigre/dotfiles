@@ -1,4 +1,5 @@
 #!/bin/bash
+
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew cask install sublime-text3
