@@ -12,3 +12,4 @@ brew cask install the-unarchiver
 brew cask install java
 brew cask install iterm2
 brew cask install totalspaces
+brew cask install zoom

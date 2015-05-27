@@ -11,6 +11,7 @@ alias tree='tree -C'
 alias python='python3'
 alias pip='pip3'
 alias httpa='http -v --session=a'
+alias zoom='open ~/Applications/Zoom.app'
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
 alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
