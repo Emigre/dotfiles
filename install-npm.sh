@@ -6,6 +6,7 @@
 npm install bower -g
 npm install ember-cli -g
 npm install generator-angular -g
+npm install generator-gulp-angular -g
 npm install generator-backbone -g
 npm install generator-backbone-mocha -g
 npm install generator-bootstrap -g
