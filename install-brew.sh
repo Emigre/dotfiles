@@ -18,6 +18,7 @@ brew install tomcat
 brew tap homebrew/games
 brew install frotz
 brew install glulxe
+brew install frobtads
 
 brew tap caskroom/cask
 brew install brew-cask
