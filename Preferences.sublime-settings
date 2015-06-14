@@ -61,6 +61,7 @@
 		"tmp"
 	],
 	"font_face": "Meslo LG M",
+	"highlight_modified_tabs": false,
 	"ignored_packages":
 	[
 		"Java",
