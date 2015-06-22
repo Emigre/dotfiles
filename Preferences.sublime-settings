@@ -58,8 +58,8 @@
 		"bin",
 		".hg",
 		"CVS",
-		".idea"
-
+		".idea",
+		"tmp"
 	],
 	"font_face": "Meslo LG M",
 	"highlight_modified_tabs": false,
