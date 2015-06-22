@@ -27,6 +27,22 @@ map £ #
 " Clear search highlight (to show again press n)
 nnoremap <silent> § :noh<CR>
 
+set timeout         " Do time out on mappings and others
+set timeoutlen=2000 " Wait {num} ms before timing out a mapping
+
+" When you’re pressing Escape to leave insert mode in the terminal, it will by
+" default take a second or another keystroke to leave insert mode completely
+" and update the statusline. This fixes that. I got this from:
+" https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+if !has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
 " Fix arrow keys that display A B C D
 " nnoremap <silent> OA k
 " nnoremap <silent> OB j
