@@ -34,7 +34,7 @@ nnoremap <silent> § :noh<CR>
 " nnoremap <silent> OD h
 
 " Switch windows and current file path
-nnoremap <silent> <C-H> <C-W>W
+nnoremap <silent> <Tab> <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> <C-L> :b#<CR>
 

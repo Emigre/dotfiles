@@ -29,4 +29,3 @@ nmap <silent> <C-C> :Bdi<CR>
 nmap <silent> <C-X> :bd!<CR>
 nnoremap <silent> <C-K> :bp<CR>
 nnoremap <silent> <C-J> :bn<CR>
-nnoremap <silent> <Tab> :bn<CR>
