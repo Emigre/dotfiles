@@ -3,11 +3,13 @@
 set nocompatible
 set autoread
 set ruler
-set number
+" set number
+
 " colors
 " https://github.com/sickill/vim-monokai
 colorscheme monokai
 syntax on
+
 " indentation
 set smartindent
 set shiftwidth=4
@@ -68,8 +70,10 @@ if has("win32") || has("win16")
   set guioptions-=T  "remove toolbar (Windows)
 endif
 
-" Always show status line
-set laststatus=2
+" Do not show the status line
+set laststatus=0
+" set noru
+
 " status line
 set statusline=
 set statusline+=\[%n\]   "buffer number
