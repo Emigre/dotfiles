@@ -1,6 +1,10 @@
-Xcode
+XCode
 -----
 https://developer.apple.com/xcode/
+
+Alcatraz for XCode
+------------------
+http://alcatraz.io/
 
 Eclipse
 -------
