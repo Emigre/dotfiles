@@ -54,6 +54,7 @@
 		".sass-cache",
 		".gradle",
 		"venv",
+		"env",
 		"__pycache__",
 		"bin",
 		".hg",
