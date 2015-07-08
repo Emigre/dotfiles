@@ -13,3 +13,4 @@ brew cask install java
 brew cask install iterm2
 brew cask install totalspaces
 brew cask install zoom
+brew cask install arduino
