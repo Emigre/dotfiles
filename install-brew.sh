@@ -1,6 +1,5 @@
 #!/bin/bash
 
-brew install node
 brew install git
 brew install httpie
 brew install mongodb

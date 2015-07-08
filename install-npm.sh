@@ -28,5 +28,5 @@ npm install http-server -g
 npm install cordova -g
 npm install ionic -g
 npm install n -g
-n 0.10.9
+n 0.10.39
 n latest
