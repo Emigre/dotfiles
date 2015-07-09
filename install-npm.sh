@@ -3,6 +3,9 @@
 # Add this to .npmrc:
 # prefix=~/.node
 
+sudo chown -R 'whoami' ~/.npm
+sudo chown -R 'whoami' /usr/local/lib/node_modules
+
 npm install bower -g
 npm install ember-cli -g
 npm install generator-angular -g
