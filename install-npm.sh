@@ -3,8 +3,10 @@
 # Add this to .npmrc:
 # prefix=~/.node
 
-sudo chown -R 'whoami' ~/.npm
-sudo chown -R 'whoami' /usr/local/lib/node_modules
+sudo npm install npm -g
+
+sudo chown -R $USER ~/.npm
+sudo chown -R $USER ~/.node/lib/node_modules
 
 npm install bower -g
 npm install ember-cli -g
@@ -18,6 +20,8 @@ npm install generator-jekyllstarter -g
 npm install generator-karma -g
 npm install generator-mocha -g
 npm install generator-webapp -g
+npm install generator-magic -g
+npm install generator-wizardry -g
 npm install grunt-cli -g
 npm install gulp -g
 npm install karma-cli -g
@@ -31,5 +35,6 @@ npm install http-server -g
 npm install cordova -g
 npm install ionic -g
 npm install n -g
-n 0.10.39
-n latest
+
+sudo n 0.10.39
+sudo n latest
