@@ -36,5 +36,5 @@ npm install cordova -g
 npm install ionic -g
 npm install n -g
 
-sudo n 0.10.39
+sudo n 0.10.40
 sudo n latest
