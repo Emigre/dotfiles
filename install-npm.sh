@@ -10,6 +10,7 @@ sudo chown -R $USER ~/.node/lib/node_modules
 
 npm install bower -g
 npm install ember-cli -g
+npm install broccoli-cli -g
 npm install generator-angular -g
 npm install generator-gulp-angular -g
 npm install generator-backbone -g
