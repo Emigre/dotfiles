@@ -10,7 +10,7 @@ alias npmlg='npm list -g --depth=0'
 alias tree='tree -C'
 alias python='python3'
 alias pip='pip3'
-alias https='http -v --session=s'
+alias httpa='http -v --session=s'
 alias zoom='open ~/Applications/Zoom.app'
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
