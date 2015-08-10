@@ -28,7 +28,6 @@ npm install generator-wizardry -g
 npm install grunt-cli -g
 npm install gulp -g
 npm install http-server -g
-npm install ionic -g
 npm install jspm -g
 npm install karma-cli -g
 npm install less -g
@@ -36,7 +35,6 @@ npm install mocha -g
 npm install n -g
 npm install npm-check-updates -g
 npm install phantomjs -g
-npm install webpack -g
 npm install yo -g
 
 sudo n 0.10.40
