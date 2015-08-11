@@ -29,7 +29,7 @@ npm install generator-wizardry -g
 npm install grunt-cli -g
 npm install gulp -g
 npm install http-server -g
-npm install jspm -g
+npm install jspm@beta -g
 npm install karma-cli -g
 npm install less -g
 npm install mocha -g
