@@ -20,6 +20,7 @@ npm install generator-bootstrap -g
 npm install generator-extjs@ -g
 npm install generator-gulp-angular -g
 npm install generator-jekyllstarter -g
+npm install generator-aurelia -g
 npm install generator-karma -g
 npm install generator-magic -g
 npm install generator-mocha -g
