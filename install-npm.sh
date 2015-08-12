@@ -36,6 +36,7 @@ npm install mocha -g
 npm install n -g
 npm install npm-check-updates -g
 npm install phantomjs -g
+npm install tsd -g
 npm install yo -g
 
 sudo n 0.10.40
