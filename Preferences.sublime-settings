@@ -55,9 +55,7 @@
 		"bin",
 		".hg",
 		"CVS",
-		".idea",
-		"node_modules",
-		"bower_components"
+		".idea"
 	],
 	"font_face": "Meslo LG M",
 	"highlight_modified_tabs": false,
