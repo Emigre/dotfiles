@@ -6,7 +6,9 @@
 # sudo chown -R `whoami` ~/.npm
 export PATH="/usr/local/bin:$HOME/.node/bin:$PATH"
 alias npml='npm list --depth=0'
-alias npmlg='npm list -g --depth=0'
+alias npmlg='npml list -g --depth=0'
+alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
+alias bowerlg='bower list -g | grep '"'"'^├\|^└'"'"''
 alias tree='tree -C'
 alias python='python3'
 alias pip='pip3'
