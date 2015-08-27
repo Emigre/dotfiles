@@ -22,6 +22,9 @@ ln -f -s ~/Dropbox/dotfiles/.vimrc.ultisnips ~/.vimrc.ultisnips
 ln -f -s ~/Dropbox/dotfiles/.vimrc.indentline ~/.vimrc.indentline
 ln -f -s ~/Dropbox/dotfiles/.vimrc.buftabline ~/.vimrc.buftabline
 
+# Emacs
+ln -f -s ~/Dropbox/dotfiles/.emacs ~/.emacs
+
 # Sublime Text
 ln -f -s ~/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3
