@@ -10,6 +10,9 @@ ln -f -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig
 ln -f -s ~/Dropbox/dotfiles/.gitignore_global ~/.gitignore_global
 ln -f -s ~/Dropbox/dotfiles/.git-completion.bash ~/.git-completion.bash
 
+# Mercurial
+ln -f -s ~/Dropbox/dotfiles/.hgrc ~/.hgrc
+
 # Vim
 ln -f -s ~/Dropbox/dotfiles/.vimrc ~/.vimrc
 ln -f -s ~/Dropbox/dotfiles/.vimrc.vundle ~/.vimrc.vundle
