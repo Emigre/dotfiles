@@ -20,6 +20,7 @@ brew tap homebrew/games
 brew install frobtads
 brew install frotz
 brew install glulxe
+brew install nethack
 
 brew tap caskroom/cask
 brew install brew-cask
