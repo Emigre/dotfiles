@@ -1,5 +1,6 @@
 #!/bin/bash
 
+brew install android-sdk
 brew install emacs --with-cocoa
 brew install git
 brew install httpie
