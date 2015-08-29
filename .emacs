@@ -3,3 +3,5 @@
 ; sudo scutil --set HostName gaspar.local
 (require 'package)
 (package-initialize)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
