@@ -13,3 +13,9 @@ https://www.eclipse.org/downloads/
 JDK
 ---
 http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+Other
+-----
+https://www.getpostman.com/
+http://www.gifgrabber.com/
+http://www.pencil2d.org/
