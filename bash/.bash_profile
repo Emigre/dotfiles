@@ -1,9 +1,3 @@
-# https://docs.npmjs.com/getting-started/fixing-npm-permissions
-# - To configure the .node folder in ~ add this to the .npmrc file:
-# echo prefix=~/.node >> ~/.npmrc
-# - And change the owner of these folders:
-# sudo chown -R `whoami` ~/.node
-# sudo chown -R `whoami` ~/.npm
 export PATH="/usr/local/bin:$HOME/.node/bin:$PATH"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'

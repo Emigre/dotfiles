@@ -1,6 +1,6 @@
-# git config --global core.excludesfile ~/.gitignore_global
 *.sublime-project
 *.sublime-workspace
 .idea
 .ctrlp
 .DS_Store
+npm-debug.log
