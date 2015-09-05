@@ -24,4 +24,16 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+; set the theme
 (load-theme 'zenburn t)
+
+; do not show the welcome message
+(setq inhibit-splash-screen t)
+
+; do not create backup files
+(setq make-backup-files nil)
+
+; Ido
+(require 'ido)
+(ido-mode t)
+
