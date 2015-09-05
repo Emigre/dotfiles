@@ -19,6 +19,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'sickill/vim-monokai'
+Plugin 'vim-scripts/Zenburn'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -45,14 +46,14 @@ filetype plugin indent on    " required
 " Vim config
 " ----------
 "
-set nocompatible
 set autoread
 set ruler
-" set number
 
 " colors
 " https://github.com/sickill/vim-monokai
-colorscheme monokai
+" https://github.com/jnurmine/Zenburn
+colorscheme Zenburn
+" colors zenburn
 syntax on
 
 " indentation
@@ -114,10 +115,6 @@ if has("win32") || has("win16")
   set guioptions-=m  "remove menu bar (Windows)
   set guioptions-=T  "remove toolbar (Windows)
 endif
-
-" Do not show the status line
-set laststatus=0
-" set noru
 
 " status line
 set statusline=
