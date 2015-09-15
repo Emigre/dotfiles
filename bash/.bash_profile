@@ -8,12 +8,21 @@ alias python='python3'
 alias pip='pip3'
 alias httpa='http -v --session=s'
 alias zoom='open ~/Applications/Zoom.app'
+
+# Java 6
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_OPTS='-Xms128m -Xmx768m -XX:MaxPermSize=512m'
+export M2_HOME='/usr/local/bin/mvn'
+export M2=$M2_HOME/bin
+export MAVEN_OPTS=$JAVA_OPTS
+
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
 alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl stop -m fast'
 alias pg_status='pg_ctl status'
 alias pg_reload='pg_ctl reload'
+
 # git completion
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then

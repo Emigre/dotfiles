@@ -41,21 +41,17 @@ sudo chown -R `whoami` ~/.node
 sudo chown -R `whoami` ~/.npm
 ```
 
-##### Java
-http://www.oracle.com/technetwork/java/javase/downloads/
+##### Java JDK
 
-_JDK_
-
-Java SE 6
-
+###### Java SE 6
 https://support.apple.com/kb/DL1572
 
-Java SE 7
+- Does not include maven. Install maven 3.1.1 with `brew install homebrew/versions/maven31`
 
+###### Java SE 7
 http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
 
-Java SE 8
-
+###### Java SE 8
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 ##### iTerm2
