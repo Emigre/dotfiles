@@ -34,7 +34,6 @@ brew cask install evernote
 brew cask install hipchat
 brew cask install inform
 brew cask install iterm2
-brew cask install java
 brew cask install mysqlworkbench
 brew cask install pharo
 brew cask install pgadmin3

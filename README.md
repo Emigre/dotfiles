@@ -41,6 +41,23 @@ sudo chown -R `whoami` ~/.node
 sudo chown -R `whoami` ~/.npm
 ```
 
+##### Java
+http://www.oracle.com/technetwork/java/javase/downloads/
+
+__JDK__
+
+Java SE 6
+
+https://support.apple.com/kb/DL1572
+
+Java SE 7
+
+http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+
+Java SE 8
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 ##### iTerm2
 
 Download Homebrew theme
@@ -69,9 +86,6 @@ http://openframeworks.cc/
 
 ##### Eclipse
 https://www.eclipse.org/downloads/
-
-##### JDK
-http://www.oracle.com/technetwork/java/javase/downloads/
 
 ##### Adobe
 http://www.adobe.com/
