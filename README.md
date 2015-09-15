@@ -75,6 +75,10 @@ http://iterm2colorschemes.com/
 
 - After installation, run `:InstallPlugins`
 
+#### Sublime Text 2
+
+- Select View > Hide Status Bar
+
 ##### XCode
 https://developer.apple.com/xcode/
 
