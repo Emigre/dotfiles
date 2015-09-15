@@ -44,7 +44,7 @@ sudo chown -R `whoami` ~/.npm
 ##### Java
 http://www.oracle.com/technetwork/java/javase/downloads/
 
-__JDK__
+_JDK_
 
 Java SE 6
 
