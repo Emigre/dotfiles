@@ -41,8 +41,22 @@ sudo chown -R `whoami` ~/.node
 sudo chown -R `whoami` ~/.npm
 ```
 
-##### Homebrew theme for iTerm2
+##### iTerm2
+
+Download Homebrew theme
 http://iterm2colorschemes.com/
+
+- Set 'Show tabs in full screen by holding command for' to zero
+- Uncheck 'Color tab labels on activity'
+- Check 'Hide tab activity indicator'
+
+#### TotalSpaces2
+
+- Go to System Preferences > Keyboard > Shortcuts and uncheck 'Mission Control'
+
+#### vim
+
+- After installation, run `:InstallPlugins`
 
 ##### XCode
 https://developer.apple.com/xcode/
