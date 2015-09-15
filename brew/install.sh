@@ -30,8 +30,8 @@ brew cask install boxer
 brew cask install brogue
 brew cask install caffeine
 brew cask install dash
-brew cask install dropbox
 brew cask install evernote
+brew cask install hipchat
 brew cask install inform
 brew cask install iterm2
 brew cask install java

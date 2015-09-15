@@ -22,7 +22,7 @@
   ui = true
 [core]
   editor = vim
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/gaspar/.gitignore_global
   protectHFS = true
   protectNTFS = true
 [credential]

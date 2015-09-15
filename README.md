@@ -1,6 +1,20 @@
+##### Google Chrome
+
+http://www.google.com/chrome/
+
+##### Dropbox
+
+http://www.dropbox.com/
+
 ##### Homebrew
 
 http://brew.sh/
+
+Do this after install
+
+```
+sudo chown -R $USER /usr/local/include
+```
 
 To clean up
 
@@ -26,6 +40,9 @@ And change the owner of these folders
 sudo chown -R `whoami` ~/.node
 sudo chown -R `whoami` ~/.npm
 ```
+
+##### Homebrew theme for iTerm2
+http://iterm2colorschemes.com/
 
 ##### XCode
 https://developer.apple.com/xcode/

@@ -7,6 +7,7 @@ sudo npm install npm -g
 
 sudo chown -R $USER ~/.npm
 sudo chown -R $USER ~/.node/lib/node_modules
+sudo chown -R $USER ~/.node/bin
 
 npm install bower -g
 npm install broccoli-cli -g
@@ -40,5 +41,6 @@ npm install tsd -g
 npm install typescript -g
 npm install yo -g
 
-sudo n 0.10.40
 sudo n latest
+sudo n 0.10.40
+sudo n 0.12.5
