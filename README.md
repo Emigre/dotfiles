@@ -63,9 +63,14 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 Download Homebrew theme
 http://iterm2colorschemes.com/
 
+- Install color theme in Preferences > Profiles > Colors > Load Presets... > Import...
 - Set 'Show tabs in full screen by holding command for' to zero
 - Uncheck 'Color tab labels on activity'
 - Check 'Hide tab activity indicator'
+- Remap keys in Preferences > Profiles > Keys
+  - alt + left: send ESC + b
+  - alt + right: send ESC + f
+  - alt + backspace: send HEX sequence “0x1B 0x08"
 
 #### TotalSpaces2
 
