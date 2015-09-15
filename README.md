@@ -68,16 +68,25 @@ http://iterm2colorschemes.com/
   - alt + right: send ESC + f
   - alt + backspace: send HEX sequence “0x1B 0x08"
 
-#### TotalSpaces2
-
+##### TotalSpaces2
 - Go to System Preferences > Keyboard > Shortcuts and uncheck 'Mission Control'
+- Uncheck Preferences > Transitions > Use transitions
+- Check Preferences > General > Start TotalSpaces2 at Login
 
-#### vim
+##### Dash
+- Set Preferences > General > Global search shortcut as alt + Space
+- Check Preferences > General > Launch Dash at login
+- Uncheck Preferences > General > Show dock icon
+- Check Preferences > General > Dismiss main window when I activate a different app
 
+##### Caffeine
+- Check Preferences > Automatically start Caffeine at login
+- Uncheck Preferences > Show this message when starting Caffeine
+
+##### vim
 - After installation, run `:InstallPlugins`
 
-#### Sublime Text 2
-
+##### Sublime Text 2
 - Select View > Hide Status Bar
 
 ##### XCode
