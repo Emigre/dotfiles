@@ -22,6 +22,13 @@ To clean up
 brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 ```
 
+To reset the casks
+
+```
+brew untap caskroom/cask && brew tap caskroom/cask
+brew untap caskroom/versions && brew tap caskroom/versions
+```
+
 ##### npm
 
 https://www.npmjs.com/
@@ -43,16 +50,16 @@ sudo chown -R `whoami` ~/.npm
 
 ##### Java JDK
 
-###### Java SE 6
-https://support.apple.com/kb/DL1572
+Install with [Homebrew Cask](http://caskroom.io/) and manage with [jEnv](http://www.jenv.be/)
 
-- Does not include maven. Install maven 3.1.1 with `brew install homebrew/versions/maven31`
+###### Java SE 6
+`jenv add /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home`
 
 ###### Java SE 7
-http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+`jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home`
 
 ###### Java SE 8
-http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+`jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home`
 
 ##### iTerm2
 
