@@ -100,6 +100,10 @@ http://iterm2colorschemes.com/
 ##### Sublime Text 2
 - Select View > Hide Status Bar
 
+##### WebStorm
+- Uncheck 'Navigation Bar' and 'Status Bar' in View
+- Assign cmd + 0 to Preferences > Keymap > Other > Terminal
+
 ##### OSX Preferences
 - In System Preferences
   - Check Trackpad > Tap to click
