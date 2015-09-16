@@ -84,10 +84,11 @@ http://iterm2colorschemes.com/
 - Check Preferences > General > Start TotalSpaces2 at Login
 
 ##### Dash
-- Set Preferences > General > Global search shortcut as alt + Space
-- Check Preferences > General > Launch Dash at login
-- Uncheck Preferences > General > Show dock icon
-- Check Preferences > General > Dismiss main window when I activate a different app
+- In Preferences > General
+  - Set 'Global search shortcut' as alt + Space
+  - Check 'Launch Dash at login'
+  - Uncheck 'Show dock icon'
+  - Check 'Dismiss main window when I activate a different app'
 
 ##### Caffeine
 - Check Preferences > Automatically start Caffeine at login
