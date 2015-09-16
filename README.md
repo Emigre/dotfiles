@@ -101,8 +101,13 @@ http://iterm2colorschemes.com/
 - Select View > Hide Status Bar
 
 ##### OSX Preferences
-- Check Preferences > Trackpad > Tap to click
-- Select 'three finger drag' in System Preferences > Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
+- In System Preferences
+  - Check Trackpad > Tap to click
+  - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
+  - In Dock
+    - Select the right dock size and magnification
+    - Check 'Minimize windows into application icon'
+    - In 'Minimize windows using:' select 'scale effect'
 
 ##### XCode
 https://developer.apple.com/xcode/
