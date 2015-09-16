@@ -107,6 +107,7 @@ http://iterm2colorschemes.com/
 ##### OSX Preferences
 - In System Preferences
   - Check Trackpad > Tap to click
+  - Set Require password 'immediately' after sleep in  Security & Privacy
   - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
   - In Dock
     - Select the right dock size and magnification
