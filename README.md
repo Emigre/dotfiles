@@ -67,9 +67,12 @@ Download Homebrew theme
 http://iterm2colorschemes.com/
 
 - Install color theme in Preferences > Profiles > Colors > Load Presets... > Import...
-- Set 'Show tabs in full screen by holding command for' to zero
-- Uncheck 'Color tab labels on activity'
-- Check 'Hide tab activity indicator'
+- In Preferences > Appearance
+  - Set 'Show tabs in full screen by holding command for' to zero
+  - Uncheck 'Color tab labels on activity'
+  - Check 'Hide tab activity indicator'
+- In Preferences > Profiles > Terminal
+  - Uncheck 'Show bell icon in tabs', 'Flash visual bell' and 'Silence bell'
 - Remap keys in Preferences > Profiles > Keys
   - alt + left: send ESC + b
   - alt + right: send ESC + f
