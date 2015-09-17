@@ -25,7 +25,6 @@ brew tap caskroom/cask
 brew tap caskroom/versions
 brew install brew-cask
 
-brew cask install google-chrome
 brew cask install android-studio
 brew cask install arduino
 brew cask install boxer
@@ -33,8 +32,10 @@ brew cask install brogue
 brew cask install caffeine
 brew cask install dash
 brew cask install evernote
+brew cask install google-chrome
 brew cask install hipchat
 brew cask install inform
+brew cask install intellij-idea-ce
 brew cask install iterm2
 brew cask install java
 brew cask install java7
@@ -42,7 +43,7 @@ brew cask install java6
 brew cask install mysqlworkbench
 brew cask install pharo
 brew cask install pgadmin3
-brew cask install pycharm
+brew cask install pycharm-ce
 brew cask install skype
 brew cask install slack
 brew cask install the-unarchiver
