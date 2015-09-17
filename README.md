@@ -66,20 +66,34 @@ Install with [Homebrew Cask](http://caskroom.io/) and manage with [jEnv](http://
 Download Homebrew theme
 http://iterm2colorschemes.com/
 
-- Install color theme in Preferences > Profiles > Colors > Load Presets... > Import...
+- In Preferences > General
+  - Uncheck Confirm "Quit iTerm2" command
 - In Preferences > Appearance
-  - Set 'Show tabs in full screen by holding command for' to zero
+  - Set 'Show tabs in full screen by holding command for' to the max value
   - Uncheck 'Color tab labels on activity'
-  - Check 'Hide tab activity indicator'
+  - Uncheck 'Show per-pane title bar with split panes'
+  - Uncheck 'Show window number'
+  - Check 'Dimming affects only text, not background'
+  - Set 'Dimming amount' to the max
+  - Check 'Hide scrollbar and resize control'
+- In Preferences > Profiles > Colors
+  - Select Load Presets... > Import... and install the color theme
+- In Preferences > Profiles > Text
+  - Check 'Blinking cursor'
+- In Preferences > Profiles > Text
+  - Set Columns to 120 nd Rows to 20 (for example)
+  - Adjust Transparency and Blur
 - In Preferences > Profiles > Terminal
-  - Uncheck 'Show bell icon in tabs', 'Flash visual bell' and 'Silence bell'
-- Remap keys in Preferences > Profiles > Keys
-  - alt + left: send ESC + b
-  - alt + right: send ESC + f
-  - alt + backspace: send HEX sequence “0x1B 0x08"
+  - Uncheck 'Show bell icon in tabs' and 'Flash visual bell'
+  - Check 'Silence bell'
+- In Preferences > Profiles > Keys
+  - Set these Profile Shortcut Keys:
+    - alt + left: send ESC + b
+    - alt + right: send ESC + f
+    - alt + backspace: send HEX sequence “0x1B 0x08"
+  - Set 'Left option key acts as' '+Esc', and the right one too
 
 ##### TotalSpaces2
-- Go to System Preferences > Keyboard > Shortcuts and uncheck 'Mission Control'
 - Uncheck Preferences > Transitions > Use transitions
 - Check Preferences > General > Start TotalSpaces2 at Login
 
@@ -106,6 +120,7 @@ http://iterm2colorschemes.com/
 
 ##### OSX Preferences
 - In System Preferences
+  - Go to Keyboard > Shortcuts and uncheck 'Mission Control'
   - Check Trackpad > Tap to click
   - Set Require password 'immediately' after sleep in  Security & Privacy
   - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
