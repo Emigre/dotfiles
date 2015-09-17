@@ -55,7 +55,8 @@
 		"bin",
 		".hg",
 		"CVS",
-		".idea"
+		".idea",
+		"target"
 	],
 	"font_face": "Meslo LG M",
 	"highlight_modified_tabs": false,
