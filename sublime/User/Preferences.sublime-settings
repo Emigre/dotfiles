@@ -16,6 +16,7 @@
 		"*.zip"
 	],
 	"close_sidebar_if_opened": false,
+	"color_scheme": "Packages/zenburn/zenburn.tmTheme",
 	"detect_indentation": false,
 	"enable_tab_scrolling": false,
 	"file_exclude_patterns":

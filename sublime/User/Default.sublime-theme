@@ -318,7 +318,7 @@
 		"indent": 12,
 		"indent_offset": 17,
 		"indent_top_level": false,
-		"layer0.tint": [60, 60, 60], /*The Money - Sidebar background color (darker gray)*/
+		"layer0.tint": [57, 57, 57], /*The Money - Sidebar background color (darker gray)*/
 		"layer0.opacity": 1.0,
 		"dark_content": false
 	},
