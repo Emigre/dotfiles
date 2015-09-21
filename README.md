@@ -145,6 +145,9 @@ http://openframeworks.cc/
 ##### Eclipse
 https://www.eclipse.org/downloads/
 
+- Select 'Dark Theme' in Preferences > General > Appearance
+- Select Window > Hide Toolbar
+
 ##### Adobe
 http://www.adobe.com/
 
