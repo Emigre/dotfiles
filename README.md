@@ -117,7 +117,7 @@ http://iterm2colorschemes.com/
 ##### WebStorm / IntelliJ IDEA
 - Uncheck 'Navigation Bar' and 'Status Bar' in View
 - Assign cmd + 0 to Preferences > Keymap > Other > Terminal
-- In Preferences > Editor > File Types add .idea and \*.iml
+- In Preferences > Editor > File Types 'Ignore files and folders' add .idea, target and \*.iml
 - In Preferences > Editor > General > Appearance uncheck 'Show right margin'
 
 ##### OSX Preferences
