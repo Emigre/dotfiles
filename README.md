@@ -118,11 +118,13 @@ http://iterm2colorschemes.com/
 - Uncheck 'Navigation Bar' and 'Status Bar' in View
 - Assign cmd + 0 to Preferences > Keymap > Other > Terminal
 - In Preferences > Editor > File Types add .idea and \*.iml
-- In Preferences > Editor > General > Appearance uncheck ''Show right margin'
+- In Preferences > Editor > General > Appearance uncheck 'Show right margin'
 
 ##### OSX Preferences
 - In System Preferences
-  - Go to Keyboard > Shortcuts and uncheck 'Mission Control'
+  - In Keyboard
+    - Under Shortcuts uncheck 'Mission Control'
+    - Under Keyboard check 'Use F1, F2, etc. keys as standard function keys'
   - Check Trackpad > Tap to click
   - Set Require password 'immediately' after sleep in  Security & Privacy
   - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
