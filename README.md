@@ -118,7 +118,9 @@ http://iterm2colorschemes.com/
 - Uncheck 'Navigation Bar' and 'Status Bar' in View
 - Assign cmd + 0 to Preferences > Keymap > Other > Terminal
 - In Preferences > Editor > File Types 'Ignore files and folders' add .idea, target and \*.iml
-- In Preferences > Editor > General > Appearance uncheck 'Show right margin'
+- In Preferences > Editor > General > Appearance
+  - Uncheck 'Show right margin'
+  - Check 'Show whitespaces' if you want to show tabs vs spaces
 
 ##### OSX Preferences
 - In System Preferences
