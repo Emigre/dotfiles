@@ -6,8 +6,10 @@ alias bowerlg='bower list -g | grep '"'"'^├\|^└'"'"''
 alias tree='tree -C'
 alias python='python3'
 alias pip='pip3'
-alias httpa='http -v --session=s'
+alias http='/usr/local/bin/http --pretty=all --verbose'
+alias httpa='http --session=s'
 alias zoom='open ~/Applications/Zoom.app'
+alias less='/usr/bin/less -R'
 
 # Java
 eval "$(jenv init -)"
