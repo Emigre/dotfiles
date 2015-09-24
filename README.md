@@ -150,6 +150,11 @@ https://www.eclipse.org/downloads/
 - Select 'Dark Theme' in Preferences > General > Appearance
 - Select Window > Hide Toolbar
 
+###### Easy Shell
+https://marketplace.eclipse.org/content/easyshell
+
+- Change Term for iTerm in Preferences > Easy Shell
+
 ##### Adobe
 http://www.adobe.com/
 
