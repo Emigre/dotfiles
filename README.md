@@ -93,6 +93,10 @@ http://iterm2colorschemes.com/
     - alt + backspace: send HEX sequence “0x1B 0x08"
   - Set 'Left option key acts as' '+Esc', and the right one too
 
+##### VirtualBox
+
+- In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
+
 ##### TotalSpaces2
 - Uncheck Preferences > Transitions > Use transitions
 - Check Preferences > General > Start TotalSpaces2 at Login
