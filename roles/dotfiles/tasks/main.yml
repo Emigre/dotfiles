@@ -1,0 +1,7 @@
+- name: Symlink the dotfiles
+  file:
+    src: "{{ item }}"
+    dest: "~/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./.*
