@@ -66,6 +66,14 @@ To update
 sudo npm install npm -g
 ```
 
+##### n
+
+```
+sudo n 0.10.40
+sudo n 0.12.5
+sudo n 4.0.0
+```
+
 ##### Java JDK
 
 Install with [Homebrew Cask](http://caskroom.io/) and manage with [jEnv](http://www.jenv.be/)
@@ -169,6 +177,10 @@ killall Dock
 ##### XCode
 https://developer.apple.com/xcode/
 
+```
+xcode-select --install
+```
+
 ##### Alcatraz for XCode
 http://alcatraz.io/
 
@@ -191,6 +203,12 @@ http://www.adobe.com/
 
 ##### Cinema 4D
 http://www.maxon.net/
+
+##### Manga Studio
+http://my.smithmicro.com/
+
+##### Rosetta Stone
+http://www.rosettastone.eu/
 
 ##### Postman
 https://www.getpostman.com/
