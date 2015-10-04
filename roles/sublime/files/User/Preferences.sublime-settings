@@ -63,11 +63,11 @@
 	"highlight_modified_tabs": false,
 	"ignored_packages":
 	[
+		"C++",
 		"Java",
+		"JavaScript",
 		"Python",
 		"Ruby",
-		"C++",
-		"JavaScript",
 		"Vintage"
 	],
 	"translate_tabs_to_spaces": false,

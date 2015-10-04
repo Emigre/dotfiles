@@ -1,0 +1,17 @@
+- name: Ensure there is a vagrant folder
+  file: "path='~/Vagrant' state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Ensure Vagrant has the folders it needs for its Vagrantfiles
+  file: "path='~/Vagrant/{{ item }}' state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+  with_fileglob:
+    - ./*
+
+- name: Symlink the Vagrantfiles
+  file:
+    src: "{{ item }}"
+    dest: "~/Vagrant/{{ item | basename }}/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./*

@@ -1,0 +1,88 @@
+- name: Symlink Sublime Text executable to /usr/local/bin
+  file:
+    src: "/Users/{{ user }}/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+    dest: "/usr/local/bin/subl"
+    state: link
+  sudo: yes
+
+- name: Ensure Sublime Text application support folder exists
+  file: "path='~/Library/Application\ Support/Sublime\ Text\ 3/' state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Ensure Sublime Text has the folders it needs for its packages
+  file: "path='~/Library/Application\ Support/Sublime\ Text\ 3/{{ item }}' state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+  with_items:
+    - Packages
+    - Packages/Package\ Control
+    - Packages/User
+    - Packages/C++
+    - Packages/CSS
+    - Packages/Java
+    - Packages/JavaScript
+    - Packages/Python
+    - Packages/Ruby
+
+- name: Ensure Package Control is installed
+  git:
+    repo: git://github.com/wbond/sublime_package_control.git
+    version: master
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Package\ Control"
+    update: no
+    accept_hostkey: yes
+
+- name: Symlink Sublime Text User packages
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./User/*
+
+- name: Symlink C++ syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/C++/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./C++/*.tmLanguage
+
+- name: Symlink CSS syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/CSS/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./CSS/*.tmLanguage
+
+- name: Symlink Java syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Java/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./Java/*.tmLanguage
+
+- name: Symlink JavaScript syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/JavaScript/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./JavaScript/*.tmLanguage
+
+- name: Symlink Python syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Python/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./Python/*.tmLanguage
+
+- name: Symlink Ruby syntax definition
+  file:
+    src: "{{ item }}"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Ruby/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./Ruby/*.tmLanguage

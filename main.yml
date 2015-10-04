@@ -19,3 +19,5 @@
     - role: gem
       when: user=='gasparrey'
     - role: vim
+    - role: sublime
+    - role: vagrant
