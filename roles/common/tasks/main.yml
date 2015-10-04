@@ -1,1 +1,17 @@
+---
+- name: Ensure proper permissions in /usr/local
+  file:
+    path: "/usr/local"
+    group: admin
+    mode: 0775
+    state: directory
+  sudo: yes
 
+- name: Ensure proper permissions in /usr/local/bin
+  file:
+    path: "/usr/local/bin"
+    group: admin
+    mode: 0775
+    state: directory
+    recurse: true
+  sudo: yes

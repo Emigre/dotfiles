@@ -1,0 +1,72 @@
+homebrew_upgrade: no
+
+homebrew_taps:
+  common:
+    - caskroom/cask
+    - caskroom/fonts
+    - caskroom/versions
+  home:
+    - homebrew/games
+
+homebrew_packages:
+  common:
+    - emacs
+    - git
+    - httpie
+    - jenv
+    - python3
+    - tree
+    - vim
+  home:
+    - android-sdk
+    - frobtads
+    - frotz
+    - glulxe
+    - mercurial
+    - mongodb
+    - mysql
+    - nethack
+    - nginx
+    - pandoc
+    - postgresql
+    - sqlite
+    - tintin
+    - tomcat
+
+homebrew_cask_apps:
+  common:
+    - caffeine
+    - dash
+    - dropbox
+    - evernote
+    - firefox
+    - font-meslo-lg
+    - google-chrome
+    - handbrake
+    - hipchat
+    - intellij-idea-ce
+    - iterm2
+    - java6
+    - skype
+    - sublime-text3
+    - the-unarchiver
+    - totalspaces
+    - vagrant
+    - virtualbox
+  home:
+    - android-studio
+    - arduino
+    - boxer
+    - brogue
+    - inform
+    - java
+    - java7
+    - mysqlworkbench
+    - pgadmin3
+    - pharo
+    - pycharm-ce
+    - slack
+    - vlc
+    - webstorm
+    - yacreader
+    - zoom

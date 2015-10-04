@@ -1,7 +1,5 @@
 #!/bin/bash
 
-brew install vim
-
 mkdir -p ~/.vim
 mkdir -p ~/.vim/backups
 mkdir -p ~/.vim/bundle

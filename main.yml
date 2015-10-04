@@ -1,11 +1,9 @@
 ---
 - hosts: localhost
-  gather_facts: False
+  connection: local
   vars:
     - user: "{{ lookup('env','USER') }}"
   roles:
-    - role: common
-    - role: home
-      when: "user == 'gasparrey'"
-    - role: work
-      when: "user == 'bb-system-0322'"
+    # - common
+    # - dotfiles
+    - brew
