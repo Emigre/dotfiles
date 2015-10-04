@@ -16,6 +16,12 @@ Do this after install
 sudo chown -R $USER /usr/local/include
 ```
 
+To update
+
+```
+brew update && brew upgrade brew-cask
+```
+
 To clean up
 
 ```
@@ -46,6 +52,18 @@ And change the owner of these folders
 ```
 sudo chown -R `whoami` ~/.node
 sudo chown -R `whoami` ~/.npm
+```
+
+To clean up
+
+```
+sudo npm cache clean -f
+```
+
+To update
+
+```
+sudo npm install npm -g
 ```
 
 ##### Java JDK
@@ -140,6 +158,13 @@ http://iterm2colorschemes.com/
     - Select the right dock size and magnification
     - Check 'Minimize windows into application icon'
     - In 'Minimize windows using:' select 'scale effect'
+
+Disable bouncing animation
+
+```
+defaults write com.apple.dock no-bouncing -bool TRUE
+killall Dock
+```
 
 ##### XCode
 https://developer.apple.com/xcode/

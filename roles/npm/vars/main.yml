@@ -8,6 +8,7 @@ npm_packages:
     - less
     - mocha
     - n
+    - npm
     - npm-check-updates
     - phantomjs
   home:
