@@ -16,4 +16,6 @@
       when: run_brew == "Y" or run_brew == "y"
     - role: npm
       when: run_npm == "Y" or run_npm == "y"
+    - role: gem
+      when: user=='gasparrey'
     - role: vim
