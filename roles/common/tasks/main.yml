@@ -1,4 +1,3 @@
----
 - name: Ensure proper permissions in /usr/local
   file:
     path: "/usr/local"

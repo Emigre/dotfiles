@@ -1,0 +1,34 @@
+npm_packages:
+  common:
+    - bower
+    - grunt-cli
+    - gulp
+    - http-server
+    - karma-cli
+    - less
+    - mocha
+    - n
+    - npm-check-updates
+    - phantomjs
+  home:
+    - broccoli-cli
+    - cordova
+    - divshot-cli
+    - ember-cli
+    - generator-angular
+    - generator-backbone
+    - generator-backbone-mocha
+    - generator-bootstrap
+    - generator-extjs
+    - generator-gulp-angular
+    - generator-jekyllstarter
+    - generator-aurelia
+    - generator-karma
+    - generator-magic
+    - generator-mocha
+    - generator-webapp
+    - generator-wizardry
+    - jspm@beta
+    - tsd
+    - typescript
+    - yo

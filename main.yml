@@ -1,9 +1,18 @@
----
 - hosts: localhost
   connection: local
   vars:
     - user: "{{ lookup('env','USER') }}"
+  vars_prompt:
+    - name: run_brew
+      prompt: "Execute brew tasks?"
+      default: "N"
+    - name: run_npm
+      prompt: "Execute npm tasks?"
+      default: "N"
   roles:
-    # - common
-    # - dotfiles
-    - brew
+    - role: common
+    - role: dotfiles
+    - role: brew
+      when: run_brew == "Y" or run_brew == "y"
+    - role: npm
+      when: run_npm == "Y" or run_npm == "y"
