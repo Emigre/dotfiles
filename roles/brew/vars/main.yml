@@ -43,7 +43,6 @@ homebrew_cask_apps:
     - firefox
     - font-meslo-lg
     - google-chrome
-    - handbrake
     - hipchat
     - intellij-idea-ce
     - iterm2
@@ -53,12 +52,14 @@ homebrew_cask_apps:
     - the-unarchiver
     - totalspaces
     - vagrant
-    - virtualbox
+    - virtualbox43691406
   home:
     - android-studio
     - arduino
     - boxer
     - brogue
+    - cyberduck
+    - handbrake
     - inform
     - java
     - java7
