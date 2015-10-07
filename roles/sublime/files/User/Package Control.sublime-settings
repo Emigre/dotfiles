@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AngularJS",
+		"ApplySyntax",
 		"bs3-sublime-plugin",
 		"EditorConfig",
 		"EJS",
@@ -15,6 +16,7 @@
 		"jQuery",
 		"LESS",
 		"Package Control",
+		"Puppet",
 		"Sass",
 		"ST2-Backbone.Marionette",
 		"sublime-customized-packages",
