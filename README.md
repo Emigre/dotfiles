@@ -87,6 +87,30 @@ Install with [Homebrew Cask](http://caskroom.io/) and manage with [jEnv](http://
 ###### Java SE 8
 `jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home`
 
+To list available Java versions:
+
+```
+jenv versions
+```
+
+Configure global version
+
+```
+jenv global 1.7
+```
+
+Configure local version (per directory)
+
+```
+jenv local 1.7
+```
+
+Configure shell instance version
+
+```
+jenv shell 1.7
+```
+
 ##### iTerm2
 
 Download Homebrew theme
