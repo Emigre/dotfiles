@@ -126,6 +126,8 @@ http://iterm2colorschemes.com/
   - Check 'Dimming affects only text, not background'
   - Set 'Dimming amount' to the max
   - Check 'Hide scrollbar and resize control'
+- In Preferences > Profiles > General
+  - Check 'Reuse previous session's directory' in Working Directory
 - In Preferences > Profiles > Colors
   - Select Load Presets... > Import... and install the color theme
 - In Preferences > Profiles > Text
