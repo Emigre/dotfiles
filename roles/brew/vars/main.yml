@@ -15,6 +15,7 @@ homebrew_packages:
     - git
     - httpie
     - jenv
+    - maven
     - python3
     - tree
     - vim
@@ -47,6 +48,7 @@ homebrew_cask_apps:
     - intellij-idea-ce
     - iterm2
     - java6
+    - java7
     - skype
     - sublime-text3
     - the-unarchiver
@@ -62,7 +64,6 @@ homebrew_cask_apps:
     - handbrake
     - inform
     - java
-    - java7
     - mysqlworkbench
     - pgadmin3
     - pharo
