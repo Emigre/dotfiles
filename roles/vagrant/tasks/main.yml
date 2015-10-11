@@ -1,17 +1,53 @@
 - name: Ensure there is a vagrant folder
-  file: "path='~/Vagrant' state=directory mode=0755 owner={{ user }}"
+  file: "path=/Users/{{ user }}/Vagrant state=directory mode=0755 owner={{ user }}"
   sudo: yes
 
 - name: Ensure Vagrant has the folders it needs for its Vagrantfiles
-  file: "path='~/Vagrant/{{ item }}' state=directory mode=0755 owner={{ user }}"
+  file: "path=/Users/{{ user }}/Vagrant/{{ item }} state=directory mode=0755 owner={{ user }}"
   sudo: yes
-  with_fileglob:
-    - ./*
+  with_items:
+    - ubuntu-1404-desktop
+    - win7-ie10
+    - win7-ie8
+    - win7-ie9
+    - win81-ie11
 
-- name: Symlink the Vagrantfiles
+- name: Symlink the IE10 Vagrant file
   file:
     src: "{{ item }}"
-    dest: "~/Vagrant/{{ item | basename }}/Vagrantfile"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
     state: link
   with_fileglob:
-    - ./*
+    - ./win7-ie10/Vagrantfile
+
+- name: Symlink the IE10 Vagrant files
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie10/Vagrantfile
+
+- name: Symlink the IE10 Vagrant files
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie10/Vagrantfile
+
+- name: Symlink the IE10 Vagrant files
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie10/Vagrantfile
+
+- name: Symlink the Ubuntu TrustyTahr with desktop Vagrant file
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie10/Vagrantfile
