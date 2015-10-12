@@ -2,6 +2,7 @@
   connection: local
   vars:
     - user: "{{ lookup('env','USER') }}"
+    - hostname: "{{ lookup('pipe','echo $HOSTNAME') }}"
   roles:
     - common
     - dotfiles

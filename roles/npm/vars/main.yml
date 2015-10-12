@@ -33,3 +33,8 @@ npm_packages:
     - tsd
     - typescript
     - yo
+  work:
+    - bb-bower-resolver
+    - bb-cli
+    - bb-lp-cli
+    - filesystem-bower-resolver
