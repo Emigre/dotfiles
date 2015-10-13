@@ -12,6 +12,22 @@
     - win7-ie9
     - win81-ie11
 
+- name: Symlink the IE8 Vagrant file
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie8/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie8/Vagrantfile
+
+- name: Symlink the IE9 Vagrant file
+  file:
+    src: "{{ item }}"
+    dest: "/Users/{{ user }}/Vagrant/win7-ie9/Vagrantfile"
+    state: link
+  with_fileglob:
+    - ./win7-ie9/Vagrantfile
+
 - name: Symlink the IE10 Vagrant file
   file:
     src: "{{ item }}"
@@ -20,34 +36,18 @@
   with_fileglob:
     - ./win7-ie10/Vagrantfile
 
-- name: Symlink the IE10 Vagrant files
+- name: Symlink the IE11 Vagrant file
   file:
     src: "{{ item }}"
-    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    dest: "/Users/{{ user }}/Vagrant/win81-ie11/Vagrantfile"
     state: link
   with_fileglob:
-    - ./win7-ie10/Vagrantfile
-
-- name: Symlink the IE10 Vagrant files
-  file:
-    src: "{{ item }}"
-    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
-    state: link
-  with_fileglob:
-    - ./win7-ie10/Vagrantfile
-
-- name: Symlink the IE10 Vagrant files
-  file:
-    src: "{{ item }}"
-    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
-    state: link
-  with_fileglob:
-    - ./win7-ie10/Vagrantfile
+    - ./win81-ie11/Vagrantfile
 
 - name: Symlink the Ubuntu TrustyTahr with desktop Vagrant file
   file:
     src: "{{ item }}"
-    dest: "/Users/{{ user }}/Vagrant/win7-ie10/Vagrantfile"
+    dest: "/Users/{{ user }}/Vagrant/ubuntu-1404-desktop/Vagrantfile"
     state: link
   with_fileglob:
-    - ./win7-ie10/Vagrantfile
+    - ./ubuntu-1404-desktop/Vagrantfile
