@@ -192,6 +192,7 @@ http://iterm2colorschemes.com/
     - Select the right dock size and magnification
     - Check 'Minimize windows into application icon'
     - In 'Minimize windows using:' select 'scale effect'
+  - In Accessibility > Zoom toggle it all
 
 Disable bouncing animation
 
