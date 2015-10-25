@@ -240,5 +240,8 @@ http://www.rosettastone.eu/
 ##### Postman
 https://www.getpostman.com/
 
+- Set 'UI Size' as 'Smallest' in Preferences
+- Select the dark theme in Preferences
+
 ##### GifGrabber
 http://www.gifgrabber.com/
