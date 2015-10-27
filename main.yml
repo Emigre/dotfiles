@@ -2,7 +2,9 @@
   connection: local
   vars:
     - user: "{{ lookup('env','USER') }}"
-    - hostname: "{{ lookup('pipe','echo $HOSTNAME') }}"
+    - computer_name: "{{ lookup('pipe', 'scutil --get ComputerName') }}"
+    - home: "{{ computer_name=='Gaspar’s MacBook Pro' }}"
+    - work: "{{ computer_name=='bb-system-0322' }}"
   roles:
     - common
     - dotfiles

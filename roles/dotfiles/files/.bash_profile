@@ -15,7 +15,7 @@ alias less='/usr/bin/less -R'
 eval "$(jenv init -)"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-if [ "$HOSTNAME" = "bb-system-0322.local" ]; then
+if [ `scutil --get ComputerName` = "bb-system-0322" ]; then
   export JAVA_OPTS='-Xms128m -Xmx768m -XX:MaxPermSize=512m'
   export M2_HOME='/usr/local/Cellar/maven31/3.1.1/libexec'
   export M2=$M2_HOME/bin
