@@ -9,12 +9,12 @@
 # Tap
 - name: Ensure configured taps are tapped
   homebrew_tap: "tap={{ item }} state=present"
-  with_items: "{{ (homebrew_taps.common + homebrew_taps.home) if home else homebrew_taps.common }}"
+  with_items: "{{ (homebrew_taps.common + homebrew_taps.home) if home|bool else homebrew_taps.common }}"
 
 # Brew
 - name: Ensure configured homebrew packages are installed
   homebrew: "name={{ item }} state=present"
-  with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if home else homebrew_packages.common }}"
+  with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if home|bool else homebrew_packages.common }}"
 
 - name: Upgrade all homebrew packages (if configured)
   homebrew: update_homebrew=yes upgrade_all=yes
@@ -23,4 +23,4 @@
 # Cask
 - name: Ensure configured homebrew cask applications are installed
   homebrew_cask: "name={{ item }}"
-  with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.home) if home else homebrew_cask_apps.common }}"
+  with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.home) if home|bool else homebrew_cask_apps.common }}"
