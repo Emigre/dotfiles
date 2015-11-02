@@ -29,7 +29,7 @@ npm_packages:
     - generator-mocha
     - generator-webapp
     - generator-wizardry
-    - jspm@beta
+    - jspm
     - tsd
     - typescript
     - yo
