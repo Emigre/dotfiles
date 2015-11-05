@@ -12,6 +12,7 @@ npm_packages:
     - npm-check-updates
     - phantomjs
   home:
+    - babel-cli
     - broccoli-cli
     - cordova
     - divshot-cli
