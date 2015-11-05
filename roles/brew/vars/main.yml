@@ -73,3 +73,5 @@ homebrew_cask_apps:
     - webstorm
     - yacreader
     - zoom
+  work:
+    - dbvisualizer
