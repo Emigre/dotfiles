@@ -193,6 +193,7 @@ http://iterm2colorschemes.com/
     - Check 'Minimize windows into application icon'
     - In 'Minimize windows using:' select 'scale effect'
   - In Accessibility > Zoom toggle it all
+  - In Mission Control deselect 'Show Desktop:' and 'Show Dashboard:'
 
 Disable bouncing animation
 
