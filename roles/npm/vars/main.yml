@@ -39,3 +39,4 @@ npm_packages:
     - bb-cli
     - bb-lp-cli
     - filesystem-bower-resolver
+    - selenium-standalone
