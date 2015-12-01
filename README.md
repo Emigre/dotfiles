@@ -167,7 +167,7 @@ http://iterm2colorschemes.com/
 ##### vim
 - After installation, run `:InstallPlugins`
 
-##### Sublime Text 2
+##### Sublime Text 3
 - Select View > Hide Status Bar
 
 ##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm
