@@ -21,6 +21,7 @@ homebrew_packages:
     - vim
   home:
     - android-sdk
+    - clisp
     - frobtads
     - frotz
     - glulxe
