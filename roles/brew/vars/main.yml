@@ -21,9 +21,11 @@ homebrew_packages:
     - vim
   home:
     - android-sdk
+    - cabal-install
     - clisp
     - frobtads
     - frotz
+    - ghc
     - glulxe
     - guile
     - mercurial
