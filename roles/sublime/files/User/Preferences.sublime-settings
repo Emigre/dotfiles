@@ -72,6 +72,6 @@
 	],
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
-	"typescript_plugin_tsc_version": "1.7.2",
+	"typescript_plugin_tsc_version": "1.7.3",
 	"word_wrap": true
 }
