@@ -44,6 +44,8 @@ homebrew_cask_apps:
   common:
     - caffeine
     - dash
+    - docker
+    - dockertoolbox
     - dropbox
     - evernote
     - firefox
