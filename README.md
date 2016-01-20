@@ -170,7 +170,7 @@ http://iterm2colorschemes.com/
 ##### Sublime Text 3
 - Select View > Hide Status Bar
 
-##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm
+##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm / CLion
 - Uncheck 'Navigation Bar', 'Status Bar', 'Toolbar', etc. in View
 - Assign cmd + 0 to Preferences > Keymap > Other > Terminal
 - In Preferences > Editor > File Types 'Ignore files and folders' add .idea, target, build and \*.iml
