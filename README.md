@@ -210,9 +210,6 @@ https://developer.apple.com/xcode/
 xcode-select --install
 ```
 
-##### Alcatraz for XCode
-http://alcatraz.io/
-
 ##### OpenFrameworks
 http://openframeworks.cc/
 
