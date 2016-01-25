@@ -176,9 +176,9 @@ http://iterm2colorschemes.com/
 - In Preferences > Editor > File Types 'Ignore files and folders' add .idea, target, build and \*.iml
 - In Preferences > Editor > General
   - Check 'Use soft wraps in editor'
-  - In 'Strip trailing spaces on Save' select 'All'
 - In Preferences > Editor > General > Appearance
   - Uncheck 'Show right margin'
+  - Uncheck 'Show line numbers'
   - Check 'Show whitespaces' if you want to show tabs vs spaces
 
 ##### OSX Preferences
