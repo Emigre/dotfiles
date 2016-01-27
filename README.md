@@ -180,6 +180,8 @@ http://iterm2colorschemes.com/
   - Uncheck 'Show right margin'
   - Uncheck 'Show line numbers'
   - Check 'Show whitespaces' if you want to show tabs vs spaces
+- In Preferences > Version Control > git
+  - Uncheck 'Control repositories synchronously'
 
 ##### OSX Preferences
 - In System Preferences
