@@ -5,3 +5,10 @@
     state: link
   with_fileglob:
     - ./.*
+
+- name: Set the .gituser file
+  template:
+    src: "gituser.j2"
+    dest: "~/.gituser"
+    group: admin
+    mode: 0664
