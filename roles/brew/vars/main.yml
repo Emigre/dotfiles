@@ -29,6 +29,7 @@ homebrew_packages:
     - frotz
     - ghc
     - glulxe
+    - go
     - guile
     - mercurial
     - mongodb
