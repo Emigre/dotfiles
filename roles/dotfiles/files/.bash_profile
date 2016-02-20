@@ -1,17 +1,27 @@
-export PATH="/usr/local/bin:$HOME/.node/bin:$HOME/.jenv/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+alias tree='tree -C'
+alias less='/usr/bin/less -R'
+alias http='/usr/local/bin/http --pretty=all --verbose'
+alias httpa='http --session=s'
+alias zoom="open $HOME/Applications/Zoom.app"
+
+# Node
+export PATH="$HOME/.node/bin:$PATH"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
 alias bowerlg='bower list -g | grep '"'"'^├\|^└'"'"''
-alias tree='tree -C'
+
+# Python
 alias python='python3'
 alias pip='pip3'
-alias http='/usr/local/bin/http --pretty=all --verbose'
-alias httpa='http --session=s'
-alias zoom='open ~/Applications/Zoom.app'
-alias less='/usr/bin/less -R'
+
+# Go
+export GOPATH=$HOME/Code/Go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # Java
+export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
