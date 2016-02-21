@@ -1,4 +1,4 @@
-- name: Ensure there is a vagrant folder
+- name: Ensure there is a Vagrant folder
   file: "path=/Users/{{ user }}/Vagrant state=directory mode=0755 owner={{ user }}"
   sudo: yes
 

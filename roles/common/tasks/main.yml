@@ -14,3 +14,7 @@
     state: directory
     recurse: true
   sudo: yes
+
+- name: Ensure the Code folder exists and has the right permissions
+  file: "path=~/Code state=directory mode=0755 owner={{ user }}"
+  sudo: yes
