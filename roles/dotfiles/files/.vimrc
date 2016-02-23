@@ -82,6 +82,11 @@ set nopaste
 " Automatically removes all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Set a character for the tabs
+set listchars=tab:\▹\ "
+set list
+hi SpecialKey ctermfg=52
+
 " maps
 map £ #
 
