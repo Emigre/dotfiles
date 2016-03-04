@@ -25,6 +25,7 @@ homebrew_packages:
     - cabal-install
     - chicken
     - clisp
+    - cmake
     - frobtads
     - frotz
     - ghc
