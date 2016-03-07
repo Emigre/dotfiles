@@ -10,7 +10,6 @@ export PATH="$HOME/.node/bin:$PATH"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
-alias bowerlg='bower list -g | grep '"'"'^├\|^└'"'"''
 
 # Python
 alias python='python3'
