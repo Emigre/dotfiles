@@ -224,6 +224,9 @@ http://www.adobe.com/
 ##### Cinema 4D
 http://www.maxon.net/
 
+##### Pure Data
+http://puredata.info/
+
 ##### Manga Studio
 http://my.smithmicro.com/
 
