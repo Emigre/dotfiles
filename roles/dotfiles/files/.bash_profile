@@ -24,6 +24,11 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+if [ "$(scutil --get ComputerName)" = "Gaspar’s MacBook Pro" ]; then
+  export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
+  export M2=$M2_HOME/bin
+fi
+
 if [ "$(scutil --get ComputerName)" = "bb-system-0322" ]; then
   export JAVA_OPTS='-Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC'
   export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
