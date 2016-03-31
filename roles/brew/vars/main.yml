@@ -80,6 +80,7 @@ homebrew_cask_apps:
     - processing
     - pycharm-ce
     - slack
+    - teamviewer
     - vlc
     - webstorm
     - yacreader
