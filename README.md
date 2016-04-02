@@ -172,8 +172,10 @@ http://iterm2colorschemes.com/
 
 ##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm / CLion
 - Uncheck 'Navigation Bar', 'Status Bar', 'Toolbar', etc. in View
-- Assign cmd + 0 to Preferences > Keymap > Other > Terminal
-- In Preferences > Editor > File Types 'Ignore files and folders' add .idea, target, build and \*.iml
+- In Preferences > Keymap
+  - Assign cmd + 0 to Other > Terminal
+  - In IntelliJ, assign cmd + 8 to Other > Database
+- In Preferences > Editor > File Types 'Ignore files and folders' add ".idea;\*.iml"
 - In Preferences > Editor > General
   - Check 'Use soft wraps in editor'
 - In Preferences > Editor > General > Appearance
