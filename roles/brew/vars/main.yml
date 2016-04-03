@@ -59,6 +59,7 @@ homebrew_cask_apps:
     - iterm2
     - java6
     - java7
+    - postman
     - skype
     - sublime-text3
     - the-unarchiver
