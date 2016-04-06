@@ -171,7 +171,7 @@ http://iterm2colorschemes.com/
 - Select View > Hide Status Bar
 
 ##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm / CLion
-- Uncheck 'Navigation Bar', 'Status Bar', 'Toolbar', etc. in View
+- Uncheck 'Toolbar', 'Tool Buttons', Status Bar' and 'Navigation Bar' in View
 - In Preferences > Keymap
   - Assign cmd + 0 to Other > Terminal
   - In IntelliJ, assign cmd + 8 to Other > Database
