@@ -170,18 +170,20 @@ http://iterm2colorschemes.com/
 ##### Sublime Text 3
 - Select View > Hide Status Bar
 
-##### WebStorm / IntelliJ IDEA / Android Studio / PyCharm / CLion
+##### JetBrain IDEs
 - Uncheck 'Toolbar', 'Tool Buttons', Status Bar' and 'Navigation Bar' in View
 - In Preferences > Keymap
   - Assign cmd + 0 to Other > Terminal
-  - In IntelliJ, assign cmd + 8 to Other > Database
-- In Preferences > Editor > File Types 'Ignore files and folders' add ".idea;\*.iml"
-- In Preferences > Editor > General
-  - Check 'Use soft wraps in editor'
-- In Preferences > Editor > General > Appearance
-  - Uncheck 'Show right margin'
-  - Uncheck 'Show line numbers'
-  - Check 'Show whitespaces' if you want to show tabs vs spaces
+  - In IntelliJ IDEA, assign cmd + 8 to Other > Database
+- In Preferences > Editor
+  - In File Types
+    - Add ".idea;\*.iml" to Ignore files and folders
+  - In General
+    - Check 'Use soft wraps in editor'
+    - Under Appearance
+      - Uncheck 'Show right margin'
+      - Uncheck 'Show line numbers'
+      - Check 'Show whitespaces' if you want to show tabs vs spaces
 - In Preferences > Version Control > git
   - Uncheck 'Control repositories synchronously'
 
