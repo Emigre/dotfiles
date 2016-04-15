@@ -222,6 +222,38 @@ http://openframeworks.cc/
 ##### Cling
 https://root.cern.ch/cling
 
+##### Eclipse
+https://www.eclipse.org/downloads/
+
+- Select Window > Hide Toolbar
+- In Preferences
+  - In General > Appearance
+    - In Color Theme select 'Zenburn'
+    - In Colors and Fonts set 'Orchid' as the color for 'Uncommited Change'
+  - In General > Editors > Text Editors
+    - Uncheck 'Show line numbers' and 'Show print margin'
+    - Check 'Show whitespace characters'
+    - In Quick Diff, select 'A Git Revision' in the dropdown
+  - In General > Keys
+    - Set Ctrl + Tab for 'Show View (Project Explorer)'
+    - Set Ctrl + Tab for 'Activate Editor'
+  - In Java > Apearance check Abbreviate package names and set the package abbreviations
+  - In Team > Git > Label Decorations
+    - Under Icon Decorations, unselect Tracked Resources and Dirty resources
+    - Under Text Decorations, set Files: {name}, Folders: {name} and Projects: {name}  [{branch}{ branch_status}]
+- In the Project Explorer dropdown, select 'Customize View', select the Content tab and unselect all except for 'Enhanced Java Rendering for Web' and 'Java Elements'
+
+Install the Lightweight CSS Editor plugin and add these styles in Preferences > General > Appearance
+https://marketplace.eclipse.org/content/eclipse-4-tools-lightweight-css-editor
+
+```css
+#org-eclipse-e4-ui-compatibility-editor Composite > Canvas { background-color: #232323; }
+Tree, List, Table { background-color: #eee; }
+```
+
+Install the Rinzo XML Editor plugin
+https://marketplace.eclipse.org/content/rinzo-xml-editor
+
 ##### Adobe
 http://www.adobe.com/
 
