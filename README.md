@@ -243,16 +243,14 @@ https://www.eclipse.org/downloads/
     - Under Text Decorations, set Files: {name}, Folders: {name} and Projects: {name}  [{branch}{ branch_status}]
 - In the Project Explorer dropdown, select 'Customize View', select the Content tab and unselect all except for 'Enhanced Java Rendering for Web' and 'Java Elements'
 
-Install the Lightweight CSS Editor plugin and add these styles in Preferences > General > Appearance
-https://marketplace.eclipse.org/content/eclipse-4-tools-lightweight-css-editor
+Install the [Lightweight CSS Editor plugin](https://marketplace.eclipse.org/content/eclipse-4-tools-lightweight-css-editor) and add these styles in Preferences > General > Appearance
 
 ```css
 #org-eclipse-e4-ui-compatibility-editor Composite > Canvas { background-color: #232323; }
 Tree, List, Table { background-color: #eee; }
 ```
 
-Install the Rinzo XML Editor plugin
-https://marketplace.eclipse.org/content/rinzo-xml-editor
+Install the [Rinzo XML Editor plugin](https://marketplace.eclipse.org/content/rinzo-xml-editor)
 
 ##### Adobe
 http://www.adobe.com/
