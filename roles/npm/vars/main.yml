@@ -31,8 +31,8 @@ npm_packages:
     - generator-webapp
     - generator-wizardry
     - jspm
-    - tsd
     - typescript
+    - typings
     - yo
   work:
     - bb-bower-resolver
