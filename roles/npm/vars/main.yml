@@ -11,6 +11,7 @@ npm_packages:
     - npm
     - npm-check-updates
     - phantomjs
+    - webpack
   home:
     - babel-cli
     - broccoli-cli
