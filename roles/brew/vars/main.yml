@@ -74,6 +74,7 @@ homebrew_cask_apps:
     - inform
     - java
     - mysqlworkbench
+    - openemu
     - pgadmin3
     - pharo
     - processing
