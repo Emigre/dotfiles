@@ -249,8 +249,6 @@ Install the [Lightweight CSS Editor plugin](https://marketplace.eclipse.org/cont
 Tree, List, Table { background-color: #eee; }
 ```
 
-Install the [Rinzo XML Editor plugin](https://marketplace.eclipse.org/content/rinzo-xml-editor)
-
 ##### Adobe
 http://www.adobe.com/
 
