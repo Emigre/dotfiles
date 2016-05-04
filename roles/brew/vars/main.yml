@@ -37,7 +37,6 @@ homebrew_packages:
     - mysql
     - nethack
     - nginx
-    - pandoc
     - postgresql
     - sqlite
     - tintin
