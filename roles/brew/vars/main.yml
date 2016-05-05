@@ -61,7 +61,6 @@ homebrew_cask_apps:
     - skype
     - sublime-text3
     - the-unarchiver
-    - totalspaces
     - vagrant
     - virtualbox43691406
   home:
