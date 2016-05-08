@@ -39,7 +39,6 @@ homebrew_packages:
     - postgresql
     - redis
     - sqlite
-    - tintin
     - tomcat
 
 homebrew_cask_apps:
