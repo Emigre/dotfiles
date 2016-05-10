@@ -216,6 +216,8 @@ https://developer.apple.com/xcode/
 xcode-select --install
 ```
 
+Will install the command-line tools.
+
 ##### OpenFrameworks
 http://openframeworks.cc/
 
