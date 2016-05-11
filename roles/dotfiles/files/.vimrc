@@ -88,7 +88,7 @@ set list
 hi SpecialKey ctermfg=52
 
 " maps
-map £ #
+imap £ #
 
 " Clear search highlight (to show again press n)
 nnoremap <silent> § :noh<CR>
