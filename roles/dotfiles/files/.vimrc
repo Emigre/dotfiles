@@ -89,9 +89,11 @@ hi SpecialKey ctermfg=52
 
 " maps
 imap £ #
+nnoremap [ [m
+nnoremap ] ]m
 
 " Clear search highlight (to show again press n)
-nnoremap <silent> § :noh<CR>
+nnoremap <silent> <C-]> :noh<CR>
 
 set timeout         " Do time out on mappings and others
 set timeoutlen=2000 " Wait {num} ms before timing out a mapping
