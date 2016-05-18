@@ -56,6 +56,8 @@ colorscheme Zenburn
 " colors zenburn
 syntax on
 
+set noswapfile
+
 " indentation
 set smartindent
 
@@ -117,8 +119,6 @@ endif
 " nnoremap <silent> OC l
 " nnoremap <silent> OD h
 
-" Switch windows and current file path
-nnoremap <silent> <Tab> <C-W>W
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> <C-L> :b#<CR>
 
