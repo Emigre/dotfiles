@@ -128,6 +128,7 @@ http://iterm2colorschemes.com/
   - Check 'Hide scrollbar and resize control'
 - In Preferences > Profiles > General
   - Check 'Reuse previous session's directory' in Working Directory
+  - In Command > 'Send text at start', write `tmux attach -t init || tmux new -s init`
 - In Preferences > Profiles > Colors
   - Select Load Presets... > Import... and install the color theme
 - In Preferences > Profiles > Text
@@ -191,7 +192,6 @@ http://iterm2colorschemes.com/
 - In System Preferences
   - In Keyboard
     - Under Shortcuts uncheck 'Mission Control'
-    - Under Keyboard check 'Use F1, F2, etc. keys as standard function keys'
   - Check Trackpad > Tap to click
   - Set Require password 'immediately' after sleep in  Security & Privacy
   - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
