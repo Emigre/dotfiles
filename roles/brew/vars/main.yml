@@ -6,6 +6,7 @@ homebrew_taps:
     - caskroom/fonts
     - caskroom/versions
   home:
+    - Emigre/tap
     - homebrew/games
 
 homebrew_packages:
@@ -28,6 +29,7 @@ homebrew_packages:
     - cmake
     - frobtads
     - frotz
+    - generate
     - ghc
     - glulxe
     - go
