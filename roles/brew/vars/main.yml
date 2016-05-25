@@ -10,7 +10,6 @@ homebrew_taps:
 
 homebrew_packages:
   common:
-    - ag
     - ansible
     - emacs
     - git
@@ -18,6 +17,7 @@ homebrew_packages:
     - jenv
     - maven
     - python3
+    - the_silver_searcher
     - tree
     - tmux
     - vim
