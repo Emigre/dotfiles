@@ -35,6 +35,7 @@ Plugin 'Emigre/VimCompleteLikeAModernEditor'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-buftabline'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +49,7 @@ filetype plugin indent on    " required
 "
 set autoread
 set ruler
+set noswapfile
 
 " colors
 " https://github.com/sickill/vim-monokai
@@ -56,22 +58,20 @@ colorscheme Zenburn
 " colors zenburn
 syntax on
 
-set noswapfile
-
 " indentation
 set smartindent
 
 " The width of a TAB is set to 4
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
-" a width of 4
-set tabstop=4
+" a width of 2
+set tabstop=2
 
-" Indents will have a width of 4
-set shiftwidth=4
+" Indents will have a width of 2
+set shiftwidth=2
 
 " Sets the number of columns for a TAB
-set softtabstop=4
+set softtabstop=2
 
 " Finally expand TABs to spaces
 set expandtab
@@ -112,12 +112,6 @@ if !has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
-
-" Fix arrow keys that display A B C D
-" nnoremap <silent> OA k
-" nnoremap <silent> OB j
-" nnoremap <silent> OC l
-" nnoremap <silent> OD h
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> <C-L> :b#<CR>
