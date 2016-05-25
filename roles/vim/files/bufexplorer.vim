@@ -1,11 +1,7 @@
 " bufexplorer.vim
 " ---------------
 " Open Buffexplorer
-if has("win32") || has("win16")
-  nnoremap <silent> <space> :BufExplorer<CR> " Windows
-else
-  nnoremap <silent> <space> :BufExplorer<CR>
-endif
+nnoremap <silent> § :BufExplorer<CR>
 
 " BufOnly.vim  -  Delete all the buffers except the current/named buffer.
 " Copyright November 2003 by Christian J. Robinson <infynity@onewest.net>
