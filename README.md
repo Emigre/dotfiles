@@ -150,10 +150,6 @@ http://iterm2colorschemes.com/
 
 - In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
 
-##### TotalSpaces2
-- Uncheck Preferences > Transitions > Use transitions
-- Check Preferences > General > Start TotalSpaces2 at Login
-
 ##### Dash
 - In Preferences > General
   - Set 'Global search shortcut' as alt + Space
