@@ -1,59 +1,113 @@
-; Emacs will be slow to start unless you have a fully-qualified domain name for
-; the computer's hostname, for example:
-; sudo scutil --set HostName gaspar.local
+;; Emacs will be slow to start unless you have a fully-qualified domain name for
+;; the computer's hostname, for example:
+;; sudo scutil --set HostName gaspar.local
 
 (require 'package)
 
-; list the packages you want
+;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace))
 
-; list the repositories containing them
+;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
-; activate all the packages (in particular autoloads)
+;; activate all the packages (in particular autoloads)
 (package-initialize)
 
-; fetch the list of packages available
+;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
-; install the missing packages
+;; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
-; set the theme
+;; set the theme
 (load-theme 'zenburn t)
 
-; do not show the welcome message
+;; do not show the welcome message
 (setq inhibit-splash-screen t)
 
-; do not create backup files
-(setq make-backup-files nil)
-
-; disable the menu bar
+;; disable the menu bar
 (menu-bar-mode 0)
 
-; hide the modeline
-(setq-default mode-line-format nil)
+;; customize the modeline
+(setq-default mode-line-format (list "%b | %l, %c | %p"))
 
-; stop creating backup~ files
+;; Makes *scratch* empty.
+(setq initial-scratch-message "")
+
+;; Removes *scratch* from buffer after the mode has been set.
+(defun remove-scratch-buffer ()
+  (if (get-buffer "*scratch*")
+      (kill-buffer "*scratch*")))
+(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
+
+;; Removes *messages* from the buffer.
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
+;; Removes *Completions* from buffer after you've opened a file.
+(add-hook 'minibuffer-exit-hook
+      '(lambda ()
+         (let ((buffer "*Completions*"))
+           (and (get-buffer buffer)
+                (kill-buffer buffer)))))
+
+;; Don't show *Buffer list* when opening multiple files at the same time.
+(setq inhibit-startup-buffer-menu t)
+
+;; Show only one active window when opening multiple files at the same time.
+(add-hook 'window-setup-hook 'delete-other-windows)
+
+;; No more typing the whole yes or no. Just y or n will do.
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; stop creating backup~ files
 (setq make-backup-files nil)
 
-; stop creating #autosave# files
+;; stop creating #autosave# files
 (setq auto-save-default nil)
 
-; whitespace mode
+;; whitespace mode
 (global-whitespace-mode 1)
 (setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
 (setq whitespace-display-mappings '((tab-mark     ?\t    [?\▹ ?\t] [?\\ ?\t])))
 
-; fiplr
+;; cycle through the buffers
+(global-set-key (kbd "M-[ c")  'next-buffer)
+(global-set-key (kbd "M-[ d")  'previous-buffer)
+
+;; kill all buffers except the current
+(defun only-current-buffer ()
+  (interactive)
+  (let ((tobe-killed (cdr (buffer-list (current-buffer)))))
+    (while tobe-killed
+      (kill-buffer (car tobe-killed))
+      (setq tobe-killed (cdr tobe-killed)))))
+
+(global-set-key (kbd "C-x C-k")  'only-current-buffer)
+
+;; copy and paste from OSX clipboard
+(defun copy-from-osx ()
+(shell-command-to-string "pbpaste"))
+
+(defun paste-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx) 
+
+;; fiplr
 (global-set-key (kbd "C-p") 'fiplr-find-file)
 (setq fiplr-ignored-globs '((directories (".git" ".svn"))
  (files ("*.jpg" "*.png" "*.zip" "*~" ".DS_Store"))))
-; Ido
+
+;; Ido
 (require 'ido)
 (ido-mode t)
