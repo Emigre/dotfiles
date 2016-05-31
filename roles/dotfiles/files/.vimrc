@@ -90,7 +90,6 @@ set list
 hi SpecialKey ctermfg=52
 
 " maps
-imap £ #
 nnoremap [ [m
 nnoremap ] ]m
 
