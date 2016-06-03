@@ -73,8 +73,11 @@
 
 ;; whitespace mode
 (global-whitespace-mode 1)
-(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark trailing)))
 (setq whitespace-display-mappings '((tab-mark     ?\t    [?\▹ ?\t] [?\\ ?\t])))
+
+;; whitespace cleanup on save
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; cycle through the buffers
 (global-set-key (kbd "M-[ c")  'next-buffer)
@@ -91,17 +94,23 @@
 (global-set-key (kbd "C-x C-k")  'only-current-buffer)
 
 ;; copy and paste from OSX clipboard
-(defun copy-from-osx ()
-(shell-command-to-string "pbpaste"))
+(defun pbcopy ()
+  (interactive)
+  (call-process-region (point) (mark) "pbcopy")
+  (setq deactivate-mark t))
 
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+(defun pbpaste ()
+  (interactive)
+  (call-process-region (point) (if mark-active (mark) (point)) "pbpaste" t t))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx) 
+(defun pbcut ()
+  (interactive)
+  (pbcopy)
+  (delete-region (region-beginning) (region-end)))
+
+(global-set-key (kbd "C-c c") 'pbcopy)
+(global-set-key (kbd "C-c v") 'pbpaste)
+(global-set-key (kbd "C-c x") 'pbcut)
 
 ;; fiplr
 (global-set-key (kbd "C-p") 'fiplr-find-file)
