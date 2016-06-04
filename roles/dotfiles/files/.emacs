@@ -5,7 +5,7 @@
 (require 'package)
 
 ;; list the packages you want
-(setq package-list '(zenburn-theme fiplr whitespace))
+(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -32,6 +32,114 @@
 
 ;; disable the menu bar
 (menu-bar-mode 0)
+
+;; tabbar mode
+(require 'tabbar)
+(tabbar-mode)
+(setq tabbar-use-images nil)
+
+(setq tabbar-buffer-groups-function (lambda () (list "All")))
+
+ ;; Add a buffer modification state indicator in the tab label, and place a
+ ;; space around the label to make it looks less crowd.
+ (defadvice tabbar-buffer-tab-label (after fixup_tab_label_space_and_flag activate)
+   (setq ad-return-value
+         (if (and (buffer-modified-p (tabbar-tab-value tab))
+                  (buffer-file-name (tabbar-tab-value tab)))
+             (concat " + " (concat ad-return-value " "))
+           (concat " " (concat ad-return-value " ")))))
+
+ ;; Called each time the modification state of the buffer changed.
+ (defun ztl-modification-state-change ()
+   (tabbar-set-template tabbar-current-tabset nil)
+   (tabbar-display-update))
+
+ ;; First-change-hook is called BEFORE the change is made.
+ (defun ztl-on-buffer-modification ()
+   (set-buffer-modified-p t)
+   (ztl-modification-state-change))
+ (add-hook 'after-save-hook 'ztl-modification-state-change)
+
+ ;; This doesn't work for revert, I don't know.
+ ;;(add-hook 'after-revert-hook 'ztl-modification-state-change)
+ (add-hook 'first-change-hook 'ztl-on-buffer-modification)
+
+(setq tabbar-background-color "#232323")
+
+(set-face-attribute 'tabbar-unselected nil
+        :inherit 'tabbar-default
+        :background "#232323"
+        :foreground "#969696")
+
+(custom-set-variables
+ '(tabbar-buffer-home-button (quote (("") "")))
+ '(tabbar-home-button (quote (("") "")))
+ '(tabbar-scroll-left-button (quote ((" <") "")))
+ '(tabbar-scroll-right-button (quote ((" ") "")))
+ )
+
+(defun tabbar-line-format (tabset)
+  "Return the `header-line-format' value to display TABSET."
+  (let* ((sel (tabbar-selected-tab tabset))
+         (tabs (tabbar-view tabset))
+         (padcolor (tabbar-background-color))
+         atsel elts)
+    ;; Initialize buttons and separator values.
+    (or tabbar-separator-value
+        (tabbar-line-separator))
+    (or tabbar-home-button-value
+        (tabbar-line-button 'home))
+    (or tabbar-scroll-left-button-value
+        (tabbar-line-button 'scroll-left))
+    (or tabbar-scroll-right-button-value
+        (tabbar-line-button 'scroll-right))
+    ;; Track the selected tab to ensure it is always visible.
+    (when tabbar--track-selected
+      (while (not (memq sel tabs))
+        (tabbar-scroll tabset -1)
+        (setq tabs (tabbar-view tabset)))
+      (while (and tabs (not atsel))
+        (setq elts  (cons (tabbar-line-tab (car tabs)) elts)
+              atsel (eq (car tabs) sel)
+              tabs  (cdr tabs)))
+      (setq elts (nreverse elts))
+      ;; At this point the selected tab is the last elt in ELTS.
+      ;; Scroll TABSET and ELTS until the selected tab becomes
+      ;; visible.
+      (with-temp-buffer
+        (let ((truncate-partial-width-windows nil)
+              (inhibit-modification-hooks t)
+              deactivate-mark ;; Prevent deactivation of the mark!
+              start)
+          (setq truncate-lines nil
+                buffer-undo-list t)
+          (apply 'insert (tabbar-line-buttons tabset))
+          (setq start (point))
+          (while (and (cdr elts) ;; Always show the selected tab!
+                      (progn
+                        (delete-region start (point-max))
+                        (goto-char (point-max))
+                        (apply 'insert elts)
+                        (goto-char (point-min))
+                        (> (vertical-motion 1) 0)))
+            (tabbar-scroll tabset 1)
+            (setq elts (cdr elts)))))
+      (setq elts (nreverse elts))
+      (setq tabbar--track-selected nil))
+    ;; Format remaining tabs.
+    (while tabs
+      (setq elts (cons (tabbar-line-tab (car tabs)) elts)
+            tabs (cdr tabs)))
+    ;; Cache and return the new tab bar.
+    (tabbar-set-template
+     tabset
+     (list (tabbar-line-buttons tabset)
+           (nreverse elts)
+           (propertize ""
+                       'face (list :background padcolor
+                                   :foreground padcolor)
+                       'pointer 'arrow)))
+    ))
 
 ;; customize the modeline
 (setq-default mode-line-format (list "%b | %l, %c | %p"))
@@ -89,9 +197,13 @@
   (let ((tobe-killed (cdr (buffer-list (current-buffer)))))
     (while tobe-killed
       (kill-buffer (car tobe-killed))
-      (setq tobe-killed (cdr tobe-killed)))))
+      (setq tobe-killed (cdr tobe-killed)))
+      (redraw-display)))
 
 (global-set-key (kbd "C-x C-k")  'only-current-buffer)
+
+;; kill buffer without asking
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 ;; copy and paste from OSX clipboard
 (defun pbcopy ()
@@ -120,3 +232,32 @@
 ;; Ido
 (require 'ido)
 (ido-mode t)
+
+(require 'diff-hl)
+
+(defvar diff-hl-margin-spec-cache
+  (cl-loop for (type . char) in '((insert . " ") (delete . " ")
+                                  (change . " ") (unknown . " ")
+                                  (ignored . " "))
+        nconc
+        (cl-loop for side in '(left right)
+                 collect
+                 (cons (cons type side)
+                       (propertize
+                        " " 'display
+                        `((margin ,(intern (format "%s-margin" side)))
+                          ,(propertize char 'face
+                                       (intern (format "diff-hl-%s" type)))))))))
+
+
+(diff-hl-mode)
+(diff-hl-margin-mode)
+(diff-hl-flydiff-mode)
+(add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
+(add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
+
+;; (setq diff-hl-side 'right)
+
+(set-face-attribute 'diff-hl-insert nil :background "gray29")
+(set-face-attribute 'diff-hl-change nil :background "gray29")
+(set-face-attribute 'diff-hl-delete nil :background "IndianRed4")
