@@ -1,0 +1,14 @@
+- name: Ensure all needed vim folders exist and have the right permissions
+  file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+  with_items:
+    - .emacs.d
+    - .emacs.d/snippets
+
+- name: Ensure my collection of emacs snippets is cloned in .emacs.d/snippets
+  git:
+    repo: git@github.com:Emigre/yasnippet-snippets.git
+    version: master
+    dest: "{{ home }}/.emacs.d/snippets"
+    update: no
+    accept_hostkey: yes
