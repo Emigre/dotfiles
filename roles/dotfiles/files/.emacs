@@ -5,7 +5,8 @@
 (require 'package)
 
 ;; list the packages you want
-(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl))
+(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl avy
+  yasnippet emmet-mode auto-complete))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -33,6 +34,9 @@
 ;; disable the menu bar
 (menu-bar-mode 0)
 
+;; automatically insert closing braces
+(electric-pair-mode 1)
+
 ;; tabbar mode
 (require 'tabbar)
 (tabbar-mode)
@@ -40,29 +44,29 @@
 
 (setq tabbar-buffer-groups-function (lambda () (list "All")))
 
- ;; Add a buffer modification state indicator in the tab label, and place a
- ;; space around the label to make it looks less crowd.
- (defadvice tabbar-buffer-tab-label (after fixup_tab_label_space_and_flag activate)
-   (setq ad-return-value
-         (if (and (buffer-modified-p (tabbar-tab-value tab))
-                  (buffer-file-name (tabbar-tab-value tab)))
-             (concat " + " (concat ad-return-value " "))
-           (concat " " (concat ad-return-value " ")))))
+;; Add a buffer modification state indicator in the tab label, and place a
+;; space around the label to make it looks less crowd.
+(defadvice tabbar-buffer-tab-label (after fixup_tab_label_space_and_flag activate)
+ (setq ad-return-value
+       (if (and (buffer-modified-p (tabbar-tab-value tab))
+                (buffer-file-name (tabbar-tab-value tab)))
+           (concat " + " (concat ad-return-value " "))
+         (concat " " (concat ad-return-value " ")))))
 
- ;; Called each time the modification state of the buffer changed.
- (defun ztl-modification-state-change ()
-   (tabbar-set-template tabbar-current-tabset nil)
-   (tabbar-display-update))
+;; Called each time the modification state of the buffer changed.
+(defun ztl-modification-state-change ()
+ (tabbar-set-template tabbar-current-tabset nil)
+ (tabbar-display-update))
 
- ;; First-change-hook is called BEFORE the change is made.
- (defun ztl-on-buffer-modification ()
-   (set-buffer-modified-p t)
-   (ztl-modification-state-change))
- (add-hook 'after-save-hook 'ztl-modification-state-change)
+;; First-change-hook is called BEFORE the change is made.
+(defun ztl-on-buffer-modification ()
+ (set-buffer-modified-p t)
+ (ztl-modification-state-change))
+(add-hook 'after-save-hook 'ztl-modification-state-change)
 
- ;; This doesn't work for revert, I don't know.
- ;;(add-hook 'after-revert-hook 'ztl-modification-state-change)
- (add-hook 'first-change-hook 'ztl-on-buffer-modification)
+;; This doesn't work for revert, I don't know.
+;;(add-hook 'after-revert-hook 'ztl-modification-state-change)
+(add-hook 'first-change-hook 'ztl-on-buffer-modification)
 
 (setq tabbar-background-color "#232323")
 
@@ -70,6 +74,14 @@
         :inherit 'tabbar-default
         :background "#232323"
         :foreground "#969696")
+
+(set-face-attribute 'tabbar-modified nil
+        :inherit 'tabbar-unselected
+        :foreground "IndianRed4")
+
+(set-face-attribute 'tabbar-selected-modified nil
+        :inherit 'tabbar-selected
+        :foreground "IndianRed4")
 
 (custom-set-variables
  '(tabbar-buffer-home-button (quote (("") "")))
@@ -233,6 +245,7 @@
 (require 'ido)
 (ido-mode t)
 
+;; diff-hl
 (require 'diff-hl)
 
 (defvar diff-hl-margin-spec-cache
@@ -249,7 +262,6 @@
                           ,(propertize char 'face
                                        (intern (format "diff-hl-%s" type)))))))))
 
-
 (diff-hl-mode)
 (diff-hl-margin-mode)
 (diff-hl-flydiff-mode)
@@ -261,3 +273,18 @@
 (set-face-attribute 'diff-hl-insert nil :background "gray29")
 (set-face-attribute 'diff-hl-change nil :background "gray29")
 (set-face-attribute 'diff-hl-delete nil :background "IndianRed4")
+
+;; avy
+(require 'avy)
+
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;; emmet
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
+;; auto-complete
+(ac-config-default)
