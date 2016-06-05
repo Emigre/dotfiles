@@ -1,9 +1,8 @@
-- name: Ensure all needed vim folders exist and have the right permissions
+- name: Ensure the .emacs.d folder exists and has the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
   sudo: yes
   with_items:
     - .emacs.d
-    - .emacs.d/snippets
 
 - name: Ensure my collection of emacs snippets is cloned in .emacs.d/snippets
   git:
