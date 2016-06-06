@@ -1,3 +1,9 @@
+##### Usage
+
+```
+ansible-playbook main.yml
+
+```
 ##### Google Chrome
 
 http://www.google.com/chrome/
@@ -144,7 +150,11 @@ http://iterm2colorschemes.com/
     - alt + left: send ESC + b
     - alt + right: send ESC + f
     - alt + backspace: send HEX sequence “0x1B 0x08"
-  - Set 'Left option key acts as' '+Esc', and the right one too
+  - Set 'Left option key acts as' '+Esc'
+  - Set 'Right option key acts as' 'Normal'
+
+##### Terminal
+- In Preferences > Profiles > Keyboard select 'Use Option as Meta key'
 
 ##### VirtualBox
 
