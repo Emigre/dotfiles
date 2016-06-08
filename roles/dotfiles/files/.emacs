@@ -5,7 +5,7 @@
 (require 'package)
 
 ;; list the packages you want
-(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl avy
+(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl
   yasnippet emmet-mode auto-complete))
 
 ;; list the repositories containing them
@@ -36,6 +36,23 @@
 
 ;; automatically insert closing braces
 (electric-pair-mode 1)
+
+;; show end of buffer
+(defun my-mark-eob ()
+  (let ((existing-overlays (overlays-in (point-max) (point-max)))
+        (eob-mark (make-overlay (point-max) (point-max) nil t t))
+        (eob-text "~"))
+    ;; Delete any previous EOB markers.  Necessary so that they don't
+    ;; accumulate on calls to revert-buffer.
+    (dolist (next-overlay existing-overlays)
+      (if (overlay-get next-overlay 'eob-overlay)
+          (delete-overlay next-overlay)))
+    ;; Add a new EOB marker.
+    (put-text-property 0 (length eob-text)
+          'face '(foreground-color . "slate gray") eob-text)
+    (overlay-put eob-mark 'eob-overlay t)
+    (overlay-put eob-mark 'after-string eob-text)))
+ (add-hook 'find-file-hooks 'my-mark-eob)
 
 ;; tabbar mode
 (require 'tabbar)
@@ -270,12 +287,9 @@
 
 ;; (setq diff-hl-side 'right)
 
-(set-face-attribute 'diff-hl-insert nil :background "gray29")
-(set-face-attribute 'diff-hl-change nil :background "gray29")
+(set-face-attribute 'diff-hl-insert nil :background "DarkOliveGreen")
+(set-face-attribute 'diff-hl-change nil :background "DarkSlateBlue")
 (set-face-attribute 'diff-hl-delete nil :background "IndianRed4")
-
-;; avy
-(require 'avy)
 
 ;; yasnippet
 (require 'yasnippet)
