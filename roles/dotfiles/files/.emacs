@@ -288,7 +288,7 @@
 ;; (setq diff-hl-side 'right)
 
 (set-face-attribute 'diff-hl-insert nil :background "DarkOliveGreen")
-(set-face-attribute 'diff-hl-change nil :background "DarkSlateBlue")
+(set-face-attribute 'diff-hl-change nil :background "gray34")
 (set-face-attribute 'diff-hl-delete nil :background "IndianRed4")
 
 ;; yasnippet
