@@ -6,7 +6,7 @@
 
 ;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl
-  yasnippet emmet-mode auto-complete))
+  yasnippet emmet-mode auto-complete multiple-cursors))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -53,6 +53,42 @@
     (overlay-put eob-mark 'eob-overlay t)
     (overlay-put eob-mark 'after-string eob-text)))
  (add-hook 'find-file-hooks 'my-mark-eob)
+
+;; mark current word
+  (defun my-mark-current-word (&optional arg allow-extend)
+    "Put point at beginning of current word, set mark at end."
+    (interactive "p\np")
+    (setq arg (if arg arg 1))
+    (if (and allow-extend
+             (or (and (eq last-command this-command) (mark t))
+                 (region-active-p)))
+        (set-mark
+         (save-excursion
+           (when (< (mark) (point))
+             (setq arg (- arg)))
+           (goto-char (mark))
+           (forward-word arg)
+           (point)))
+      (let ((wbounds (bounds-of-thing-at-point 'word)))
+        (unless (consp wbounds)
+          (error "No word at point"))
+        (if (>= arg 0)
+            (goto-char (car wbounds))
+          (goto-char (cdr wbounds)))
+        (push-mark (save-excursion
+                     (forward-word arg)
+                     (point)))
+        (activate-mark))))
+(global-set-key (kbd "ESC <up>") 'my-mark-current-word)
+
+;; select whole line
+(defun my-select-current-line-and-forward-line (arg)
+  (interactive "p")
+  (when (not (use-region-p))
+    (forward-line 0)
+    (set-mark-command nil))
+  (forward-line arg))
+(global-set-key (kbd "ESC <down>") 'my-select-current-line-and-forward-line)
 
 ;; tabbar mode
 (require 'tabbar)
@@ -302,3 +338,11 @@
 
 ;; auto-complete
 (ac-config-default)
+
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c e") 'mc/edit-lines)
+(global-set-key (kbd "M-[ a") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-[ b") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
