@@ -73,8 +73,10 @@ homebrew_cask_apps:
     - boxer
     - brogue
     - cyberduck
+    - gimp
     - handbrake
     - inform
+    - inkscape
     - java
     - mysqlworkbench
     - pgadmin3
@@ -86,6 +88,7 @@ homebrew_cask_apps:
     - teamviewer
     - vlc
     - webstorm
+    - xquartz
     - yacreader
     - zoom
   work:
