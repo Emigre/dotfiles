@@ -3,6 +3,7 @@ alias tree='tree -C'
 alias less='/usr/bin/less -R'
 alias http='/usr/local/bin/http --pretty=all --verbose'
 alias httpa='http --session=s'
+alias ts='tree -L 3 | less'
 alias zoom="open $HOME/Applications/Zoom.app"
 
 # Node
