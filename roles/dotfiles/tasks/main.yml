@@ -1,7 +1,7 @@
 - name: Symlink the dotfiles
   file:
     src: "{{ item }}"
-    dest: "~/{{ item | basename }}"
+    dest: "{{ home }}/{{ item | basename }}"
     state: link
   with_fileglob:
     - ./.*
@@ -9,6 +9,6 @@
 - name: Set the .gituser file
   template:
     src: "gituser.j2"
-    dest: "~/.gituser"
+    dest: "{{ home }}/.gituser"
     group: admin
     mode: 0664

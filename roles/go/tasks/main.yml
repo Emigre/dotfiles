@@ -1,3 +1,3 @@
 - name: Ensure the Go workspace exists and has the right permissions
-  file: "path=~/Code/Go state=directory mode=0755 owner={{ user }}"
+  file: "path={{ home }}/Code/Go state=directory mode=0755 owner={{ user }}"
   sudo: yes

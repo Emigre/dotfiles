@@ -1,5 +1,5 @@
 - name: Ensure all needed vim folders exist and have the right permissions
-  file: "path=~/{{ item }} state=directory mode=0755 owner={{ user }}"
+  file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
   sudo: yes
   with_items:
     - .vim
@@ -14,14 +14,14 @@
   git:
     repo: git://github.com/VundleVim/Vundle.vim.git
     version: master
-    dest: "~/.vim/bundle/Vundle.vim"
+    dest: "{{ home }}/.vim/bundle/Vundle.vim"
     update: no
     accept_hostkey: yes
 
 - name: Symlink the configuration files for all installed vim plugins
   file:
     src: "{{ item }}"
-    dest: "~/.vim/plugin/{{ item | basename }}"
+    dest: "{{ home }}/.vim/plugin/{{ item | basename }}"
     state: link
   with_fileglob:
     - ./*.vim
