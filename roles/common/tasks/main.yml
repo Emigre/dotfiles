@@ -18,3 +18,11 @@
 - name: Ensure the Code folder exists and has the right permissions
   file: "path={{ home }}/Code state=directory mode=0755 owner={{ user }}"
   sudo: yes
+
+- name: Ensure the depot tools are cloned
+  git:
+    repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    version: master
+    dest: "{{ home }}/Code/depot_tools"
+    update: no
+    accept_hostkey: yes

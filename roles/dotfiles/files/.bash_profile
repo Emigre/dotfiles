@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/Code/depot_tools:/usr/local/bin:$PATH"
 alias tree='tree -C'
 alias less='/usr/bin/less -R'
 alias http='/usr/local/bin/http --pretty=all --verbose'
