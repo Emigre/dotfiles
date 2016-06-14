@@ -6,7 +6,7 @@
 
 ;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl
-  yasnippet emmet-mode auto-complete multiple-cursors))
+  yasnippet emmet-mode auto-complete multiple-cursors vim-empty-lines-mode))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -36,23 +36,6 @@
 
 ;; automatically insert closing braces
 (electric-pair-mode 1)
-
-;; show end of buffer
-(defun my-mark-eob ()
-  (let ((existing-overlays (overlays-in (point-max) (point-max)))
-        (eob-mark (make-overlay (point-max) (point-max) nil t t))
-        (eob-text "~"))
-    ;; Delete any previous EOB markers.  Necessary so that they don't
-    ;; accumulate on calls to revert-buffer.
-    (dolist (next-overlay existing-overlays)
-      (if (overlay-get next-overlay 'eob-overlay)
-          (delete-overlay next-overlay)))
-    ;; Add a new EOB marker.
-    (put-text-property 0 (length eob-text)
-          'face '(foreground-color . "slate gray") eob-text)
-    (overlay-put eob-mark 'eob-overlay t)
-    (overlay-put eob-mark 'after-string eob-text)))
- (add-hook 'find-file-hooks 'my-mark-eob)
 
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
@@ -291,8 +274,8 @@
 
 ;; fiplr
 (global-set-key (kbd "C-p") 'fiplr-find-file)
-(setq fiplr-ignored-globs '((directories (".git" ".svn"))
- (files ("*.jpg" "*.png" "*.zip" "*~" ".DS_Store"))))
+(setq fiplr-ignored-globs '((directories (".git" ".svn" "node_modules" "bower_components"))
+ (files ("*.jpg" "*.png" "*.zip" "*~" ".DS_Store" "*.o" "*.d" "*.out"))))
 
 ;; Ido
 (require 'ido)
@@ -346,3 +329,5 @@
 (global-set-key (kbd "M-[ b") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
+;; empty lines mode
+(global-vim-empty-lines-mode)
