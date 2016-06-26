@@ -37,6 +37,10 @@
 ;; automatically insert closing braces
 (electric-pair-mode 1)
 
+;; set indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
     "Put point at beginning of current word, set mark at end."
