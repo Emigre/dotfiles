@@ -30,3 +30,5 @@
   helper = osxkeychain
 [receive]
   fsckObjects = true
+[push]
+	default = simple
