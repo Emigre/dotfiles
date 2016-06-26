@@ -304,8 +304,6 @@
 (add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
 (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
 
-;; (setq diff-hl-side 'right)
-
 (set-face-attribute 'diff-hl-insert nil :background "DarkOliveGreen")
 (set-face-attribute 'diff-hl-change nil :background "gray34")
 (set-face-attribute 'diff-hl-delete nil :background "IndianRed4")
