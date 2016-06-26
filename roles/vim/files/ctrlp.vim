@@ -25,13 +25,8 @@ let g:ctrlp_status_func = { 'main': 'CtrlPStatusLine' }
 
 " Main statusline
 function! CtrlPStatusLine(...)
-  " let focus = '%#LineNr# '.a:1.' %*'
-  " let byfname = '%#Character# '.a:2.' %*'
   let regex = a:3 ? '%#LineNr# regex %*' : ''
-  "let prv = ' <'.a:4.'>='
   let item = ' %#Character# '.a:5.' %*'
-  " let nxt = '=<'.a:6.'>'
-  " let marked =' '.a:7.' '
   let dir = ' %=%<%#LineNr# '.getcwd().' %*'
   retu regex.item.dir
 endfunction

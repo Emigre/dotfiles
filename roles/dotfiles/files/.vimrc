@@ -130,10 +130,7 @@ if has("win32") || has("win16")
 endif
 
 " status line
-set statusline=
-set statusline+=\[%n\]   "buffer number
-set statusline+=\ %f     "file
-set statusline+=\ %m     "modified flag
+set statusline=%m        "modified flag
 set statusline+=%=       "left/right separator
 set statusline+=%l,      "cursor line
 set statusline+=%c       "cursor column
