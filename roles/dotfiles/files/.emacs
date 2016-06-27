@@ -5,7 +5,7 @@
 (require 'package)
 
 ;; list the packages you want
-(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl
+(setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl undo-tree
   yasnippet emmet-mode auto-complete multiple-cursors vim-empty-lines-mode))
 
 ;; list the repositories containing them
@@ -39,7 +39,40 @@
 
 ;; set indentation
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq-default c-basic-offset 2) ; java / c / c++
+(setq-default coffee-tab-width 2) ; coffeescript
+(setq-default javascript-indent-level 2) ; javascript-mode
+(setq-default js-indent-level 2) ; js-mode
+(setq-default js2-basic-offset 2) ; js2-mode
+(setq-default web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
+(setq-default web-mode-css-indent-offset 2) ; web-mode, css in html file
+(setq-default web-mode-code-indent-offset 2) ; web-mode, js code in html file
+(setq-default css-indent-offset 2) ; css-mode
+
+;; Offer to save each buffer(once only), then kill this Emacs process.
+;; With prefix ARG, silently save all file-visiting buffers, then kill
+(defun my-save-buffers-kill-emacs (&optional arg)
+    (interactive "P")
+    (save-some-buffers arg t)
+    (and (or (not (fboundp 'process-list))
+             ;; process-list is not defined on MSDOS.
+             (let ((processes (process-list))
+                   active)
+               (while processes
+                 (and (memq (process-status (car processes)) '(run stop open listen))
+                      (process-query-on-exit-flag (car processes))
+                      (setq active t))
+                 (setq processes (cdr processes)))
+               (or (not active)
+                   (progn (list-processes t)
+                          (yes-or-no-p "Active processes exist; kill them and exit anyway? ")))))
+         ;; Query the user for other things, perhaps.
+         (run-hook-with-args-until-failure 'kill-emacs-query-functions)
+         (or (null confirm-kill-emacs)
+             (funcall confirm-kill-emacs "Really exit Emacs? "))
+         (kill-emacs)))
+
+(global-set-key (kbd "C-x C-c") 'my-save-buffers-kill-emacs)
 
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
@@ -104,8 +137,6 @@
  (ztl-modification-state-change))
 (add-hook 'after-save-hook 'ztl-modification-state-change)
 
-;; This doesn't work for revert, I don't know.
-;;(add-hook 'after-revert-hook 'ztl-modification-state-change)
 (add-hook 'first-change-hook 'ztl-on-buffer-modification)
 
 (setq tabbar-background-color "#232323")
@@ -315,6 +346,7 @@
 ;; yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
+(setq yas/indent-line 'auto)
 
 ;; emmet
 (require 'emmet-mode)
@@ -333,3 +365,6 @@
 
 ;; empty lines mode
 (global-vim-empty-lines-mode)
+
+;; undo tree
+(global-undo-tree-mode)
