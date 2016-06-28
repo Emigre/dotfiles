@@ -37,6 +37,18 @@
 ;; automatically insert closing braces
 (electric-pair-mode 1)
 
+;; define keys for arrow key sequences
+(define-key input-decode-map "\e[1;5A" [C-up])
+(define-key input-decode-map "\e[1;5B" [C-down])
+(define-key input-decode-map "\e[1;5C" [C-left])
+(define-key input-decode-map "\e[1;5D" [C-right])
+(define-key function-key-map "\e[1;9A" [M-up])
+(define-key function-key-map "\e[1;9B" [M-down])
+(define-key function-key-map "\e[1;9C" [M-right])
+(define-key function-key-map "\e[1;9D" [M-left])
+(define-key function-key-map "\e[1;4A" [S-M-up])
+(define-key function-key-map "\e[1;4B" [S-M-down])
+
 ;; set indentation
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 2) ; java / c / c++
@@ -99,7 +111,7 @@
                      (forward-word arg)
                      (point)))
         (activate-mark))))
-(global-set-key (kbd "ESC <up>") 'my-mark-current-word)
+(global-set-key [M-up] 'my-mark-current-word)
 
 ;; select whole line
 (defun my-select-current-line-and-forward-line (arg)
@@ -108,7 +120,7 @@
     (forward-line 0)
     (set-mark-command nil))
   (forward-line arg))
-(global-set-key (kbd "ESC <down>") 'my-select-current-line-and-forward-line)
+(global-set-key [M-down] 'my-select-current-line-and-forward-line)
 
 ;; tabbar mode
 (require 'tabbar)
@@ -271,8 +283,8 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; cycle through the buffers
-(global-set-key (kbd "M-[ c")  'next-buffer)
-(global-set-key (kbd "M-[ d")  'previous-buffer)
+(global-set-key [C-right] 'next-buffer)
+(global-set-key [C-left]  'previous-buffer)
 
 ;; kill all buffers except the current
 (defun only-current-buffer ()
@@ -355,13 +367,23 @@
 
 ;; auto-complete
 (ac-config-default)
+(setq-default ac-sources '(ac-source-variables ac-sourcefunction ac-source-filename))
+;; (ac-source-filename
+;;  ac-source-functions
+;;  ac-source-yasnippet
+;;  ac-source-variables
+;;  ac-source-symbols
+;;  ac-source-features
+;;  ac-source-abbrev
+;;  ac-source-words-in-same-mode-buffers
+;;  ac-source-dictionary)
 
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c e") 'mc/edit-lines)
-(global-set-key (kbd "M-[ a") 'mc/mark-previous-like-this)
-(global-set-key (kbd "M-[ b") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+(global-set-key [S-M-up] 'mc/mark-previous-like-this)
+(global-set-key [S-M-down] 'mc/mark-next-like-this)
 
 ;; empty lines mode
 (global-vim-empty-lines-mode)
