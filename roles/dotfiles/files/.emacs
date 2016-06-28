@@ -367,16 +367,7 @@
 
 ;; auto-complete
 (ac-config-default)
-(setq-default ac-sources '(ac-source-variables ac-sourcefunction ac-source-filename))
-;; (ac-source-filename
-;;  ac-source-functions
-;;  ac-source-yasnippet
-;;  ac-source-variables
-;;  ac-source-symbols
-;;  ac-source-features
-;;  ac-source-abbrev
-;;  ac-source-words-in-same-mode-buffers
-;;  ac-source-dictionary)
+(setq-default ac-sources '(ac-source-words-in-buffer))
 
 ;; multiple cursors
 (require 'multiple-cursors)
