@@ -1,4 +1,5 @@
 export PATH="$HOME/Code/depot_tools:/usr/local/bin:$PATH"
+alias e='emacs'
 alias tree="tree -C -I 'node_modules|bower_components'"
 alias less='/usr/bin/less -R'
 alias http='/usr/local/bin/http --pretty=all --verbose'
