@@ -28,6 +28,9 @@
 ;; set the theme
 (load-theme 'zenburn t)
 
+;; highlight martching parens
+(show-paren-mode 1)
+
 ;; do not show the welcome message
 (setq inhibit-splash-screen t)
 
@@ -48,6 +51,8 @@
 (define-key function-key-map "\e[1;9D" [M-left])
 (define-key function-key-map "\e[1;4A" [S-M-up])
 (define-key function-key-map "\e[1;4B" [S-M-down])
+(define-key function-key-map "\e[1;4C" [S-M-righ])
+(define-key function-key-map "\e[1;4D" [S-M-left])
 
 ;; set indentation
 (setq-default indent-tabs-mode nil)
@@ -85,6 +90,26 @@
          (kill-emacs)))
 
 (global-set-key (kbd "C-x C-c") 'my-save-buffers-kill-emacs)
+
+;; Custom movements
+(defun search-parenthesis-forward ()
+  (interactive)
+  (re-search-forward "[\{\(]"))
+
+(defun search-parenthesis-backward ()
+  (interactive)
+  (backward-char 1)
+  (re-search-backward "[\{\(]" nil t)
+  (forward-char 1))
+
+(defun jump-to-matching-parenthesis ()
+  (interactive)
+  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+        ((looking-at "\\s\)") (forward-char 1) (backward-list 1))))
+
+(global-set-key [S-M-right] 'search-parenthesis-forward)
+(global-set-key [S-M-left] 'search-parenthesis-backward)
+(global-set-key (kbd "M-\"") 'jump-to-matching-parenthesis)
 
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
