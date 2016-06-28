@@ -84,13 +84,11 @@ set nopaste
 " Automatically removes all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Fix for xterm keys in tmuxux
-if &term =~ '^screen'
-    " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
+" disable Background Color Erase (BCE) so that color schemes
+" render properly when inside 256-color tmux and GNU screen.
+" see http://snk.tuxfamily.org/log/vim-256color-bce.html
+if &term =~ '256color'
+  set t_ut=
 endif
 
 " Set a character for the tabs
