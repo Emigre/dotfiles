@@ -36,6 +36,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-buftabline'
 Plugin 'mattn/emmet-vim'
+Plugin 'airblade/vim-gitgutter'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -83,6 +85,15 @@ set nopaste
 
 " Automatically removes all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Fix for xterm keys in tmuxux
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 
 " Set a character for the tabs
 set listchars=tab:\▹\ "
