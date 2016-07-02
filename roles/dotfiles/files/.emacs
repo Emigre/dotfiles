@@ -6,7 +6,7 @@
 
 ;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl undo-tree
-  yasnippet emmet-mode auto-complete multiple-cursors vim-empty-lines-mode ag))
+  yasnippet emmet-mode multiple-cursors vim-empty-lines-mode ag company))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -414,10 +414,6 @@
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
-;; auto-complete
-(ac-config-default)
-(setq-default ac-sources '(ac-source-words-in-buffer))
-
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c e") 'mc/edit-lines)
@@ -430,3 +426,6 @@
 
 ;; undo tree
 (global-undo-tree-mode)
+
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
