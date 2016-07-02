@@ -6,7 +6,7 @@
 
 ;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl undo-tree
-  yasnippet emmet-mode auto-complete multiple-cursors vim-empty-lines-mode))
+  yasnippet emmet-mode auto-complete multiple-cursors vim-empty-lines-mode ag))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -94,7 +94,7 @@
 ;; Custom movements
 (defun search-parenthesis-forward ()
   (interactive)
-  (re-search-forward "[\{\(]"))
+  (re-search-forward "[\{\(]" nil t))
 
 (defun search-parenthesis-backward ()
   (interactive)
@@ -102,14 +102,38 @@
   (re-search-backward "[\{\(]" nil t)
   (forward-char 1))
 
+(defun search-closing-parenthesis-forward ()
+  (interactive)
+  (forward-char 1)
+  (re-search-forward "[\}\)]" nil t)
+  (backward-char 1))
+
+(defun search-closing-parenthesis-backward ()
+  (interactive)
+  (re-search-backward "[\}\)]" nil t))
+
 (defun jump-to-matching-parenthesis ()
   (interactive)
   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))))
 
+(defun search-semicolon-forward ()
+  (interactive)
+  (search-forward ";"))
+
+(defun search-semicolon-backward ()
+  (interactive)
+  (backward-char 1)
+  (search-backward ";" nil t)
+  (forward-char 1))
+
 (global-set-key [S-M-right] 'search-parenthesis-forward)
 (global-set-key [S-M-left] 'search-parenthesis-backward)
-(global-set-key (kbd "M-\"") 'jump-to-matching-parenthesis)
+(global-set-key (kbd "M-l") 'search-closing-parenthesis-forward)
+(global-set-key (kbd "M-p") 'search-closing-parenthesis-backward)
+(global-set-key (kbd "M-5") 'jump-to-matching-parenthesis)
+(global-set-key (kbd "M-\"") 'search-semicolon-forward)
+(global-set-key (kbd "M-:") 'search-semicolon-backward)
 
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
