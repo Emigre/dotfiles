@@ -129,11 +129,11 @@
 
 (global-set-key [S-M-right] 'search-parenthesis-forward)
 (global-set-key [S-M-left] 'search-parenthesis-backward)
-(global-set-key (kbd "M-l") 'search-closing-parenthesis-forward)
-(global-set-key (kbd "M-p") 'search-closing-parenthesis-backward)
+(global-set-key (kbd "M-\"") 'search-closing-parenthesis-forward)
+(global-set-key (kbd "M-:") 'search-closing-parenthesis-backward)
 (global-set-key (kbd "M-5") 'jump-to-matching-parenthesis)
-(global-set-key (kbd "M-\"") 'search-semicolon-forward)
-(global-set-key (kbd "M-:") 'search-semicolon-backward)
+(global-set-key (kbd "M-l") 'search-semicolon-forward)
+(global-set-key (kbd "M-p") 'search-semicolon-backward)
 
 ;; mark current word
   (defun my-mark-current-word (&optional arg allow-extend)
