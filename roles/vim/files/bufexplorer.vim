@@ -142,7 +142,5 @@ command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>'
 
 nmap <silent> <C-C> :BufOnly<CR>
 nmap <silent> <C-X> :Bclose<CR>
-nnoremap <silent> <C-J> :bn<CR>
-nnoremap <silent> <C-K> :bp<CR>
 nnoremap <silent> <C-Right> :bn<CR>
 nnoremap <silent> <C-Left> :bp<CR>

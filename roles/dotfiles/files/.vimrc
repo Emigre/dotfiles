@@ -1,6 +1,5 @@
 " Vundle
 " ------
-" https://github.com/gmarik/Vundle.vim
 "
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -49,13 +48,11 @@ filetype plugin indent on    " required
 "
 set autoread
 set ruler
+set rulerformat=%l,%c%=%P
 set noswapfile
 
 " colors
-" https://github.com/sickill/vim-monokai
-" https://github.com/jnurmine/Zenburn
 colorscheme Zenburn
-" colors zenburn
 syntax on
 
 " indentation

@@ -162,15 +162,6 @@
         (activate-mark))))
 (global-set-key [M-up] 'my-mark-current-word)
 
-;; select whole line
-(defun my-select-current-line-and-forward-line (arg)
-  (interactive "p")
-  (when (not (use-region-p))
-    (forward-line 0)
-    (set-mark-command nil))
-  (forward-line arg))
-(global-set-key [M-down] 'my-select-current-line-and-forward-line)
-
 ;; tabbar mode
 (require 'tabbar)
 (tabbar-mode)
