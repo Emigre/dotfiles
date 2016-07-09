@@ -28,6 +28,7 @@ homebrew_packages:
     - cabal-install
     - clisp
     - cmake
+    - couchdb
     - frobtads
     - frotz
     - generate
@@ -63,10 +64,10 @@ homebrew_cask_apps:
     - java7
     - postman
     - skype
-    - sublime-text3
+    - sublime-text
     - the-unarchiver
     - vagrant
-    - virtualbox43691406
+    - virtualbox
   home:
     - android-studio
     - arduino
