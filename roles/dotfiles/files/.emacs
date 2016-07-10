@@ -388,8 +388,7 @@
 (diff-hl-mode)
 (diff-hl-margin-mode)
 (diff-hl-flydiff-mode)
-(add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
-(add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
+(global-diff-hl-mode)
 
 (set-face-attribute 'diff-hl-insert nil :background "DarkOliveGreen")
 (set-face-attribute 'diff-hl-change nil :background "gray34")
