@@ -11,6 +11,7 @@ homebrew_taps:
 
 homebrew_packages:
   common:
+    - ack
     - ansible
     - emacs
     - git
