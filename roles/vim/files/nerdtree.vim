@@ -18,7 +18,7 @@ endfunction
 " Colors in NERDTree
 
 call NERDTreeHighlightFile('js', '28', 'none')
-call NERDTreeHighlightFile('py', '28', 'none')
+call NERDTreeHighlightFile('py', '166', 'none')
 call NERDTreeHighlightFile('rb', '89', 'none')
 call NERDTreeHighlightFile('cpp', 'darkBlue', 'none')
 call NERDTreeHighlightFile('c', 'darkBlue', 'none')
