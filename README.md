@@ -80,6 +80,10 @@ sudo n 0.12.5
 sudo n 4.0.0
 ```
 
+##### RVM
+
+https://rvm.io/
+
 ##### Java JDK
 
 Install with [Homebrew Cask](http://caskroom.io/) and manage with [jEnv](http://www.jenv.be/)
