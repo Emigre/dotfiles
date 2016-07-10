@@ -98,6 +98,23 @@ hi SpecialKey ctermfg=52
 nnoremap [ [m
 nnoremap ] ]m
 
+function! MySearch(searchText, searchForward)
+  let command = a:searchForward ? "/" : "?"
+  let search = join(["normal! ", command, a:searchText, ""], "")
+  set nowrapscan
+  try
+    execute search
+  catch /^Vim(normal):E384:/
+    echo v:exception[17:]
+  endtry
+  set wrapscan
+endfunction
+
+nnoremap - :call MySearch("(", 0)<CR>
+nnoremap = :call MySearch("(", 1)<CR>
+nnoremap _ :call MySearch(";", 0)<CR>
+nnoremap + :call MySearch(";", 1)<CR>
+
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
 
