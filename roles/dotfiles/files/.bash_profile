@@ -1,6 +1,7 @@
 export PATH="$HOME/Code/depot_tools:/usr/local/bin:$PATH"
+alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
-alias less='/usr/bin/less -R'
+alias less='/usr/bin/less -r'
 alias http='/usr/local/bin/http --pretty=all --verbose'
 alias httpa='http --session=s'
 alias ts='tree -L 3 | less'

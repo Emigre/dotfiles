@@ -6,4 +6,5 @@ set shellpipe=>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --hidden'
 endif
-cnoreabbrev ag Ack
+
+nnoremap <leader>a :Ack!<space>
