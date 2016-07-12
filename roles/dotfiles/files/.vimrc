@@ -108,7 +108,7 @@ function! MySearch(searchText, searchForward)
   set nowrapscan
   try
     execute search
-  catch /^Vim(normal):E384:/
+  catch
     echo v:exception[17:]
   endtry
   set wrapscan
