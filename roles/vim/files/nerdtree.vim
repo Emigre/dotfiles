@@ -47,3 +47,4 @@ call NERDTreeHighlightFile('jade', 'darkBlue', 'none')
 call NERDTreeHighlightFile('tpl', 'darkBlue', 'none')
 
 call NERDTreeHighlightFile('hidden', 'darkGrey', 'none')
+call NERDTreeHighlightFile('pyc', 'darkGrey', 'none')
