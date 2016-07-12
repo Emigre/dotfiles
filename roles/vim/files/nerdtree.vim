@@ -1,10 +1,19 @@
 " nerdtree.vim
 " ------------
-map <silent> § :NERDTreeToggle <CR>
-map <silent> ± :NERDTreeFind<CR>
+function! NERDTreeCustomToggle()
+  if (exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1))
+    exe ":winc w"
+  else
+    exe ":NERDTree"
+  endif
+endfunction
+map <silent> § :call NERDTreeCustomToggle()<CR>
+map <silent> ± :NERDTreeClose<CR>
+map <C-f> :NERDTreeFind<CR>
+
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea']
+let NERDTreeIgnore = ['^\.git$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea', 'venv', '__pycache__']
 
 function! NERDTreeHighlightFile(extension, fg, bg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension . 'FileType ctermbg=' . a:bg .' ctermfg='. a:fg
@@ -38,4 +47,3 @@ call NERDTreeHighlightFile('jade', 'darkBlue', 'none')
 call NERDTreeHighlightFile('tpl', 'darkBlue', 'none')
 
 call NERDTreeHighlightFile('hidden', 'darkGrey', 'none')
-call NERDTreeHighlightFile('pyc', 'darkGrey', 'none')
