@@ -17,6 +17,7 @@ npm_packages:
     - broccoli-cli
     - cordova
     - divshot-cli
+    - elm
     - ember-cli
     - generator-angular
     - generator-backbone
@@ -32,6 +33,8 @@ npm_packages:
     - generator-webapp
     - generator-wizardry
     - jspm
+    - pulp
+    - purescript
     - typescript
     - typings
     - yo
