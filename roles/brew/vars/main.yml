@@ -5,6 +5,7 @@ homebrew_taps:
     - caskroom/cask
     - caskroom/fonts
     - caskroom/versions
+    - homebrew/apache
   home:
     - Emigre/tap
     - homebrew/games
