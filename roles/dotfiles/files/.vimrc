@@ -119,6 +119,9 @@ nnoremap = :call MySearch("(", 1)<CR>
 nnoremap _ :call MySearch(";", 0)<CR>
 nnoremap + :call MySearch(";", 1)<CR>
 
+" Insert a new line without entering insert mode
+nnoremap <CR><CR> o<ESC>
+
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
 
