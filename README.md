@@ -164,6 +164,10 @@ http://iterm2colorschemes.com/
 
 - In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
 
+##### Docker for Mac Beta
+
+https://docs.docker.com/docker-for-mac/
+
 ##### Dash
 - In Preferences > General
   - Set 'Global search shortcut' as alt + Space
