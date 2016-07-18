@@ -120,10 +120,16 @@ nnoremap _ :call MySearch(";", 0)<CR>
 nnoremap + :call MySearch(";", 1)<CR>
 
 " Insert a new line without entering insert mode
-nnoremap <CR><CR> o<ESC>
+nnoremap <leader>o o<ESC>
+
+" Shortcut to search
+nnoremap <leader>s :%s/
 
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
+
+" Set Q command to quit, too
+command Q q
 
 set timeout         " Do time out on mappings and others
 set timeoutlen=2000 " Wait {num} ms before timing out a mapping
@@ -171,8 +177,6 @@ set encoding=utf-8 nobomb
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
 set ttyfast
-" Add the g flag to search/replace by default
-set gdefault
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
@@ -222,7 +226,7 @@ function! StripWhitespace()
         call setpos('.', save_cursor)
         call setreg('/', old_query)
 endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
+noremap <leader>d<space> :call StripWhitespace()<CR>
 
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
