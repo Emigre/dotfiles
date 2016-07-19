@@ -12,6 +12,7 @@
     - brew
     - npm
     - gem
+    - pip
     - vim
     - emacs
     - sublime

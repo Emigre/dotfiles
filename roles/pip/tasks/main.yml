@@ -1,0 +1,4 @@
+- name: Ensure configured python packages are installed
+  pip: "name={{ item }}"
+  with_items: "{{ python_packages }}"
+

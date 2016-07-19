@@ -1,4 +1,4 @@
-npm_packages:
+node_packages:
   common:
     - bower
     - grunt-cli
