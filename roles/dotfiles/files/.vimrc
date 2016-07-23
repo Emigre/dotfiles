@@ -226,10 +226,7 @@ function! StripWhitespace()
         call setpos('.', save_cursor)
         call setreg('/', old_query)
 endfunction
-noremap <leader>d<space> :call StripWhitespace()<CR>
-
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
+noremap <leader>w :call StripWhitespace()<CR>
 
 " Automatic commands
 if has("autocmd")
