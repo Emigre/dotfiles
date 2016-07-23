@@ -99,9 +99,6 @@ set list
 hi SpecialKey ctermfg=52
 
 " maps
-nnoremap [ [m
-nnoremap ] ]m
-
 function! MySearch(searchText, searchForward)
   let command = a:searchForward ? "/" : "?"
   let search = join(["normal! ", command, a:searchText, ""], "")
@@ -114,6 +111,8 @@ function! MySearch(searchText, searchForward)
   set wrapscan
 endfunction
 
+nnoremap [ :call MySearch("{", 0)<CR>
+nnoremap ] :call MySearch("{", 1)<CR>
 nnoremap - :call MySearch("(", 0)<CR>
 nnoremap = :call MySearch("(", 1)<CR>
 nnoremap _ :call MySearch(";", 0)<CR>
