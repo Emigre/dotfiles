@@ -148,7 +148,7 @@ if !has('gui_running')
 endif
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
-nnoremap <silent> <C-L> :b#<CR>
+nnoremap <silent> <leader>5 :b#<CR>
 
 " Font and font size
 " https://github.com/andreberg/Meslo-Font

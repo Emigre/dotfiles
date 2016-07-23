@@ -1,4 +1,4 @@
-  " Place snippets in ~/.vim/myUltiSnippets/
+" Place snippets in ~/.vim/myUltiSnippets/
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

@@ -31,4 +31,4 @@ function! CtrlPStatusLine(...)
   retu regex.item.dir
 endfunction
 
-nmap <leader>= :CtrlPClearCache<CR>
+nmap <leader>r :CtrlPClearCache<CR>

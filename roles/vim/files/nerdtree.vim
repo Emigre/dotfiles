@@ -9,7 +9,7 @@ function! NERDTreeCustomToggle()
 endfunction
 map <silent> § :call NERDTreeCustomToggle()<CR>
 map <silent> ± :NERDTreeClose<CR>
-map <C-f> :NERDTreeFind<CR>
+map <leader>f :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
