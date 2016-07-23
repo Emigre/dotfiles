@@ -18,6 +18,14 @@
     update: no
     accept_hostkey: yes
 
+- name: Ensure my vim snippets are cloned in the bundle folder
+  git:
+    repo: git://github.com/Emigre/vim-snippets.git
+    version: master
+    dest: "{{ home }}/.vim/bundle/vim-snippets"
+    update: no
+    accept_hostkey: yes
+
 - name: Symlink the configuration files for all installed vim plugins
   file:
     src: "{{ item }}"
