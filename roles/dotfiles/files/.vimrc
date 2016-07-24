@@ -67,7 +67,7 @@ set smartindent
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
 " a width of 2
-set tabstop=2
+set tabstop=4
 
 " Indents will have a width of 2
 set shiftwidth=2
