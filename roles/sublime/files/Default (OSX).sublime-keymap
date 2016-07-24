@@ -6,8 +6,5 @@
 	{ "keys": ["super+ctrl+r"], "command": "reveal_in_side_bar" },
 	{ "keys": ["super+ctrl+left"], "command": "focus_side_bar" },
 	{ "keys": ["super+ctrl+right"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["alt+q"], "command": "wrap_lines_plus" },
-	{ "keys": ["alt+super+up"], "command": "move_caret_top" },
-	{ "keys": ["alt+super+down"], "command": "move_caret_bottom" },
-	{ "keys": ["alt+super+."], "command": "move_caret_middle" }
+	{ "keys": ["alt+q"], "command": "wrap_lines_plus" }
 ]
