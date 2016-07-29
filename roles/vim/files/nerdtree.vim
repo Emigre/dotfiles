@@ -25,26 +25,22 @@ function! NERDTreeHighlightFile(extension, fg, bg)
 endfunction
 
 " Colors in NERDTree
-
-call NERDTreeHighlightFile('js', '28', 'none')
-call NERDTreeHighlightFile('py', '166', 'none')
-call NERDTreeHighlightFile('rb', '89', 'none')
-call NERDTreeHighlightFile('cpp', 'darkBlue', 'none')
 call NERDTreeHighlightFile('c', 'darkBlue', 'none')
-
-call NERDTreeHighlightFile('h', '17', 'none')
-call NERDTreeHighlightFile('hpp', '17', 'none')
-
-call NERDTreeHighlightFile('md', 'blue', 'none')
-
-call NERDTreeHighlightFile('json', '136', 'none')
-call NERDTreeHighlightFile('yml', '136', 'none')
-
-call NERDTreeHighlightFile('html', 'cyan', 'none')
+call NERDTreeHighlightFile('cpp', 'darkBlue', 'none')
 call NERDTreeHighlightFile('css', 'cyan', 'none')
-
-call NERDTreeHighlightFile('jade', 'darkBlue', 'none')
-call NERDTreeHighlightFile('tpl', 'darkBlue', 'none')
-
+call NERDTreeHighlightFile('h', '17', 'none')
 call NERDTreeHighlightFile('hidden', 'darkGrey', 'none')
+call NERDTreeHighlightFile('hpp', '17', 'none')
+call NERDTreeHighlightFile('html', 'cyan', 'none')
+call NERDTreeHighlightFile('jade', 'darkBlue', 'none')
+call NERDTreeHighlightFile('js', '28', 'none')
+call NERDTreeHighlightFile('json', '136', 'none')
+call NERDTreeHighlightFile('jsx', '28', 'none')
+call NERDTreeHighlightFile('md', 'blue', 'none')
+call NERDTreeHighlightFile('py', '166', 'none')
 call NERDTreeHighlightFile('pyc', 'darkGrey', 'none')
+call NERDTreeHighlightFile('rb', '89', 'none')
+call NERDTreeHighlightFile('tpl', 'darkBlue', 'none')
+call NERDTreeHighlightFile('ts', '28', 'none')
+call NERDTreeHighlightFile('tsx', '28', 'none')
+call NERDTreeHighlightFile('yml', '136', 'none')
