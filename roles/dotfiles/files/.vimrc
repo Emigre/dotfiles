@@ -42,7 +42,7 @@ Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'godlygeek/csapprox'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-
+Plugin 'leafgarland/typescript-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -131,6 +131,7 @@ nnoremap <silent> <C-]> :noh<CR>
 
 " Set Q command to quit, too
 command Q q
+command Qa qa
 
 set timeout         " Do time out on mappings and others
 set timeoutlen=2000 " Wait {num} ms before timing out a mapping
