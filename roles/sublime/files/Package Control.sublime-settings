@@ -1,5 +1,8 @@
 {
 	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AngularJS",
@@ -8,6 +11,7 @@
 		"EJS",
 		"FindKeyConflicts",
 		"Handlebars",
+		"JSX",
 		"LESS",
 		"Package Control",
 		"Puppet",
