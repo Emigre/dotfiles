@@ -12,6 +12,7 @@ node_packages:
     - npm-check-updates
     - phantomjs
     - webpack
+    - webpack-bundle-size-analyzer
   home:
     - babel-cli
     - broccoli-cli
