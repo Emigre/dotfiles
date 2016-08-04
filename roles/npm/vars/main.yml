@@ -32,6 +32,7 @@ node_packages:
     - generator-karma
     - generator-magic
     - generator-mocha
+    - generator-sorcery
     - generator-webapp
     - generator-wizardry
     - jspm
@@ -40,9 +41,3 @@ node_packages:
     - typescript
     - typings
     - yo
-  work:
-    - bb-bower-resolver
-    - bb-cli
-    - bb-lp-cli
-    - filesystem-bower-resolver
-    - selenium-standalone

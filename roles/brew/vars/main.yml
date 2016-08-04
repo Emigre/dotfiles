@@ -28,7 +28,6 @@ homebrew_packages:
   home:
     - android-sdk
     - cabal-install
-    - clisp
     - cmake
     - couchdb
     - frobtads
@@ -87,7 +86,6 @@ homebrew_cask_apps:
     - pharo
     - processing
     - pycharm-ce
-    - racket
     - slack
     - teamviewer
     - vlc
@@ -95,6 +93,3 @@ homebrew_cask_apps:
     - xquartz
     - yacreader
     - zoom
-  work:
-    - dbvisualizer
-    - cord
