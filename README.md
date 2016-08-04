@@ -238,6 +238,10 @@ http://openframeworks.cc/
 ##### Cling
 https://root.cern.ch/cling
 
+##### Qt
+
+https://www.qt.io/
+
 ##### Eclipse
 https://www.eclipse.org/downloads/
 
