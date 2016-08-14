@@ -37,6 +37,7 @@ homebrew_packages:
     - glulxe
     - go
     - guile
+    - leiningen
     - mercurial
     - mongodb
     - mysql
@@ -81,6 +82,7 @@ homebrew_cask_apps:
     - inform
     - inkscape
     - java
+    - lighttable
     - mysqlworkbench
     - pgadmin3
     - pharo
