@@ -28,6 +28,7 @@ homebrew_packages:
   home:
     - android-sdk
     - cabal-install
+    - chicken
     - cmake
     - couchdb
     - frobtads
@@ -36,9 +37,9 @@ homebrew_packages:
     - ghc
     - glulxe
     - go
-    - guile
     - leiningen
     - mercurial
+    - mit-scheme
     - mongodb
     - mysql
     - nethack
