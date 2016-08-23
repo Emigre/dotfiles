@@ -17,6 +17,9 @@ alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
 alias python='python3'
 alias pip='pip3'
 
+# Scheme
+alias scheme='rlwrap mit-scheme'
+
 # Go
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
