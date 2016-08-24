@@ -123,39 +123,11 @@ jenv shell 1.7
 
 ##### iTerm2
 
-Download Homebrew theme
-http://iterm2colorschemes.com/
-
 - In Preferences > General
-  - Uncheck Confirm "Quit iTerm2" command
-- In Preferences > Appearance
-  - Set 'Show tabs in full screen by holding command for' to the max value
-  - Uncheck 'Color tab labels on activity'
-  - Uncheck 'Show per-pane title bar with split panes'
-  - Uncheck 'Show window number'
-  - Check 'Dimming affects only text, not background'
-  - Set 'Dimming amount' to the max
-  - Check 'Hide scrollbar and resize control'
-- In Preferences > Profiles > General
-  - Check 'Reuse previous session's directory' in Working Directory
-  - In Command > 'Send text at start', write `tmux attach -t init || tmux new -s init`
-- In Preferences > Profiles > Colors
-  - Select Load Presets... > Import... and install the color theme
-- In Preferences > Profiles > Text
-  - Check 'Blinking cursor'
-- In Preferences > Profiles > Text
-  - Set Columns to 120 nd Rows to 20 (for example)
-  - Adjust Transparency and Blur
-- In Preferences > Profiles > Terminal
-  - Uncheck 'Show bell icon in tabs' and 'Flash visual bell'
-  - Check 'Silence bell'
-- In Preferences > Profiles > Keys
-  - Set these Profile Shortcut Keys:
-    - alt + left: send ESC + b
-    - alt + right: send ESC + f
-    - alt + backspace: send HEX sequence “0x1B 0x08"
-  - Set 'Left option key acts as' '+Esc'
-  - Set 'Right option key acts as' 'Normal'
+  - Check 'Load preferences from a custom folder or URL' and set it to `/Users/gasparrey/.iterm.d`
+  - Check 'Save changes to folder when iTerm2 quits'
+- In Preferences > Profiles
+  - Select 'My Profile' and 'Set as Default' in the 'Other Actions...' menu
 
 ##### Terminal
 - In Preferences > Profiles > Keyboard select 'Use Option as Meta key'

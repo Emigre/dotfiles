@@ -1,0 +1,19 @@
+- name: Ensure an .iterm.d folder exists and has the right permissions
+  file: "path={{ home }}/.iterm.d state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Copy the iTerm2 preferences
+  copy:
+    src: "{{ item }}"
+    dest: "{{ home }}/.iterm.d/{{ item | basename }}"
+    backup: "yes"
+  with_fileglob:
+    - ./com.googlecode.iterm2.plist
+
+- name: Symlink iTerm2 profiles
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/Library/Application\ Support/iTerm2/DynamicProfiles/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./*.json
