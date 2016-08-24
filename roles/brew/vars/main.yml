@@ -28,7 +28,6 @@ homebrew_packages:
   home:
     - android-sdk
     - cabal-install
-    - chicken
     - cmake
     - couchdb
     - frobtads
