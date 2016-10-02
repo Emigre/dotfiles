@@ -36,6 +36,7 @@ homebrew_packages:
     - ghc
     - glulxe
     - go
+    - haskell-stack
     - leiningen
     - mercurial
     - mit-scheme
