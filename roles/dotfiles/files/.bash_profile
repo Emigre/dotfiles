@@ -25,6 +25,9 @@ alias scheme='rlwrap mit-scheme'
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
+# Haskell
+export PATH=$PATH:"$HOME/.cabal/bin"
+
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

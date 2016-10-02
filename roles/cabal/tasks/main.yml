@@ -1,0 +1,8 @@
+- name: Update cabal package list
+  command: cabal update
+
+- name: Upgrade to latest cabal
+  command: cabal install cabal-install
+
+- name: Ensure yesod is installed
+  command: cabal install yesod yesod-cli
