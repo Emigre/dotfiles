@@ -106,7 +106,8 @@ hi SpecialKey ctermfg=52
 " maps
 function! MySearch(searchText, searchForward)
   let command = a:searchForward ? "/" : "?"
-  let search = join(["normal! ", command, a:searchText, ""], "")
+  let search = join(["normal! ", command, a:searchText, "
+"], "")
   set nowrapscan
   try
     execute search
@@ -126,8 +127,8 @@ nnoremap + :call MySearch(";", 1)<CR>
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
 
-" Shortcut to search
-nnoremap <leader>s :%s/
+" Shortcut to substitute
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
