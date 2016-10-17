@@ -185,7 +185,9 @@ https://docs.docker.com/docker-for-mac/
     - Select the right dock size and magnification
     - Check 'Minimize windows into application icon'
     - In 'Minimize windows using:' select 'scale effect'
-  - In Accessibility > Zoom toggle it all
+  - In Accessibility
+    - Zoom toggle it all
+    - In Mouse & Trackpad, check Enable Dragging and select Finger Dragging
   - In Mission Control deselect 'Show Desktop:' and 'Show Dashboard:'
 
 Disable bouncing animation
