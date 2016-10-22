@@ -4,6 +4,7 @@
     group: admin
     mode: 0775
     state: directory
+    owner: "{{ user }}"
   sudo: yes
 
 - name: Ensure proper permissions in /usr/local/bin
@@ -13,6 +14,7 @@
     mode: 0775
     state: directory
     recurse: true
+    owner: "{{ user }}"
   sudo: yes
 
 - name: Ensure the Code folder exists and has the right permissions
@@ -26,3 +28,4 @@
     dest: "{{ home }}/Code/depot_tools"
     update: no
     accept_hostkey: yes
+  when: is_home
