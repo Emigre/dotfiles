@@ -1,6 +1,6 @@
 - name: Symlink Sublime Text executable to /usr/local/bin
   file:
-    src: "{{ home }}/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+    src: "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
     dest: "/usr/local/bin/subl"
     state: link
   sudo: yes
