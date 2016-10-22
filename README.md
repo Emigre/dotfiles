@@ -25,13 +25,13 @@ sudo chown -R $USER /usr/local/include
 To update
 
 ```
-brew update && brew upgrade brew-cask
+brew update
 ```
 
 To clean up
 
 ```
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
+brew update && brew cleanup && brew cask cleanup
 ```
 
 To reset the casks
