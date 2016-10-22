@@ -1,5 +1,7 @@
 python_packages:
-  - awscli
-  - awsebcli
-  - pyinstaller
-  - virtualenv
+  common:
+    - virtualenv
+  home:
+    - awscli
+    - awsebcli
+    - pyinstaller    
