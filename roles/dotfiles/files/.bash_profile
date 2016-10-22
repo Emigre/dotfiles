@@ -1,14 +1,27 @@
-export PATH="$HOME/Code/depot_tools:/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+[ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
+
+if [ $IS_HOME == false ] ; then
+  export proxy=http://surf-proxy.intranet.db.com:8080
+  export https_proxy=https://surf-proxy.gslb.db.com:8080
+fi
+
+# aliases
 alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
 alias less='/usr/bin/less -r'
 alias http='/usr/local/bin/http --pretty=all --verbose'
 alias httpa='http --session=s'
 alias ts='tree -L 3 | less'
-alias zoom="open $HOME/Applications/Zoom.app"
+if [ $IS_HOME == true ]; then
+  alias zoom="open $HOME/Applications/Zoom.app"
+fi
 
 # Node
-export PATH="$HOME/.node/bin:$PATH"
+if [ $IS_HOME == true ] ; then
+  export PATH="$HOME/.node/bin:$PATH"
+fi
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
@@ -32,18 +45,8 @@ export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-if [ "$(scutil --get ComputerName)" = "Gaspar’s MacBook Pro" ]; then
-  export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
-  export M2=$M2_HOME/bin
-fi
-
-if [ "$(scutil --get ComputerName)" = "bb-system-0322" ]; then
-  export JAVA_OPTS='-Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC'
-  export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
-  export M2=$M2_HOME/bin
-  export MAVEN_OPTS=$JAVA_OPTS
-fi
+export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
+export M2=$M2_HOME/bin
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
@@ -52,10 +55,12 @@ alias pg_stop='pg_ctl stop -m fast'
 alias pg_status='pg_ctl status'
 alias pg_reload='pg_ctl reload'
 
+# depot tools
+export PATH="$HOME/Code/depot_tools:$PATH"
+
 # git completion
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+[ -f "$HOME/.git-completion.bash" ] && source "$HOME/.git-completion.bash"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
