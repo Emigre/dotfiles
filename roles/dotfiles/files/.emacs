@@ -207,11 +207,17 @@
         :foreground "IndianRed4")
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (company ag vim-empty-lines-mode multiple-cursors emmet-mode yasnippet undo-tree diff-hl tabbar fiplr zenburn-theme)))
  '(tabbar-buffer-home-button (quote (("") "")))
  '(tabbar-home-button (quote (("") "")))
  '(tabbar-scroll-left-button (quote ((" <") "")))
- '(tabbar-scroll-right-button (quote ((" ") "")))
- )
+ '(tabbar-scroll-right-button (quote ((" ") ""))))
 
 (defun tabbar-line-format (tabset)
   "Return the `header-line-format' value to display TABSET."
@@ -419,3 +425,9 @@
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

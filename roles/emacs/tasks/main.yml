@@ -6,7 +6,7 @@
 
 - name: Ensure my collection of emacs snippets is cloned in .emacs.d/snippets
   git:
-    repo: git@github.com:Emigre/yasnippet-snippets.git
+    repo: git://github.com/Emigre/yasnippet-snippets.git
     version: master
     dest: "{{ home }}/.emacs.d/snippets"
     update: no
