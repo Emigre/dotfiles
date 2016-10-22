@@ -8,9 +8,8 @@ node_packages:
     - less
     - mocha
     - n
-    - npm
     - npm-check-updates
-    - phantomjs
+    - react-native-cli
     - webpack
     - webpack-bundle-size-analyzer
   home:
@@ -36,6 +35,7 @@ node_packages:
     - generator-webapp
     - generator-wizardry
     - jspm
+    - phantomjs
     - pulp
     - purescript
     - typescript

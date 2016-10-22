@@ -1,9 +1,11 @@
 - name: Ensure the .npmrc config file exists
   file: "path={{ home }}/.npmrc state=touch mode=0644 owner={{ user }}"
   sudo: yes
+  when: is_home
 
 - name: Ensure .npmrc has ~/.node as the global items location
   lineinfile: dest={{ home }}/.npmrc regexp="^prefix"  line="prefix={{ home }}/.node"
+  when: is_home
 
 - name: Ensure several node folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
@@ -13,6 +15,7 @@
     - .node/bin
     - .node/lib
     - .node/lib/node_modules
+  when: is_home
 
 - name: Ensure configured global node packages are installed
   npm: "name={{ item }} path={{ home }}/.node/lib"
