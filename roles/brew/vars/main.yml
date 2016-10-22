@@ -19,6 +19,7 @@ homebrew_packages:
     - httpie
     - jenv
     - maven
+    - node
     - python3
     - reattach-to-user-namespace
     - the_silver_searcher
@@ -54,13 +55,11 @@ homebrew_cask_apps:
     - caffeine
     - dash
     - docker
-    - dockertoolbox
     - dropbox
     - evernote
     - firefox
     - font-meslo-lg
     - google-chrome
-    - hipchat
     - intellij-idea-ce
     - iterm2
     - java6
@@ -80,6 +79,7 @@ homebrew_cask_apps:
     - brogue
     - cyberduck
     - gimp
+    - hipchat
     - handbrake
     - inform
     - inkscape

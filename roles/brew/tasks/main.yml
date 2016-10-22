@@ -23,4 +23,4 @@
 # Cask
 - name: Ensure configured homebrew cask applications are installed
   homebrew_cask: "name={{ item }}"
-  with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.work) if is_work|bool else (homebrew_cask_apps.common + homebrew_cask_apps.home) if is_home|bool else homebrew_cask_apps.common }}"
+  with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.home) if is_home|bool else homebrew_cask_apps.common }}"
