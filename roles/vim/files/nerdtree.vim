@@ -1,14 +1,27 @@
 " nerdtree.vim
 " ------------
 function! NERDTreeCustomToggle()
-  if (exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1))
-    exe ":winc w"
+  if (exists("t:NERDTreeBufName"))
+    if (bufwinnr(t:NERDTreeBufName) != -1)
+      exe ":winc w"
+    else
+      exe ":NERDTreeToggle"
+    endif
   else
     exe ":NERDTree"
   endif
 endfunction
 map <silent> § :call NERDTreeCustomToggle()<CR>
-map <silent> ± :NERDTreeClose<CR>
+
+function! NERDTreeCustomClose()
+  if (exists("t:NERDTreeBufName"))
+    if (bufwinnr(t:NERDTreeBufName) != -1)
+      exe ":NERDTreeToggle"
+    endif
+  endif
+endfunction
+map <silent> ± :call NERDTreeCustomClose()<CR>
+
 map <leader>f :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
@@ -33,7 +46,7 @@ call NERDTreeHighlightFile('hidden', 'darkGrey', 'none')
 call NERDTreeHighlightFile('hpp', '17', 'none')
 call NERDTreeHighlightFile('html', 'cyan', 'none')
 call NERDTreeHighlightFile('jade', '40', 'none')
-call NERDTreeHighlightFile('js', '33', 'none')
+call NERDTreeHighlightFile('js', '223', 'none')
 call NERDTreeHighlightFile('json', '136', 'none')
 call NERDTreeHighlightFile('jsx', '33', 'none')
 call NERDTreeHighlightFile('md', '249', 'none')

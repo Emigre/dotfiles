@@ -106,8 +106,7 @@ hi SpecialKey ctermfg=52
 " maps
 function! MySearch(searchText, searchForward)
   let command = a:searchForward ? "/" : "?"
-  let search = join(["normal! ", command, a:searchText, "
-"], "")
+  let search = join(["normal! ", command, a:searchText, ""], "")
   set nowrapscan
   try
     execute search
