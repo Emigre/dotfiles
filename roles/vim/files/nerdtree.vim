@@ -22,7 +22,7 @@ function! NERDTreeCustomClose()
 endfunction
 map <silent> ± :call NERDTreeCustomClose()<CR>
 
-map <leader>f :NERDTreeFind<CR>
+map <leader>t :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1

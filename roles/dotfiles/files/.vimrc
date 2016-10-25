@@ -45,6 +45,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
