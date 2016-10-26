@@ -130,6 +130,21 @@ nnoremap <leader>o o<ESC>
 " Shortcut to substitute
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
+" find files by filename and populate the quickfix list with them
+fun! FindFiles(filename)
+  let error_file = tempname()
+  silent exe '!find . -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -name "'.a:filename.'" -print | xargs file | sed "s/:/:1:/" > '.error_file
+  set errorformat=%f:%l:%m
+  exe "cg ". error_file
+  copen
+  call delete(error_file)
+  redraw!
+endfun
+command! -nargs=1 Find call FindFiles(<q-args>)
+nnoremap <leader>f :Find<space>
+
+hi IncSearch cterm=NONE ctermbg=green
+
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
 
