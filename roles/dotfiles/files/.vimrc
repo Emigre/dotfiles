@@ -148,9 +148,10 @@ hi IncSearch cterm=NONE ctermbg=green
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
 
-" Set Q command to quit, too
+" Set some commands that I often write in a wrong way by mistake
 command Q q
 command Qa qa
+command W w
 
 set timeout         " Do time out on mappings and others
 set timeoutlen=2000 " Wait {num} ms before timing out a mapping
