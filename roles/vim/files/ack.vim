@@ -3,7 +3,7 @@
 set shellpipe=>
 
 " use ag instead of ack
-let g:ackprg = 'ag --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
+let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
 fun! CustomAck(pattern)
   exe "Ack! '".a:pattern."'"
 endfun
