@@ -26,7 +26,7 @@ map <leader>t :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea', 'venv', '__pycache__']
+let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^venv$', '^__pycache__$']
 
 function! NERDTreeHighlightFile(extension, fg, bg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension . 'FileType ctermbg=' . a:bg .' ctermfg='. a:fg
