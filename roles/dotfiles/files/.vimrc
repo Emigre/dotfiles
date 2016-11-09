@@ -105,24 +105,33 @@ set list
 hi SpecialKey ctermfg=52
 
 " maps
-function! MySearch(searchText, searchForward)
+function! MySearch(searchText, searchForward, mode)
   let command = a:searchForward ? "/" : "?"
-  let search = join(["normal! ", command, a:searchText, ""], "")
+  let search = join(["normal! ", a:mode, command, a:searchText, ""], "")
+  set whichwrap+=h,l
   set nowrapscan
   try
     execute search
   catch
     echo v:exception[17:]
   endtry
+  set whichwrap-=h,l
   set wrapscan
 endfunction
 
-nnoremap [ :call MySearch("{", 0)<CR>
-nnoremap ] :call MySearch("{", 1)<CR>
-nnoremap - :call MySearch("(", 0)<CR>
-nnoremap = :call MySearch("(", 1)<CR>
-nnoremap _ :call MySearch(";", 0)<CR>
-nnoremap + :call MySearch(";", 1)<CR>
+nnoremap [ :call MySearch("{", 0, " ")<CR>
+nnoremap ] :call MySearch("{", 1, " ")<CR>
+nnoremap - :call MySearch("(", 0, " ")<CR>
+nnoremap = :call MySearch("(", 1, " ")<CR>
+nnoremap _ :call MySearch(";", 0, " ")<CR>
+nnoremap + :call MySearch(";", 1, " ")<CR>
+
+vnoremap [ :<C-u>call MySearch("{", 0, "gv ")<CR>
+vnoremap ] :<C-u>call MySearch("{", 1, "gv ")<CR>
+vnoremap - :<C-u>call MySearch("(", 0, "gvh ")<CR>
+vnoremap = :<C-u>call MySearch("(", 1, "gvh ")<CR>
+vnoremap _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
+vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
