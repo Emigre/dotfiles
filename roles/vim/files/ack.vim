@@ -34,14 +34,13 @@ fun! SearchAndReplace(pattern, newpattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  let substitution = substitute(a:newpattern, "\'", "\\\\x27", "g")
   silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   copen
   call delete(error_file)
   redraw!
-  exe 'cdo %s/\v\c'.search.'/'.substitution.'/gc'
+  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gc'
 endfun
 command! -nargs=* Replace call SearchAndReplace(<f-args>)
 nnoremap <leader>r :Replace<space>
@@ -50,17 +49,19 @@ nnoremap <leader>r :Replace<space>
 :nnoremap <Leader>l :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 " find files by filename and populate the quickfix list with them
-fun! FindFiles(filename)
+fun! FindFiles(filename, ...)
   let error_file = tempname()
-  silent exe '!find . -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
+  let path = a:0 < 1 ? '.' : a:1
+  silent exe '!find '.path.' -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   copen
   call delete(error_file)
   redraw!
 endfun
-command! -nargs=1 Find call FindFiles(<q-args>)
+command! -nargs=* Find call FindFiles(<f-args>)
 nnoremap <leader>f :Find<space>
 
+" bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green
 
