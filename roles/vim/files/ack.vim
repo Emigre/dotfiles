@@ -2,42 +2,65 @@
 " https://github.com/mileszs/ack.vim/issues/18
 set shellpipe=>
 
-" use ag instead of ack
+" set vim ack to use ag instead of ack
 let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
 
+" customize ack
 fun! CustomAck(pattern, ...)
   let path = a:0 < 1 ? '' : a:1
-  exe "Ack! '".a:pattern."' ".path
+  let search = substitute(a:pattern, "\'", "\\\\x27", "g")
+  exe "Ack! '".search."' ".path
 endfun
-command! -nargs=* Ag call CustomAck(<f-args>)
-nnoremap <leader>a :Ag<space>
+command! -nargs=* Search call CustomAck(<f-args>)
+nnoremap <leader>s :Search<space>
 
 " use ag but only return one match per file
-fun! FindWithAck(pattern, ...)
+fun! FindByContent(pattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
-  silent exe "!ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden --print0 --files-with-matches '".a:pattern."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  let search = substitute(a:pattern, "\'", "\\\\x27", "g")
+  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   copen
   call delete(error_file)
   redraw!
 endfun
-command! -nargs=* Encounter call FindWithAck(<f-args>)
+command! -nargs=* Encounter call FindByContent(<f-args>)
 nnoremap <leader>e :Encounter<space>
 
 " search for text in files, populate the quickfix list with them and run replace on it
 fun! SearchAndReplace(pattern, newpattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
-  silent exe "!ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden --print0 --files-with-matches '".a:pattern."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  let search = substitute(a:pattern, "\'", "\\\\x27", "g")
+  let substitution = substitute(a:newpattern, "\'", "\\\\x27", "g")
+  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   copen
   call delete(error_file)
   redraw!
-  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gc'
+  exe 'cdo %s/\v\c'.search.'/'.substitution.'/gc'
 endfun
 command! -nargs=* Replace call SearchAndReplace(<f-args>)
 nnoremap <leader>r :Replace<space>
+
+" Shortcut to substitute
+:nnoremap <Leader>l :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
+
+" find files by filename and populate the quickfix list with them
+fun! FindFiles(filename)
+  let error_file = tempname()
+  silent exe '!find . -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
+  set errorformat=%f:%l:%m
+  exe "cg ". error_file
+  copen
+  call delete(error_file)
+  redraw!
+endfun
+command! -nargs=1 Find call FindFiles(<q-args>)
+nnoremap <leader>f :Find<space>
+
+hi IncSearch cterm=NONE ctermbg=green
 

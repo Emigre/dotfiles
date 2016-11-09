@@ -32,7 +32,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Emigre/vim-snippets'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-buftabline'
 Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
@@ -46,6 +45,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -126,24 +126,6 @@ nnoremap + :call MySearch(";", 1)<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
-
-" Shortcut to substitute
-:nnoremap <Leader>s :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
-
-" find files by filename and populate the quickfix list with them
-fun! FindFiles(filename)
-  let error_file = tempname()
-  silent exe '!find . -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
-  set errorformat=%f:%l:%m
-  exe "cg ". error_file
-  copen
-  call delete(error_file)
-  redraw!
-endfun
-command! -nargs=1 Find call FindFiles(<q-args>)
-nnoremap <leader>f :Find<space>
-
-hi IncSearch cterm=NONE ctermbg=green
 
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-]> :noh<CR>
