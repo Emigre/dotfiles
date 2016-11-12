@@ -46,6 +46,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

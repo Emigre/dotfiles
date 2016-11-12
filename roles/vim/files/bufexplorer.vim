@@ -138,6 +138,12 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
 
+" Exclude quickfix buffer from `:bnext` `:bprevious`
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
 nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
 nnoremap <silent> <C-j> :bn<CR>
