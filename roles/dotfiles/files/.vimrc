@@ -135,9 +135,10 @@ vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
+nnoremap <leader>O O<ESC>
 
 " Clear search highlight (to show again press n)
-nnoremap <silent> <Space> :noh<CR>
+nnoremap <silent> <C-m> :noh<CR>
 
 " bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green
