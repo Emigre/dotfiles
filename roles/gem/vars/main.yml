@@ -1,3 +1,4 @@
 rubygems:
+  - mdless
   - travis
   - compass
