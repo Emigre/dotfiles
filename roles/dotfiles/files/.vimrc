@@ -137,7 +137,10 @@ vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
 nnoremap <leader>o o<ESC>
 
 " Clear search highlight (to show again press n)
-nnoremap <silent> <C-]> :noh<CR>
+nnoremap <silent> <Space> :noh<CR>
+
+" bright color for search matches
+hi IncSearch cterm=NONE ctermbg=green
 
 " Set some commands that I often write in a wrong way by mistake
 command Q q
@@ -278,3 +281,7 @@ endfunction
 command! -nargs=? -range=% Space2Tab call IndentConvert(<line1>,<line2>,0,<q-args>)
 command! -nargs=? -range=% Tab2Space call IndentConvert(<line1>,<line2>,1,<q-args>)
 command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q-args>)
+
+" to show all available colors:
+" :so $VIMRUNTIME/syntax/hitest.vim
+

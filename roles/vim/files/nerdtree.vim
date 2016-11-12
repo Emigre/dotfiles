@@ -11,7 +11,7 @@ function! NERDTreeCustomToggle()
     exe ":NERDTree"
   endif
 endfunction
-map <silent> § :call NERDTreeCustomToggle()<CR>
+noremap <silent> ' :call NERDTreeCustomToggle()<CR>
 
 function! NERDTreeCustomClose()
   if (exists("t:NERDTreeBufName"))
@@ -20,7 +20,7 @@ function! NERDTreeCustomClose()
     endif
   endif
 endfunction
-map <silent> ± :call NERDTreeCustomClose()<CR>
+map <silent> "  :call NERDTreeCustomClose()<CR>
 
 map <leader>t :NERDTreeFind<CR>
 

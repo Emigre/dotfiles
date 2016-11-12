@@ -62,6 +62,3 @@ endfun
 command! -nargs=* Find call FindFiles(<f-args>)
 nnoremap <leader>f :Find<space>
 
-" bright color for search matches
-hi IncSearch cterm=NONE ctermbg=green
-
