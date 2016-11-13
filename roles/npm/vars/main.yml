@@ -1,6 +1,13 @@
 node_packages:
   common:
+    - babel-eslint
     - bower
+    - eslint
+    - eslint-config-airbnb
+    - eslint-plugin-babel
+    - eslint-plugin-import
+    - eslint-plugin-react
+    - eslint-plugin-jsx-a11y
     - grunt-cli
     - gulp
     - http-server
@@ -15,10 +22,8 @@ node_packages:
   home:
     - babel-cli
     - broccoli-cli
-    - cordova
     - divshot-cli
     - elm
-    - ember-cli
     - express-generator
     - generator-angular
     - generator-backbone
