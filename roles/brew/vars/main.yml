@@ -21,11 +21,14 @@ homebrew_packages:
     - maven
     - node
     - python3
+    - react-native-cli
     - reattach-to-user-namespace
     - the_silver_searcher
     - tree
     - tmux
     - vim
+    - wget
+    - yarn
   home:
     - android-sdk
     - cabal-install
