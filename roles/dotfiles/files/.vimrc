@@ -140,6 +140,7 @@ nnoremap <leader>O O<ESC>
 
 " Clear search highlight (to show again press n)
 nnoremap <silent> <C-m> :noh<CR>
+nnoremap <silent> <Space> :noh<CR>
 
 " bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green
