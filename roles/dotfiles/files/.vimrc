@@ -137,9 +137,11 @@ vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 
-" Clear search highlight (to show again press n)
-nnoremap <silent> <C-m> :noh<CR>
-nnoremap <silent> <Space> :noh<CR>
+" Clear search highlight with Enter
+nnoremap <silent> <CR> :noh<CR>
+
+" But not in a Quickfix List
+autocmd FileType qf nnoremap <buffer> <CR> <CR>
 
 " bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green

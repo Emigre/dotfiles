@@ -37,6 +37,9 @@ function! NERDTreeHighlightFile(extension, fg, bg)
   endif
 endfunction
 
+" Preserve the clear highlight command in NERDTree
+autocmd FileType nerdtree nmap <buffer> <CR> :noh<CR>
+
 " Colors in NERDTree
 call NERDTreeHighlightFile('c', '34', 'none')
 call NERDTreeHighlightFile('cc', '34', 'none')
