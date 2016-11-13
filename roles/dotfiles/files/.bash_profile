@@ -22,6 +22,7 @@ fi
 if [ $IS_HOME == true ] ; then
   export PATH="$HOME/.node/bin:$PATH"
 fi
+export PATH="$PATH:$HOME/.yarn/bin"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
