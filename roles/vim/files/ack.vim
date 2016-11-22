@@ -40,13 +40,13 @@ fun! SearchAndReplace(pattern, newpattern, ...)
   copen
   call delete(error_file)
   redraw!
-  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gc'
+  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gci | update'
 endfun
 command! -nargs=* Replace call SearchAndReplace(<f-args>)
 nnoremap <leader>r :Replace<space>
 
 " Shortcut to substitute
-:nnoremap <Leader>l :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
+:nnoremap <Leader>a :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 " find files by filename and populate the quickfix list with them
 fun! FindFiles(filename, ...)
