@@ -1,0 +1,19 @@
+- name: Ensure the Atom configuration folder exists and has the right permissions
+  file: "path={{ home }}/.atom state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Symlink the Atom configuration files
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/.atom/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./*
+
+- name: Disable unwanted packages
+  command: "apm disable {{ item }}"
+  with_items:
+    - wrap-guide
+
+- name: Install Atom's package-sync
+  command: apm install package-sync

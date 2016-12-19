@@ -1,0 +1,4 @@
+packages: [
+  "language-emacs-lisp"
+  "package-sync"
+]
