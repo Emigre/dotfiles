@@ -282,6 +282,11 @@ command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q
 " yanks filename to the clipboard
 nnoremap <leader>y :let @+ = expand('%:p')<CR>
 
+" Disable some keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> § :b#<CR>
