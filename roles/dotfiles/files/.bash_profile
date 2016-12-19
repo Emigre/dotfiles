@@ -2,11 +2,6 @@ export PATH="/usr/local/bin:$PATH"
 
 [ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
 
-if [ $IS_HOME == false ] ; then
-  export proxy=http://surf-proxy.intranet.db.com:8080
-  export https_proxy=https://surf-proxy.gslb.db.com:8080
-fi
-
 # aliases
 alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
@@ -14,9 +9,11 @@ alias less='/usr/bin/less -r'
 alias http='/usr/local/bin/http --pretty=all --verbose'
 alias httpa='http --session=s'
 alias ts='tree -L 3 | less'
+alias e='emacs'
 if [ $IS_HOME == true ]; then
   alias zoom="open $HOME/Applications/Zoom.app"
 fi
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 # Node
 if [ $IS_HOME == true ] ; then
