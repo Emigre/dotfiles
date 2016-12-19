@@ -1,0 +1,11 @@
+"*":
+  core:
+    disabledPackages: [
+      "wrap-guide"
+      "metrics"
+    ]
+    telemetryConsent: "no"
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false

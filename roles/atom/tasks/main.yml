@@ -10,10 +10,5 @@
   with_fileglob:
     - ./*
 
-- name: Disable unwanted packages
-  command: "apm disable {{ item }}"
-  with_items:
-    - wrap-guide
-
 - name: Install Atom's package-sync
   command: apm install package-sync
