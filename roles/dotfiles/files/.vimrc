@@ -122,19 +122,25 @@ function! MySearch(searchText, searchForward, mode)
   set wrapscan
 endfunction
 
-nnoremap [ :call MySearch("{", 0, " ")<CR>
-nnoremap ] :call MySearch("{", 1, " ")<CR>
-nnoremap - :call MySearch("(", 0, " ")<CR>
-nnoremap = :call MySearch("(", 1, " ")<CR>
-nnoremap _ :call MySearch(";", 0, " ")<CR>
-nnoremap + :call MySearch(";", 1, " ")<CR>
+nnoremap <C-f> :call MySearch("{", 1, " ")<CR>
+vnoremap <C-f> :<C-u>call MySearch("{", 1, "gv ")<CR>
+nnoremap <C-t> :call MySearch("{", 0, " ")<CR>
+vnoremap <C-t> :<C-u>call MySearch("{", 0, "gv ")<CR>
 
-vnoremap [ :<C-u>call MySearch("{", 0, "gv ")<CR>
-vnoremap ] :<C-u>call MySearch("{", 1, "gv ")<CR>
-vnoremap - :<C-u>call MySearch("(", 0, "gvh ")<CR>
-vnoremap = :<C-u>call MySearch("(", 1, "gvh ")<CR>
-vnoremap _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
-vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
+nnoremap <C-g> :call MySearch("(", 1, " ")<CR>
+vnoremap <C-g> :<C-u>call MySearch("(", 1, "gvh ")<CR>
+nnoremap <C-y> :call MySearch("(", 0, " ")<CR>
+vnoremap <C-y> :<C-u>call MySearch("(", 0, "gvh ")<CR>
+
+nnoremap <Leader>a :call MySearch(";", 1, " ")<CR>
+vnoremap <Leader>a :<C-u>call MySearch(";", 1, "gvh ")<CR>
+nnoremap <Leader>q :call MySearch(";", 0, " ")<CR>
+vnoremap <Leader>q :<C-u>call MySearch(";", 0, "gvh ")<CR>
+
+nnoremap <C-e> }
+vnoremap <C-e> }
+nnoremap <C-w> {
+vnoremap <C-w> {
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
