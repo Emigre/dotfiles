@@ -11,7 +11,8 @@ function! NERDTreeCustomToggle()
     exe ":NERDTree"
   endif
 endfunction
-nnoremap <silent> <C-h> :call NERDTreeCustomToggle()<CR>
+nnoremap <silent> <C-m> :call NERDTreeCustomToggle()<CR>
+autocmd FileType nerdtree nmap <buffer> <silent> <C-m> :call NERDTreeCustomToggle()<CR>
 
 function! NERDTreeCustomClose()
   if (exists("t:NERDTreeBufName"))
@@ -20,7 +21,7 @@ function! NERDTreeCustomClose()
     endif
   endif
 endfunction
-nnoremap <silent> <C-m>  :call NERDTreeCustomClose()<CR>
+nnoremap <silent> <C-h> :call NERDTreeCustomClose()<CR>
 
 map <leader>t :NERDTreeFind<CR>
 
