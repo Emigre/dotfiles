@@ -110,7 +110,7 @@ hi SpecialKey ctermfg=52
 " maps
 function! MySearch(searchText, searchForward, mode)
   let command = a:searchForward ? "/" : "?"
-  let search = join(["normal! ", a:mode, command, a:searchText, ""], "")
+  let search = join(["normal! ", a:mode, command, a:searchText, "\<CR>"], "")
   set whichwrap+=h,l
   set nowrapscan
   try
