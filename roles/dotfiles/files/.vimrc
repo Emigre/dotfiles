@@ -62,6 +62,9 @@ set ruler
 set rulerformat=%l,%c%=%P
 set noswapfile
 
+" leader key
+let mapleader = "\<Space>"
+
 " colors
 colorscheme Zenburn
 syntax on
