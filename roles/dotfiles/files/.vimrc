@@ -146,12 +146,6 @@ vnoremap <C-w> {
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 
-" Clear search highlight with Enter
-nnoremap <silent> <CR> :noh<CR>
-
-" But not in a Quickfix List
-autocmd FileType qf nnoremap <buffer> <CR> <CR>
-
 " bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green
 
@@ -175,9 +169,6 @@ if !has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
-
-" Terminal vim on OSX doesn't let you use <Ctrl-6>
-nnoremap <silent> <leader>5 :b#<CR>
 
 " Font and font size
 " https://github.com/andreberg/Meslo-Font
@@ -246,16 +237,6 @@ else
     set undodir=~/.vim/undo
   endif
 endif
-
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-        let save_cursor = getpos(".")
-        let old_query = getreg('/')
-        :%s/\s\+$//e
-        call setpos('.', save_cursor)
-        call setreg('/', old_query)
-endfunction
-noremap <leader>w :call StripWhitespace()<CR>
 
 " Automatic commands
 if has("autocmd")
