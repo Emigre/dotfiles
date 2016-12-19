@@ -280,7 +280,7 @@ command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q
 " :so $VIMRUNTIME/syntax/hitest.vim
 
 " yanks filename to the clipboard
-nnoremap <leader>q :let @+ = expand(‘%:p')<CR>
+nnoremap <leader>y :let @+ = expand('%:p')<CR>
 
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
