@@ -60,3 +60,6 @@ export PATH="$HOME/Code/depot_tools:$PATH"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# do not disturb terminal with ctrl-S or ctrl-Q
+stty -ixon
