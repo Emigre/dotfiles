@@ -11,7 +11,7 @@ function! NERDTreeCustomToggle()
     exe ":NERDTree"
   endif
 endfunction
-noremap <silent> ' :call NERDTreeCustomToggle()<CR>
+nnoremap <silent> <C-h> :call NERDTreeCustomToggle()<CR>
 
 function! NERDTreeCustomClose()
   if (exists("t:NERDTreeBufName"))
@@ -20,12 +20,14 @@ function! NERDTreeCustomClose()
     endif
   endif
 endfunction
-map <silent> "  :call NERDTreeCustomClose()<CR>
+nnoremap <silent> <C-m>  :call NERDTreeCustomClose()<CR>
 
 map <leader>t :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+
 let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^CMakeFiles$', '^venv$', '^__pycache__$','^bin$', '^obj$']
 
 function! NERDTreeHighlightFile(extension, fg, bg)
@@ -37,8 +39,9 @@ function! NERDTreeHighlightFile(extension, fg, bg)
   endif
 endfunction
 
-" Preserve the clear highlight command in NERDTree
-autocmd FileType nerdtree nmap <buffer> <CR> :noh<CR>o
+let NERDTreeMapHelp='§'
+let NERDTreeMapToggleBookmarks='±'
+let NERDTreeMouseMode=3
 
 " Colors in NERDTree
 call NERDTreeHighlightFile('c', '34', 'none')

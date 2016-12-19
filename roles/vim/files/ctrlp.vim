@@ -32,3 +32,6 @@ function! CtrlPStatusLine(...)
 endfunction
 
 :command CtrlPRefresh CtrlPClearCache
+
+nnoremap <leader>p :CtrlPRefresh<CR>
+

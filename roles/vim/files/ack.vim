@@ -5,6 +5,9 @@ set shellpipe=>
 " set vim ack to use ag instead of ack
 let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
 
+" Shortcut to substitute
+:nnoremap <C-s> :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
+
 " customize ack
 fun! CustomAck(pattern, ...)
   let path = a:0 < 1 ? '' : a:1
@@ -44,9 +47,6 @@ fun! SearchAndReplace(pattern, newpattern, ...)
 endfun
 command! -nargs=* Replace call SearchAndReplace(<f-args>)
 nnoremap <leader>r :Replace<space>
-
-" Shortcut to substitute
-:nnoremap <Leader>a :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 " find files by filename and populate the quickfix list with them
 fun! FindFiles(filename, ...)
