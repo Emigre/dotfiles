@@ -26,8 +26,6 @@ alias bowerl='bower list | grep '"'"'^├\|^└'"'"''
 
 # Python
 export PATH="$HOME/Library/Python/3.4/bin:$PATH"
-alias python='python3'
-alias pip='pip3'
 
 # Scheme
 alias scheme='rlwrap mit-scheme'
