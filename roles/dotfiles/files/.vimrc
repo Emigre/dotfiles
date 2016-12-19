@@ -276,13 +276,23 @@ command! -nargs=? -range=% Space2Tab call IndentConvert(<line1>,<line2>,0,<q-arg
 command! -nargs=? -range=% Tab2Space call IndentConvert(<line1>,<line2>,1,<q-args>)
 command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q-args>)
 
-" Disable Ex Mode
-map q: <Nop>
-nnoremap <silent> Q :redraw!<CR>
-
 " to show all available colors:
 " :so $VIMRUNTIME/syntax/hitest.vim
 
 " yanks filename to the clipboard
 nnoremap <leader>q :let @+ = expand(‘%:p')<CR>
+
+
+" Terminal vim on OSX doesn't let you use <Ctrl-6>
+nnoremap <silent> § :b#<CR>
+
+" Switch between matching braces
+nnoremap <silent> Q %
+
+" Redraw the screen
+nnoremap <Leader>c :redraw!<CR>
+
+" Enable / disable highlight of searches
+map <Leader>h :set hlsearch!<cr>
+:set nohlsearch
 
