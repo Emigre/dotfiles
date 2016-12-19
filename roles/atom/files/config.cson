@@ -3,6 +3,7 @@
     disabledPackages: [
       "wrap-guide"
       "metrics"
+      "exception-reporting"
     ]
     telemetryConsent: "no"
   welcome:
