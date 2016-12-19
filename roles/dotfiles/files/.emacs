@@ -431,3 +431,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; enable mouse for terminal
+(unless window-system
+  (xterm-mouse-mode 1)
+  (global-set-key [mouse-4] (lambda ()
+                              (interactive)
+                              (scroll-down 1)))
+  (global-set-key [mouse-5] (lambda ()
+                              (interactive)
+                              (scroll-up 1))))
