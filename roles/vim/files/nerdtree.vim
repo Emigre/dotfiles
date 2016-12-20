@@ -1,27 +1,7 @@
-" nerdtree.vim
-" ------------
-function! NERDTreeCustomToggle()
-  if (exists("t:NERDTreeBufName"))
-    if (bufwinnr(t:NERDTreeBufName) != -1)
-      exe ":winc w"
-    else
-      exe ":NERDTreeToggle"
-    endif
-  else
-    exe ":NERDTree"
-  endif
-endfunction
-nnoremap <silent> <C-m> :call NERDTreeCustomToggle()<CR>
-autocmd FileType nerdtree nmap <buffer> <silent> <C-m> :call NERDTreeCustomToggle()<CR>
+nnoremap <silent> <C-m> :winc w<CR>
+autocmd FileType nerdtree nmap <buffer> <silent> <C-m> :winc w<CR>
 
-function! NERDTreeCustomClose()
-  if (exists("t:NERDTreeBufName"))
-    if (bufwinnr(t:NERDTreeBufName) != -1)
-      exe ":NERDTreeToggle"
-    endif
-  endif
-endfunction
-nnoremap <silent> <C-h> :call NERDTreeCustomClose()<CR>
+nnoremap <silent> <C-h> :NERDTreeToggle<CR>
 
 map <leader>t :NERDTreeFind<CR>
 
