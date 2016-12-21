@@ -105,7 +105,7 @@ endif
 " Set a character for the tabs
 set listchars=tab:\▹\ "
 set list
-hi SpecialKey ctermfg=52
+hi SpecialKey ctermfg=8
 
 " maps
 function! MySearch(searchText, searchForward, mode)
