@@ -128,6 +128,8 @@ jenv shell 1.7
   - Check 'Save changes to folder when iTerm2 quits'
 - In Preferences > Profiles
   - Select 'My Profile' and 'Set as Default' in the 'Other Actions...' menu
+- In Preferences > Pointer
+  - Add "Three-finger Tap" to "Send Text \e:w\n"
 
 ##### Terminal
 - In Preferences > Profiles > Keyboard select 'Use Option as Meta key'
@@ -267,3 +269,5 @@ http://www.gifgrabber.com/
 ##### Cathode and Blinky
 http://www.secretgeometry.com/
 
+##### Key Codes
+https://manytricks.com/keycodes/

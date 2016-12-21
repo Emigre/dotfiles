@@ -298,6 +298,12 @@ map <Leader>h :set hlsearch!<cr>
 " Color of matching brackets
 hi MatchParen ctermbg=none ctermfg=green
 
+" Enter insert mode on click
+nnoremap <LeftMouse> i<LeftMouse>
+nnoremap <RightMouse> <LeftMouse>
+autocmd FileType nerdtree nnoremap <buffer> <LeftMouse> <LeftMouse>
+autocmd BufReadPost quickfix nnoremap <buffer> <LeftMouse> <LeftMouse>
+
 " Change cursor shape between insert and normal mode in iTerm2
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
