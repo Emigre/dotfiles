@@ -1,3 +1,11 @@
 - name: Ensure configured python packages are installed
   pip: "name={{ item }}"
   with_items: "{{ (python_packages.common + python_packages.home) if is_home|bool else python_packages.common }}"
+
+- name: Symlink python scripts to site-packages
+  file:
+    src: "{{ item }}"
+    dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./.*
