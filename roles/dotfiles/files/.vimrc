@@ -299,10 +299,9 @@ map <Leader>h :set hlsearch!<cr>
 hi MatchParen ctermbg=none ctermfg=green
 
 " Enter insert mode on click
-nnoremap <LeftMouse> i<LeftMouse>
-nnoremap <RightMouse> <LeftMouse>
-autocmd FileType nerdtree nnoremap <buffer> <LeftMouse> <LeftMouse>
-autocmd BufReadPost quickfix nnoremap <buffer> <LeftMouse> <LeftMouse>
+nnoremap <RightMouse> i<LeftMouse>
+autocmd FileType nerdtree nnoremap <buffer> <RightMouse> <RightMouse>
+autocmd BufReadPost quickfix nnoremap <buffer> <RightMouse> <RightMouse>
 
 " Change cursor shape between insert and normal mode in iTerm2
 if exists('$TMUX')
