@@ -6,6 +6,9 @@
       "exception-reporting"
     ]
     telemetryConsent: "no"
+  editor:
+    showInvisibles: true
+    softWrap: true
   welcome:
     showOnStartup: false
   whitespace:
