@@ -214,6 +214,9 @@ set ignorecase
 set incsearch
 " Enable mouse in all modes
 set mouse=a
+set ttymouse=xterm2
+" Set more characters for redraws
+set ttyfast
 " Disable all error bells
 set noerrorbells
 set noerrorbells
