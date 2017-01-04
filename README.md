@@ -129,6 +129,7 @@ jenv shell 1.7
 - In Preferences > Profiles
   - Select 'My Profile' and 'Set as Default' in the 'Other Actions...' menu
 - In Preferences > Pointer
+  - Remove the defaults
   - Add "Three-finger Tap" to "Send Text \e:w\n"
 
 ##### Terminal
