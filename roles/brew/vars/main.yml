@@ -16,6 +16,7 @@ homebrew_packages:
     - ansible
     - emacs
     - git
+    - git-flow
     - httpie
     - jenv
     - maven
