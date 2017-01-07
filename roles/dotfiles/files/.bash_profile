@@ -61,5 +61,9 @@ export PATH="$HOME/Code/depot_tools:$PATH"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Ensure the xterm ctrl-arrow combinations function
+bind '"\e[1;5C": forward-word'
+bind '"\e[1;5D": backward-word'
+
 # do not disturb terminal with ctrl-S or ctrl-Q
 stty -ixon
