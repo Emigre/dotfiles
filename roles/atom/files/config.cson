@@ -4,11 +4,28 @@
       "wrap-guide"
       "metrics"
       "exception-reporting"
+      "status-bar"
+      "autocomplete-plus"
+      "background-tips"
+      "linter-eslint"
     ]
     telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "zenburn"
+    ]
   editor:
+    invisibles:
+      cr: " "
+      eol: " "
+      space: " "
     showInvisibles: true
+    showLineNumbers: false
     softWrap: true
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "tree-view":
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
   whitespace:
