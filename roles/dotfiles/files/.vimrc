@@ -243,10 +243,10 @@ endif
 
 " Automatic commands
 if has("autocmd")
-        " Enable file type detection
-        filetype on
-        " Treat .json files as .js
-        autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  " Enable file type detection
+  filetype on
+  " Treat .json files as .js
+  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
 " Return indent (all whitespace at start of a line), converted from
