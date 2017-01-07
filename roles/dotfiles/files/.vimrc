@@ -292,10 +292,13 @@ nnoremap <silent> § :b#<CR>
 nnoremap <silent> Q %
 
 " Redraw the screen
-nnoremap <Leader>c :redraw!<CR>
+nnoremap <silent> <Leader>d :redraw!<CR>
+
+" Shortcut to save
+nnoremap <C-s> :w<CR>
 
 " Enable / disable highlight of searches
-map <Leader>h :set hlsearch!<cr>
+map <silent> <Leader>h :set hlsearch!<cr>
 :set nohlsearch
 
 " Color of matching brackets
