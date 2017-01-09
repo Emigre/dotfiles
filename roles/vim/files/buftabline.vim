@@ -6,13 +6,19 @@ hi BufTabLineActive ctermbg=236 ctermfg=8
 hi BufTabLineHidden ctermbg=235 ctermfg=8
 hi BufTabLineFill ctermbg=235
 
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
+fun! GoToTab(n)
+  if a:n <= len(buftabline#user_buffers())
+    exe "normal \<Plug>BufTabLine.Go(".a:n.")"
+  endif
+endfun
+
+nmap <silent> <leader>1 :call GoToTab(1)<cr>
+nmap <silent> <leader>2 :call GoToTab(2)<cr>
+nmap <silent> <leader>3 :call GoToTab(3)<cr>
+nmap <silent> <leader>4 :call GoToTab(4)<cr>
+nmap <silent> <leader>5 :call GoToTab(5)<cr>
+nmap <silent> <leader>6 :call GoToTab(6)<cr>
+nmap <silent> <leader>7 :call GoToTab(7)<cr>
+nmap <silent> <leader>8 :call GoToTab(8)<cr>
+nmap <silent> <leader>9 :call GoToTab(9)<cr>
+nmap <silent> <leader>0 :call GoToTab(0)<cr>
