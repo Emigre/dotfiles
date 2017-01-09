@@ -296,6 +296,7 @@ nnoremap <silent> <Leader>d :redraw!<CR>
 
 " Shortcut to save
 nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
 
 " Enable / disable highlight of searches
 map <silent> <Leader>h :set hlsearch!<cr>
