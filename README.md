@@ -80,6 +80,11 @@ sudo n 0.12.5
 sudo n 4.0.0
 ```
 
+##### MIT Scheme
+```
+ln -s /usr/local/opt/readline/lib/libreadline.7.dylib /usr/local/opt/readline/lib/libreadline.6.dylib
+```
+
 ##### RVM
 
 https://rvm.io/
