@@ -6,7 +6,7 @@ set shellpipe=>
 let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
 
 " Shortcut to substitute
-:nnoremap <leader>x :%s/\c\<<C-r><C-w>\>//gc<Left><Left><Left>
+:nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>
 
 " customize ack
 fun! CustomAck(pattern, ...)

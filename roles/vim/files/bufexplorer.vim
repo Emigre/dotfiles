@@ -146,5 +146,6 @@ augroup END
 
 nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
-nnoremap <silent> <C-j> :bn<CR>
 nnoremap <silent> <C-k> :bp<CR>
+nnoremap <silent> <C-j> :bn<CR>
+nnoremap <silent> <CR> :bn<CR>

@@ -1,5 +1,5 @@
-nnoremap <silent> <C-m> :winc w<CR>
-autocmd FileType nerdtree nmap <buffer> <silent> <C-m> :winc w<CR>
+nnoremap <silent> <BS> :winc w<CR>
+autocmd FileType nerdtree nmap <buffer> <silent> <BS> :winc w<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> o <CR>
 
 nnoremap <silent> <space><space> :NERDTreeToggle<CR>
