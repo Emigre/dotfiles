@@ -14,6 +14,7 @@ if [ $IS_HOME == true ]; then
   alias zoom="open $HOME/Applications/Zoom.app"
 fi
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+alias vi='vim'
 
 # Node
 if [ $IS_HOME == true ] ; then
