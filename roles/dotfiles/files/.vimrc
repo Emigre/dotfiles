@@ -122,8 +122,8 @@ function! MySearch(searchText, searchForward, mode)
   set wrapscan
 endfunction
 
-nnoremap <C-h> :call MySearch("{", 1, " ")<CR>
-vnoremap <C-h> :<C-u>call MySearch("{", 1, "gv ")<CR>
+nnoremap <C-j> :call MySearch("{", 1, " ")<CR>
+vnoremap <C-j> :<C-u>call MySearch("{", 1, "gv ")<CR>
 nnoremap <C-y> :call MySearch("{", 0, " ")<CR>
 vnoremap <C-y> :<C-u>call MySearch("{", 0, "gv ")<CR>
 

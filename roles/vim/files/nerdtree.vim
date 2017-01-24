@@ -1,4 +1,6 @@
+nnoremap <silent> <C-h> :winc w<CR>
 nnoremap <silent> <BS> :winc w<CR>
+autocmd FileType nerdtree nmap <buffer> <silent> <C-h> :winc w<CR>
 autocmd FileType nerdtree nmap <buffer> <silent> <BS> :winc w<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> o <CR>
 
