@@ -8,17 +8,18 @@
   cm = "!git commit -m "
   b = branch
   d = diff
-  ds = diff --staged
   s = status
   m = merge
   a = add
   f = "!git fetch && git l -10"
   p = "!git push && git l -10"
   pl = "!git pull && git l -10"
-# Show contributors sorted by frequency
+  # Show contributors sorted by frequency
   rank = !git log --pretty=format:"%an" | sort | uniq -c | sort -frn
-# Delete local branches that have been deleted on the remote
+  # Delete local branches that have been deleted on the remote
   clean = "!f() { echo "git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -d"; }; f"
+  # Show files with conflicts
+  conflicts = diff --name-only --diff-filter=U
 [color]
   ui = true
 [core]
