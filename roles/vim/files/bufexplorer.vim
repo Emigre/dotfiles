@@ -148,5 +148,6 @@ nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
 nnoremap <silent> <C-k> :bp<CR>
 nnoremap <silent> <CR> :bn<CR>
+nnoremap <silent> <c-j> :bn<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 

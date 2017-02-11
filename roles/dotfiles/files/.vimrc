@@ -122,25 +122,32 @@ function! MySearch(searchText, searchForward, mode)
   set wrapscan
 endfunction
 
-nnoremap <C-j> :call MySearch("{", 1, " ")<CR>
-vnoremap <C-j> :<C-u>call MySearch("{", 1, "gv ")<CR>
-nnoremap <C-y> :call MySearch("{", 0, " ")<CR>
-vnoremap <C-y> :<C-u>call MySearch("{", 0, "gv ")<CR>
-
-nnoremap <C-g> :call MySearch("(", 1, " ")<CR>
-vnoremap <C-g> :<C-u>call MySearch("(", 1, "gvh ")<CR>
-nnoremap <C-t> :call MySearch("(", 0, " ")<CR>
-vnoremap <C-t> :<C-u>call MySearch("(", 0, "gvh ")<CR>
-
-nnoremap <Leader>a :call MySearch(";", 1, " ")<CR>
-vnoremap <Leader>a :<C-u>call MySearch(";", 1, "gvh ")<CR>
-nnoremap <Leader>q :call MySearch(";", 0, " ")<CR>
-vnoremap <Leader>q :<C-u>call MySearch(";", 0, "gvh ")<CR>
-
+" searches for end of paragraph (blank line)
 nnoremap <C-f> }
 vnoremap <C-f> }
 nnoremap <C-e> {
 vnoremap <C-e> {
+" move the <C-e> fucntionality to <C-v>
+nnoremap <c-v> <c-e>
+nnoremap <c-v> <c-e>
+
+" searches for curly bracket
+nnoremap <C-g> :call MySearch("{", 1, " ")<CR>
+vnoremap <C-g> :<C-u>call MySearch("{", 1, "gv ")<CR>
+nnoremap <C-t> :call MySearch("{", 0, " ")<CR>
+vnoremap <C-t> :<C-u>call MySearch("{", 0, "gv ")<CR>
+
+" searches for parenthesis
+nnoremap ) :call MySearch("(", 1, " ")<CR>
+vnoremap ) :<C-u>call MySearch("(", 1, "gvh ")<CR>
+nnoremap ( :call MySearch("(", 0, " ")<CR>
+vnoremap ( :<C-u>call MySearch("(", 0, "gvh ")<CR>
+
+" searches for semicolon
+nnoremap + :call MySearch(";", 1, " ")<CR>
+vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
+nnoremap _ :call MySearch(";", 0, " ")<CR>
+vnoremap _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
