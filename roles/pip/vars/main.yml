@@ -1,5 +1,6 @@
 python_packages:
   common:
+    - http-prompt
     - virtualenv
   home:
     - awscli
