@@ -6,8 +6,6 @@ export PATH="/usr/local/bin:$PATH"
 alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
 alias less='/usr/bin/less -r'
-alias http='/usr/local/bin/http --pretty=all --verbose'
-alias httpa='http --session=s'
 alias ts='tree -L 3 | less'
 alias e='emacs'
 if [ $IS_HOME == true ]; then
@@ -15,6 +13,10 @@ if [ $IS_HOME == true ]; then
 fi
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias vi='vim'
+
+# Httpie
+alias h='http-prompt'
+alias http='/usr/local/bin/http --pretty=all --verbose'
 
 # Node
 if [ $IS_HOME == true ] ; then
