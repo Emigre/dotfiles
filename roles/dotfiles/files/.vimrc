@@ -46,6 +46,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'Yggdroot/indentLine'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

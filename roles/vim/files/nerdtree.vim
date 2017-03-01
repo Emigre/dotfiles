@@ -26,6 +26,7 @@ endfunction
 let NERDTreeMapHelp='§'
 let NERDTreeMapToggleBookmarks='±'
 let NERDTreeMouseMode=3
+let g:NERDTreeWinSize = 40
 
 " Colors in NERDTree
 call NERDTreeHighlightFile('c', '34', 'none')
@@ -39,10 +40,10 @@ call NERDTreeHighlightFile('html', '110', 'none')
 call NERDTreeHighlightFile('jade', '40', 'none')
 call NERDTreeHighlightFile('js', '223', 'none')
 call NERDTreeHighlightFile('json', '136', 'none')
-call NERDTreeHighlightFile('jsx', '33', 'none')
+call NERDTreeHighlightFile('jsx', '221', 'none')
 call NERDTreeHighlightFile('less', '115', 'none')
 call NERDTreeHighlightFile('md', '249', 'none')
-call NERDTreeHighlightFile('py', '166', 'none')
+call NERDTreeHighlightFile('py', '214', 'none')
 call NERDTreeHighlightFile('pyc', 'darkGrey', 'none')
 call NERDTreeHighlightFile('rb', '89', 'none')
 call NERDTreeHighlightFile('sass', '115', 'none')
