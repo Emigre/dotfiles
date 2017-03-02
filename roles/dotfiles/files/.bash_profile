@@ -53,6 +53,7 @@ alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl stop -m fast'
 alias pg_status='pg_ctl status'
 alias pg_reload='pg_ctl reload'
+alias pg_port="egrep 'listen|port' /usr/local/var/postgres/postgresql.conf"
 
 # depot tools
 export PATH="$HOME/Code/depot_tools:$PATH"
