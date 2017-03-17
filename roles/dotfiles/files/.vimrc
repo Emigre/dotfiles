@@ -48,6 +48,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Yggdroot/indentLine'
 Plugin 'elzr/vim-json'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -301,7 +302,7 @@ nnoremap <silent> § :b#<CR>
 nnoremap <silent> Q %
 
 " Redraw the screen
-nnoremap <silent> <Leader>d :redraw!<CR>
+nnoremap <silent> ± :redraw!<CR>
 
 " Shortcut to save
 nnoremap <C-s> :w<CR>
@@ -310,6 +311,7 @@ inoremap <C-s> <Esc>:w<CR>
 " Enable / disable highlight of searches
 map <silent> <Leader>h :set hlsearch!<cr>
 :set nohlsearch
+hi Search ctermfg=black ctermbg=108
 
 " Color of matching brackets
 hi MatchParen ctermbg=none ctermfg=green
