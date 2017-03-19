@@ -46,6 +46,7 @@ eval "$(jenv init -)"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
 export M2=$M2_HOME/bin
+export GRADLE_USER_HOME="$HOME/.gradle"
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
