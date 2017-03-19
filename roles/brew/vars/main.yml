@@ -52,7 +52,12 @@ homebrew_packages:
     - nginx
     - postgresql
     - redis
+    - sdl2
+    - sdl2_image
+    - sdl2_mixer
+    - sdl2_ttf
     - sqlite
+    - texinfo
     - tomcat
 
 homebrew_cask_apps:
