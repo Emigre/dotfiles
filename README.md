@@ -86,7 +86,6 @@ ln -s /usr/local/opt/readline/lib/libreadline.7.dylib /usr/local/opt/readline/li
 ```
 
 ##### RVM
-
 https://rvm.io/
 
 ##### Java JDK
@@ -143,7 +142,6 @@ jenv shell 1.7
 - In Preferences > Profiles > Keyboard select 'Use Option as Meta key'
 
 ##### VirtualBox
-
 - In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
 
 ##### Docker for Mac Beta
@@ -216,48 +214,14 @@ xcode-select --install
 
 Will install the command-line tools.
 
-##### OpenFrameworks
-http://openframeworks.cc/
-
-##### Cling
-https://root.cern.ch/cling
-
-##### Qt
-
-https://www.qt.io/
-
-##### Eclipse
-https://www.eclipse.org/downloads/
-
-- Select Window > Hide Toolbar
-- In Preferences
-  - In General > Appearance
-    - In Color Theme select 'Zenburn'
-    - In Colors and Fonts set 'Orchid' as the color for 'Uncommited Change'
-  - In General > Editors > Text Editors
-    - Uncheck 'Show line numbers' and 'Show print margin'
-    - Check 'Show whitespace characters'
-    - In Quick Diff, select 'A Git Revision' in the dropdown
-  - In General > Keys
-    - Set Ctrl + Tab for 'Show View (Project Explorer)'
-    - Set Ctrl + Tab for 'Activate Editor'
-  - In Java > Apearance check Abbreviate package names and set the package abbreviations
-  - In Team > Git > Label Decorations
-    - Under Icon Decorations, unselect Tracked Resources and Dirty resources
-    - Under Text Decorations, set Files: {name}, Folders: {name} and Projects: {name}  [{branch}{ branch_status}]
-
-Install the [Lightweight CSS Editor plugin](https://marketplace.eclipse.org/content/eclipse-4-tools-lightweight-css-editor) and add these styles in Preferences > General > Appearance
-
-```css
-#org-eclipse-e4-ui-compatibility-editor Composite > Canvas { background-color: #232323; }
-Tree, List, Table { background-color: #eee; }
-```
-
 ##### Adobe
 http://www.adobe.com/
 
-##### Cinema 4D
-http://www.maxon.net/
+##### Affinity Photo
+https://affinity.serif.com/
+
+##### Fusion
+https://www.blackmagicdesign.com/
 
 ##### Pure Data
 http://puredata.info/
@@ -265,11 +229,8 @@ http://puredata.info/
 ##### Manga Studio
 http://my.smithmicro.com/
 
-##### Rosetta Stone
-http://www.rosettastone.eu/
-
 ##### Postman
-- Select the dark theme in Preferences
+https://www.getpostman.com/
 
 ##### GifGrabber
 http://www.gifgrabber.com/
