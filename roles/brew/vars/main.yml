@@ -52,6 +52,7 @@ homebrew_packages:
     - nginx
     - postgresql
     - redis
+    - rlwrap
     - sdl2
     - sdl2_image
     - sdl2_mixer
@@ -59,6 +60,7 @@ homebrew_packages:
     - sqlite
     - texinfo
     - tomcat
+    - watch
 
 homebrew_cask_apps:
   common:
@@ -101,6 +103,7 @@ homebrew_cask_apps:
     - processing
     - pycharm-ce
     - qt-creator
+    - sketch
     - slack
     - teamviewer
     - vlc
