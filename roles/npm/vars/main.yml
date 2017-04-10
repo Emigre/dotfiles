@@ -25,6 +25,7 @@ node_packages:
     - divshot-cli
     - elm
     - express-generator
+    - flow-bin
     - generator-angular
     - generator-backbone
     - generator-backbone-mocha
