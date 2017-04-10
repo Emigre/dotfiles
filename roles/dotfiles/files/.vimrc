@@ -44,11 +44,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'Yggdroot/indentLine'
 Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,7 +117,7 @@ function! MySearch(searchText, searchForward, mode)
   set whichwrap+=h,l
   set nowrapscan
   try
-    execute search
+    silent execute search
   catch
     echo v:exception[17:]
   endtry
@@ -135,22 +135,22 @@ nnoremap <c-v> <c-e>
 nnoremap <c-v> <c-e>
 
 " searches for curly bracket
-nnoremap <C-g> :call MySearch("{", 1, " ")<CR>
-vnoremap <C-g> :<C-u>call MySearch("{", 1, "gv ")<CR>
-nnoremap <C-t> :call MySearch("{", 0, " ")<CR>
-vnoremap <C-t> :<C-u>call MySearch("{", 0, "gv ")<CR>
+nnoremap <silent> <C-g> :call MySearch("{", 1, " ")<CR>
+vnoremap <silent> <C-g> :<C-u>call MySearch("{", 1, "gv ")<CR>
+nnoremap <silent> <C-t> :call MySearch("{", 0, " ")<CR>
+vnoremap <silent> <C-t> :<C-u>call MySearch("{", 0, "gv ")<CR>
 
 " searches for parenthesis
-nnoremap ) :call MySearch("(", 1, " ")<CR>
-vnoremap ) :<C-u>call MySearch("(", 1, "gvh ")<CR>
-nnoremap ( :call MySearch("(", 0, " ")<CR>
-vnoremap ( :<C-u>call MySearch("(", 0, "gvh ")<CR>
+nnoremap <silent> ) :call MySearch("(", 1, " ")<CR>
+vnoremap <silent> ) :<C-u>call MySearch("(", 1, "gvh ")<CR>
+nnoremap <silent> ( :call MySearch("(", 0, " ")<CR>
+vnoremap <silent> ( :<C-u>call MySearch("(", 0, "gvh ")<CR>
 
 " searches for semicolon
-nnoremap + :call MySearch(";", 1, " ")<CR>
-vnoremap + :<C-u>call MySearch(";", 1, "gvh ")<CR>
-nnoremap _ :call MySearch(";", 0, " ")<CR>
-vnoremap _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
+nnoremap <silent> + :call MySearch(";", 1, " ")<CR>
+vnoremap <silent> + :<C-u>call MySearch(";", 1, "gvh ")<CR>
+nnoremap <silent> _ :call MySearch(";", 0, " ")<CR>
+vnoremap <silent> _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
@@ -163,6 +163,7 @@ hi IncSearch cterm=NONE ctermbg=green
 command Q q
 command Qa qa
 command W w
+command Ccl ccl
 
 set timeout         " Do time out on mappings and others
 set timeoutlen=2000 " Wait {num} ms before timing out a mapping
