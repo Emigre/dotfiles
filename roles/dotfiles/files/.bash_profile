@@ -13,6 +13,7 @@ if [ $IS_HOME == true ]; then
 fi
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias vi='vim'
+alias flow-watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 
 # Httpie
 alias h='http-prompt'
