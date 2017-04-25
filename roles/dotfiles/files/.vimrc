@@ -51,10 +51,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
+call vundle#end()
 
 
 " Vim config
@@ -73,7 +70,14 @@ colorscheme Zenburn
 syntax on
 
 " indentation
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+
 set smartindent
+
+autocmd Filetype java setlocal ts=4 sw=4 expandtab
 
 " The width of a TAB is set to 4
 " Still it is a \t. It is just that
@@ -309,9 +313,8 @@ nnoremap <silent> ± :redraw!<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Enable / disable highlight of searches
-map <silent> <Leader>h :set hlsearch!<cr>
-:set nohlsearch
+" Clear the last search highlight
+map <silent> <Leader>h :noh<cr>
 hi Search ctermfg=black ctermbg=108
 
 " Color of matching brackets
