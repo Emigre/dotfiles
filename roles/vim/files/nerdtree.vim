@@ -12,7 +12,7 @@ let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 
-let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^CMakeFiles$', '^venv$', '^__pycache__$','^bin$', '^obj$']
+let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^CMakeFiles$', '^venv$', '^__pycache__$', '^obj$', '^coverage$']
 
 function! NERDTreeHighlightFile(extension, fg, bg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension . 'FileType ctermbg=' . a:bg .' ctermfg='. a:fg
@@ -26,7 +26,7 @@ endfunction
 let NERDTreeMapHelp='§'
 let NERDTreeMapToggleBookmarks='±'
 let NERDTreeMouseMode=3
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 30
 
 " Colors in NERDTree
 call NERDTreeHighlightFile('ac', '249', 'none')

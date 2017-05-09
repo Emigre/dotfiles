@@ -3,7 +3,7 @@
 if exists("g:ctrl_user_command")
     unlet g:ctrlp_user_command
 endif
-set wildignore+=*/tmp/*,*/CMakeFiles/*,*/dist/*,*/bin/*,*/build/*,*/target/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*/jspm_packages/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/bower_components/*,*/*.xcodeproj/*,*/*.app/*,*.plist,*.xcconfig,*/.idea/*,*.o,*.d,*.out,*/bin/*,*/obj/*
+set wildignore+=*/tmp/*,*/CMakeFiles/*,*/dist/*,*/bin/*,*/build/*,*/target/*,*.so,*.swp,*.zip,*.exe,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*/jspm_packages/*,*.keep,*.DS_Store,*/.git/*,*/.svn/*,*/bower_components/*,*/*.xcodeproj/*,*/*.app/*,*.plist,*.xcconfig,*/.idea/*,*.o,*.d,*.out,*/bin/*,*/obj/*,*/coverage/*
 " Change the default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

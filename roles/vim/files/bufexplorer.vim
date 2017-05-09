@@ -146,8 +146,20 @@ augroup END
 
 nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
-nnoremap <silent> <C-k> :bp<CR>
+
 nnoremap <silent> <CR> :bn<CR>
 nnoremap <silent> <c-j> :bn<CR>
+nnoremap <silent> <C-k> :bp<CR>
+
+autocmd FileType nerdtree nnoremap <buffer> <C-X> <C-X>
+autocmd FileType nerdtree nnoremap <buffer> <C-C> <C-C>
+autocmd FileType nerdtree nnoremap <buffer> <C-j> <C-j>
+autocmd FileType nerdtree nnoremap <buffer> <C-k> k
+
+autocmd BufReadPost quickfix nnoremap <buffer> <C-X> <C-X>
+autocmd BufReadPost quickfix nnoremap <buffer> <C-C> <C-C>
+autocmd BufReadPost quickfix nnoremap <buffer> <C-j> <C-j>
+autocmd BufReadPost quickfix nnoremap <buffer> <C-k> k
+
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 

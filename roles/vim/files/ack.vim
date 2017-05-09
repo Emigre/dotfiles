@@ -3,7 +3,7 @@
 set shellpipe=>
 
 " set vim ack to use ag instead of ack
-let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules} --vimgrep --hidden'
+let g:ackprg = 'ag --ignore-case --ignore-dir={.git,bower_components,node_modules,docs} --vimgrep --hidden'
 
 " Shortcut to substitute
 :nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>

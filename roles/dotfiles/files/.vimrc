@@ -313,8 +313,9 @@ nnoremap <silent> ± :redraw!<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Clear the last search highlight
-map <silent> <Leader>h :noh<cr>
+" Enable / disable highlight of searches
+map <silent> ; :set hlsearch!<cr>
+:set nohlsearch
 hi Search ctermfg=black ctermbg=108
 
 " Color of matching brackets
