@@ -20,6 +20,8 @@
   clean = "!f() { echo "git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -d"; }; f"
   # Show files with conflicts
   conflicts = diff --name-only --diff-filter=U
+  # Diffs a file agains its last changes
+  changes = log -p --follow -1
 [color]
   ui = true
 [core]
