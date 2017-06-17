@@ -5,9 +5,6 @@ export PATH="/usr/local/bin:$PATH"
 # aliases
 alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
-alias less='/usr/bin/less -r'
-alias ts='tree -L 3 | less'
-alias e='emacs'
 if [ $IS_HOME == true ]; then
   alias zoom="open $HOME/Applications/Zoom.app"
 fi
