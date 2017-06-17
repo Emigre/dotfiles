@@ -12,6 +12,7 @@ node_packages:
     - gulp
     - http-server
     - karma-cli
+    - lerna
     - less
     - mocha
     - n
