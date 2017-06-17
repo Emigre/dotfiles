@@ -26,7 +26,7 @@ endfunction
 let NERDTreeMapHelp='§'
 let NERDTreeMapToggleBookmarks='±'
 let NERDTreeMouseMode=3
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize=30
 
 " Colors in NERDTree
 call NERDTreeHighlightFile('ac', '249', 'none')

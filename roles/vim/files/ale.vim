@@ -9,7 +9,10 @@ hi! link ALEWarningSign SpellRare
 
 nmap <silent> ' <Plug>(ale_next_wrap)
 
-let g:ale_linters = {'jsx': ['eslint']}
+let g:ale_linters = {
+\ 'jsx': ['eslint'],
+\ 'java': ['checkstyle'],
+\}
 
 let g:ale_lint_on_text_changed = 'never'
 
