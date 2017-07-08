@@ -162,6 +162,9 @@ https://docs.docker.com/docker-for-mac/
 ##### vim
 - After installation, run `:InstallPlugins`
 
+##### Eclim
+http://eclim.org/
+
 ##### Sublime Text 3
 - Select View > Hide Status Bar
 

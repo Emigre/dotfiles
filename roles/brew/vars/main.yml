@@ -69,6 +69,7 @@ homebrew_cask_apps:
     - dash
     - docker
     - dropbox
+    - eclipse-ide
     - evernote
     - firefox
     - font-meslo-lg
