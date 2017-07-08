@@ -12,7 +12,7 @@ let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 
-let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^CMakeFiles$', '^venv$', '^__pycache__$', '^obj$', '^coverage$']
+let NERDTreeIgnore = ['^\.git$', '^bower_components$', '^node_modules$', '^\.sass-cache$', '^\.DS_Store$', '^\.idea$', '^CMakeFiles$', '^venv$', '^__pycache__$', '^obj$', '^bin$', '^coverage$', '^\.classpath$', '^\.project$', '^\.gradle$', '^\.settings$', '^workbench\.xmi$', '^\.mvn$', '^gradle$']
 
 function! NERDTreeHighlightFile(extension, fg, bg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension . 'FileType ctermbg=' . a:bg .' ctermfg='. a:fg

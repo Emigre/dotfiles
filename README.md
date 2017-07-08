@@ -160,7 +160,12 @@ https://docs.docker.com/docker-for-mac/
 - Uncheck Preferences > Show this message when starting Caffeine
 
 ##### vim
-- After installation, run `:InstallPlugins`
+- After installation, run `:PluginInstall`
+- `:PluginList` lists configured plugins
+- `:PluginInstall` installs plugins, append `!` to update
+- `:PluginUpdate` same as `:PluginInstall!`
+- `:PluginSearch foo` searches for foo, append `!` to refresh local cache
+- `:PluginClean` confirms removal of unused plugins, append `!` to auto-approve removal
 
 ##### Eclim
 http://eclim.org/
