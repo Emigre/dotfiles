@@ -26,6 +26,7 @@ homebrew_packages:
     - react-native-cli
     - reattach-to-user-namespace
     - the_silver_searcher
+    - tidy-html5
     - tree
     - tmux
     - vim
