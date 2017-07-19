@@ -6,7 +6,7 @@
 
 ;; list the packages you want
 (setq package-list '(zenburn-theme fiplr whitespace tabbar diff-hl undo-tree
-  yasnippet emmet-mode multiple-cursors vim-empty-lines-mode ag company))
+  emmet-mode multiple-cursors vim-empty-lines-mode ag company))
 
 ;; list the repositories containing them
 (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
