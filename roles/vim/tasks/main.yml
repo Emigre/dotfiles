@@ -9,6 +9,7 @@
     - .vim/plugin
     - .vim/swaps
     - .vim/undo
+    - .vim/vim-snippets
 
 - name: Ensure vundle is cloned in the bundle folder
   git:
@@ -18,11 +19,11 @@
     update: no
     accept_hostkey: yes
 
-- name: Ensure my vim snippets are cloned in the bundle folder
+- name: Ensure my vim snippets are cloned inside the .vim folder
   git:
     repo: git://github.com/Emigre/vim-snippets.git
     version: master
-    dest: "{{ home }}/.vim/bundle/vim-snippets"
+    dest: "{{ home }}/.vim/vim-snippets"
     update: no
     accept_hostkey: yes
 
