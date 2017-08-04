@@ -77,8 +77,7 @@ homebrew_cask_apps:
     - google-chrome
     - intellij-idea-ce
     - iterm2
-    - java6
-    - java7
+    - java
     - opera
     - postman
     - skype
@@ -98,7 +97,8 @@ homebrew_cask_apps:
     - handbrake
     - inform
     - inkscape
-    - java
+    - java6
+    - java7
     - lighttable
     - mysqlworkbench
     - pgadmin3
