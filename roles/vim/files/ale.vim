@@ -4,6 +4,8 @@ let g:ale_sign_warning = '░ '
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 
+hi! link ALEError SpellBad
+hi! ALEWarning ctermfg=NONE
 hi! link ALEErrorSign SpellBad
 hi! link ALEWarningSign SpellRare
 
