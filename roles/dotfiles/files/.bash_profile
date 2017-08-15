@@ -12,6 +12,7 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Si
 alias vi='vim'
 alias eclim='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
 alias flow-watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
+alias less='less -R '
 
 # Httpie
 alias h='http-prompt'
