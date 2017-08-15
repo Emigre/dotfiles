@@ -30,6 +30,7 @@ homebrew_packages:
     - tree
     - tmux
     - vim
+    - watchman
     - wget
     - yarn
   home:
