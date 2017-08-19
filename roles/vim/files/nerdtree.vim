@@ -26,7 +26,12 @@ endfunction
 let NERDTreeMapHelp='§'
 let NERDTreeMapToggleBookmarks='±'
 let NERDTreeMouseMode=3
-let g:NERDTreeWinSize=30
+
+if system('scutil --get ComputerName') == "Gaspar’s MacBook Pro\n"
+  let g:NERDTreeWinSize=30
+else
+  let g:NERDTreeWinSize=40
+endif
 
 " Colors in NERDTree
 call NERDTreeHighlightFile('ac', '249', 'none')
