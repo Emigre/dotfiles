@@ -134,6 +134,8 @@ jenv shell 1.7
   - Select 'My Profile' and 'Set as Default' in the 'Other Actions...' menu
   - In the profile keys, ensure that the 'xterm Defaults' preset is on, that alt-left sends ESC + [1;5D and alt-right ESC + [1;5C
   - In the profile keys, make the Ctrl and number combination send a space and that number as text
+- In Preferences > Keys
+  - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
 - In Preferences > Pointer
   - Remove the defaults
   - Add "Three-finger Tap" to "Send Text \e:w\n"
