@@ -24,7 +24,6 @@ function! NERDTreeHighlightFile(extension, fg, bg)
 endfunction
 
 let NERDTreeMapHelp='§'
-let NERDTreeMapToggleBookmarks='±'
 let NERDTreeMouseMode=3
 
 if system('scutil --get ComputerName') == "Gaspar’s MacBook Pro\n"
