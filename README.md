@@ -136,12 +136,10 @@ jenv shell 1.7
   - In the profile keys, make the Ctrl and number combination send a space and that number as text
 - In Preferences > Keys
   - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
+  - Set `Ctrl` + numbers from `1` to `9` to 'Send Escape Sequence' `[27;5;49~`, `[27;5;50~`, `[27;5;51~` and so on...
 - In Preferences > Pointer
   - Remove the defaults
   - Add "Three-finger Tap" to "Send Text \e:w\n"
-
-##### Terminal
-- In Preferences > Profiles > Keyboard select 'Use Option as Meta key'
 
 ##### VirtualBox
 - In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
@@ -149,13 +147,6 @@ jenv shell 1.7
 ##### Docker for Mac Beta
 
 https://docs.docker.com/docker-for-mac/
-
-##### Dash
-- In Preferences > General
-  - Set 'Global search shortcut' as alt + Space
-  - Check 'Launch Dash at login'
-  - Uncheck 'Show dock icon'
-  - Check 'Dismiss main window when I activate a different app'
 
 ##### Caffeine
 - Check Preferences > Automatically start Caffeine at login
@@ -172,41 +163,22 @@ https://docs.docker.com/docker-for-mac/
 ##### Eclim
 http://eclim.org/
 
-##### Sublime Text 3
-- Select View > Hide Status Bar
-
-##### JetBrain IDEs
-- Uncheck 'Toolbar', 'Tool Buttons', Status Bar' and 'Navigation Bar' in View
-- In Preferences > Keymap
-  - Assign cmd + 0 to Other > Terminal
-  - In IntelliJ IDEA, assign cmd + 8 to Other > Database
-- In Preferences > Editor
-  - In File Types
-    - Add ".idea;\*.iml" to Ignore files and folders
-  - In General
-    - Check 'Use soft wraps in editor'
-    - Under Appearance
-      - Uncheck 'Show right margin'
-      - Uncheck 'Show line numbers'
-      - Check 'Show whitespaces' if you want to show tabs vs spaces
-- In Preferences > Version Control > git
-  - Uncheck 'Control repositories synchronously'
-
 ##### OSX Preferences
 - In System Preferences
   - In Keyboard
     - Under Shortcuts uncheck 'Mission Control'
-  - Check Trackpad > Tap to click
-  - Set Require password 'immediately' after sleep in  Security & Privacy
-  - Select 'three finger drag' in Accessibility > Mouse & Trackpad > Trackpad Options... > Enable dragging
+  - In Trackpad
+    - Enable 'Tap to click'
+  - In Security & Privacy
+    - Set Require password 'immediately' after sleep
   - In Dock
     - Select the right dock size and magnification
     - Check 'Minimize windows into application icon'
     - In 'Minimize windows using:' select 'scale effect'
   - In Accessibility
-    - Zoom toggle it all
-    - In Mouse & Trackpad, check Enable Dragging and select Finger Dragging
-  - In Mission Control deselect 'Show Desktop:' and 'Show Dashboard:'
+    - In Mouse & Trackpad, under Trackpad Options, check 'Enable dragging' and select 'three finger drag'
+    - In Display, enable 'Reduce motion'
+  - In Mission Control deselect 'Show Desktop' and 'Show Dashboard'
 
 Disable bouncing animation
 
