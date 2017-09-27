@@ -81,6 +81,7 @@ homebrew_cask_apps:
     - java
     - opera
     - postman
+    - react-native-debugger
     - skype
     - sublime-text
     - the-unarchiver
