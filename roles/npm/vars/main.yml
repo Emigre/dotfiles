@@ -17,6 +17,7 @@ node_packages:
     - mocha
     - n
     - npm-check-updates
+    - nodemon
     - react-native-cli
     - webpack
     - webpack-bundle-size-analyzer
