@@ -156,6 +156,7 @@ hi IncSearch cterm=NONE ctermbg=green
 command Q q
 command Qa qa
 command W w
+command Wq wq
 command Ccl ccl
 
 set timeout         " Do time out on mappings and others
