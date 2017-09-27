@@ -16,7 +16,7 @@ alias less='less -R '
 
 # Httpie
 alias h='http-prompt'
-alias http='/usr/local/bin/http --pretty=all --verbose'
+alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 
 # Node
 if [ $IS_HOME == true ] ; then
