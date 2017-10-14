@@ -22,6 +22,8 @@
   conflicts = diff --name-only --diff-filter=U
   # Diffs a file agains its last changes
   changes = log -p --follow -1
+  # Lists all files in a commit
+  files = show --pretty="" --name-only
 [color]
   ui = true
 [core]
@@ -34,4 +36,4 @@
 [receive]
   fsckObjects = true
 [push]
-	default = simple
+  default = simple
