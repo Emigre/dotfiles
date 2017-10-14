@@ -15,7 +15,7 @@ homebrew_packages:
     - ansible
     - checkstyle
     - emacs
-    - fswatch
+    - entr
     - git
     - git-flow
     - httpie

@@ -18,6 +18,17 @@ alias less='less -R '
 alias h='http-prompt'
 alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 
+# entr
+function e() {
+  if [[ $# -eq 0 ]] ; then
+    entr
+  else
+    while true; do
+      ag -l | entr -c -d $@
+    done
+  fi
+}
+
 # Node
 if [ $IS_HOME == true ] ; then
   export PATH="$HOME/.node/bin:$PATH"
