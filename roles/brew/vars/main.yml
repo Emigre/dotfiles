@@ -18,6 +18,7 @@ homebrew_packages:
     - entr
     - git
     - git-flow
+    - httperf
     - httpie
     - jenv
     - maven
