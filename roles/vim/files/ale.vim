@@ -14,6 +14,7 @@ nmap <silent> ' <Plug>(ale_next_wrap)
 let g:ale_linters = {
 \ 'jsx': ['eslint'],
 \ 'java': ['checkstyle'],
+\ 'haskell': ['hlint'],
 \}
 
 let g:ale_lint_on_text_changed = 'never'

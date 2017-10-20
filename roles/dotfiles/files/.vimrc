@@ -67,6 +67,8 @@ filetype plugin indent on    " required
 set smartindent
 
 autocmd Filetype java setlocal ts=4 sw=4 expandtab
+autocmd Filetype haskell setlocal ts=4 sw=4 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 " The width of a TAB is set to 4
 " Still it is a \t. It is just that
