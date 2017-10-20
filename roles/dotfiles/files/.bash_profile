@@ -50,6 +50,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"
+export PATH=$PATH:"$HOME/.local/bin"
 
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -61,11 +62,11 @@ export GRADLE_USER_HOME="$HOME/.gradle"
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
-alias pg_start='pg_ctl -l /usr/local/var/postgres/server.log start'
-alias pg_stop='pg_ctl stop -m fast'
-alias pg_status='pg_ctl status'
-alias pg_reload='pg_ctl reload'
-alias pg_port="egrep 'listen|port' /usr/local/var/postgres/postgresql.conf"
+alias psql_start='pg_ctl -l /usr/local/var/postgres/server.log start'
+alias psql_stop='pg_ctl stop -m fast'
+alias psql_status='pg_ctl status | egrep pg_ctl'
+alias psql_reload='pg_ctl reload'
+alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
 # depot tools
 export PATH="$HOME/Code/depot_tools:$PATH"
