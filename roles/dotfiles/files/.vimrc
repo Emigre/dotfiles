@@ -38,6 +38,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'w0rp/ale'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -129,23 +130,17 @@ vnoremap <C-e> {
 nnoremap <c-v> <c-e>
 nnoremap <c-v> <c-e>
 
-" searches for curly bracket
-nnoremap <silent> <C-g> :call MySearch("{", 1, " ")<CR>
-vnoremap <silent> <C-g> :<C-u>call MySearch("{", 1, "gv ")<CR>
-nnoremap <silent> <C-t> :call MySearch("{", 0, " ")<CR>
-vnoremap <silent> <C-t> :<C-u>call MySearch("{", 0, "gv ")<CR>
-
 " searches for parenthesis
 nnoremap <silent> ) :call MySearch("(", 1, " ")<CR>
 vnoremap <silent> ) :<C-u>call MySearch("(", 1, "gvh ")<CR>
 nnoremap <silent> ( :call MySearch("(", 0, " ")<CR>
 vnoremap <silent> ( :<C-u>call MySearch("(", 0, "gvh ")<CR>
 
-" searches for semicolon
-nnoremap <silent> + :call MySearch(";", 1, " ")<CR>
-vnoremap <silent> + :<C-u>call MySearch(";", 1, "gvh ")<CR>
-nnoremap <silent> _ :call MySearch(";", 0, " ")<CR>
-vnoremap <silent> _ :<C-u>call MySearch(";", 0, "gvh ")<CR>
+" searches for curly bracket
+nnoremap <silent> + :call MySearch("{", 1, " ")<CR>
+vnoremap <silent> + :<C-u>call MySearch("{", 1, "gv ")<CR>
+nnoremap <silent> _ :call MySearch("{", 0, " ")<CR>
+vnoremap <silent> _ :<C-u>call MySearch("{", 0, "gv ")<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>

@@ -1,3 +1,5 @@
+[init]
+  templatedir = ~/.git_template
 [include]
   path = ~/.gituser
 [alias]
@@ -24,6 +26,8 @@
   changes = log -p --follow -1
   # Lists all files in a commit
   files = show --pretty="" --name-only
+  # Re-index ctags
+  ctags = !.git/hooks/ctags
 [color]
   ui = true
 [core]

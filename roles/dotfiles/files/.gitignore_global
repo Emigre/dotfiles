@@ -3,4 +3,5 @@
 .idea
 .ctrlp
 .DS_Store
+tags
 npm-debug.log
