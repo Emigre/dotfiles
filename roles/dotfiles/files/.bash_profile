@@ -3,7 +3,6 @@ export PATH="/usr/local/bin:$PATH"
 [ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
 
 # aliases
-alias ag='ag --path-to-agignore ~/.agignore'
 alias tree="tree -C -I 'node_modules|bower_components'"
 if [ $IS_HOME == true ]; then
   alias zoom="open $HOME/Applications/Zoom.app"
@@ -11,7 +10,7 @@ fi
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias vi='vim'
 alias eclim='/Applications/Eclipse.app/Contents/Eclipse/eclimd'
-alias flow-watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
+alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 alias less='less -R '
 
 # Httpie
