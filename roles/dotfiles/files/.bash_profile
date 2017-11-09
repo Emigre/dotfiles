@@ -69,24 +69,6 @@ alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
 # Git
-alias gll="git log --pretty=format:\"%C(dim green)%h %ad%Creset %C(cyan)%an%Creset%C(auto)%d%Creset %s\" --date=short --graph --all --color=always"
-alias gl="gll -15"
-alias gco="git checkout"
-alias gcb="gic checkout -b"
-alias gca="git commit --amend"
-alias gcm="git commit -m"
-alias gb="git branch"
-alias gd="git diff"
-alias gs="git status"
-alias gm="git merge"
-alias ga="git add"
-alias ga.="git add ."
-alias gas="git add ./src"
-alias gf="git fetch && gll -10"
-alias gp="git push && gll -10"
-alias gpf="git push -f && gll -10"
-alias gpu="gi push -u origin HEAD"
-alias gpl="git pull && gll -10"
 # git completion | https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 [ -f "$HOME/.git-completion.bash" ] && source "$HOME/.git-completion.bash"
 
