@@ -13,7 +13,7 @@ nmap <silent> ' <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
 \ 'jsx': ['eslint'],
-\ 'java': ['checkstyle'],
+\ 'java': [],
 \ 'haskell': ['hlint'],
 \}
 
