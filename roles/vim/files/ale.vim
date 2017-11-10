@@ -69,8 +69,8 @@ let s:openframeworks_options = "-std=c++14 -Wall".
       \" -I../openFrameworks/libs/utf8/include".
       \" -I../openFrameworks/libs/utf8/include/utf8"
 
-let g:ale_pattern_options = {
-  \   '^'.$HOME.'/Code/c++/openFrameworks/': { 'ale_cpp_clang_options': s:openframeworks_options },
-  \   '^'.$HOME.'/Code/c++/randomWalker/': { 'ale_cpp_clang_options': s:openframeworks_options },
-  \   '^'.$HOME.'/Code/c++/particleSystem/': { 'ale_cpp_clang_options': s:openframeworks_options },
-  \}
+if !empty(glob("Makefile"))
+  if system("grep -c 'OF_ROOT' Makefile") != 0
+    let g:ale_cpp_clang_options = s:openframeworks_options
+  endif
+endif
