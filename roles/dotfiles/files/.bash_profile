@@ -8,7 +8,9 @@ alias tree="tree -C -I 'node_modules|bower_components'"
 alias vi='vim'
 
 # C++
-export PATH="$HOME/Code/depot_tools:$PATH"
+export PATH="$HOME/Code/c++/depot_tools:$PATH"
+export OF_ROOT="$HOME/Code/c++/openFrameworks"
+alias run='make RunRelease'
 
 # Javascript
 if [ $IS_HOME == true ] ; then
