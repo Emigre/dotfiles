@@ -69,8 +69,6 @@ let s:openframeworks_options = "-std=c++14 -Wall".
       \" -I../openFrameworks/libs/utf8/include".
       \" -I../openFrameworks/libs/utf8/include/utf8"
 
-if !empty(glob("Makefile"))
-  if system("grep -c 'OF_ROOT' Makefile") != 0
-    let g:ale_cpp_clang_options = s:openframeworks_options
-  endif
+if !empty(system("ag -c --silent OF_ROOT Makefile"))
+  let g:ale_cpp_clang_options = s:openframeworks_options
 endif
