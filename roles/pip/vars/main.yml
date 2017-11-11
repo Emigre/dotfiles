@@ -6,7 +6,9 @@ python_packages:
     - awscli
     - awsebcli
     - flake8
+    - ipdb
     - mypy
+    - pudb3
     - pyinstaller
     - pylint
     - voltron

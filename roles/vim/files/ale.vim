@@ -21,7 +21,11 @@ let g:ale_linters = {
 \ 'python': ['flake8', 'pylint'],
 \}
 
-let g:ale_python_pylint_options = '--disable=missing-docstring,too-few-public-methods,invalid-name'
+let g:ale_python_pylint_options = "--disable=".
+      \"missing-docstring,".
+      \"too-few-public-methods,".
+      \"invalid-name,".
+      \"no-self-use"
 
 let g:ale_lint_on_text_changed = 'never'
 
