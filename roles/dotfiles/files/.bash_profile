@@ -4,13 +4,14 @@ export PATH="/usr/local/bin:$PATH"
 
 alias la="ls -la"
 alias less='less -R '
-alias tree="tree -C -I 'node_modules|bower_components'"
-alias vi='vim'
+alias tree="tree -C -I 'node_modules|build|target|dist|bin'"
+alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
+alias vi="vim"
 
 # C++
-export PATH="$HOME/Code/c++/depot_tools:$PATH"
 export OF_ROOT="$HOME/Code/c++/openFrameworks"
 alias run='make RunRelease'
+alias depot_tools_start='export PATH="$HOME/Code/c++/depot_tools:$PATH"'
 
 # Javascript
 if [ $IS_HOME == true ] ; then
