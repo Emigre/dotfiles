@@ -1,5 +1,6 @@
 " Start an Eclim project
 command ProjectStart execute 'ProjectCreate' getcwd() '-n java'
+autocmd BufReadPost *.java Validate
 
 let g:EclimLoclistSignText='░ '
 let g:EclimUserSignText='■ '
