@@ -5,5 +5,8 @@ python_packages:
   home:
     - awscli
     - awsebcli
+    - flake8
+    - mypy
     - pyinstaller
+    - pylint
     - voltron

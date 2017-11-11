@@ -12,11 +12,17 @@ hi! link ALEWarningSign SpellRare
 nmap <silent> ' <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
-\ 'jsx': ['eslint'],
-\ 'java': [],
+\ 'c': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
+\ 'cpp': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
 \ 'haskell': ['hlint'],
-\ 'cpp': ['clang', 'clangcheck', 'clangtidy', 'clang-format']
+\ 'java': [],
+\ 'javascript': ['eslint'],
+\ 'jsx': ['eslint'],
+\ 'python': ['flake8', 'pylint'],
 \}
+
+let g:ale_python_pylint_executable = '/usr/local/bin/pylint'
+let g:ale_python_pylint_options = '--disable=missing-docstring,too-few-public-methods,invalid-name'
 
 let g:ale_lint_on_text_changed = 'never'
 
