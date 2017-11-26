@@ -37,16 +37,6 @@ export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
 export M2=$M2_HOME/bin
 export GRADLE_USER_HOME="$HOME/.gradle"
 export ECLIPSE_HOME='/Applications/Eclipse.app/Contents/Eclipse'
-alias eclim_start="$ECLIPSE_HOME/eclimd --background  >/dev/null 2>&1 && echo ' >> Starting eclim'"
-alias eclim_stop="$ECLIPSE_HOME/eclim -command shutdown && echo ' >> Shutting down eclim'"
-function eclim_status() {
-  if [ `ps -e | grep -o eclim | wc -l` -gt 1 ]
-  then
-    echo ' >> Eclim is running'
-  else
-    echo ' -- Eclim is not running'
-  fi
-}
 
 # Scheme
 alias scheme='rlwrap mit-scheme'

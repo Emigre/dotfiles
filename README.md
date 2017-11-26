@@ -160,9 +160,6 @@ https://docs.docker.com/docker-for-mac/
 - `:PluginSearch foo` searches for foo, append `!` to refresh local cache
 - `:PluginClean` confirms removal of unused plugins, append `!` to auto-approve removal
 
-##### Eclim
-http://eclim.org/
-
 ##### OSX Preferences
 - In System Preferences
   - In Keyboard
