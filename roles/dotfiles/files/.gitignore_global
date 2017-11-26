@@ -1,11 +1,3 @@
-bin/
-tags
 .DS_Store
 .ctrlp
-*.sublime-project
-*.sublime-workspace
-.idea
-npm-debug.log
-.classpath
-.project
-workbench.xmi
+tags

@@ -4,7 +4,7 @@ export PATH="/usr/local/bin:$PATH"
 
 alias la="ls -la"
 alias less='less -R '
-alias tree="tree -C -I 'node_modules|build|target|dist|bin'"
+alias tree="tree -I 'node_modules|build|target|dist|bin'"
 alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
 alias vi="vim"
 
@@ -30,13 +30,10 @@ export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 
 # Java
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
+export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
 export M2=$M2_HOME/bin
-export GRADLE_USER_HOME="$HOME/.gradle"
-export ECLIPSE_HOME='/Applications/Eclipse.app/Contents/Eclipse'
 
 # Scheme
 alias scheme='rlwrap mit-scheme'
@@ -44,10 +41,6 @@ alias scheme='rlwrap mit-scheme'
 # Go
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
-
-# Ruby
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Httpie
 alias h='http-prompt'
