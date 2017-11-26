@@ -1,12 +1,12 @@
-nnoremap <silent> <C-h> :winc w<CR>
-nnoremap <silent> <BS> :winc w<CR>
-autocmd FileType nerdtree nmap <buffer> <silent> <C-h> :winc w<CR>
-autocmd FileType nerdtree nmap <buffer> <silent> <BS> :winc w<CR>
+" nnoremap <silent> <C-h> :winc w<CR>
+" nnoremap <silent> <BS> :winc w<CR>
+" autocmd FileType nerdtree nmap <buffer> <silent> <C-h> :winc w<CR>
+" autocmd FileType nerdtree nmap <buffer> <silent> <BS> :winc w<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> o <CR>
 
-nnoremap <silent> <space><space> :NERDTreeToggle<CR>
+nnoremap <silent> <space>t :NERDTreeToggle<CR>
 
-map <leader>t :NERDTreeFind<CR>
+" map <leader>t :NERDTreeFind<CR>
 
 let g:NERDTreeChDirMode=0
 let NERDTreeShowHidden=1
