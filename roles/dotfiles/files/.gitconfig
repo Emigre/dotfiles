@@ -15,7 +15,7 @@
   f = "!git fetch && git l -10"
   l = "!git ll -15"
   lf = "log --format=fuller"
-  ll = "log --pretty=format:\"%C(dim green)%h %ad%Creset %C(cyan)%an%Creset%C(auto)%d%Creset %s\" --date=short --graph --all --color=always"
+  ll = "log --pretty=format:\"%C(dim green)%h %ai%Creset %C(cyan)%an%Creset%C(auto)%d%Creset %s\" --graph --all --color=always"
   m = "merge"
   p = "!git push && git l -10"
   pf = "!git push -f && git l -10"
