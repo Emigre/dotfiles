@@ -38,11 +38,14 @@ homebrew_packages:
   home:
     - android-sdk
     - cabal-install
+    - gcc
+    - cgdb
     - cmake
     - couchdb
     - frobtads
     - frotz
     - generate
+    - gdb
     - ghc
     - glulxe
     - go
