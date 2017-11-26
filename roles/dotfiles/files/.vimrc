@@ -8,7 +8,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'sickill/vim-monokai'
 Plugin 'vim-scripts/Zenburn'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
