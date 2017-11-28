@@ -23,8 +23,6 @@
   pu = "!git push -u origin HEAD && git l -10"
   rp = "remote prune origin"
   s = "status"
-  # Show contributors sorted by frequency
-  rank = !git log --pretty=format:"%an" | sort | uniq -c | sort -frn
   # Show files with conflicts
   conflicts = diff --name-only --diff-filter=U
   # Diffs a file agains its last changes

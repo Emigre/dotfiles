@@ -11,7 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/Zenburn'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'groenewege/vim-less'
@@ -24,7 +23,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tommcdo/vim-fugitive-blame-ext'
 Plugin 'godlygeek/csapprox'
@@ -321,3 +319,54 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" use ag for searches
+let g:ackprg = 'ag --ignore-case --ignore-dir={.git,node_modules,docs} --vimgrep --hidden'
+
+" Shortcut to substitute
+:nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>
+
+" use ag but only return one match per file
+fun! SearchContentAndShowFiles(pattern, ...)
+  let error_file = tempname()
+  let path = a:0 < 1 ? '' : a:1
+  let search = substitute(a:pattern, "\'", "\\\\x27", "g")
+  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  set errorformat=%f:%l:%m
+  exe "cg ". error_file
+  botright cope
+  call delete(error_file)
+  redraw!
+endfun
+command! -nargs=* Search call SearchContentAndShowFiles(<f-args>)
+nnoremap <leader>s :Search<space>
+
+" search for text in files, populate the quickfix list with them and run replace on it
+fun! SearchContentAndReplace(pattern, newpattern, ...)
+  let error_file = tempname()
+  let path = a:0 < 1 ? '' : a:1
+  let search = substitute(a:pattern, "\'", "\\\\x27", "g")
+  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  set errorformat=%f:%l:%m
+  exe "cg ". error_file
+  botright cope
+  call delete(error_file)
+  redraw!
+  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gci | update'
+endfun
+command! -nargs=* Replace call SearchContentAndReplace(<f-args>)
+nnoremap <leader>r :Replace<space>
+
+" find files by filename and populate the quickfix list with them
+fun! FindFilesByFileName(filename, ...)
+  let error_file = tempname()
+  let path = a:0 < 1 ? '.' : a:1
+  silent exe '!find '.path.' -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
+  set errorformat=%f:%l:%m
+  exe "cg ". error_file
+  copen
+  call delete(error_file)
+  redraw!
+endfun
+command! -nargs=* Find call FindFilesByFileName(<f-args>)
+nnoremap <leader>f :Find<space>
