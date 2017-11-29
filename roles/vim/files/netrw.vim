@@ -13,6 +13,7 @@ autocmd FileType netrw setl bufhidden=wipe
 
 let g:netrw_list_hide = "
       \^.DS_Store$,
+      \^node_modules/$,
       \^tags$,
       \^tags\.lock$,
       \^tags\.temp$,
@@ -129,11 +130,13 @@ fun! NrwGoToFileInTree(fileName, route)
   endtry
 endf
 
-fun! NrwExplore()
+fun! NrwExplore(...)
   let l:path = substitute(expand('%:p'), '^' . getcwd(), '', '')
   let l:fileName = expand('%:t')
   let l:route = split(l:path, '/')
-  if empty(l:path)
+  if a:0 > 0
+    execute ":Explore " . a:1
+  elseif empty(l:path)
     execute ":Explore ."
   else
     execute ":Explore ."
@@ -144,13 +147,21 @@ fun! NrwExplore()
   endif
 endf
 
-" Open nertw
-nnoremap <silent> <C-h> :call NrwExplore()<CR>
-nnoremap <silent> <BS> :call NrwExplore()<CR>
-nnoremap <silent> <space>h :Explore .<CR>
+fun! NrwCycleOrExplore()
+  if winnr('$') == 1
+    call NrwExplore()
+  else
+    execute "wincmd w"
+  endif
+endf
 
-" Close netrw
+nnoremap <silent> <space>h  :call NrwExplore('.')<CR>
+
+nnoremap <silent> <C-h> :call NrwCycleOrExplore()<CR>
+nnoremap <silent> <BS> :call NrwCycleOrExplore()<CR>
+
 autocmd FileType netrw map <silent> <buffer> <C-h> <C-j>
+autocmd FileType netrw map <silent> <buffer> <C-x> <C-j>
 autocmd FileType netrw map <silent> <buffer> <BS> <C-j>
 autocmd FileType netrw map <silent> <buffer> <Space>h <C-j>
 
