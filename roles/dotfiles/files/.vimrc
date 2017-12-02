@@ -50,6 +50,7 @@ set autoread
 set ruler
 set rulerformat=%l,%c%=%P
 set noswapfile
+set nofoldenable
 
 " leader key
 let mapleader = "\<Space>"
