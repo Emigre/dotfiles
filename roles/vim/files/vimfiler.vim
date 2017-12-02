@@ -18,39 +18,77 @@ let g:vimfiler_ignore_pattern = [
       \ '^\.DS_Store$',
       \ ]
 
-let s:colors = [
-      \ [["ac", "am"], "249", "none"],
-      \ [["c", "cc", "cpp"], "34", "none"],
-      \ [["css"], "115", "none"],
-      \ [["go"], "130", "none"],
-      \ [["h", "hpp"], "28", "none"],
-      \ [["html"], "110", "none"],
-      \ [["js"], "223", "none"],
-      \ [["json"], "136", "none"],
-      \ [["jsx"], "221", "none"],
-      \ [["log", "md"], "242", "none"],
-      \ [["py"], "214", "none"],
-      \ [["pyc"], "darkGrey", "none"],
-      \ [["rb"], "89", "none"],
-      \ [["scm"], "209", "none"],
-      \ [["scss", "sass", "less"], "115", "none"],
-      \ [["tpl", "jade"], "40", "none"],
-      \ [["ts", "tsx"], "33", "none"],
-      \ [["yaml", "yml"], "136", "none"],
-      \ ]
+au FileType vimfiler exe "syntax match vimfilerColumn__AMFile '.\\+\\.\\%(ac\\|am\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__AMFile ctermfg=249
 
-fun! ConfigureVimfilerColors(colors)
-  for color in a:colors
-    let l:groupName = "vimfiler" . toupper(color[0][0])
-    let l:pattern = ".\+"
-    exe "au FileType vimfiler exe 'syntax match " . l:groupName . " \" " . l:pattern . "\" "
-          \ . "containedin=vimfilerNormalFile "
-          \ . "contains=vimfilerColumn__Type,vimfilerColumn__Size,vimfilerColumn__Time'"
-    exe "hi " . l:groupName  . " ctermfg=" . color[1] . " ctermbg=" . color[2]
-  endfor
-endfunction
+au FileType vimfiler exe "syntax match vimfilerColumn__CFile '.\\+\\.\\%(c\\|cpp\\|cc\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__CFile ctermfg=34
 
-" call ConfigureVimfilerColors(s:colors)
+au FileType vimfiler exe "syntax match vimfilerColumn__DotFile '\\%(.gitignore\\|.editorconfig\\)'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__DotFile ctermfg=darkGrey
+
+au FileType vimfiler exe "syntax match vimfilerColumn__CompiledFile '.\\+\\.\\%(o\\|pyc\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__CompiledFile ctermfg=darkGrey
+
+au FileType vimfiler exe "syntax match vimfilerColumn__GOFile '.\\+\\.go[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__GOFile ctermfg=130
+
+au FileType vimfiler exe "syntax match vimfilerColumn__HeaderFile '.\\+\\.\\%(h\\|hpp\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__HeaderFile ctermfg=28
+
+au FileType vimfiler exe "syntax match vimfilerColumn__HTMLFile '.\\+\\.\\%(html\\|htm\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__HTMLFile ctermfg=130
+
+au FileType vimfiler exe "syntax match vimfilerColumn__JSFile '.\\+\\.js[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__JSFile ctermfg=223
+
+au FileType vimfiler exe "syntax match vimfilerColumn__JSONFile '.\\+\\.json[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__JSONFile ctermfg=136
+
+au FileType vimfiler exe "syntax match vimfilerColumn__JSXFile '.\\+\\.jsx[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__JSXFile ctermfg=221
+
+au FileType vimfiler exe "syntax match vimfilerColumn__MDFile '.\\+\\.\\%(md\\|log\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__MDFile ctermfg=242
+
+au FileType vimfiler exe "syntax match vimfilerColumn__MakefileFile '\\%(CMakefile\\|Makefile\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__MakefileFile ctermfg=249
+
+au FileType vimfiler exe "syntax match vimfilerColumn__PYFile '.\\+\\.py[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__PYFile ctermfg=214
+
+au FileType vimfiler exe "syntax match vimfilerColumn__RBFile '.\\+\\.rb[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__RBFile ctermfg=89
+
+au FileType vimfiler exe "syntax match vimfilerColumn__StyleFile '.\\+\\.\\%(css\\|sass\\|less\\|scss\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__StyleFile ctermfg=115
+
+au FileType vimfiler exe "syntax match vimfilerColumn__TemplateFile '.\\+\\.\\%(tpl\\|jade\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__TemplateFile ctermfg=40
+
+au FileType vimfiler exe "syntax match vimfilerColumn__TSFile '.\\+\\.\\%(ts\\|tsx\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__TSFile ctermfg=33
+
+au FileType vimfiler exe "syntax match vimfilerColumn__YAMLFile '.\\+\\.\\%(yaml\\|yml\\)[^a-zA-Z\s.\\-]'"
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__YAMLFile ctermfg=33
 
 fun! OpenVimFiler()
   if winnr('$') == 1
