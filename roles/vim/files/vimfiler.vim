@@ -98,10 +98,12 @@ autocmd FileType vimfiler map <silent> <buffer> L L
 autocmd FileType vimfiler map <silent> <buffer> M M
 autocmd FileType vimfiler map <silent> <buffer> N <Nop>
 autocmd FileType vimfiler map <silent> <buffer> O <Plug>(vimfiler_expand_tree_recursive)
+autocmd FileType vimfiler map <silent> <buffer> P <Nop>
 autocmd FileType vimfiler map <silent> <buffer> R <Plug>(vimfiler_redraw_screen)
 autocmd FileType vimfiler map <silent> <buffer> S <Nop>
 autocmd FileType vimfiler map <silent> <buffer> T <Nop>
 autocmd FileType vimfiler map <silent> <buffer> U <Nop>
+autocmd FileType vimfiler map <silent> <buffer> Y <Nop>
 
 autocmd FileType vimfiler map <silent> <buffer> <C-g> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-i> <Nop>
