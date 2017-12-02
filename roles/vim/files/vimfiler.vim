@@ -11,6 +11,7 @@ let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
 let g:vimfiler_ignore_pattern = [
       \ '^\.git$',
+      \ '^\.mvn$',
       \ '^node_modules$',
       \ '^tags$',
       \ '^tags\.lock$',
@@ -48,17 +49,21 @@ au FileType vimfiler exe "syntax match vimfilerColumn__HTMLFile '.\\+\\.\\%(html
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__HTMLFile ctermfg=130
 
+au FileType vimfiler exe "syntax match vimfilerColumn__JAVAFile '.\\+\\.java[^a-zA-Z\\s.\\-]'" .
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__JAVAFile ctermfg=146
+
 au FileType vimfiler exe "syntax match vimfilerColumn__JSFile '.\\+\\.js[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
-highlight def vimfilerColumn__JSFile ctermfg=223
+highlight def vimfilerColumn__JSFile ctermfg=150
 
 au FileType vimfiler exe "syntax match vimfilerColumn__JSONFile '.\\+\\.json[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
-highlight def vimfilerColumn__JSONFile ctermfg=136
+highlight def vimfilerColumn__JSONFile ctermfg=71
 
 au FileType vimfiler exe "syntax match vimfilerColumn__JSXFile '.\\+\\.jsx[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
-highlight def vimfilerColumn__JSXFile ctermfg=221
+highlight def vimfilerColumn__JSXFile ctermfg=150
 
 au FileType vimfiler exe "syntax match vimfilerColumn__LUAFile '.\\+\\.lua[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
@@ -97,6 +102,10 @@ highlight def vimfilerColumn__TemplateFile ctermfg=40
 au FileType vimfiler exe "syntax match vimfilerColumn__TSFile '.\\+\\.\\%(ts\\|tsx\\)[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__TSFile ctermfg=33
+
+au FileType vimfiler exe "syntax match vimfilerColumn__XMLFile '.\\+\\.xml[^a-zA-Z\\s.\\-]'" .
+      \ " contained containedin=vimfilerNormalFile"
+highlight def vimfilerColumn__XMLFile ctermfg=136
 
 au FileType vimfiler exe "syntax match vimfilerColumn__YAMLFile '.\\+\\.\\%(yaml\\|yml\\)[^a-zA-Z\\s.\\-]'" .
       \ " contained containedin=vimfilerNormalFile"
