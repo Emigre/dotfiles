@@ -140,6 +140,8 @@ jenv shell 1.7
 - In Preferences > Pointer
   - Remove the defaults
   - Add "Three-finger Tap" to "Send Text \e:w\n"
+- In Preferences > Advanced > Mouse
+  - Set 'Scroll wheel sends arrow keys when in alternate mode' to 'Yes'
 
 ##### VirtualBox
 - In Machine > Settings > General > Advanced select 'Bidirectional' in 'Shared Clipboard'
@@ -164,6 +166,7 @@ https://docs.docker.com/docker-for-mac/
 - In System Preferences
   - In Keyboard
     - Under Shortcuts uncheck 'Mission Control'
+    - Click on 'Modifier Keys...' and Select '^ Control' for the 'Caps Lock Key'
   - In Trackpad
     - Enable 'Tap to click'
   - In Security & Privacy
