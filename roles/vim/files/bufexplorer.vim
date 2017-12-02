@@ -151,6 +151,7 @@ nnoremap <silent> <CR> :bn<CR>
 nnoremap <silent> <c-j> :bn<CR>
 nnoremap <silent> <C-k> :bp<CR>
 
+autocmd BufReadPost quickfix nnoremap <buffer> o <CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <C-X> :ccl<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <C-C> <C-C>
 autocmd BufReadPost quickfix nnoremap <buffer> <C-j> <C-j>
