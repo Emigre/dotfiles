@@ -372,3 +372,16 @@ fun! FindFilesByFileName(filename, ...)
 endfun
 command! -nargs=* Find call FindFilesByFileName(<f-args>)
 nnoremap <leader>f :Find<space>
+
+function! QuickfixToggle()
+  for i in range(1, winnr('$'))
+    let bnum = winbufnr(i)
+    if getbufvar(bnum, '&buftype') == 'quickfix'
+      cclose
+      return
+    endif
+  endfor
+  copen
+endfunction
+
+nnoremap <silent> <leader>j :call QuickfixToggle()<cr>
