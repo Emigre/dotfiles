@@ -52,6 +52,10 @@ set rulerformat=%l,%c%=%P
 set noswapfile
 set nofoldenable
 
+" Enable project-specific .vimrc files
+set exrc
+set secure
+
 " leader key
 let mapleader = "\<Space>"
 
