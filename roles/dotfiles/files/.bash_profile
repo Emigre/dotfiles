@@ -11,6 +11,7 @@ alias vi="vim"
 # C++
 export OF_ROOT="$HOME/Code/c++/openFrameworks"
 alias run='make RunRelease'
+alias vimof="vim --cmd 'let openFrameworks=1'"
 alias depot_tools_start='export PATH="$HOME/Code/c++/depot_tools:$PATH"'
 
 # Javascript
