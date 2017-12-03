@@ -23,6 +23,7 @@ alias npmlg='npm list -g --depth=0'
 alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 
 # Python
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="$HOME/Library/Python/3.4/bin:$PATH"
 
 # Haskell
