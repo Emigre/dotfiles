@@ -8,44 +8,35 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'vim-scripts/Zenburn'
-Plugin 'tpope/vim-repeat'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vinarise.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'groenewege/vim-less'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ap/vim-buftabline'
-Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tommcdo/vim-fugitive-blame-ext'
-Plugin 'godlygeek/csapprox'
+Plugin 'ap/vim-buftabline'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'elzr/vim-json'
 Plugin 'Emigre/vim-javascript'
 Plugin 'Emigre/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'Yggdroot/indentLine'
-Plugin 'elzr/vim-json'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'w0rp/ale'
+Plugin 'ervandew/supertab'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vinarise.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'svermeulen/vim-easyclip'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tommcdo/vim-fugitive-blame-ext'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-scripts/Zenburn'
+Plugin 'w0rp/ale'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 
-
-" Vim config
-" ----------
-"
 set autoread
 set ruler
 set rulerformat=%l,%c%=%P
@@ -179,16 +170,7 @@ endif
 " Font and font size
 " https://github.com/andreberg/Meslo-Font
 " To show current font use :set guifont?
-if has("win32") || has("win16")
-  set guifont=Meslo\ LG\ M:h9
-else
-  set guifont=Meslo\ LG\ M:h12
-endif
-
-if has("win32") || has("win16")
-  set guioptions-=m  "remove menu bar (Windows)
-  set guioptions-=T  "remove toolbar (Windows)
-endif
+set guifont=Meslo\ LG\ M:h12
 
 " status line
 set statusline=%m        "modified flag

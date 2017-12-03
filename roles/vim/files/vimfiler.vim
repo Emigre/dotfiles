@@ -29,7 +29,7 @@ au FileType vimfiler exe "syntax match vimfilerColumn__CFile '.\\+\\.\\%(c\\|cpp
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__CFile ctermfg=34
 
-au FileType vimfiler exe "syntax match vimfilerColumn__DotFile '\\%(.gitignore\\|.gitattributes\\|.editorconfig\\|.clang-format\\|.gdb_history\\)'" .
+au FileType vimfiler exe "syntax match vimfilerColumn__DotFile '\\%(.vimrc\\|.gitignore\\|.gitattributes\\|.editorconfig\\|.clang-format\\|.gdb_history\\)'" .
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__DotFile ctermfg=darkGrey
 
