@@ -174,6 +174,6 @@ autocmd FileType vimfiler map <silent> <buffer> <C-l> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-o> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-v> <C-v>
 
-autocmd FileType vimfiler map <silent> <buffer> <LeftMouse> <Leftmouse>o
-autocmd FileType vimfiler map <silent> <buffer> <2-LeftMouse> <LeftMouse>
+autocmd FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l)
+autocmd FileType vimfiler nmap <silent><buffer> <LeftMouse> <LeftMouse><Plug>(vimfiler_smart_l)
 autocmd FileType vimfiler map <silent> <buffer> <RightMouse> <Nop>

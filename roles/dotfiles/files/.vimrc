@@ -295,11 +295,6 @@ hi Search ctermfg=black ctermbg=108
 " Color of matching brackets
 hi MatchParen ctermbg=none ctermfg=green
 
-" Enter insert mode on click
-nnoremap <RightMouse> i<LeftMouse>
-autocmd FileType nerdtree nnoremap <buffer> <RightMouse> <RightMouse>
-autocmd BufReadPost quickfix nnoremap <buffer> <RightMouse> <RightMouse>
-
 " Change cursor shape between insert and normal mode in iTerm2
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
