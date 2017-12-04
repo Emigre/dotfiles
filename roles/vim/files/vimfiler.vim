@@ -6,6 +6,7 @@ let g:vimfiler_tree_closed_icon = "▸"
 let g:vimfiler_readonly_file_icon = "×"
 let g:vimfiler_file_icon = " "
 let g:vimfiler_marked_file_icon = "░"
+let g:vimfiler_expand_jump_to_first_child = 0
 
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
@@ -173,5 +174,6 @@ autocmd FileType vimfiler map <silent> <buffer> <C-l> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-o> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-v> <C-v>
 
-autocmd FileType vimfiler map <silent> <buffer> <2-LeftMouse> <LeftMouse>o
+autocmd FileType vimfiler map <silent> <buffer> <LeftMouse> <Leftmouse>o
+autocmd FileType vimfiler map <silent> <buffer> <2-LeftMouse> <LeftMouse>
 autocmd FileType vimfiler map <silent> <buffer> <RightMouse> <Nop>

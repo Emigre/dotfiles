@@ -37,6 +37,7 @@ homebrew_packages:
     - yarn
   home:
     - android-sdk
+    - arp-scan
     - cabal-install
     - gcc
     - cgdb
