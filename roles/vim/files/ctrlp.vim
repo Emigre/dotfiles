@@ -6,9 +6,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](' . join([
     \ '\.cabal-sandbox',
     \ '\.git',
+    \ '\.temp',
     \ '\.stack-work',
     \ '\.xcodeproj',
     \ 'android',
+    \ 'assets',
     \ 'bin',
     \ 'build',
     \ 'CMakeFiles',

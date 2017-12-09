@@ -8,6 +8,12 @@ let g:vimfiler_file_icon = " "
 let g:vimfiler_marked_file_icon = "░"
 let g:vimfiler_expand_jump_to_first_child = 0
 
+if system('scutil --get ComputerName') == "Gaspar’s MacBook Pro\n"
+  let g:vimfiler_window_width = 40
+else
+  let g:vimfiler_window_width = 40
+endif
+
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
 let g:vimfiler_ignore_pattern = [
@@ -54,7 +60,7 @@ au FileType vimfiler exe "syntax match vimfilerColumn__JAVAFile '.\\+\\.java[^a-
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__JAVAFile ctermfg=146
 
-au FileType vimfiler exe "syntax match vimfilerColumn__JSFile '.\\+\\.js[^a-zA-Z\\s.\\-]'" .
+au FileType vimfiler exe "syntax match vimfilerColumn__JSFile '.\\+\\.js\\>'" .
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__JSFile ctermfg=150
 
@@ -112,18 +118,50 @@ au FileType vimfiler exe "syntax match vimfilerColumn__YAMLFile '.\\+\\.\\%(yaml
       \ " contained containedin=vimfilerNormalFile"
 highlight def vimfilerColumn__YAMLFile ctermfg=33
 
-fun! OpenVimFiler()
-  if winnr('$') == 1
-    execute "VimFilerExplorer -winwidth=40"
-  else
+fun! IsVimFilerOpen()
+  for i in range(1, winnr('$'))
+      let bnum = winbufnr(i)
+      if getbufvar(bnum, '&filetype') == 'vimfiler'
+          return i
+      endif
+  endfor
+  return 0
+endf
+
+fun! ExecuteVimFiler(...)
+  let options = a:0 ? (' ' . a:1) : ''
+  execute 'VimFiler -explorer -winwidth=' . g:vimfiler_window_width . options
+endf
+
+fun! EnterAndExitVimFiler()
+  if &filetype == 'vimfiler'
     execute "wincmd w"
+  else
+    let vimfilerwindow = IsVimFilerOpen()
+    if vimfilerwindow
+      execute vimfilerwindow 'wincmd w'
+    else
+      call ExecuteVimFiler()
+    endif
   endif
 endf
 
-nnoremap <silent> <C-h> :call OpenVimFiler()<CR>
-nnoremap <silent> <BS> :call OpenVimFiler()<CR>
-nnoremap <silent> <leader>t :VimFilerExplorer -winwidth=40 -find<CR>
-nnoremap <silent> <leader>h :VimFilerExplorer -winwidth=40<CR>
+fun! FindInVimFiler()
+  if &filetype == 'vimfiler'
+    execute 'wincmd w'
+  else
+    call ExecuteVimFiler('-find')
+  endif
+endf
+
+fun! ToggleVimFiler()
+  call ExecuteVimFiler()
+endf
+
+nnoremap <silent> <C-h> :call EnterAndExitVimFiler()<CR>
+nnoremap <silent> <BS> :call EnterAndExitVimFiler()<CR>
+nnoremap <silent> <leader>h :call FindInVimFiler()<CR>
+nnoremap <silent> <leader>t :call ToggleVimFiler()<CR>
 
 autocmd FileType vimfiler map <silent> <buffer> <C-x> <C-w><C-c>
 autocmd FileType vimfiler map <silent> <buffer> <BS> <C-w><C-w>
@@ -174,6 +212,6 @@ autocmd FileType vimfiler map <silent> <buffer> <C-l> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-o> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <C-v> <C-v>
 
-autocmd FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l)
-autocmd FileType vimfiler nmap <silent><buffer> <LeftMouse> <LeftMouse><Plug>(vimfiler_smart_l)
+nmap <LeftMouse> <LeftMouse><Plug>(vimfiler_smart_l)
+autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Nop>
 autocmd FileType vimfiler map <silent> <buffer> <RightMouse> <Nop>

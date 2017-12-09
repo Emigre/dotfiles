@@ -355,15 +355,43 @@ endfun
 command! -nargs=* Find call FindFilesByFileName(<f-args>)
 nnoremap <leader>f :Find<space>
 
-function! QuickfixToggle()
+fun! IsQuickFixOpen()
   for i in range(1, winnr('$'))
-    let bnum = winbufnr(i)
-    if getbufvar(bnum, '&buftype') == 'quickfix'
-      cclose
-      return
-    endif
+      let bnum = winbufnr(i)
+      if getbufvar(bnum, '&buftype') == 'quickfix'
+          return i
+      endif
   endfor
-  copen
+  return 0
+endf
+
+function! EnterAndExitQuickFix()
+  if &buftype == 'quickfix'
+    execute "wincmd k"
+  else
+    let quickfixwindow = IsQuickFixOpen()
+    if quickfixwindow
+      execute quickfixwindow 'wincmd w'
+    else
+      cope
+    endif
+  endif
 endfunction
 
-nnoremap <silent> <leader>j :call QuickfixToggle()<cr>
+function! ToggleQuickFix()
+  if IsQuickFixOpen()
+    ccl
+  else
+    cope
+  endif
+endfunction
+
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-X> :ccl<CR>
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-C> <C-C>
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-j> <C-w>k
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-k> k
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> o <CR>
+autocmd BufReadPost quickfix nnoremap <silent> <buffer> <CR> <CR>
+
+nnoremap <silent> <C-g> :call EnterAndExitQuickFix()<cr>
+nnoremap <silent> <leader>j :call ToggleQuickFix()<cr>
