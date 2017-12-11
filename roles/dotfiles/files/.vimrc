@@ -393,5 +393,5 @@ autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-k> k
 autocmd BufReadPost quickfix nnoremap <silent> <buffer> o <CR>
 autocmd BufReadPost quickfix nnoremap <silent> <buffer> <CR> <CR>
 
-nnoremap <silent> <C-g> :call EnterAndExitQuickFix()<cr>
-nnoremap <silent> <leader>j :call ToggleQuickFix()<cr>
+nnoremap <silent> <C-g> :call EnterAndExitQuickFix()<CR>
+nnoremap <silent> <leader>j :call ToggleQuickFix()<CR>

@@ -5,6 +5,7 @@
 [alias]
   a = "add"
   b = "branch"
+  ba = "branch --all"
   bd = "branch -D"
   bv = "branch -vv"
   ca = "!git commit --amend "
