@@ -63,9 +63,12 @@ filetype plugin indent on    " required
 
 set smartindent
 
-autocmd Filetype java setlocal ts=4 sw=4 expandtab
-autocmd Filetype haskell setlocal ts=4 sw=4 expandtab
-autocmd Filetype python setlocal ts=4 sw=4 expandtab
+aug TabSettings
+  au!
+  au Filetype java setlocal ts=4 sw=4 expandtab
+  au Filetype haskell setlocal ts=4 sw=4 expandtab
+  au Filetype python setlocal ts=4 sw=4 expandtab
+aug END
 
 " The width of a TAB is set to 4
 " Still it is a \t. It is just that
@@ -102,8 +105,7 @@ set listchars=tab:\▹\ "
 set list
 hi SpecialKey ctermfg=8
 
-" maps
-function! MySearch(searchText, searchForward, mode)
+fun! s:mySearch(searchText, searchForward, mode)
   let command = a:searchForward ? "/" : "?"
   let search = join(["normal! ", a:mode, command, a:searchText, "\<CR>"], "")
   set whichwrap+=h,l
@@ -115,7 +117,7 @@ function! MySearch(searchText, searchForward, mode)
   endtry
   set whichwrap-=h,l
   set wrapscan
-endfunction
+endf
 
 " searches for end of paragraph (blank line)
 nnoremap <C-f> }
@@ -127,16 +129,16 @@ nnoremap <c-v> <c-e>
 nnoremap <c-v> <c-e>
 
 " searches for parenthesis
-nnoremap <silent> ) :call MySearch("(", 1, " ")<CR>
-vnoremap <silent> ) :<C-u>call MySearch("(", 1, "gvh ")<CR>
-nnoremap <silent> ( :call MySearch("(", 0, " ")<CR>
-vnoremap <silent> ( :<C-u>call MySearch("(", 0, "gvh ")<CR>
+nnoremap <silent> ) :call <SID>mySearch('(', 1, ' ')<CR>
+vnoremap <silent> ) :<C-u>call <SID>mySearch('(', 1, 'gvh ')<CR>
+nnoremap <silent> ( :call <SID>mySearch('(', 0, " ")<CR>
+vnoremap <silent> ( :<C-u>call <SID>mySearch('(', 0, 'gvh ')<CR>
 
 " searches for curly bracket
-nnoremap <silent> + :call MySearch("{", 1, " ")<CR>
-vnoremap <silent> + :<C-u>call MySearch("{", 1, "gv ")<CR>
-nnoremap <silent> _ :call MySearch("{", 0, " ")<CR>
-vnoremap <silent> _ :<C-u>call MySearch("{", 0, "gv ")<CR>
+nnoremap <silent> + :call <SID>mySearch('{', 1, ' ')<CR>
+vnoremap <silent> + :<C-u>call <SID>mySearch('{', 1, 'gv ')<CR>
+nnoremap <silent> _ :call <SID>mySearch('{', 0, ' ')<CR>
+vnoremap <silent> _ :<C-u>call <SID>mySearch('{', 0, 'gv ')<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
@@ -161,11 +163,11 @@ set timeoutlen=2000 " Wait {num} ms before timing out a mapping
 " https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
 if !has('gui_running')
   set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
+  aug FastEscape
+    au!
     au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
-  augroup END
+  aug END
 endif
 
 " Font and font size
@@ -221,35 +223,32 @@ set undofile
 " Centralize backups, swapfiles and undo history
 " To create directories for backups, colors, swaps and undo.
 " $ cd ~/.vim ; mkdir backups ; mkdir colors ; mkdir swaps; mkdir undo;
-if has("win32") || has("win16")
-else
-  set backupdir=~/.vim/backups
-  set directory=~/.vim/swaps
-  if exists("&undodir")
-    set undodir=~/.vim/undo
-  endif
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+  set undodir=~/.vim/undo
 endif
 
 " Automatic commands
-if has("autocmd")
+if has('autocmd')
   " Enable file type detection
   filetype on
   " Treat .json files as .js
-  autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  au BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
 " Return indent (all whitespace at start of a line), converted from
 " tabs to spaces if what = 1, or from spaces to tabs otherwise.
 " When converting to tabs, result has no redundant spaces.
-function! Indenting(indent, what, cols)
+fun! Indenting(indent, what, cols)
   let spccol = repeat(' ', a:cols)
   let result = substitute(a:indent, spccol, '\t', 'g')
   let result = substitute(result, ' \+\ze\t', '', 'g')
   if a:what == 1
     let result = substitute(result, '\t', spccol, 'g')
   endif
-  return result
-endfunction
+  retu result
+endf
 
 " Convert whitespace used for indenting (before first non-whitespace).
 " what = 0 (convert spaces to tabs), or 1 (convert tabs to spaces).
@@ -308,90 +307,99 @@ endif
 let g:ackprg = 'ag --ignore-case --ignore-dir={.git,node_modules,docs} --vimgrep --hidden'
 
 " Shortcut to substitute
-:nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>
+nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>
 
 " use ag but only return one match per file
-fun! SearchContentAndShowFiles(pattern, ...)
+fun! s:searchContentAndShowFiles(pattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  silent exe '!' . g:ackprg . " --print0 --files-with-matches '" .
+        \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   botright cope
   call delete(error_file)
   redraw!
-endfun
-command! -nargs=* Search call SearchContentAndShowFiles(<f-args>)
+endf
+command! -nargs=* Search call <SID>searchContentAndShowFiles(<f-args>)
 nnoremap <leader>s :Search<space>
 
 " search for text in files, populate the quickfix list with them and run replace on it
-fun! SearchContentAndReplace(pattern, newpattern, ...)
+fun! s:searchContentAndReplace(pattern, newpattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  silent exe "!".g:ackprg." --print0 --files-with-matches '".search."' ".path." | xargs -0 file | sed 's/:/:1:/' > ".error_file
+  silent exe '!' . g:ackprg . " --print0 --files-with-matches '" .
+        \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   botright cope
   call delete(error_file)
   redraw!
-  exe 'cdo %s/\v\c'.a:pattern.'/'.a:newpattern.'/gci | update'
-endfun
-command! -nargs=* Replace call SearchContentAndReplace(<f-args>)
+  exe 'cdo %s/\v\c' . a:pattern . '/' . a:newpattern . '/gci | update'
+endf
+command! -nargs=* Replace call <SID>searchContentAndReplace(<f-args>)
 nnoremap <leader>r :Replace<space>
 
 " find files by filename and populate the quickfix list with them
-fun! FindFilesByFileName(filename, ...)
+fun! s:findFilesByFileName(filename, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '.' : a:1
-  silent exe '!find '.path.' -type d \( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) -prune -o -iname "'.a:filename.'" -print0 | xargs -0 file | sed "s/:/:1:/" > '.error_file
+  silent exe '!find ' . path . ' -type d ' .
+        \ '\( -path .*/node_modules -o -path .*/.git -o -path .*/bower_components \) ' .
+        \ '-prune -o -iname "' . a:filename . '" -print0 ' .
+        \ '| xargs -0 file | sed "s/:/:1:/" > ' . error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
   copen
   call delete(error_file)
   redraw!
-endfun
-command! -nargs=* Find call FindFilesByFileName(<f-args>)
+endf
+command! -nargs=* Find call <SID>findFilesByFileName(<f-args>)
 nnoremap <leader>f :Find<space>
 
-fun! IsQuickFixOpen()
+fun! s:isQuickFixOpen()
   for i in range(1, winnr('$'))
-      let bnum = winbufnr(i)
-      if getbufvar(bnum, '&buftype') == 'quickfix'
-          return i
-      endif
+    let bnum = winbufnr(i)
+    if getbufvar(bnum, '&buftype') ==# 'quickfix'
+      retu i
+    endif
   endfor
-  return 0
 endf
 
-function! EnterAndExitQuickFix()
-  if &buftype == 'quickfix'
-    execute "wincmd k"
+fun! s:enterAndExitQuickFix()
+  echo &buftype
+  if &buftype ==# 'quickfix'
+    exe 'wincmd k'
   else
-    let quickfixwindow = IsQuickFixOpen()
+    let quickfixwindow = s:isQuickFixOpen()
     if quickfixwindow
-      execute quickfixwindow 'wincmd w'
+      exe quickfixwindow 'wincmd w'
     else
       cope
     endif
   endif
-endfunction
+endf
 
-function! ToggleQuickFix()
-  if IsQuickFixOpen()
+fun! s:toggleQuickFix()
+  if <SID>isQuickFixOpen()
     ccl
   else
     cope
   endif
-endfunction
+endf
 
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-X> :ccl<CR>
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-C> <C-C>
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-j> <C-w>k
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> <C-k> k
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> o <CR>
-autocmd BufReadPost quickfix nnoremap <silent> <buffer> <CR> <CR>
+nnoremap <silent> <leader>j :call <SID>toggleQuickFix()<CR>
+nnoremap <silent> <CR> :call <SID>enterAndExitQuickFix()<CR>
 
-nnoremap <silent> <C-g> :call EnterAndExitQuickFix()<CR>
-nnoremap <silent> <leader>j :call ToggleQuickFix()<CR>
+aug MyQuickfixMaps
+  au!
+  au BufReadPost quickfix nnoremap <silent> <buffer> <C-X> :ccl<CR>
+  au BufReadPost quickfix nnoremap <silent> <buffer> <C-C> <C-C>
+  au BufReadPost quickfix nnoremap <silent> <buffer> <C-j> <C-w>k
+  au BufReadPost quickfix nnoremap <silent> <buffer> <C-k> k
+  au BufReadPost quickfix nnoremap <silent> <buffer> o <CR>
+  au BufReadPost quickfix nnoremap <silent> <buffer> <CR> :call <SID>enterAndExitQuickFix()<CR>
+  au FileType vimfiler nnoremap <silent> <buffer> <CR> :call <SID>enterAndExitQuickFix()<CR>
+aug END

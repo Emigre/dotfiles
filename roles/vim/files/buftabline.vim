@@ -10,7 +10,7 @@ fun! GoToTab(n)
   if a:n <= len(buftabline#user_buffers())
     exe "normal \<Plug>BufTabLine.Go(".a:n.")"
   endif
-endfun
+endf
 
 nmap <silent> <leader>1 :call GoToTab(1)<cr>
 nmap <silent> <leader>2 :call GoToTab(2)<cr>

@@ -56,12 +56,12 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_status_func = { 'main': 'CtrlPStatusLine' }
 
 " Main statusline
-function! CtrlPStatusLine(...)
+fun! CtrlPStatusLine(...)
   let regex = a:3 ? '%#LineNr# regex %*' : ''
-  let item = ' %#Character# '.a:5.' %*'
-  let dir = ' %=%<%#LineNr# '.getcwd().' %*'
+  let item = ' %#Character# ' . a:5 . ' %*'
+  let dir = ' %=%<%#LineNr# ' . getcwd() . ' %*'
   retu regex.item.dir
-endfunction
+endf
 
 :command CtrlPRefresh CtrlPClearCache
 

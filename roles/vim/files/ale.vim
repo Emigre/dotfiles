@@ -16,20 +16,20 @@ nmap <silent> \ <Plug>(ale_previous_wrap)
 nmap <silent> ' <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
-\ 'c': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
-\ 'cpp': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
-\ 'haskell': ['hlint'],
-\ 'java': ['javac'],
-\ 'javascript': ['eslint'],
-\ 'jsx': ['eslint'],
-\ 'python': ['flake8', 'pylint'],
-\}
+      \ 'c': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
+      \ 'cpp': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
+      \ 'haskell': ['hlint'],
+      \ 'java': ['javac'],
+      \ 'javascript': ['eslint'],
+      \ 'jsx': ['eslint'],
+      \ 'python': ['flake8', 'pylint'],
+      \}
 
 let g:ale_java_javac_classpath = "./src/main/java/"
-let g:ale_java_javac_options = ""
+let g:ale_java_javac_options = ''
 
-let g:ale_python_pylint_options = "--disable=".
-      \"missing-docstring,".
-      \"too-few-public-methods,".
-      \"invalid-name,".
-      \"no-self-use"
+let g:ale_python_pylint_options = '--disable=' .
+      \ 'missing-docstring,' .
+      \ 'too-few-public-methods,' .
+      \ 'invalid-name,' .
+      \ 'no-self-use'

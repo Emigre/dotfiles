@@ -18,7 +18,7 @@ command! -nargs=? -complete=buffer -bang Bufonly
 command! -nargs=? -complete=buffer -bang BufOnly
   \ :call BufOnly('<args>', '<bang>')
 
-function! BufOnly(buffer, bang)
+fun! BufOnly(buffer, bang)
   if a:buffer == ''
     " No buffer provided, use the current buffer.
     let buffer = bufnr('%')
@@ -34,7 +34,7 @@ function! BufOnly(buffer, bang)
     echohl ErrorMsg
     echomsg "No matching buffer for" a:buffer
     echohl None
-    return
+    retu
   endif
 
   let last_buffer = bufnr('$')
@@ -64,7 +64,7 @@ function! BufOnly(buffer, bang)
     echomsg delete_count "buffers deleted"
   endif
 
-endfunction
+endf
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
 " Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
@@ -88,7 +88,7 @@ endfunction
 " or the previous buffer (:bp), or a blank buffer if no previous.
 " Command ':Bclose!' is the same, but executes ':bd!' (discard changes).
 " An optional argument can specify which buffer to close (name or number).
-function! s:Bclose(bang, buffer)
+fun! s:Bclose(bang, buffer)
   if empty(a:buffer)
     let btarget = bufnr('%')
   elseif a:buffer =~ '^\d\+$'
@@ -98,21 +98,21 @@ function! s:Bclose(bang, buffer)
   endif
   if btarget < 0
     call s:Warn('No matching buffer for '.a:buffer)
-    return
+    retu
   endif
   if empty(a:bang) && getbufvar(btarget, '&modified')
     call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
-    return
+    retu
   endif
   " Numbers of windows that view target buffer which we will delete.
   let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
   if !g:bclose_multiple && len(wnums) > 1
     call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
-    return
+    retu
   endif
   let wcurrent = winnr()
   for w in wnums
-    execute w.'wincmd w'
+    exe w.'wincmd w'
     let prevbuf = bufnr('#')
     if prevbuf > 0 && buflisted(prevbuf) && prevbuf != w
       buffer #
@@ -127,26 +127,25 @@ function! s:Bclose(bang, buffer)
       " Take the first buffer, if any (could be more intelligent).
       let bjump = (bhidden + blisted + [-1])[0]
       if bjump > 0
-        execute 'buffer '.bjump
+        exe 'buffer '.bjump
       else
-        execute 'enew'.a:bang
+        exe 'enew'.a:bang
       endif
     endif
   endfor
-  execute 'bdelete'.a:bang.' '.btarget
-  execute wcurrent.'wincmd w'
-endfunction
+  exe 'bdelete'.a:bang.' '.btarget
+  exe wcurrent.'wincmd w'
+endf
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
 
 " Exclude quickfix buffer from `:bnext` `:bprevious`
-augroup qf
-    autocmd!
-    autocmd FileType qf set nobuflisted
-augroup END
+aug MyBufExplorerSettings
+  au!
+  au FileType qf set nobuflisted
+aug END
 
 nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
 
-nnoremap <silent> <CR> :bn<CR>
 nnoremap <silent> <c-j> :bn<CR>
 nnoremap <silent> <C-k> :bp<CR>
