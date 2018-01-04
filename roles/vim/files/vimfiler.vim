@@ -38,7 +38,7 @@ fun! s:defineSyntaxFromRegex(id, regex)
 endf
 
 fun! s:defineSyntax(id, extension)
-  retu <SID>defineSyntaxFromRegex(a:id, '.+\.' . a:extension . '[ $]')
+  retu <SID>defineSyntaxFromRegex(a:id, '.+\.' . a:extension . '( |$)')
 endf
 
 au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
@@ -62,7 +62,7 @@ au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID
 au FileType vimfiler exe <SID>defineSyntax('xml', 'xml') | call <SID>defineColor('xml', 136)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('make',
-      \ '\s+(CMakeLists\.txt|Makefile|.+\.cmake)[ $]') | call <SID>defineColor('make', 249)
+      \ '\s+(CMakeLists\.txt|Makefile|.+\.cmake)( |$)') | call <SID>defineColor('make', 249)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
@@ -126,6 +126,7 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> gs <Nop>
   au FileType vimfiler noremap <silent> <buffer> gS <Nop>
   au FileType vimfiler noremap <silent> <buffer> g<C-g> <Nop>
+  au FileType vimfiler noremap <silent> <buffer> h <Nop>
   au FileType vimfiler noremap <silent> <buffer> n n
   au FileType vimfiler nmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_current_line)
   au FileType vimfiler vmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_selected_lines)
@@ -156,4 +157,6 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> <C-v> <C-v>
   au FileType vimfiler noremap <buffer> <2-LeftMouse> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <RightMouse> <Nop>
+
+  au FileType unite_exrename noremap <silent> <buffer> <BS> <BS>
 aug END

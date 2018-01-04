@@ -271,7 +271,7 @@ command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q
 " :so $VIMRUNTIME/syntax/hitest.vim
 
 " yanks filename to the clipboard
-nnoremap <leader>y :let @+ = expand('%:p')<CR>
+nnoremap <silent> <leader>y :let @+ = expand('%:p')<CR>
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> § :b#<CR>
@@ -372,6 +372,7 @@ fun! s:enterAndExitQuickFix()
   echo &buftype
   if &buftype ==# 'quickfix'
     exe 'wincmd k'
+    exe 'wincmd l'
   else
     let quickfixwindow = s:isQuickFixOpen()
     if quickfixwindow
@@ -390,7 +391,7 @@ fun! s:toggleQuickFix()
   endif
 endf
 
-nnoremap <silent> <leader>j :call <SID>toggleQuickFix()<CR>
+nnoremap <silent> <leader>m :call <SID>toggleQuickFix()<CR>
 nnoremap <silent> <CR> :call <SID>enterAndExitQuickFix()<CR>
 
 aug MyQuickfixMaps
