@@ -1,0 +1,14 @@
+- name: Ensure all needed vim snippet folders exist and have the right permissions
+  file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+  with_items:
+    - .vim
+    - .vim/vim-snippets
+
+- name: Symlink my vim snippets
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/.vim/vim-snippets/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ./*.snippets
