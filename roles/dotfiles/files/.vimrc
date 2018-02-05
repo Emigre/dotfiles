@@ -270,8 +270,11 @@ command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q
 " to show all available colors:
 " :so $VIMRUNTIME/syntax/hitest.vim
 
-" yanks filename to the clipboard
-nnoremap <silent> <leader>y :let @+ = expand('%:p')<CR>
+" yanks path to the clipboard
+nnoremap <silent> <leader>y :let @+ = expand('%')<CR>
+
+" yanks full path to the clipboard
+nnoremap <silent> <leader>Y :let @+ = expand('%:p')<CR>
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> § :b#<CR>
