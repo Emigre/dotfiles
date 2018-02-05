@@ -128,6 +128,7 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> g<C-g> <Nop>
   au FileType vimfiler noremap <silent> <buffer> h <Nop>
   au FileType vimfiler noremap <silent> <buffer> n n
+  au FileType vimfiler noremap <silent> <buffer> p <Nop>
   au FileType vimfiler nmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_current_line)
   au FileType vimfiler vmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_selected_lines)
   au FileType vimfiler nmap <silent> <buffer> u <Plug>(vimfiler_clear_mark_all_lines)
