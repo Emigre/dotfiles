@@ -9,9 +9,9 @@ alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
 alias vi="vim"
 
 # C++
-export OF_ROOT="$HOME/Code/c++/openFrameworks"
-alias run='make RunRelease'
+alias of_run='make RunRelease'
 alias depot_tools_start='export PATH="$HOME/Code/c++/depot_tools:$PATH"'
+export OF_ROOT="$HOME/Code/c++/openFrameworks"
 
 # Javascript
 if [ $IS_HOME == true ] ; then
@@ -55,20 +55,23 @@ alias psql_status='pg_ctl status | egrep pg_ctl'
 alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
-# Git
-# git completion | https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# Git completion
 [ -f "$HOME/.git-completion.bash" ] && source "$HOME/.git-completion.bash"
 
-# Use entr to run commands on file changes
-function e() {
-  if [[ $# -eq 0 ]] ; then
-    entr
-  else
-    while true; do
-      ag -l | entr -c -d $@
-    done
-  fi
-}
+# `filewatch` runs a command on files changes
+[ -f "$HOME/.filewatch.bash" ] && source "$HOME/.filewatch.bash"
+
+# `autostart` creates files and folders for an Autotools project
+[ -f "$HOME/.autostart.bash" ] && source "$HOME/.autostart.bash"
+
+# `cmakestart` creates files and folders for a CMake project
+[ -f "$HOME/.cmakestart.bash" ] && source "$HOME/.cmakestart.bash"
+
+# `cm` runs CMake in a build folder
+[ -f "$HOME/.cm.bash" ] && source "$HOME/.cm.bash"
+
+# `run` builds a CMake folder and watch for source code changes
+[ -f "$HOME/.run.bash" ] && source "$HOME/.run.bash"
 
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
