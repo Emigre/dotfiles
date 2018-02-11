@@ -407,3 +407,6 @@ aug MyQuickfixMaps
   au BufReadPost quickfix nnoremap <silent> <buffer> <CR> :call <SID>enterAndExitQuickFix()<CR>
   au FileType vimfiler nnoremap <silent> <buffer> <CR> :call <SID>enterAndExitQuickFix()<CR>
 aug END
+
+map <ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-D>
