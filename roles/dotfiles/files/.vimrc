@@ -129,16 +129,16 @@ nnoremap <c-v> <c-e>
 nnoremap <c-v> <c-e>
 
 " searches for parenthesis
-nnoremap <silent> ) :call <SID>mySearch('(', 1, ' ')<CR>
-vnoremap <silent> ) :<C-u>call <SID>mySearch('(', 1, 'gvh ')<CR>
-nnoremap <silent> ( :call <SID>mySearch('(', 0, " ")<CR>
-vnoremap <silent> ( :<C-u>call <SID>mySearch('(', 0, 'gvh ')<CR>
+nnoremap <silent> ] :call <SID>mySearch('(', 1, ' ')<CR>
+vnoremap <silent> ] :<C-u>call <SID>mySearch('(', 1, 'gvh ')<CR>
+nnoremap <silent> [ :call <SID>mySearch('(', 0, " ")<CR>
+vnoremap <silent> [ :<C-u>call <SID>mySearch('(', 0, 'gvh ')<CR>
 
 " searches for curly bracket
-nnoremap <silent> + :call <SID>mySearch('{', 1, ' ')<CR>
-vnoremap <silent> + :<C-u>call <SID>mySearch('{', 1, 'gv ')<CR>
-nnoremap <silent> _ :call <SID>mySearch('{', 0, ' ')<CR>
-vnoremap <silent> _ :<C-u>call <SID>mySearch('{', 0, 'gv ')<CR>
+nnoremap <silent> } :call <SID>mySearch('{', 1, ' ')<CR>
+vnoremap <silent> } :<C-u>call <SID>mySearch('{', 1, 'gv ')<CR>
+nnoremap <silent> { :call <SID>mySearch('{', 0, ' ')<CR>
+vnoremap <silent> { :<C-u>call <SID>mySearch('{', 0, 'gv ')<CR>
 
 " Insert a new line without entering insert mode
 nnoremap <leader>o o<ESC>
