@@ -67,7 +67,7 @@ aug TabSettings
   au!
   au Filetype java setlocal ts=4 sw=4 expandtab
   au Filetype haskell setlocal ts=4 sw=4 expandtab
-  au Filetype python setlocal ts=4 sw=4 expandtab
+  au Filetype python setlocal ts=4 sts=4 sw=4 expandtab
 aug END
 
 " The width of a TAB is set to 4

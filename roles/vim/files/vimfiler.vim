@@ -25,6 +25,8 @@ let g:vimfiler_ignore_pattern = [
       \ '^tags\.temp$',
       \ '^\.DS_Store$',
       \ '^autom4te\.cache$',
+      \ '\.pyc$',
+      \ '\.o$',
       \ ]
 
 fun! s:defineColor(id, ctermfg)
