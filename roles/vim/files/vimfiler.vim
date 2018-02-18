@@ -17,6 +17,7 @@ endif
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
 let g:vimfiler_ignore_pattern = [
+      \ '^\.DS_Store$',
       \ '^\.deps$',
       \ '^\.git$',
       \ '^\.mvn$',

@@ -25,13 +25,20 @@ alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow statu
 # Python
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="$HOME/Library/Python/3.4/bin:$PATH"
+alias use_python_2='unalias python'
+alias use_python_3='alias python="python3"'
+use_python_3
 
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
+if [ $IS_HOME == true ] ; then
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
+else
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home"
+fi
 export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
 export M2=$M2_HOME/bin

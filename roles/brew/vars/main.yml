@@ -24,6 +24,7 @@ homebrew_packages:
     - jenv
     - maven
     - node
+    - pyenv
     - python3
     - react-native-cli
     - reattach-to-user-namespace
