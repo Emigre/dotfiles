@@ -23,11 +23,9 @@ alias npmlg='npm list -g --depth=0'
 alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 
 # Python
-export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-export PATH="$HOME/Library/Python/3.4/bin:$PATH"
-alias use_python_2='unalias python'
-alias use_python_3='alias python="python3"'
-use_python_3
+export PIP_CONFIG_FILE="$HOME/.pip_conf"
+alias python='python3'
+alias pip='pip3'
 
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"

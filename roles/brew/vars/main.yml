@@ -24,7 +24,7 @@ homebrew_packages:
     - jenv
     - maven
     - node
-    - pyenv
+    - python
     - python3
     - react-native-cli
     - reattach-to-user-namespace
@@ -32,7 +32,7 @@ homebrew_packages:
     - tidy-html5
     - tree
     - tmux
-    - vim
+    - { name: vim, install_options: "with-python3" }
     - watchman
     - wget
     - yarn
