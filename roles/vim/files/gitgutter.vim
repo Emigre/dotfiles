@@ -1,4 +1,5 @@
 set signcolumn=yes
+set updatetime=100
 let g:gitgutter_override_sign_column_highlight = 0
 
 hi SignColumn ctermbg=237
