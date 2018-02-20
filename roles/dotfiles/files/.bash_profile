@@ -1,5 +1,3 @@
-export PATH="/usr/local/bin:$PATH"
-
 [ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
 
 alias la="ls -la"
@@ -15,7 +13,7 @@ export OF_ROOT="$HOME/Code/c++/openFrameworks"
 
 # Javascript
 if [ $IS_HOME == true ] ; then
-  export PATH="$HOME/.node/bin:$PATH"
+  export PATH="$PATH:$HOME/.node/bin"
 fi
 export PATH="$PATH:$HOME/.yarn/bin"
 alias npml='npm list --depth=0'
