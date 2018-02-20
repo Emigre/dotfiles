@@ -34,6 +34,7 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vinarise.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'vim-scripts/Zenburn'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -65,9 +66,9 @@ set smartindent
 
 aug TabSettings
   au!
-  au Filetype java setlocal ts=4 sw=4 expandtab
-  au Filetype haskell setlocal ts=4 sw=4 expandtab
-  au Filetype python setlocal ts=4 sts=4 sw=4 expandtab
+  au Filetype java setlocal ts=4 sw=4 et
+  au Filetype haskell setlocal ts=4 sw=4 et
+  au Filetype python setlocal ts=4 sts=4 sw=4 et
 aug END
 
 " The width of a TAB is set to 4
