@@ -102,7 +102,7 @@ if &term =~ '256color'
 endif
 
 " Set a character for the tabs
-set listchars=tab:\▹\ "
+set listchars=nbsp:␣,tab:\▹\ "
 set list
 hi SpecialKey ctermfg=8
 
