@@ -92,7 +92,7 @@ set expandtab
 set nopaste
 
 " Automatically removes all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :silent %s/\s\+$//e
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
