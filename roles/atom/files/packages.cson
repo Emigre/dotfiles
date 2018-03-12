@@ -1,8 +1,0 @@
-packages: [
-  "language-emacs-lisp"
-  "package-sync"
-  "git-blame"
-  "git-diff-details"
-  "git-time-machine"
-  "linter"
-]

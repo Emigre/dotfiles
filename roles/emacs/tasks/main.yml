@@ -1,5 +1,0 @@
-- name: Ensure the .emacs.d folder exists and has the right permissions
-  file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
-  sudo: yes
-  with_items:
-    - .emacs.d
