@@ -1,5 +1,5 @@
 # Uses entr to run commands on file changes
-function filewatch() {
+function watch_changes() {
   local ag_path=""
   if [[ `basename "$PWD"` == 'build' ]]; then
     ag_path=".."

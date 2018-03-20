@@ -7,9 +7,9 @@
     - is_home: "{{ computer_name=='Gaspar’s MacBook Pro' }}"
     - is_work: "{{ computer_name!='Gaspar’s MacBook Pro' }}"
   roles:
-    - common
     - dotfiles
     - brew
+    - scripts
     - npm
     - gem
     - pip

@@ -1,3 +1,35 @@
+- name: Ensure proper permissions in /usr/local
+  file:
+    path: "/usr/local"
+    group: admin
+    mode: 0775
+    state: directory
+    owner: "{{ user }}"
+  sudo: yes
+
+- name: Ensure proper permissions in /usr/local/bin
+  file:
+    path: "/usr/local/bin"
+    group: admin
+    mode: 0775
+    state: directory
+    recurse: true
+    owner: "{{ user }}"
+  sudo: yes
+
+- name: Ensure the Code folder exists and has the right permissions
+  file: "path={{ home }}/Code state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Ensure the depot tools are cloned
+  git:
+    repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    version: master
+    dest: "{{ home }}/Code/depot_tools"
+    update: no
+    accept_hostkey: yes
+  when: is_home
+
 - name: Symlink the dotfiles
   file:
     src: "{{ item }}"

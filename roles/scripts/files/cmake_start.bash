@@ -1,5 +1,5 @@
 # Creates files and folders for a CMake project
-function cmakestart() {
+function cmake_start() {
   local use_the_force=false
   for i in "$@" ; do
     if [[ $i == "-f" || $i == "--force" ]]; then

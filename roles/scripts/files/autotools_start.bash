@@ -1,5 +1,5 @@
 # Creates files and folders for an Autotools project
-function autostart() {
+function autotools_start() {
   local use_the_force=false
   local use_autoscan=false
   for i in "$@" ; do

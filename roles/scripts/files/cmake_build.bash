@@ -1,5 +1,5 @@
 # Runs CMake in a build folder
-function cm() {
+function cmake_build() {
   if [[ ! `basename "$PWD"` == 'build' ]]; then
     mkdir -p build
     cd build
