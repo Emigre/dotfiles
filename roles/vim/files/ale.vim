@@ -12,8 +12,8 @@ hi! ALEWarning ctermfg=NONE
 hi! link ALEErrorSign SpellBad
 hi! link ALEWarningSign SpellRare
 
-nmap <silent> \ <Plug>(ale_previous_wrap)
-nmap <silent> ' <Plug>(ale_next_wrap)
+nmap <silent> \| <Plug>(ale_previous_wrap)
+nmap <silent> \ <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
       \ 'c': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
