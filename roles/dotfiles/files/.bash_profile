@@ -59,22 +59,22 @@ alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
 # Git completion
-[ -f "$HOME/.git-completion.bash" ] && source "$HOME/.git-completion.bash"
+[ -f "$HOME/.scripts/git_completion.bash" ] && source "$HOME/.scripts/git_completion.bash"
 
 # `filewatch` runs a command on files changes
-[ -f "$HOME/.filewatch.bash" ] && source "$HOME/.filewatch.bash"
+[ -f "$HOME/.scripts/watch_changes.bash" ] && source "$HOME/.scripts/watch_changes.bash"
 
 # `autostart` creates files and folders for an Autotools project
-[ -f "$HOME/.autostart.bash" ] && source "$HOME/.autostart.bash"
+[ -f "$HOME/.scripts/autotools_start.bash" ] && source "$HOME/.scripts/autotools_start.bash"
 
 # `cmakestart` creates files and folders for a CMake project
-[ -f "$HOME/.cmakestart.bash" ] && source "$HOME/.cmakestart.bash"
+[ -f "$HOME/.scripts/cmake_start.bash" ] && source "$HOME/.scripts/cmake_start.bash"
 
 # `cm` runs CMake in a build folder
-[ -f "$HOME/.cm.bash" ] && source "$HOME/.cm.bash"
+[ -f "$HOME/.scripts/cmake_build.bash" ] && source "$HOME/.scripts/cmake_build.bash"
 
 # `run` builds a CMake folder and watch for source code changes
-[ -f "$HOME/.run.bash" ] && source "$HOME/.run.bash"
+[ -f "$HOME/.scripts/run.bash" ] && source "$HOME/.scripts/run.bash"
 
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
