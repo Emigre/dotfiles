@@ -91,8 +91,12 @@ set expandtab
 " http://blog.ayaz.pk/2008/06/21/paste-mode-pasting-text-and-indenting-it-in-vim/
 set nopaste
 
-" Automatically removes all trailing whitespace
+" Automatically removes all trailing whitespace on save
 autocmd BufWritePre * :silent %s/\s\+$//e
+
+" Automatically substitutes any no-break spaces (U+00A0) with
+" regular spaces (U+0020) on save
+autocmd BufWritePre * :silent %s/\%u00A0/ /e
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
