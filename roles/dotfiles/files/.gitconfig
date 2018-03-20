@@ -1,5 +1,3 @@
-[init]
-  templatedir = ~/.git_template
 [include]
   path = ~/.gituser
 [alias]
@@ -25,14 +23,12 @@
   rp = "remote prune origin"
   s = "status"
   sl = "stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%Creset%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(blue)<%an>%C(reset)\""
-  # Show files with conflicts
+  # Show files with conflicts
   conflicts = diff --name-only --diff-filter=U
   # Diffs a file agains its last changes
   changes = log -p --follow -1
   # Lists all files in a commit
   files = show --pretty="" --name-only
-  # Re-index ctags
-  ctags = !.git/hooks/ctags
 [color]
   ui = true
 [core]
