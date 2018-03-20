@@ -33,6 +33,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vinarise.vim'
 Plugin 'Shougo/vimfiler.vim'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/Zenburn'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
