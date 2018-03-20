@@ -295,8 +295,8 @@ nnoremap <silent> ± :redraw!<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Enable / disable highlight of searches
-map <silent> ; :set hlsearch!<cr>
+" Enable or disable highlight of searches
+map <silent> ' :set hlsearch!<cr>
 :set nohlsearch
 hi Search ctermfg=black ctermbg=108
 
