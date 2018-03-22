@@ -17,18 +17,49 @@
     owner: "{{ user }}"
   sudo: yes
 
-- name: Ensure the Code folder exists and has the right permissions
-  file: "path={{ home }}/Code state=directory mode=0755 owner={{ user }}"
+- name: Ensure the code folder exists and has the right permissions
+  file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   sudo: yes
 
 - name: Ensure the depot tools are cloned
   git:
     repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
     version: master
-    dest: "{{ home }}/Code/depot_tools"
+    dest: "{{ home }}/code/depot_tools"
     update: no
     accept_hostkey: yes
   when: is_home
+
+- name: Ensure there is a vagrant folder
+  file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Ensure the vagrant repo is cloned
+  git:
+    repo: https://github.com/Emigre/vagrant.git
+    version: master
+    dest: "{{ home }}/vagrant"
+    update: yes
+    accept_hostkey: yes
+  when: is_home
+
+- name: Ensure there is a scripts folder
+  file: "path={{ home }}/scripts state=directory mode=0755 owner={{ user }}"
+  sudo: yes
+
+- name: Ensure the scripts repo is cloned
+  git:
+    repo: https://github.com/Emigre/scripts.git
+    version: master
+    dest: "{{ home }}/scripts"
+    update: yes
+    accept_hostkey: yes
+
+- name: Symlink lldb python script to Python 2.7 site-packages
+  file:
+    src: "{{ home }}/scripts/lldbinit.py"
+    dest: "/Library/Python/2.7/site-packages/lldbinit.py"
+    state: link
 
 - name: Symlink the dotfiles
   file:
