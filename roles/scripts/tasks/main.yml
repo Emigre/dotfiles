@@ -1,8 +1,0 @@
-- name: Symlink lldb python script to Python 2.7 site-packages
-  file:
-    src: "{{ item }}"
-    dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
-    state: link
-  with_fileglob:
-    - ./lldbinit.py
-
