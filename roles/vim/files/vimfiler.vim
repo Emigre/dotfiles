@@ -1,3 +1,6 @@
+let g:netrw_banner = 0
+let g:netrw_liststyle=3
+
 let g:vimfiler_as_default_explorer = 0
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_tree_leaf_icon = ' '
@@ -29,7 +32,9 @@ let g:vimfiler_ignore_pattern = [
       \ ]
 
 fun! s:defineColor(id, ctermfg)
-  exe 'hi def vimfilerColumn__' . a:id . 'File ctermfg=' . a:ctermfg
+  if @% ==# 'vimfiler:explorer'
+    exe 'hi def vimfilerColumn__' . a:id . 'File ctermfg=' . a:ctermfg
+  endif
 endf
 
 fun! s:defineSyntaxFromRegex(id, regex)
@@ -38,7 +43,9 @@ fun! s:defineSyntaxFromRegex(id, regex)
 endf
 
 fun! s:defineSyntax(id, extension)
-  retu <SID>defineSyntaxFromRegex(a:id, '.+\.' . a:extension . '( |$)')
+  if @% ==# 'vimfiler:explorer'
+    retu <SID>defineSyntaxFromRegex(a:id, '.+\.' . a:extension . '( |$)')
+  endif
 endf
 
 au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
@@ -66,7 +73,7 @@ au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ '\s+(AUTHORS|ChangeLog|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 246)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
-      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|configure\.ac)( |$)') | call <SID>defineColor('build', 250)
+      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac)( |$)') | call <SID>defineColor('build', 250)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
@@ -108,6 +115,22 @@ fun! s:toggleVimFiler()
   call <SID>executeVimFiler()
 endf
 
+fun! s:doNotExecuteInExplorer(action)
+  if @% ==# 'vimfiler:explorer'
+    retu
+  else
+    exe a:action
+  endif
+endf
+
+fun! s:openMainVimFiler()
+  let fileName = expand('%:t')
+  let folder = expand('%:p:h')
+  exe 'VimFiler -simple -buffer-name=' . fileName . ' ' . folder
+endf
+
+nnoremap <silent> <leader><leader> :call <SID>openMainVimFiler()<CR>
+
 nnoremap <silent> <C-h> :call <SID>enterAndExitVimFiler()<CR>
 nnoremap <silent> <BS> :call <SID>enterAndExitVimFiler()<CR>
 nnoremap <silent> <leader>t :call <SID>findInVimFiler()<CR>
@@ -121,6 +144,7 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> <Space> <Space>
   au FileType vimfiler noremap <silent> <buffer> \ <Nop>
   au FileType vimfiler noremap <silent> <buffer> ~ <Nop>
+  au FileType vimfiler nmap <buffer> - <Plug>(vimfiler_switch_to_parent_directory)
   au FileType vimfiler noremap <silent> <buffer> a <Nop>
   au FileType vimfiler noremap <silent> <buffer> e <Nop>
   au FileType vimfiler nmap <silent> <buffer> f <Plug>(vimfiler_new_file)
@@ -133,6 +157,7 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> h <Nop>
   au FileType vimfiler noremap <silent> <buffer> n n
   au FileType vimfiler noremap <silent> <buffer> p <Nop>
+  au FileType vimfiler nmap <silent> <buffer> q <Plug>(vimfiler_exit)
   au FileType vimfiler nmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_current_line)
   au FileType vimfiler vmap <silent> <buffer> s <Plug>(vimfiler_toggle_mark_selected_lines)
   au FileType vimfiler nmap <silent> <buffer> u <Plug>(vimfiler_clear_mark_all_lines)
@@ -155,8 +180,8 @@ aug MyVimfilerMaps
   au FileType vimfiler noremap <silent> <buffer> U <Nop>
   au FileType vimfiler noremap <silent> <buffer> Y <Nop>
   au FileType vimfiler noremap <silent> <buffer> <C-i> <Nop>
-  au FileType vimfiler noremap <silent> <buffer> <C-j> <Nop>
-  au FileType vimfiler noremap <silent> <buffer> <C-k> <Nop>
+  au FileType vimfiler nnoremap <silent> <buffer> <C-j> :call <SID>doNotExecuteInExplorer('bn')<CR>
+  au FileType vimfiler nnoremap <silent> <buffer> <C-k> :call <SID>doNotExecuteInExplorer('bp')<CR>
   au FileType vimfiler noremap <silent> <buffer> <C-l> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <C-o> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <C-v> <C-v>

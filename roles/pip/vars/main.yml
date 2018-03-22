@@ -5,6 +5,7 @@ python_packages:
   home:
     - awscli
     - awsebcli
+    - cpplint
     - flake8
     - ipdb
     - mypy

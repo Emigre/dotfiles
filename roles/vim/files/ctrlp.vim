@@ -5,6 +5,7 @@ endif
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](' . join([
     \ '\.cabal-sandbox',
+    \ 'cmake-build-debug',
     \ '\.git',
     \ '\.temp',
     \ '\.stack-work',
@@ -34,7 +35,6 @@ let g:ctrlp_custom_ignore = {
     \ '\.rar',
     \ '\.xcconfig',
     \ '\.zip',
-    \ 'tags',
     \ 'tags\.lock',
     \ 'tags\.temp',
   \ ], '|') . ')$',

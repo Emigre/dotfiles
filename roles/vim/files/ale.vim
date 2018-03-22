@@ -16,16 +16,19 @@ nmap <silent> \| <Plug>(ale_previous_wrap)
 nmap <silent> \ <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
-      \ 'c': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
-      \ 'cpp': ['clang', 'clangcheck', 'clangtidy', 'clang-format'],
+      \ 'c': ['cpplint'],
+      \ 'cpp': ['cpplint'],
       \ 'haskell': ['hlint'],
       \ 'java': ['javac'],
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
+      \ 'typescript': ['tslint'],
       \}
 
-let g:ale_java_javac_classpath = "./src/main/java/"
+let g:ale_cpp_cpplint_options = '--filter=-legal/copyright,-build/include_subdir'
+
+let g:ale_java_javac_classpath = './src/main/java/'
 let g:ale_java_javac_options = ''
 
 let g:ale_python_pylint_options = '--disable=' .

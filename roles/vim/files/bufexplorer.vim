@@ -147,5 +147,5 @@ aug END
 nmap <silent> <C-X> :Bclose<CR>
 nmap <silent> <C-C> :BufOnly<CR>
 
-nnoremap <silent> <c-j> :bn<CR>
+nnoremap <silent> <C-j> :bn<CR>
 nnoremap <silent> <C-k> :bp<CR>
