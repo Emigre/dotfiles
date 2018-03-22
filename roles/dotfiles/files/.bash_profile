@@ -9,7 +9,7 @@ alias vi="vim"
 # C++
 alias of_run='make RunRelease'
 alias depot_tools_start='export PATH="$HOME/Code/c++/depot_tools:$PATH"'
-export OF_ROOT="$HOME/Code/c++/openFrameworks"
+export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
 # Javascript
 if [ $IS_HOME == true ] ; then
@@ -59,22 +59,22 @@ alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
 # Git completion
-[ -f "$HOME/.scripts/git_completion.bash" ] && source "$HOME/.scripts/git_completion.bash"
+[ -f "$HOME/scripts/git_completion.bash" ] && source "$HOME/scripts/git_completion.bash"
 
 # `filewatch` runs a command on files changes
-[ -f "$HOME/.scripts/watch_changes.bash" ] && source "$HOME/.scripts/watch_changes.bash"
+[ -f "$HOME/scripts/watch_changes.bash" ] && source "$HOME/scripts/watch_changes.bash"
 
 # `autostart` creates files and folders for an Autotools project
-[ -f "$HOME/.scripts/autotools_start.bash" ] && source "$HOME/.scripts/autotools_start.bash"
+[ -f "$HOME/scripts/autotools_start.bash" ] && source "$HOME/scripts/autotools_start.bash"
 
 # `cmakestart` creates files and folders for a CMake project
-[ -f "$HOME/.scripts/cmake_start.bash" ] && source "$HOME/.scripts/cmake_start.bash"
+[ -f "$HOME/scripts/cmake_start.bash" ] && source "$HOME/scripts/cmake_start.bash"
 
 # `cm` runs CMake in a build folder
-[ -f "$HOME/.scripts/cmake_build.bash" ] && source "$HOME/.scripts/cmake_build.bash"
+[ -f "$HOME/scripts/cmake_build.bash" ] && source "$HOME/scripts/cmake_build.bash"
 
 # `run` builds a CMake folder and watch for source code changes
-[ -f "$HOME/.scripts/run.bash" ] && source "$HOME/.scripts/run.bash"
+[ -f "$HOME/scripts/run.bash" ] && source "$HOME/scripts/run.bash"
 
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
