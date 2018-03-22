@@ -89,6 +89,8 @@ aug TabSettings
   au Filetype java setlocal ts=4 sw=4 et
   au Filetype haskell setlocal ts=4 sw=4 et
   au Filetype python setlocal ts=4 sts=4 sw=4 et
+  au Filetype tags setlocal ts=32
+  au Filetype tags setlocal nowrap
 aug END
 
 " The width of a TAB is set to 4
@@ -112,11 +114,11 @@ set expandtab
 set nopaste
 
 " Automatically removes all trailing whitespace on save
-autocmd BufWritePre * :silent %s/\s\+$//e
+au BufWritePre * :silent %s/\s\+$//e
 
 " Automatically substitutes any no-break spaces (U+00A0) with
 " regular spaces (U+0020) on save
-autocmd BufWritePre * :silent %s/\%u00A0/ /e
+au BufWritePre * :silent %s/\%u00A0/ /e
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
@@ -149,15 +151,10 @@ nnoremap <C-f> }
 vnoremap <C-f> }
 nnoremap <C-e> {
 vnoremap <C-e> {
+
 " move the <C-e> fucntionality to <C-v>
 nnoremap <c-v> <c-e>
 nnoremap <c-v> <c-e>
-
-" searches for parenthesis
-nnoremap <silent> ] :call <SID>mySearch('(', 1, ' ')<CR>
-vnoremap <silent> ] :<C-u>call <SID>mySearch('(', 1, 'gvh ')<CR>
-nnoremap <silent> [ :call <SID>mySearch('(', 0, " ")<CR>
-vnoremap <silent> [ :<C-u>call <SID>mySearch('(', 0, 'gvh ')<CR>
 
 " searches for curly bracket
 nnoremap <silent> } :call <SID>mySearch('{', 1, ' ')<CR>
@@ -238,7 +235,7 @@ set noerrorbells
 set noerrorbells
 set novisualbell
 set t_vb=
-autocmd! GUIEnter * set vb t_vb=
+au! GUIEnter * set vb t_vb=
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 
