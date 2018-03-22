@@ -19,12 +19,11 @@ node_packages:
     - npm-check-updates
     - nodemon
     - react-native-cli
+    - typescript
     - webpack
     - webpack-bundle-size-analyzer
   home:
     - babel-cli
-    - broccoli-cli
-    - divshot-cli
     - elm
     - express-generator
     - flow-bin
@@ -42,10 +41,6 @@ node_packages:
     - generator-sorcery
     - generator-webapp
     - generator-wizardry
-    - jspm
     - phantomjs
     - pulp
-    - purescript
-    - typescript
-    - typings
     - yo
