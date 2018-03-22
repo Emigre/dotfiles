@@ -10,7 +10,10 @@
 --exclude=ios
 --exclude=android
 --exclude=assets
---exclude=node_modules
+
+--c++-kinds=+p
+--fields=+iaS
+--extra=+q
 
 --langdef=js
 --langmap=js:.js
