@@ -1,42 +1,63 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-buftabline'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vinarise.vim'
+Plug 'svermeulen/vim-easyclip'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tommcdo/vim-fugitive-blame-ext'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/Zenburn'
+Plug 'Yggdroot/indentLine'
 
-Plugin 'w0rp/ale'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ap/vim-buftabline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tommcdo/vim-fugitive-blame-ext'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'Yggdroot/indentLine'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'mxw/vim-jsx'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-repeat'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vinarise.vim'
-Plugin 'Shougo/vimfiler.vim'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/Zenburn'
-Plugin 'Vimjas/vim-python-pep8-indent'
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for':['javascript', 'javascript.jsx'] }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
-" All of your Plugins must be added before the following line
-call vundle#end()
+Plug 'w0rp/ale', { 
+      \ 'for': [
+      \ 'c',
+      \ 'cpp',
+      \ 'haskell',
+      \ 'java',
+      \ 'javascript',
+      \ 'javascript.jsx',
+      \ 'python',
+      \ 'rust',
+      \ 'typescript',
+      \]
+      \}
+
+Plug 'Valloric/YouCompleteMe', {
+      \ 'do': 'python3 ./install.py '.
+      \ '--clang-completer --js-completer --rust-completer',
+      \ 'for': [
+      \ 'c',
+      \ 'cpp',
+      \ 'haskell',
+      \ 'javascript',
+      \ 'javascript.jsx',
+      \ 'python',
+      \ 'rust',
+      \ 'typescript',
+      \ 'vimscript',
+      \ ]
+      \ }
+
+call plug#end()
 
 set autoread
 set ruler
