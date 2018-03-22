@@ -432,3 +432,26 @@ aug END
 
 map <ScrollWheelUp> <C-U>
 map <ScrollWheelDown> <C-D>
+
+fun! s:SwitchBetweenHeaderAndImplementation()
+  if match(expand('%'), '\.\(c\|cc\|cpp\)$') > 0
+    let target = 'header'
+    let search_pattern = substitute(expand('%:t'), '\.c\(.*\)$', '.h*', '')
+  elseif match(expand('%'), '\.\(h\|hpp\)$') > 0
+    let target = 'implementation'
+    let search_pattern = substitute(expand('%:t'), '\.h\(.*\)$', '.c*', '')
+  else
+    retu
+  endif
+  let dir_name = fnamemodify(expand('%:p'), ':h')
+  let cmd = 'find ' . dir_name .  ' . -type f ' .
+        \ '-iname ' . search_pattern . ' -print -quit'
+  let file_name = substitute(system(cmd), '\n$', '', '')
+  if filereadable(file_name)
+    exe 'e ' file_name
+  else
+    echo 'No ' . target . ' file found for ' . expand('%:t')
+  endif
+endfun
+
+nnoremap <leader>] :call <SID>SwitchBetweenHeaderAndImplementation()<CR>
