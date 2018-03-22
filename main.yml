@@ -9,12 +9,8 @@
   roles:
     - dotfiles
     - brew
-    - scripts
-    - npm
-    - gem
-    - pip
     - vim
-    - vagrant
-    - go
-    - cabal
     - iterm
+    - npm
+    - pip
+    - cabal

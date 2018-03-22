@@ -1,3 +1,0 @@
-- name: Ensure configured rubygems are installed
-  gem: "name={{ item }} state=present"
-  with_items: "{{ rubygems }}"
