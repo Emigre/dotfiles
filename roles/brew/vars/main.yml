@@ -61,6 +61,7 @@ homebrew_packages:
     - mysql
     - nethack
     - nginx
+    - ocaml
     - postgresql
     - redis
     - rlwrap
