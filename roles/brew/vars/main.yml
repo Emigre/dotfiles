@@ -24,6 +24,7 @@ homebrew_packages:
     - httpie
     - jenv
     - maven
+    - nmap
     - node
     - python
     - python3
