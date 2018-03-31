@@ -139,7 +139,7 @@ nmap <LeftMouse> <LeftMouse><Plug>(vimfiler_smart_l)
 
 aug MyVimfilerMaps
   au!
-  au FileType vimfiler noremap <silent> <buffer> <C-x> <C-w><C-c>
+  au FileType vimfiler nmap <silent> <buffer> <C-x> q
   au FileType vimfiler noremap <silent> <buffer> <BS> <C-w><C-w>
   au FileType vimfiler noremap <silent> <buffer> <Space> <Space>
   au FileType vimfiler noremap <silent> <buffer> \ <Nop>
