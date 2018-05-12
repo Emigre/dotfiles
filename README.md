@@ -1,5 +1,15 @@
-##### Usage
+#### Requirements
+
+- [Homebrew](https://brew.sh/)
+
+#### Setup
 
 ```
-ansible-playbook main.yml
+brew install Emigre/tap/dotfiles && dotfiles setup
+```
+
+#### Usage
+
+```
+dotfiles update
 ```
