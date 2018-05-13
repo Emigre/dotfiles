@@ -4,8 +4,7 @@ alias la="ls -la"
 alias less='less -R '
 alias tree="tree -I 'node_modules|build|target|dist|bin'"
 alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
-alias vim="/usr/local/bin/vim"
-alias vi="/usr/local/bin/vim"
+alias vi="vim"
 
 # C++
 alias of_run='make RunRelease'
