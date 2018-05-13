@@ -9,6 +9,6 @@ python_packages:
     - flake8
     - ipdb
     - mypy
-    - pudb3
+    - pudb
     - pyinstaller
     - pylint
