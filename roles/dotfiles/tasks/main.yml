@@ -51,6 +51,7 @@
     src: "{{ home }}/scripts/lldbinit.py"
     dest: "/Library/Python/2.7/site-packages/lldbinit.py"
     state: link
+  become: yes
 
 - name: Symlink the dotfiles
   file:
