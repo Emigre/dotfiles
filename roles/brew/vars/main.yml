@@ -6,8 +6,6 @@ homebrew_taps:
     - caskroom/fonts
     - caskroom/versions
     - homebrew/apache
-  home:
-    - Emigre/tap
 
 homebrew_packages:
   common:
@@ -39,7 +37,6 @@ homebrew_packages:
     - wget
     - yarn
   home:
-    - android-sdk
     - arp-scan
     - cabal-install
     - gcc
@@ -79,52 +76,25 @@ homebrew_packages:
 
 homebrew_cask_apps:
   common:
+    - android-studio
     - caffeine
-    - dash
-    - docker
     - dropbox
-    - eclipse-ide
-    - evernote
     - firefox
     - font-meslo-lg
     - google-chrome
-    - intellij-idea-ce
     - iterm2
     - java
     - opera
     - postman
     - react-native-debugger
-    - skype
     - sublime-text
     - the-unarchiver
+  home:
+    - docker
+    - evernote
+    - nosleep
+    - skype
     - vagrant
     - virtualbox
-  home:
-    - android-studio
-    - arduino
-    - blender
-    - boxer
-    - brogue
-    - filezilla
-    - gimp
-    - hipchat
-    - handbrake
-    - inform
-    - inkscape
-    - java6
-    - java7
-    - lighttable
-    - mysqlworkbench
-    - pgadmin3
-    - pharo
-    - processing
-    - pycharm-ce
-    - qt-creator
-    - sketch
-    - slack
-    - teamviewer
+    - virtualbox-extension-pack
     - vlc
-    - webstorm
-    - xquartz
-    - yacreader
-    - zoom

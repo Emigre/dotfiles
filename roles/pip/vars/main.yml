@@ -12,4 +12,3 @@ python_packages:
     - pudb3
     - pyinstaller
     - pylint
-    - voltron

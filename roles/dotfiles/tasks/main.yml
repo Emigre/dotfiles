@@ -17,6 +17,16 @@
     owner: "{{ user }}"
   become: yes
 
+- name: Ensure the dotfiles folder exists and has the right permissions
+  file: "path={{ home }}/Dropbox/dotfiles state=directory mode=0755 owner={{ user }}"
+  become: yes
+
+- name: Ensure there is a symlink to the dotfiles folder in the home folder
+  file:
+    src: "{{ home }}/dotfiles"
+    dest: "{{ home }}/Dropbox/dotfiles"
+    state: link
+
 - name: Ensure the code folder exists and has the right permissions
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
