@@ -27,8 +27,8 @@ homebrew_packages:
     - reattach-to-user-namespace
     - the_silver_searcher
     - tidy-html5
-    - tree
     - tmux
+    - tree
     - vim
     - watchman
     - wget
@@ -36,13 +36,12 @@ homebrew_packages:
   home:
     - arp-scan
     - cabal-install
-    - gcc
     - cgdb
     - cmake
     - couchdb
     - frobtads
     - frotz
-    - generate
+    - gcc
     - gdb
     - ghc
     - glulxe
@@ -54,9 +53,9 @@ homebrew_packages:
     - mit-scheme
     - mongodb
     - mysql
-    - ninja
     - nethack
     - nginx
+    - ninja
     - ocaml
     - postgresql
     - redis

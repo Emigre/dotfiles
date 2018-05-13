@@ -10,6 +10,14 @@
   with_fileglob:
     - ./com.googlecode.iterm2.plist
 
+- name: Ensure the iTerm profiles folder exists and has the right permissions
+  file:
+    path: "{{ home }}/Library/Application\ Support/iTerm2/DynamicProfiles/"
+    state: directory
+    mode: 0755
+    owner: "{{ user }}"
+  become: yes
+
 - name: Symlink iTerm2 profiles
   file:
     src: "{{ item }}"

@@ -13,4 +13,4 @@
     - iterm
     - npm
     - pip
-    - cabal
+    - { role: cabal, when: "is_home|bool" }

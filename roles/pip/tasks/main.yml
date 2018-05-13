@@ -1,8 +1,3 @@
-- name: Ensure pip is installed
-  easy_install:
-    name: pip3
-    state: latest
-
 - name: Ensure configured python packages are installed
-  pip: "executable=/usr/local/bin/pip3 name={{ item }}"
+  pip: "executable=pip3 name={{ item }}"
   with_items: "{{ (python_packages.common + python_packages.home) if is_home|bool else python_packages.common }}"
