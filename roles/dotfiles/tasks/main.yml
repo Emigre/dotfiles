@@ -1,30 +1,11 @@
-- name: Ensure proper permissions in /usr/local
-  file:
-    path: "/usr/local"
-    group: admin
-    mode: 0775
-    state: directory
-    owner: "{{ user }}"
-  become: yes
-
-- name: Ensure proper permissions in /usr/local/bin
-  file:
-    path: "/usr/local/bin"
-    group: admin
-    mode: 0775
-    state: directory
-    recurse: true
-    owner: "{{ user }}"
-  become: yes
-
 - name: Ensure the dotfiles folder exists and has the right permissions
   file: "path={{ home }}/Dropbox/dotfiles state=directory mode=0755 owner={{ user }}"
   become: yes
 
 - name: Ensure there is a symlink to the dotfiles folder in the home folder
   file:
-    src: "{{ home }}/dotfiles"
-    dest: "{{ home }}/Dropbox/dotfiles"
+    src: "{{ home }}/Dropbox/dotfiles"
+    dest: "{{ home }}/dotfiles"
     state: link
 
 - name: Ensure the code folder exists and has the right permissions
