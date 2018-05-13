@@ -24,13 +24,12 @@ homebrew_packages:
     - nmap
     - node
     - python
-    - python3
     - reattach-to-user-namespace
     - the_silver_searcher
     - tidy-html5
     - tree
     - tmux
-    - { name: vim, install_options: "with-python3" }
+    - vim
     - watchman
     - wget
     - yarn
