@@ -5,7 +5,6 @@ homebrew_taps:
     - caskroom/cask
     - caskroom/fonts
     - caskroom/versions
-    - homebrew/apache
 
 homebrew_packages:
   common:
