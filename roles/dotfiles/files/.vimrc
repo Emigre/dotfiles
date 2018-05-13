@@ -28,7 +28,7 @@ Plug 'pangloss/vim-javascript', { 'for':['javascript', 'javascript.jsx'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
-Plug 'w0rp/ale', { 
+Plug 'w0rp/ale', {
       \ 'for': [
       \ 'c',
       \ 'cpp',
