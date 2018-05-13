@@ -1,6 +1,6 @@
 - name: Ensure all needed vim folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
-  sudo: yes
+  become: yes
   with_items:
     - .vim
     - .vim/autoload

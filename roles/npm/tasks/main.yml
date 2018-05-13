@@ -1,6 +1,6 @@
 - name: Ensure the .npmrc config file exists
   file: "path={{ home }}/.npmrc state=touch mode=0644 owner={{ user }}"
-  sudo: yes
+  become: yes
   when: is_home
 
 - name: Ensure .npmrc has ~/.node as the global items location
@@ -9,7 +9,7 @@
 
 - name: Ensure several node folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
-  sudo: yes
+  become: yes
   with_items:
     - .npm
     - .node/bin

@@ -1,6 +1,6 @@
 - name: Ensure an .iterm.d folder exists and has the right permissions
   file: "path={{ home }}/.iterm.d state=directory mode=0755 owner={{ user }}"
-  sudo: yes
+  become: yes
 
 - name: Copy the iTerm2 preferences
   copy:
