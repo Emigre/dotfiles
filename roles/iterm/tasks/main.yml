@@ -1,14 +1,8 @@
-- name: Ensure an .iterm.d folder exists and has the right permissions
-  file: "path={{ home }}/.iterm.d state=directory mode=0755 owner={{ user }}"
-  become: yes
-
-- name: Copy the iTerm2 preferences
-  copy:
-    src: "{{ item }}"
-    dest: "{{ home }}/.iterm.d/{{ item | basename }}"
-    backup: "yes"
-  with_fileglob:
-    - ./com.googlecode.iterm2.plist
+- name: Symlink the iTerm2 preferences
+  file:
+    src: "{{ home }}/dotfiles/roles/iterm/preferences"
+    dest: "{{ home }}/.iterm.d"
+    state: link
 
 - name: Ensure the iTerm profiles folder exists and has the right permissions
   file:
