@@ -23,6 +23,7 @@ let g:vimfiler_ignore_pattern = [
       \ '^\.DS_Store$',
       \ '^\.deps$',
       \ '^\.git$',
+      \ '^node_modules$',
       \ '^\.mvn$',
       \ '^tags\.lock$',
       \ '^tags\.temp$',
@@ -61,7 +62,7 @@ au FileType vimfiler exe <SID>defineSyntax('jsx', 'jsx') | call <SID>defineColor
 au FileType vimfiler exe <SID>defineSyntax('lua', 'lua') | call <SID>defineColor('lua', 214)
 au FileType vimfiler exe <SID>defineSyntax('markdown', 'md') | call <SID>defineColor('markdown', 249)
 au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineColor('python', 214)
-au FileType vimfiler exe <SID>defineSyntax('ruby', 'rb') | call <SID>defineColor('ruby', 89)
+au FileType vimfiler exe <SID>defineSyntax('ruby', 'rb') | call <SID>defineColor('ruby', 169)
 au FileType vimfiler exe <SID>defineSyntax('shell', '(sh|bash)') | call <SID>defineColor('shell', 'lightCyan')
 au FileType vimfiler exe <SID>defineSyntax('stylesheet', '(css|sass|less|scss)') | call <SID>defineColor('stylesheet', 115)
 au FileType vimfiler exe <SID>defineSyntax('template', '(tpl|jade)') | call <SID>defineColor('template', 40)
@@ -124,9 +125,13 @@ fun! s:doNotExecuteInExplorer(action)
 endf
 
 fun! s:openMainVimFiler()
-  let fileName = expand('%:t')
-  let folder = expand('%:p:h')
-  exe 'VimFiler -simple -buffer-name=' . fileName . ' ' . folder
+  if &fileType ==# 'vimfiler'
+    retu
+  else
+    let fileName = expand('%:t')
+    let folder = expand('%:p:h')
+    exe 'VimFiler -simple -buffer-name=' . fileName . ' ' . folder
+  endif
 endf
 
 nnoremap <silent> <leader><leader> :call <SID>openMainVimFiler()<CR>
