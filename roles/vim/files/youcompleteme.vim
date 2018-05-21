@@ -5,6 +5,6 @@ let g:ycm_confirm_extra_conf = 1
 nnoremap <C-]> :YcmCompleter GoTo<CR>
 nnoremap [ :YcmCompleter GetType<CR>
 nnoremap ] :YcmForceCompileAndDiagnostics<CR>
-nnoremap <silent> <leader>q :YcmRestartServer<CR>
+nnoremap <silent> <leader>k :YcmRestartServer<CR>
 
 hi YcmErrorSign ctermfg=9 ctermbg=237
