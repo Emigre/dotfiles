@@ -49,6 +49,7 @@ Plug 'Valloric/YouCompleteMe', {
       \ 'c',
       \ 'cpp',
       \ 'haskell',
+      \ 'java',
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
