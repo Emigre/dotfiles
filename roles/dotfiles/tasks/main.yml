@@ -21,6 +21,10 @@
     accept_hostkey: yes
   when: is_home
 
+- name: Ensure xcpretty is installed
+  gem: "name=xcpretty state=present"
+  when: is_home
+
 - name: Ensure there is a vagrant folder
   file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
   become: yes
