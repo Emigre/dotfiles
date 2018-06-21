@@ -12,7 +12,6 @@ homebrew_packages:
     - ansible
     - checkstyle
     - ctags
-    - emacs
     - entr
     - git
     - git-flow
@@ -46,8 +45,6 @@ homebrew_packages:
     - gdb
     - ghc
     - glulxe
-    - go
-    - guile
     - haskell-stack
     - leiningen
     - mercurial
@@ -57,7 +54,6 @@ homebrew_packages:
     - nethack
     - nginx
     - ninja
-    - ocaml
     - postgresql
     - redis
     - rlwrap
@@ -67,7 +63,6 @@ homebrew_packages:
     - sdl2_mixer
     - sdl2_ttf
     - sqlite
-    - texinfo
     - tomcat
     - watch
 
