@@ -21,6 +21,7 @@ let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
 let g:vimfiler_ignore_pattern = [
       \ '^\.DS_Store$',
+      \ '^\.cache$',
       \ '^\.deps$',
       \ '^\.git$',
       \ '^node_modules$',

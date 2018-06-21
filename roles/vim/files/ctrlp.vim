@@ -7,6 +7,7 @@ let g:ctrlp_custom_ignore = {
     \ '\.cabal-sandbox',
     \ 'cmake-build-debug',
     \ '\.git',
+    \ '\.cache',
     \ '\.temp',
     \ '\.stack-work',
     \ '\.xcodeproj',
