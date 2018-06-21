@@ -8,7 +8,7 @@ alias vi="vim"
 
 # C++
 alias of_run='make RunRelease'
-alias depot_tools_start='export PATH="$HOME/Code/c++/depot_tools:$PATH"'
+alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
 # Javascript
@@ -45,6 +45,9 @@ alias scheme='rlwrap mit-scheme'
 # Go
 export GOPATH=$HOME/Code/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+# Pascal
+alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
 
 # Httpie
 alias h='http-prompt'
