@@ -16,7 +16,7 @@
   git:
     repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
     version: master
-    dest: "{{ home }}/code/depot_tools"
+    dest: "{{ home }}/depot_tools"
     update: no
     accept_hostkey: yes
   when: is_home
@@ -39,23 +39,29 @@
   when: is_home
 
 - name: Ensure there is a scripts folder
-  file: "path={{ home }}/scripts state=directory mode=0755 owner={{ user }}"
+  file: "path={{ home }}/Dropbox/scripts state=directory mode=0755 owner={{ user }}"
   become: yes
 
 - name: Ensure the scripts repo is cloned
   git:
     repo: https://github.com/Emigre/scripts.git
     version: master
-    dest: "{{ home }}/scripts"
+    dest: "{{ home }}/Dropbox/scripts"
     update: yes
     accept_hostkey: yes
 
 - name: Symlink lldb python script to Python 2.7 site-packages
   file:
-    src: "{{ home }}/scripts/lldbinit.py"
+    src: "{{ home }}/Dropbox/scripts/lldbinit.py"
     dest: "/Library/Python/2.7/site-packages/lldbinit.py"
     state: link
   become: yes
+
+- name: Ensure there is a symlink to the scripts folder in the home folder
+  file:
+    src: "{{ home }}/Dropbox/scripts"
+    dest: "{{ home }}/scripts"
+    state: link
 
 - name: Symlink the dotfiles
   file:
