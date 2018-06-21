@@ -48,7 +48,6 @@ homebrew_packages:
     - haskell-stack
     - leiningen
     - mercurial
-    - mit-scheme
     - mongodb
     - mysql
     - nethack
