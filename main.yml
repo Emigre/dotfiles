@@ -9,8 +9,8 @@
   roles:
     - dotfiles
     - brew
-    - vim
     - iterm
-    - npm
-    - pip
-    - { role: cabal, when: "is_home|bool" }
+    - vim
+    - javascript
+    - python
+    - { role: haskell, when: "is_home|bool" }
