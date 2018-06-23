@@ -7,6 +7,7 @@ python_packages:
     - awsebcli
     - cpplint
     - flake8
+    - gdbgui
     - ipdb
     - mypy
     - pudb
