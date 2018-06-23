@@ -52,7 +52,7 @@ endf
 
 au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
-au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx)') | call <SID>defineColor('c', 34)
+au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx|m)') | call <SID>defineColor('c', 34)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntax('go', 'go') | call <SID>defineColor('go', 130)
 au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp)') | call <SID>defineColor('header', 28)
