@@ -7,7 +7,6 @@ alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
 alias vi="vim"
 
 # C++
-alias of_run='make RunRelease'
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
@@ -39,13 +38,6 @@ export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
 export M2=$M2_HOME/bin
 
-# Scheme
-alias scheme='rlwrap mit-scheme'
-
-# Go
-export GOPATH=$HOME/Code/Go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
-
 # Pascal
 alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
 
@@ -61,27 +53,16 @@ alias psql_status='pg_ctl status | egrep pg_ctl'
 alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 
-# Git completion
-[ -f "$HOME/scripts/git_completion.bash" ] && source "$HOME/scripts/git_completion.bash"
-
-# `filewatch` runs a command on files changes
-[ -f "$HOME/scripts/watch_changes.bash" ] && source "$HOME/scripts/watch_changes.bash"
-
-# `autostart` creates files and folders for an Autotools project
-[ -f "$HOME/scripts/autotools_start.bash" ] && source "$HOME/scripts/autotools_start.bash"
-
-# `cmakestart` creates files and folders for a CMake project
-[ -f "$HOME/scripts/cmake_start.bash" ] && source "$HOME/scripts/cmake_start.bash"
-
-# `cm` runs CMake in a build folder
-[ -f "$HOME/scripts/cmake_build.bash" ] && source "$HOME/scripts/cmake_build.bash"
-
-# `run` builds a CMake folder and watch for source code changes
-[ -f "$HOME/scripts/run.bash" ] && source "$HOME/scripts/run.bash"
-
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
 bind '"\e[1;5D": backward-word'
 
 # do not disturb terminal with ctrl-S or ctrl-Q
 stty -ixon
+
+# Scripts
+[ -f "$HOME/scripts/git_completion.bash" ] && source "$HOME/scripts/git_completion.bash"
+[ -f "$HOME/scripts/watch_changes.bash" ] && source "$HOME/scripts/watch_changes.bash"
+[ -f "$HOME/scripts/autotools_init.bash" ] && source "$HOME/scripts/autotools_init.bash"
+[ -f "$HOME/scripts/cmake_init.bash" ] && source "$HOME/scripts/cmake_init.bash"
+[ -f "$HOME/scripts/run.bash" ] && source "$HOME/scripts/run.bash"
