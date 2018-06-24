@@ -39,7 +39,7 @@ Plug 'w0rp/ale', {
       \ 'python',
       \ 'rust',
       \ 'typescript',
-      \]
+      \ ]
       \}
 
 Plug 'Valloric/YouCompleteMe', {
