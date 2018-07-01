@@ -10,7 +10,7 @@
     - dotfiles
     - brew
     - iterm
-    - vim
     - javascript
     - python
     - { role: haskell, when: "is_home|bool" }
+    - vim
