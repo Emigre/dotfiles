@@ -1,0 +1,22 @@
+- name: Ensure rustup-init is available
+  homebrew: name=rustup-init state=present
+
+- name: Ensure rustup is installed with rustup-init
+  become: yes
+  command: rustup-init -y --no-modify-path
+  args:
+    creates: "{{ home }}/.cargo/bin/rustup"
+
+- name: Ensure rust is installed
+  become: yes
+  command: rustup install stable
+
+- name: Set the default rust toolchain
+  become: yes
+  command: rustup default stable
+
+- name: Initialize bash completion for rust
+  become: yes
+  shell: "rustup completions bash > {{ home }}/.bash_completion.d/rust_completion.bash"
+  args:
+    creates: "{{ home }}/.bash_completion.d/rust_completion.bash"

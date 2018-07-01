@@ -9,8 +9,11 @@
   roles:
     - dotfiles
     - brew
-    - iterm
+    - { role: cpp, when: "is_home|bool" }
+    - { role: rust, when: "is_home|bool" }
+    - java
     - javascript
     - python
     - { role: haskell, when: "is_home|bool" }
+    - iterm
     - vim

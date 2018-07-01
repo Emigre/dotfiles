@@ -1,0 +1,23 @@
+- name: Ensure the C++ homebrew packages are installed
+  homebrew: "name={{ item }} state=present"
+  with_items: homebrew_packages
+
+- name: Ensure the depot tools are cloned
+  git:
+    repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    version: master
+    dest: "{{ home }}/depot_tools"
+    update: no
+    accept_hostkey: yes
+  when: is_home
+
+- name: Ensure xcpretty is installed
+  gem: name=xcpretty state=present
+  when: is_home
+
+- name: Symlink lldb python script to Python 2.7 site-packages
+  file:
+    src: "{{ home }}/Dropbox/scripts/lldbinit.py"
+    dest: "/Library/Python/2.7/site-packages/lldbinit.py"
+    state: link
+  become: yes

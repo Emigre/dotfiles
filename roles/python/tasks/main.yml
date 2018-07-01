@@ -1,3 +1,6 @@
+- name: Ensure Python is installed with homebrew
+  homebrew: name=python state=present
+
 - name: Ensure configured python packages are installed
   pip: "executable=pip3 name={{ item }}"
   with_items: "{{ (python_packages.common + python_packages.home) if is_home|bool else python_packages.common }}"

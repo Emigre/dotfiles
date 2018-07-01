@@ -2,12 +2,24 @@
   homebrew_tap: "tap={{ item }} state=present"
   with_items: "{{ homebrew_taps.common }}"
 
-- name: Ensure Java is installed with homebrew cask
-  homebrew_cask: "name=java"
-
 - name: Ensure the homebrew packages are installed
   homebrew: "name={{ item }} state=present"
   with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
+
+- name: Ensure servers are installed with homebrew
+  homebrew: "name={{ item }} state=present"
+  with_items: homebrew_packages_servers
+  when: is_home
+
+- name: Ensure databases are installed with homebrew
+  homebrew: "name={{ item }} state=present"
+  with_items: homebrew_packages_databases
+  when: is_home
+
+- name: Ensure games are installed with homebrew
+  homebrew: "name={{ item }} state=present"
+  with_items: homebrew_packages_games
+  when: is_home
 
 - name: Upgrade all homebrew packages (if configured)
   homebrew: update_homebrew=yes upgrade_all=yes

@@ -1,3 +1,6 @@
+- name: Ensure iTerm2 is installed with homebrew cask
+  homebrew_cask: name=iterm2 state=present
+
 - name: Symlink the iTerm2 preferences
   file:
     src: "{{ home }}/dotfiles/roles/iterm/preferences"

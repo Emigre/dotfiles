@@ -10,19 +10,12 @@ homebrew_packages:
   common:
     - ack
     - ansible
-    - checkstyle
-    - ctags
     - entr
     - git
-    - git-flow
     - htop
     - httperf
     - httpie
-    - jenv
-    - maven
     - nmap
-    - node
-    - python
     - reattach-to-user-namespace
     - the_silver_searcher
     - tidy-html5
@@ -31,39 +24,30 @@ homebrew_packages:
     - vim
     - watchman
     - wget
-    - yarn
   home:
     - arp-scan
-    - cabal-install
-    - cgdb
-    - cmake
-    - couchdb
     - fpc
-    - frobtads
-    - frotz
-    - gcc
-    - gdb
-    - ghc
-    - glulxe
-    - haskell-stack
-    - leiningen
     - mercurial
-    - mongodb
-    - mysql
-    - nethack
-    - nginx
-    - ninja
-    - postgresql
-    - redis
     - rlwrap
-    - rust
-    - sdl2
-    - sdl2_image
-    - sdl2_mixer
-    - sdl2_ttf
-    - sqlite
-    - tomcat
     - watch
+
+homebrew_packages_servers:
+  - tomcat
+  - nginx
+
+homebrew_packages_databases:
+  - mysql
+  - postgresql
+  - couchdb
+  - mongodb
+  - redis
+  - sqlite
+
+homebrew_packages_games:
+  - nethack
+  - frobtads
+  - frotz
+  - glulxe
 
 homebrew_cask_apps:
   common:
@@ -73,10 +57,7 @@ homebrew_cask_apps:
     - firefox
     - font-meslo-lg
     - google-chrome
-    - iterm2
-    - opera
     - postman
-    - react-native-debugger
     - sublime-text
     - the-unarchiver
   home:

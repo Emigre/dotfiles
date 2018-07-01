@@ -10,6 +10,15 @@ alias vi="vim"
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
+# Java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
+export GRADLE_USER_HOME="$HOME/.gradle"
+export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
+export M2=$M2_HOME/bin
+
+# Rust
+export PATH=$PATH:"$HOME/.cargo/bin"
+
 # Javascript
 if [ $IS_HOME == true ] ; then
   export PATH="$PATH:$HOME/.node/bin"
@@ -27,16 +36,6 @@ alias pip='pip3'
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH=$PATH:"$HOME/.local/bin"
-
-# Java
-if [ $IS_HOME == true ] ; then
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
-else
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home"
-fi
-export GRADLE_USER_HOME="$HOME/.gradle"
-export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
-export M2=$M2_HOME/bin
 
 # Pascal
 alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
@@ -61,7 +60,6 @@ bind '"\e[1;5D": backward-word'
 stty -ixon
 
 # Scripts
-[ -f "$HOME/scripts/git_completion.bash" ] && source "$HOME/scripts/git_completion.bash"
 [ -f "$HOME/scripts/watch_changes.bash" ] && source "$HOME/scripts/watch_changes.bash"
 [ -f "$HOME/scripts/autotools_init.bash" ] && source "$HOME/scripts/autotools_init.bash"
 [ -f "$HOME/scripts/cmake_init.bash" ] && source "$HOME/scripts/cmake_init.bash"

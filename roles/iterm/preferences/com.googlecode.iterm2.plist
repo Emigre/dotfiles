@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Homebrew</key>
@@ -272,15 +274,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>769 110 445 238 0 0 1280 777 </string>
+	<string>876 364 675 462 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 220 599 388 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>158 324 918 452 0 0 1280 777 </string>
+	<string>367 603 918 452 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1090 777 0 0 1280 777 </string>
+	<string>0 0 1920 1057 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>58 50 1120 648 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
@@ -870,7 +872,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>MesloLGM-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -914,7 +916,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.017377597205118143</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -949,6 +951,8 @@
 	<real>492882326.317384</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -995,9 +999,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-13T10:44:56Z</date>
+	<date>2018-06-21T18:40:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>Secure Input</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>WordCharacters</key>

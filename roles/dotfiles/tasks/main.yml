@@ -12,19 +12,6 @@
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
 
-- name: Ensure the depot tools are cloned
-  git:
-    repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
-    version: master
-    dest: "{{ home }}/depot_tools"
-    update: no
-    accept_hostkey: yes
-  when: is_home
-
-- name: Ensure xcpretty is installed
-  gem: "name=xcpretty state=present"
-  when: is_home
-
 - name: Ensure there is a vagrant folder
   file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
   become: yes
@@ -50,17 +37,20 @@
     update: yes
     accept_hostkey: yes
 
-- name: Symlink lldb python script to Python 2.7 site-packages
-  file:
-    src: "{{ home }}/Dropbox/scripts/lldbinit.py"
-    dest: "/Library/Python/2.7/site-packages/lldbinit.py"
-    state: link
-  become: yes
-
 - name: Ensure there is a symlink to the scripts folder in the home folder
   file:
     src: "{{ home }}/Dropbox/scripts"
     dest: "{{ home }}/scripts"
+    state: link
+
+- name: Ensure there is a bash completions folder
+  file: "path={{ home }}/.bash_completion.d state=directory mode=0755 owner={{ user }}"
+  become: yes
+
+- name: Ensure the git completion is symlinked into the bash completion folder
+  file:
+    src: "{{ home }}/Dropbox/scripts/git_completion.bash"
+    dest: "{{ home }}/.bash_completion.d/git.bash"
     state: link
 
 - name: Symlink the dotfiles
