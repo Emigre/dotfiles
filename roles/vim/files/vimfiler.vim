@@ -54,7 +54,6 @@ au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defin
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
 au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx|m)') | call <SID>defineColor('c', 34)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
-au FileType vimfiler exe <SID>defineSyntax('go', 'go') | call <SID>defineColor('go', 130)
 au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp)') | call <SID>defineColor('header', 28)
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)
 au FileType vimfiler exe <SID>defineSyntax('java', 'java') | call <SID>defineColor('java', 146)
@@ -65,6 +64,7 @@ au FileType vimfiler exe <SID>defineSyntax('pascal', '(pas|pp)') | call <SID>def
 au FileType vimfiler exe <SID>defineSyntax('markdown', 'md') | call <SID>defineColor('markdown', 249)
 au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineColor('python', 214)
 au FileType vimfiler exe <SID>defineSyntax('ruby', 'rb') | call <SID>defineColor('ruby', 169)
+au FileType vimfiler exe <SID>defineSyntax('rust', 'rs') | call <SID>defineColor('rust', 214)
 au FileType vimfiler exe <SID>defineSyntax('shell', '(sh|bash)') | call <SID>defineColor('shell', 'lightCyan')
 au FileType vimfiler exe <SID>defineSyntax('stylesheet', '(css|sass|less|scss)') | call <SID>defineColor('stylesheet', 115)
 au FileType vimfiler exe <SID>defineSyntax('template', '(tpl|jade)') | call <SID>defineColor('template', 40)
@@ -76,7 +76,7 @@ au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ '\s+(AUTHORS|ChangeLog|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 246)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
-      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac)( |$)') | call <SID>defineColor('build', 250)
+      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|Cargo\.toml|Cargo\.lock)( |$)') | call <SID>defineColor('build', 250)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()

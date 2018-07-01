@@ -44,18 +44,16 @@ Plug 'w0rp/ale', {
 
 Plug 'Valloric/YouCompleteMe', {
       \ 'do': 'python3 ./install.py '.
-      \ '--clang-completer --js-completer --rust-completer',
+      \ '--clang-completer --js-completer --rust-completer --java-completer',
       \ 'for': [
       \ 'c',
       \ 'cpp',
-      \ 'haskell',
       \ 'java',
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
       \ 'rust',
       \ 'typescript',
-      \ 'vimscript',
       \ ]
       \ }
 

@@ -22,11 +22,11 @@ nmap <silent> \ <Plug>(ale_next_wrap)
 let g:ale_linters = {
       \ 'c': ['cpplint'],
       \ 'cpp': ['cpplint'],
-      \ 'haskell': ['hlint'],
       \ 'java': ['javac'],
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
+      \ 'rust': ['cargo'],
       \ 'typescript': ['tslint'],
       \}
 
