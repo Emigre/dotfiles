@@ -11,6 +11,7 @@
     - brew
     - { role: cpp, when: "is_home|bool" }
     - { role: rust, when: "is_home|bool" }
+    - objectivec
     - java
     - javascript
     - python

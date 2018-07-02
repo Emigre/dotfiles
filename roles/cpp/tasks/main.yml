@@ -11,10 +11,6 @@
     accept_hostkey: yes
   when: is_home
 
-- name: Ensure xcpretty is installed
-  gem: name=xcpretty state=present
-  when: is_home
-
 - name: Symlink lldb python script to Python 2.7 site-packages
   file:
     src: "{{ home }}/Dropbox/scripts/lldbinit.py"
