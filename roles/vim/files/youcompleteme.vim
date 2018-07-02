@@ -3,7 +3,7 @@ let g:ycm_warning_symbol = '▸'
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_global_ycm_extra_conf = '~/scripts/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 1
-let g:ycm_extra_conf_vim_data = ['&filetype']
+let g:ycm_rust_src_path='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 nnoremap <silent> <leader>jh :YcmCompleter<CR>
 nnoremap <silent> <leader>jl :YcmToggleLogs<CR>
