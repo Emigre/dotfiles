@@ -15,6 +15,10 @@
   become: yes
   command: rustup default stable
 
+- Ensure rust source code has been downloaded
+  become: yes
+  commadn: rustup component add rust-src
+
 - name: Initialize bash completion for rust
   become: yes
   shell: "rustup completions bash > {{ home }}/.bash_completion.d/rust_completion.bash"
