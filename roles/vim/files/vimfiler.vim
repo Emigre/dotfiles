@@ -127,7 +127,7 @@ fun! s:doNotExecuteInExplorer(action)
 endf
 
 fun! s:openMainVimFiler()
-  if &fileType ==# 'vimfiler'
+  if &filetype ==# 'vimfiler'
     retu
   else
     let fileName = expand('%:t')
@@ -136,7 +136,7 @@ fun! s:openMainVimFiler()
   endif
 endf
 
-nnoremap <silent> <leader><leader> :call <SID>openMainVimFiler()<CR>
+nnoremap <silent> <leader>e :call <SID>openMainVimFiler()<CR>
 
 nnoremap <silent> <C-h> :call <SID>enterAndExitVimFiler()<CR>
 nnoremap <silent> <BS> :call <SID>enterAndExitVimFiler()<CR>
