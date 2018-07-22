@@ -41,7 +41,6 @@ export PATH=$PATH:"$HOME/.local/bin"
 alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
 
 # Httpie
-alias h='http-prompt'
 alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 
 # PostgreSQL
@@ -59,8 +58,12 @@ bind '"\e[1;5D": backward-word'
 # do not disturb terminal with ctrl-S or ctrl-Q
 stty -ixon
 
-# Scripts
-[ -f "$HOME/scripts/watch_changes.bash" ] && source "$HOME/scripts/watch_changes.bash"
-[ -f "$HOME/scripts/autotools_init.bash" ] && source "$HOME/scripts/autotools_init.bash"
-[ -f "$HOME/scripts/cmake_init.bash" ] && source "$HOME/scripts/cmake_init.bash"
-[ -f "$HOME/scripts/run.bash" ] && source "$HOME/scripts/run.bash"
+# Completion scripts
+for bcfile in ~/.bash_completion.d/* ; do
+  [ -f "$bcfile" ] && . $bcfile
+done
+
+# Other bash scripts
+for bfile in `find ~/scripts/* -name "*.bash" -not -name "*_completion.*"` ; do
+  [ -f "$bfile" ] && . $bfile
+done

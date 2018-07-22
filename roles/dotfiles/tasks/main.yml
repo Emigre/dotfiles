@@ -47,9 +47,9 @@
   file: "path={{ home }}/.bash_completion.d state=directory mode=0755 owner={{ user }}"
   become: yes
 
-- name: Ensure the git completion is symlinked into the bash completion folder
+- name: Ensure the bash completion scripts are symlinked to the bash completion folder
   file:
-    src: "{{ home }}/Dropbox/scripts/git_completion.bash"
+    src: "{{ home }}/Dropbox/scripts/*_completion.bash"
     dest: "{{ home }}/.bash_completion.d/git.bash"
     state: link
 
@@ -60,6 +60,11 @@
     state: link
   with_fileglob:
     - ./.*
+
+- name: Ensure there is a .h_config file
+  file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"
+  become: yes
+  when: is_home
 
 - name: Set the .gituser file
   template:
