@@ -1,3 +1,2 @@
 - name: Ensure xcpretty is installed
   gem: name=xcpretty state=present
-  when: is_home

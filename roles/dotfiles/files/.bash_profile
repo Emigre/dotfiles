@@ -55,15 +55,13 @@ alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/
 bind '"\e[1;5C": forward-word'
 bind '"\e[1;5D": backward-word'
 
-# do not disturb terminal with ctrl-S or ctrl-Q
+# Do not disturb terminal with ctrl-S or ctrl-Q
 stty -ixon
 
-# Completion scripts
+# Bash completion
 for bcfile in ~/.bash_completion.d/* ; do
   [ -f "$bcfile" ] && . $bcfile
 done
 
-# Other bash scripts
-for bfile in `find ~/scripts/* -name "*.bash" -not -name "*_completion.*"` ; do
-  [ -f "$bfile" ] && . $bfile
-done
+# Utility scripts
+export PATH=$PATH:"$HOME/scripts"

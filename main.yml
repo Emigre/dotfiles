@@ -9,12 +9,12 @@
   roles:
     - dotfiles
     - brew
-    - { role: cpp, when: "is_home|bool" }
-    - { role: rust, when: "is_home|bool" }
-    - objectivec
+    - python
     - java
     - javascript
-    - python
+    - { role: cpp, when: "is_home|bool" }
+    - { role: rust, when: "is_home|bool" }
+    - { role: objectivec, when: "is_home|bol" }
     - { role: haskell, when: "is_home|bool" }
     - iterm
     - vim

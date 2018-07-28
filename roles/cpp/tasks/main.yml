@@ -9,11 +9,21 @@
     dest: "{{ home }}/depot_tools"
     update: no
     accept_hostkey: yes
-  when: is_home
 
-- name: Symlink lldb python script to Python 2.7 site-packages
+- name: Symlink the C++ dotfiles
   file:
-    src: "{{ home }}/Dropbox/scripts/lldbinit.py"
-    dest: "/Library/Python/2.7/site-packages/lldbinit.py"
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item | basename }}"
     state: link
   become: yes
+  with_fileglob:
+    - ./.*
+
+- name: Symlink the debugger python scripts to Python 2.7 site-packages
+  file:
+    src: "{{ item }}"
+    dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
+    state: link
+  become: yes
+  with_fileglob:
+    - ./*dbinit.py
