@@ -1,13 +1,14 @@
 [ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
 
-alias la="ls -la"
+alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
+alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 alias less='less -R '
 alias tree="tree -I 'node_modules|build|target|dist|bin'"
-alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
 alias vi="vim"
 
 # C++
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
+alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
 # Java
@@ -39,9 +40,6 @@ export PATH=$PATH:"$HOME/.local/bin"
 
 # Pascal
 alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
-
-# Httpie
-alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'
