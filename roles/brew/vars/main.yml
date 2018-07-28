@@ -10,7 +10,6 @@ homebrew_packages:
   common:
     - ack
     - ansible
-    - entr
     - git
     - htop
     - httperf
