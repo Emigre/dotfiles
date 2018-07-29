@@ -6,6 +6,10 @@
   command: rustup-init -y --no-modify-path
   args:
     creates: "{{ home }}/.cargo/bin/rustup"
+  environment:
+    RUSTUP_HOME: "{{ home }}/.rustup"
+    CARGO_HOME: "{{ home }}/.cargo"
+    RUSTUP_INIT_SKIP_PATH_CHECK: "yes"
 
 - name: Ensure a rust toolchain is installed
   become: yes
@@ -14,6 +18,7 @@
     creates: "{{ home }}/.rustup/toolchains/stable-x86_64-apple-darwin"
   environment:
     RUSTUP_HOME: "{{ home }}/.rustup"
+    CARGO_HOME: "{{ home }}/.cargo"
 
 - name: Set the default rust toolchain
   become: yes
@@ -21,6 +26,7 @@
   changed_when: false
   environment:
     RUSTUP_HOME: "{{ home }}/.rustup"
+    CARGO_HOME: "{{ home }}/.cargo"
 
 - name: Ensure rust source code has been downloaded
   become: yes
@@ -29,6 +35,7 @@
     creates: "{{ home }}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
   environment:
     RUSTUP_HOME: "{{ home }}/.rustup"
+    CARGO_HOME: "{{ home }}/.cargo"
 
 - name: Initialize bash completion for rust
   become: yes
@@ -37,3 +44,4 @@
     creates: "{{ home }}/.bash_completion.d/rust_completion.bash"
   environment:
     RUSTUP_HOME: "{{ home }}/.rustup"
+    CARGO_HOME: "{{ home }}/.cargo"
