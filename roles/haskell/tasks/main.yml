@@ -6,11 +6,14 @@
   become: yes
   with_fileglob:
     - ".*"
+  when: is_home
 
 - name: Ensure the Haskell homebrew packages are installed
   homebrew: "name={{ item }} state=present"
   with_items: "{{ homebrew_packages }}"
+  when: is_home
 
 - name: Ensure the yesod cli is installed
   command: stack install yesod-bin
   changed_when: false
+  when: is_home

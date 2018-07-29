@@ -12,9 +12,9 @@
     - python
     - javascript
     - java
-    - { role: cpp, when: "is_home|bool" }
-    - { role: rust, when: "is_home|bool" }
-    - { role: objectivec, when: "is_home|bool" }
-    - { role: haskell, when: "is_home|bool" }
+    - cpp
+    - rust
+    - objectivec
+    - haskell
     - iterm
     - vim

@@ -1,6 +1,6 @@
 - name: Ensure the C++ homebrew packages are installed
   homebrew: "name={{ item }} state=present"
-  with_items: "{{ homebrew_packages }}"
+  with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
 
 - name: Ensure the depot tools are cloned
   git:
@@ -9,6 +9,7 @@
     dest: "{{ home }}/depot_tools"
     update: no
     accept_hostkey: yes
+  when: is_home
 
 - name: Symlink the C++ dotfiles
   file:
@@ -18,6 +19,7 @@
   become: yes
   with_fileglob:
     - ".*"
+  when: is_home
 
 - name: Symlink the debugger python scripts to Python 2.7 site-packages
   file:
@@ -27,3 +29,4 @@
   become: yes
   with_fileglob:
     - "*dbinit.py"
+  when: is_home
