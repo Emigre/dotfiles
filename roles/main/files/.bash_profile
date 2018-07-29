@@ -8,6 +8,7 @@ alias vi="vim"
 
 # C++
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
+alias cmake='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
