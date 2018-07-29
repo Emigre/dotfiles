@@ -66,7 +66,7 @@
 - name: Ensure there is a .h_config file
   file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"
   become: yes
-  when: is_home
+  changed_when: false
 
 - name: Set the .gituser file
   template:

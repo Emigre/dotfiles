@@ -3,16 +3,15 @@
 
 - name: Ensure the JavaScript homebrew packages are installed
   homebrew: "name={{ item }} state=present"
-  with_items: homebrew_packages
+  with_items: "{{ homebrew_packages }}"
 
 - name: Ensure the .npmrc config file exists
   file: "path={{ home }}/.npmrc state=touch mode=0644 owner={{ user }}"
   become: yes
-  when: is_home
+  changed_when: false
 
 - name: Ensure .npmrc has ~/.node as the global items location
   lineinfile: dest={{ home }}/.npmrc regexp="^prefix"  line="prefix={{ home }}/.node"
-  when: is_home
 
 - name: Ensure several node folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
@@ -22,8 +21,19 @@
     - .node/bin
     - .node/lib
     - .node/lib/node_modules
-  when: is_home
+
+- name: Ensure eslint is installed globally
+  npm: "name={{ item }} state=present global=yes"
+  with_items:
+    - eslint
+    - babel-eslint
+    - eslint-config-airbnb
+    - eslint-plugin-babel
+    - eslint-plugin-import
+    - eslint-plugin-react
+    - eslint-plugin-jsx-a11y
+  changed_when: false
 
 - name: Ensure configured global node packages are installed
-  npm: "name={{ item }} path={{ home }}/.node/lib"
-  with_items: "{{ (node_packages.common + node_packages.home) if is_home|bool else node_packages.common }}"
+  npm: "name={{ item }} state=present global=yes"
+  with_items: "{{ (node_packages.common + node_packages.home) if is_home|bool else (node_packages.common + node_packages.work) }}"

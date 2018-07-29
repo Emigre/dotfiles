@@ -10,14 +10,17 @@
 - name: Ensure rust is installed
   become: yes
   command: rustup install stable
+  changed_when: false
 
 - name: Set the default rust toolchain
   become: yes
   command: rustup default stable
+  changed_when: false
 
 - name: Ensure rust source code has been downloaded
   become: yes
   command: rustup component add rust-src
+  changed_when: false
 
 - name: Initialize bash completion for rust
   become: yes

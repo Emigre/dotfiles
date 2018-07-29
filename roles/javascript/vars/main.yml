@@ -3,21 +3,10 @@ homebrew_packages:
 
 node_packages:
   common:
-    - babel-eslint
-    - eslint
-    - eslint-config-airbnb
-    - eslint-plugin-babel
-    - eslint-plugin-import
-    - eslint-plugin-react
-    - eslint-plugin-jsx-a11y
-    - http-server
-    - lerna
     - n
-    - nodemon
-    - react-native-cli
     - typescript
+  work:
+    - react-native-cli
+    - lerna
   home:
-    - babel-cli
-    - elm
-    - express-generator
     - flow-bin

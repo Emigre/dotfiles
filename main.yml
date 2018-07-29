@@ -10,11 +10,11 @@
     - main
     - brew
     - python
-    - java
     - javascript
+    - java
     - { role: cpp, when: "is_home|bool" }
     - { role: rust, when: "is_home|bool" }
-    - { role: objectivec, when: "is_home|bol" }
+    - { role: objectivec, when: "is_home|bool" }
     - { role: haskell, when: "is_home|bool" }
     - iterm
     - vim
