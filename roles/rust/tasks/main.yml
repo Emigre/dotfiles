@@ -15,9 +15,9 @@
   become: yes
   command: rustup default stable
 
-- Ensure rust source code has been downloaded
+- name: Ensure rust source code has been downloaded
   become: yes
-  commadn: rustup component add rust-src
+  command: rustup component add rust-src
 
 - name: Initialize bash completion for rust
   become: yes
