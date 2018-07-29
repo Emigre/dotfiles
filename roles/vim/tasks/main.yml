@@ -5,7 +5,7 @@
     state: link
   become: yes
   with_fileglob:
-    - ./.*
+    - ".*"
 
 - name: Ensure all needed vim folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
@@ -32,4 +32,4 @@
     dest: "{{ home }}/.vim/plugin/{{ item | basename }}"
     state: link
   with_fileglob:
-    - ./*.vim
+    - "*.vim"

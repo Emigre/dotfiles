@@ -17,7 +17,7 @@
     state: link
   become: yes
   with_fileglob:
-    - ./.*
+    - ".*"
 
 - name: Symlink the debugger python scripts to Python 2.7 site-packages
   file:
@@ -26,4 +26,4 @@
     state: link
   become: yes
   with_fileglob:
-    - ./*dbinit.py
+    - "*dbinit.py"

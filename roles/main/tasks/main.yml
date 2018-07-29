@@ -14,7 +14,7 @@
     dest: "{{ home }}/{{ item | basename }}"
     state: link
   with_fileglob:
-    - ./.*
+    - ".*"
 
 - name: Ensure the code folder exists and has the right permissions
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
@@ -61,7 +61,7 @@
     dest: "{{ home }}/.bash_completion.d/{{ item | basename }}"
     state: link
   with_fileglob:
-    - ./*_completion.bash
+    - "*_completion.bash"
 
 - name: Ensure there is a .h_config file
   file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"

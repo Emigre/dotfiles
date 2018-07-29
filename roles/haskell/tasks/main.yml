@@ -5,7 +5,7 @@
     state: link
   become: yes
   with_fileglob:
-    - ./.*
+    - ".*"
 
 - name: Ensure the Haskell homebrew packages are installed
   homebrew: "name={{ item }} state=present"
