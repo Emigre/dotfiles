@@ -7,23 +7,33 @@
   args:
     creates: "{{ home }}/.cargo/bin/rustup"
 
-- name: Ensure rust is installed
+- name: Ensure a rust toolchain is installed
   become: yes
-  command: rustup install stable
-  changed_when: false
+  command: "{{ home }}/.cargo/bin/rustup install stable"
+  args:
+    creates: "{{ home }}/.rustup/toolchains/stable-x86_64-apple-darwin"
+  environment:
+    RUSTUP_HOME: "{{ home }}/.rustup"
 
 - name: Set the default rust toolchain
   become: yes
-  command: rustup default stable
+  command: "{{ home }}/.cargo/bin/rustup default stable"
   changed_when: false
+  environment:
+    RUSTUP_HOME: "{{ home }}/.rustup"
 
 - name: Ensure rust source code has been downloaded
   become: yes
-  command: rustup component add rust-src
-  changed_when: false
+  command: "{{ home }}/.cargo/bin/rustup component add rust-src"
+  args:
+    creates: "{{ home }}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
+  environment:
+    RUSTUP_HOME: "{{ home }}/.rustup"
 
 - name: Initialize bash completion for rust
   become: yes
-  shell: "rustup completions bash > {{ home }}/.bash_completion.d/rust_completion.bash"
+  shell: "{{ home }}/.cargo/bin/rustup completions bash > {{ home }}/.bash_completion.d/rust_completion.bash"
   args:
     creates: "{{ home }}/.bash_completion.d/rust_completion.bash"
+  environment:
+    RUSTUP_HOME: "{{ home }}/.rustup"
