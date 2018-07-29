@@ -1,11 +1,11 @@
-- name: Symlink the Vim dotfiles
+- name: Symlink .vimrc
   file:
     src: "{{ item }}"
     dest: "{{ home }}/{{ item | basename }}"
     state: link
   become: yes
   with_fileglob:
-    - ".*"
+    - ".vimrc"
 
 - name: Ensure all needed vim folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
