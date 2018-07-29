@@ -82,6 +82,6 @@
     chdir: "{{ home }}/.vim/plugged/YouCompleteMe"
     creates: "{{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so"
   environment:
-    PATH: "/urs/local/bin:/usr/bin:/bin:/sbin:{{ home }}/.cargo/bin"
+    PATH: "/usr/local/bin:/usr/bin:/bin:/sbin:{{ home }}/.cargo/bin"
     RUSTUP_HOME: "{{ home }}/.rustup"
     CARGO_HOME: "{{ home }}/.cargo"
