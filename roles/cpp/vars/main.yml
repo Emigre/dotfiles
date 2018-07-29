@@ -2,6 +2,7 @@ homebrew_packages:
   common:
     - cmake
   home:
+    - bear
     - cgdb
     - gcc
     - gdb
