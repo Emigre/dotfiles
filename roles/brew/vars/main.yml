@@ -28,7 +28,10 @@ homebrew_packages:
     - fpc
     - mercurial
     - rlwrap
+    - tcptrace
+    - tcptraceroute
     - watch
+    - wireshark
 
 homebrew_packages_servers:
   - tomcat
