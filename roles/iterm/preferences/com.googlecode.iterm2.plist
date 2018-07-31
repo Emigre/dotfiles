@@ -234,7 +234,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Desktop</string>
+	<string>~/Dropbox/dotfiles/roles/iterm/preferences</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{914, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -280,9 +280,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 220 599 388 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>367 603 918 452 0 0 1920 1057 </string>
+	<string>1066 405 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1057 0 0 1920 1080 </string>
+	<string>0 0 1270 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>58 50 1120 648 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
@@ -618,6 +618,20 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x6b-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Text</key>
+					<string></string>
+				</dict>
+				<key>0x72-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Text</key>
+					<string></string>
+				</dict>
 				<key>0x7f-0x80000</key>
 				<dict>
 					<key>Action</key>
@@ -872,7 +886,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGM-Regular 12</string>
+			<string>MesloLGM-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -987,9 +1001,11 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/gasparrey/.iterm.d</string>
+	<string>/Users/gasparrey/Dropbox/dotfiles/roles/iterm/preferences</string>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -999,7 +1015,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-21T18:40:12Z</date>
+	<date>2018-07-31T09:57:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1009,7 +1025,7 @@
 	<key>WordCharacters</key>
 	<string></string>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.1.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

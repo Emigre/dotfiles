@@ -1,12 +1,6 @@
 - name: Ensure iTerm2 is installed with homebrew cask
   homebrew_cask: name=iterm2 state=present
 
-- name: Symlink the iTerm2 preferences
-  file:
-    src: "{{ home }}/dotfiles/roles/iterm/preferences"
-    dest: "{{ home }}/.iterm.d"
-    state: link
-
 - name: Ensure the iTerm profiles folder exists and has the right permissions
   file:
     path: "{{ home }}/Library/Application\ Support/iTerm2/DynamicProfiles/"
@@ -15,6 +9,7 @@
     owner: "{{ user }}"
   become: yes
 
+# The profile settings are saved automatically
 - name: Symlink iTerm2 profiles
   file:
     src: "{{ item }}"
@@ -22,3 +17,6 @@
     state: link
   with_fileglob:
     - "*.json"
+
+# Settings are saved when iTerm quits - ensure that 'Load preferences from a custom folder or URL'
+# points to the 'roles/iterm/preferences' folder that contains 'com.googlecode.iterm2.plist'
