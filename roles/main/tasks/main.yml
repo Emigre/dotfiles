@@ -74,7 +74,3 @@
     dest: "{{ home }}/.gituser"
     group: admin
     mode: 0664
-
-- name: Ensure that there is a /usr/local/sbin folder and that it has the right permissions
-  file: "path=/usr/local/sbin state=directory mode=0755 owner={{ user }}"
-  become: yes

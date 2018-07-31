@@ -28,7 +28,6 @@ homebrew_packages:
     - fpc
     - mercurial
     - rlwrap
-    - ssldump
     - tcptrace
     - tcptraceroute
     - watch
