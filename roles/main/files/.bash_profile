@@ -21,6 +21,10 @@ export M2=$M2_HOME/bin
 # Rust
 export PATH=$PATH:"$HOME/.cargo/bin"
 
+# Go
+export GOPATH=$HOME/code/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
 # Javascript
 if [ $IS_HOME == true ] ; then
   export PATH="$PATH:$HOME/.node/bin"
