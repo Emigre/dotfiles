@@ -13,9 +13,9 @@ alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 export GRADLE_USER_HOME="$HOME/.gradle"
-export M2_HOME='/usr/local/Cellar/maven/3.3.3/libexec'
+export M2_HOME='/usr/local/Cellar/maven/3.5.4/libexec'
 export M2=$M2_HOME/bin
 
 # Rust
