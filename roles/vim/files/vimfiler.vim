@@ -20,17 +20,18 @@ endif
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
 let g:vimfiler_ignore_pattern = [
-      \ '^\.DS_Store$',
+      \ '\.o$',
+      \ '\.pyc$',
       \ '^\.cache$',
       \ '^\.deps$',
+      \ '^\.DS_Store$',
       \ '^\.git$',
-      \ '^node_modules$',
+      \ '^\.h$',
       \ '^\.mvn$',
+      \ '^autom4te\.cache$',
+      \ '^node_modules$',
       \ '^tags\.lock$',
       \ '^tags\.temp$',
-      \ '^autom4te\.cache$',
-      \ '\.pyc$',
-      \ '\.o$',
       \ ]
 
 fun! s:defineColor(id, ctermfg)

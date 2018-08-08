@@ -5,16 +5,16 @@ endif
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](' . join([
     \ '\.cabal-sandbox',
-    \ 'cmake-build-debug',
-    \ '\.git',
     \ '\.cache',
-    \ '\.temp',
+    \ '\.git',
     \ '\.stack-work',
+    \ '\.temp',
     \ '\.xcodeproj',
     \ 'android',
     \ 'assets',
     \ 'bin',
     \ 'build',
+    \ 'cmake-build-debug',
     \ 'CMakeFiles',
     \ 'coverage',
     \ 'dist',
@@ -29,6 +29,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v(' . join([
     \ '\.d',
     \ '\.DS_Store',
+    \ '\.h',
     \ '\.o',
     \ '\.out',
     \ '\.plist',
