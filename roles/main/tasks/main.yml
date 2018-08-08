@@ -20,6 +20,10 @@
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
 
+- name: Ensure the envs folder exists and has the right permissions
+  file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"
+  become: yes
+
 - name: Ensure there is a vagrant folder
   file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
   become: yes

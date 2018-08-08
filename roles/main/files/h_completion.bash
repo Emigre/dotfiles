@@ -18,3 +18,4 @@ _http_prompt() {
 }
 
 complete -F _http_prompt h
+complete -F _http_prompt h_init
