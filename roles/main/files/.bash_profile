@@ -1,7 +1,6 @@
 [ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
 
 alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
-alias http='/usr/local/bin/http --pretty=all --verify=no --verbose'
 alias less='less -R '
 alias tree="tree -I 'node_modules|build|target|dist|bin'"
 alias vi="vim"
