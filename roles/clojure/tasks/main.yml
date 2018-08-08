@@ -1,0 +1,8 @@
+- name: Ensure Clojure is installed with homebrew
+  homebrew: name=clojure state=present
+  when: is_home
+
+- name: Ensure the Clojure homebrew packages are installed
+  homebrew: "name={{ item }} state=present"
+  with_items: "{{ homebrew_packages }}"
+  when: is_home
