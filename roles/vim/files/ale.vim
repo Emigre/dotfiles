@@ -21,6 +21,7 @@ nmap <silent> \ <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
       \ 'c': ['cpplint'],
+      \ 'clojure': ['joker'],
       \ 'cpp': ['cpplint'],
       \ 'java': ['checkstyle'],
       \ 'javascript': ['eslint'],

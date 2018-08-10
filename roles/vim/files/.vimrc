@@ -31,6 +31,7 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'w0rp/ale', {
       \ 'for': [
       \ 'c',
+      \ 'clojure',
       \ 'cpp',
       \ 'haskell',
       \ 'java',
@@ -47,6 +48,7 @@ Plug 'Valloric/YouCompleteMe', {
       \ '--clang-completer --rust-completer --java-completer',
       \ 'for': [
       \ 'c',
+      \ 'clojure',
       \ 'cpp',
       \ 'java',
       \ 'javascript',
