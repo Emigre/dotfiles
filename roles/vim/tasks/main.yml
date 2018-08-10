@@ -80,7 +80,7 @@
 - name: Compile YouCompleteMe
   become: yes
   become_user: "{{ user }}"
-  command: python3 ./install.py --clang-completer --java-completer --rust-completer
+  command: python3 ./install.py --clang-completer --java-completer --rust-completer --go-completer
   args:
     chdir: "{{ home }}/.vim/plugged/YouCompleteMe"
     creates: "{{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so"

@@ -5,3 +5,13 @@
   file: "path={{ home }}/code/go state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
+
+- name: Ensure golint is installed
+  shell: /usr/local/bin/go get -u golang.org/x/lint/golint
+  become: yes
+  become_user: "{{ user }}"
+  args:
+    creates: "{{ home }}/code/go/bin/golint"
+  environment:
+    GOPATH: "{{ home }}/code/go"
+  changed_when: false

@@ -23,6 +23,7 @@ let g:ale_linters = {
       \ 'c': ['cpplint'],
       \ 'clojure': ['joker'],
       \ 'cpp': ['cpplint'],
+      \ 'go': ['golint'],
       \ 'java': ['checkstyle'],
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
