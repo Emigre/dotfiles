@@ -4,12 +4,14 @@
     dest: "{{ home }}/{{ item | basename }}"
     state: link
   become: yes
+  become_user: "{{ user }}"
   with_fileglob:
     - ".vimrc"
 
 - name: Ensure all needed vim folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
   with_items:
     - .vim
     - .vim/autoload
@@ -77,6 +79,7 @@
 
 - name: Compile YouCompleteMe
   become: yes
+  become_user: "{{ user }}"
   command: python3 ./install.py --clang-completer --java-completer --rust-completer
   args:
     chdir: "{{ home }}/.vim/plugged/YouCompleteMe"

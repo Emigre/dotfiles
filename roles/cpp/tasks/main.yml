@@ -17,6 +17,7 @@
     dest: "{{ home }}/{{ item | basename }}"
     state: link
   become: yes
+  become_user: "{{ user }}"
   with_fileglob:
     - ".*"
   when: is_home
@@ -27,6 +28,7 @@
     dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
     state: link
   become: yes
+  become_user: "{{ user }}"
   with_fileglob:
     - "*dbinit.py"
   when: is_home

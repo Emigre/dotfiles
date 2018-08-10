@@ -1,6 +1,7 @@
 - name: Ensure the dotfiles folder exists and has the right permissions
   file: "path={{ home }}/Dropbox/dotfiles state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Ensure there is a symlink to the dotfiles folder in the home folder
   file:
@@ -19,14 +20,17 @@
 - name: Ensure the code folder exists and has the right permissions
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Ensure the envs folder exists and has the right permissions
   file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Ensure there is a vagrant folder
   file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Ensure the vagrant repo is cloned
   git:
@@ -40,6 +44,7 @@
 - name: Ensure there is a scripts folder
   file: "path={{ home }}/Dropbox/scripts state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Ensure the scripts repo is cloned
   git:
@@ -58,6 +63,7 @@
 - name: Ensure there is a bash completions folder
   file: "path={{ home }}/.bash_completion.d state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 - name: Symlink the completion scripts
   file:
@@ -70,6 +76,7 @@
 - name: Ensure there is a .h_config file
   file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
   changed_when: false
 
 - name: Set the .gituser file

@@ -8,6 +8,7 @@
     mode: 0755
     owner: "{{ user }}"
   become: yes
+  become_user: "{{ user }}"
 
 # The profile settings are saved automatically
 - name: Symlink iTerm2 profiles

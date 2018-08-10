@@ -4,3 +4,4 @@
 - name: Ensure the Go workspace exists and has the right permissions
   file: "path={{ home }}/code/go state=directory mode=0755 owner={{ user }}"
   become: yes
+  become_user: "{{ user }}"
