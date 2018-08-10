@@ -44,8 +44,6 @@ Plug 'w0rp/ale', {
       \}
 
 Plug 'Valloric/YouCompleteMe', {
-      \ 'do': 'sudo python3 ./install.py '.
-      \ '--clang-completer --rust-completer --java-completer',
       \ 'for': [
       \ 'c',
       \ 'clojure',
