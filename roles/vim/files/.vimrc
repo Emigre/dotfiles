@@ -31,15 +31,11 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'w0rp/ale', {
       \ 'for': [
       \ 'c',
-      \ 'clojure',
       \ 'cpp',
-      \ 'go',
-      \ 'haskell',
       \ 'java',
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
-      \ 'rust',
       \ 'typescript',
       \ ]
       \}
@@ -47,14 +43,11 @@ Plug 'w0rp/ale', {
 Plug 'Valloric/YouCompleteMe', {
       \ 'for': [
       \ 'c',
-      \ 'clojure',
       \ 'cpp',
-      \ 'go',
       \ 'java',
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
-      \ 'rust',
       \ 'typescript',
       \ ]
       \ }

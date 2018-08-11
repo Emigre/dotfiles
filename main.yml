@@ -9,14 +9,9 @@
   roles:
     - main
     - brew
-    - python
-    - javascript
-    - java
     - cpp
-    - rust
-    - go
-    - objectivec
-    - clojure
-    - haskell
+    - python
+    - java
+    - javascript
     - iterm
     - vim

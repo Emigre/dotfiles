@@ -17,13 +17,6 @@ export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.5.4/libexec'
 export M2=$M2_HOME/bin
 
-# Rust
-export PATH=$PATH:"$HOME/.cargo/bin"
-
-# Go
-export GOPATH=$HOME/code/go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
-
 # Javascript
 if [ $IS_HOME == true ] ; then
   export PATH="$PATH:$HOME/.node/bin"
@@ -37,13 +30,6 @@ alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow statu
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
 alias python='python3'
 alias pip='pip3'
-
-# Haskell
-export PATH=$PATH:"$HOME/.cabal/bin"
-export PATH=$PATH:"$HOME/.local/bin"
-
-# Pascal
-alias fpc='MACOSX_DEPLOYMENT_TARGET=10.12 fpc'
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'

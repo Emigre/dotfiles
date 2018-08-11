@@ -32,3 +32,6 @@
   with_fileglob:
     - "*dbinit.py"
   when: is_home
+
+- name: Ensure xcpretty is installed for Objective-C
+  gem: name=xcpretty state=present

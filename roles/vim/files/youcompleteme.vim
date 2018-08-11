@@ -201,19 +201,18 @@ let g:ycm_extra_conf_globlist = ['~/code/c++/chromium/*']
 " let g:ycm_filepath_completion_use_working_dir = 0
 
 " option that controls the character-based triggers for the various semantic completion engines
-let g:ycm_semantic_triggers =  {
-  \ 'c' : ['->', '.'],
-  \ 'clojure': ['('],
-  \ 'cpp,cuda,objcpp' : ['->', '.', '::'],
-  \ 'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \ 'erlang' : [':'],
-  \ 'lua' : ['.', ':'],
-  \ 'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s', 're!\[.*\]\s'],
-  \ 'ocaml' : ['.', '#'],
-  \ 'perl' : ['->'],
-  \ 'php' : ['->', '::'],
-  \ 'ruby' : ['.', '::'],
-  \ }
+" let g:ycm_semantic_triggers =  {
+"   \ 'c' : ['->', '.'],
+"   \ 'cpp,cuda,objcpp' : ['->', '.', '::'],
+"   \ 'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"   \ 'erlang' : [':'],
+"   \ 'lua' : ['.', ':'],
+"   \ 'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s', 're!\[.*\]\s'],
+"   \ 'ocaml' : ['.', '#'],
+"   \ 'perl' : ['->'],
+"   \ 'php' : ['->', '::'],
+"   \ 'ruby' : ['.', '::'],
+"   \ }
 
 " some omnicompletion engines do not work well with the YCM cache—in particular, they might not produce
 " all possible results for a given prefix. By unsetting this option you can ensure that the
@@ -233,8 +232,3 @@ let g:ycm_semantic_triggers =  {
 " specifies the Python interpreter to use to run the jedi completion library. By default the Python
 " under which ycmd runs is used (ycmd runs on Python 2.7.1+ or 3.4+)
 " let g:ycm_python_binary_path = ''
-
-" for semantic analysis with rust including the standard library, you must have a local copy of
-" the Rust source code. YCM will find its location automatically. Otherwise, download the archive,
-" extract it somewhere, and set the following option so YCM can locate it
-let g:ycm_rust_src_path='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
