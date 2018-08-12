@@ -39,3 +39,22 @@
 - name: Ensure configured global node packages are installed
   npm: "name={{ item }} state=present global=yes"
   with_items: "{{ (node_packages.common + node_packages.home) if is_home|bool else (node_packages.common + node_packages.work) }}"
+
+- name: Ensure there is a blueprints folder for the redux cli
+  file: "path={{ home }}/Dropbox/blueprints state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the blueprints repo is cloned
+  git:
+    repo: https://github.com/Emigre/blueprints.git
+    version: master
+    dest: "{{ home }}/Dropbox/blueprints"
+    update: yes
+    accept_hostkey: yes
+
+- name: Ensure there is a symlink to the blueprints folder in the home folder
+  file:
+    src: "{{ home }}/Dropbox/blueprints"
+    dest: "{{ home }}/blueprints"
+    state: link
