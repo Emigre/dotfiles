@@ -307,7 +307,7 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
 " Enable or disable highlight of searches
-map <silent> ' :set hlsearch!<cr>
+map <silent> <leader>/ :set hlsearch!<cr>
 :set nohlsearch
 hi Search ctermfg=black ctermbg=108
 
