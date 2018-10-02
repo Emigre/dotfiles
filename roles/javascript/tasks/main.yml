@@ -12,7 +12,10 @@
   changed_when: false
 
 - name: Ensure .npmrc has ~/.node as the global items location
-  lineinfile: dest={{ home }}/.npmrc regexp="^prefix"  line="prefix={{ home }}/.node"
+  lineinfile:
+    dest: "{{ home }}/.npmrc"
+    regexp: "^prefix"
+    line: "prefix={{ home }}/.node"
 
 - name: Ensure several node folders exist and have the right permissions
   file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
