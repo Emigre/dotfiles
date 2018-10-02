@@ -88,3 +88,16 @@
     PATH: "/usr/local/bin:/usr/bin:/bin:/sbin:{{ home }}/.cargo/bin"
     RUSTUP_HOME: "{{ home }}/.rustup"
     CARGO_HOME: "{{ home }}/.cargo"
+
+- name: Ensure the jdt folder inside YouCompleteMe has the right permissions
+  become: yes
+  become_user: "{{ user }}"
+  file:
+    dest: "{{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/third_party/eclipse.jdt.ls"
+    owner: "{{ user }}"
+    recurse: yes
+
+- name: Ensure the workspace folder exists inside the YouCompleteMe jdt folder
+  file: "path={{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/third_party/eclipse.jdt.ls/workspace state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
