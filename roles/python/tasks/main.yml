@@ -1,5 +1,8 @@
-- name: Ensure Python is installed with homebrew
+- name: Ensure Python is installed
   homebrew: name=python state=present
+
+- name: Ensure Pypenv is installed
+  homebrew: name=pipenv state=present
 
 - name: Ensure configured python packages are installed
   pip: "executable=pip3 state=present name={{ item }}"
