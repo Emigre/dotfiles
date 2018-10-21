@@ -10,4 +10,5 @@ node_packages:
     - react-native-cli
     - lerna
   home:
+    - elm
     - flow-bin
