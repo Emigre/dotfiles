@@ -1,7 +1,7 @@
 - name: Ensure rustup-init is available
   homebrew: name=rustup-init state=present
 
- - name: Ensure rustup is installed with rustup-init
+- name: Ensure rustup is installed with rustup-init
   become: yes
   become_user: "{{ user }}"
   command: rustup-init -y --no-modify-path
@@ -12,7 +12,7 @@
     CARGO_HOME: "{{ home }}/.cargo"
     RUSTUP_INIT_SKIP_PATH_CHECK: "yes"
 
- - name: Ensure a rust toolchain is installed
+- name: Ensure a rust toolchain is installed
   become: yes
   become_user: "{{ user }}"
   command: "{{ home }}/.cargo/bin/rustup install stable"
@@ -22,7 +22,7 @@
     RUSTUP_HOME: "{{ home }}/.rustup"
     CARGO_HOME: "{{ home }}/.cargo"
 
- - name: Set the default rust toolchain
+- name: Set the default rust toolchain
   become: yes
   become_user: "{{ user }}"
   command: "{{ home }}/.cargo/bin/rustup default stable"
@@ -31,7 +31,7 @@
     RUSTUP_HOME: "{{ home }}/.rustup"
     CARGO_HOME: "{{ home }}/.cargo"
 
- - name: Ensure rust source code has been downloaded
+- name: Ensure rust source code has been downloaded
   become: yes
   become_user: "{{ user }}"
   command: "{{ home }}/.cargo/bin/rustup component add rust-src"
@@ -41,7 +41,7 @@
     RUSTUP_HOME: "{{ home }}/.rustup"
     CARGO_HOME: "{{ home }}/.cargo"
 
- - name: Initialize bash completion for rust
+- name: Initialize bash completion for rust
   become: yes
   become_user: "{{ user }}"
   shell: "{{ home }}/.cargo/bin/rustup completions bash > {{ home }}/.bash_completion.d/rust_completion.bash"
