@@ -16,7 +16,6 @@ homebrew_packages:
     - httpie
     - jq
     - nmap
-    - reattach-to-user-namespace
     - the_silver_searcher
     - tidy-html5
     - tmux
