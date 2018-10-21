@@ -232,3 +232,8 @@ let g:ycm_extra_conf_globlist = ['~/code/c++/chromium/*']
 " specifies the Python interpreter to use to run the jedi completion library. By default the Python
 " under which ycmd runs is used (ycmd runs on Python 2.7.1+ or 3.4+)
 " let g:ycm_python_binary_path = ''
+
+" for semantic analysis with rust including the standard library, you must have a local copy of
+" the Rust source code. YCM will find its location automatically. Otherwise, download the archive,
+" extract it somewhere, and set the following option so YCM can locate it
+let g:ycm_rust_src_path='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'

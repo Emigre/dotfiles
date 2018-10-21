@@ -11,6 +11,10 @@ alias cmake='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
+# Haskell
+export PATH=$PATH:"$HOME/.cabal/bin"
+export PATH=$PATH:"$HOME/.local/bin"
+
 # Java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
 export GRADLE_USER_HOME="$HOME/.gradle"
@@ -30,6 +34,9 @@ alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow statu
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
 alias python='python3'
 alias pip='pip3'
+
+# Rust
+export PATH=$PATH:"$HOME/.cargo/bin"
 
 # PostgreSQL
 export PGDATA='/usr/local/var/postgres'

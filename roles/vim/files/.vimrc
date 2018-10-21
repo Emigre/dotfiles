@@ -32,10 +32,12 @@ Plug 'w0rp/ale', {
       \ 'for': [
       \ 'c',
       \ 'cpp',
+      \ 'haskell',
       \ 'java',
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
+      \ 'rust',
       \ 'typescript',
       \ ]
       \}
@@ -48,6 +50,7 @@ Plug 'Valloric/YouCompleteMe', {
       \ 'javascript',
       \ 'javascript.jsx',
       \ 'python',
+      \ 'rust',
       \ 'typescript',
       \ ]
       \ }

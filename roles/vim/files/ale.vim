@@ -26,6 +26,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
+      \ 'rust': ['cargo'],
       \ 'typescript': ['tslint'],
       \}
 
