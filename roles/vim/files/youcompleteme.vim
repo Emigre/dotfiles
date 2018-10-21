@@ -4,9 +4,9 @@ nnoremap ] :YcmCompleter GoToDefinition<CR>
 nnoremap <silent> <leader>jj :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>jt :YcmCompleter GetType<CR>
 
-nnoremap <silent> <leader>jk :YcmCompleter RestartServer<CR>
+nnoremap <silent> <leader>jk :YcmRestartServer<CR>
 nnoremap <silent> <leader>jl :YcmToggleLogs<CR>
-nnoremap <silent> <leader>jr :YcmRestartServer<CR>
+nnoremap <silent> <leader>jr :YcmCompleter RestartServer<CR>
 nnoremap <silent> <leader>jd :YcmDebugInfo<CR>
 nnoremap <silent> <leader>jf :YcmForceCompileAndDiagnostics<CR>
 
