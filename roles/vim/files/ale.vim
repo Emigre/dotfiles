@@ -31,8 +31,6 @@ let g:ale_linters = {
       \ }
 
 let g:ale_fixers = {
-      \ 'c': ['clang-format'],
-      \ 'cpp': ['clang-format'],
       \ 'css': ['prettier'],
       \ 'javascript': ['prettier', 'eslint'],
       \ 'python': ['autopep8'],
@@ -47,11 +45,6 @@ let g:ale_javascript_prettier_options = '' .
 let g:ale_cpp_cpplint_options = '' .
       \ '--filter=-whitespace,-legal/copyright,' .
       \ '-build/include_subdir'
-
-let g:ale_c_clangformat_options = '-style="{' .
-      \ 'AccessModifierOffset: -1, ' .
-      \ 'AllowShortFunctionsOnASingleLine: Empty' .
-      \ '}"'
 
 let g:ale_java_javac_classpath = './src/main/java/'
 

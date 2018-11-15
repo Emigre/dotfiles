@@ -24,8 +24,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'pangloss/vim-javascript', { 'for':['javascript', 'javascript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp', 'objective-c', 'java']}
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
 Plug 'w0rp/ale', {
