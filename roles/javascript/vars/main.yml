@@ -1,11 +1,11 @@
-homebrew_packages:
-  - yarn
-
 node_packages:
   common:
+    - eslint
     - n
     - redux-cli
     - typescript
+    - prettier
+    - tslint
   work:
     - react-native-cli
     - lerna

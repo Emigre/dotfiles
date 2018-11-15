@@ -67,5 +67,4 @@ endf
 
 :command CtrlPRefresh CtrlPClearCache
 
-nnoremap <leader>p :CtrlPRefresh<CR>
-
+nnoremap <leader>q :CtrlPRefresh<CR>

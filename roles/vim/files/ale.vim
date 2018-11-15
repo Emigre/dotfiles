@@ -1,8 +1,8 @@
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_filetype_changed = 1
-
 let g:ale_sign_error = '░ '
 let g:ale_sign_warning = '░ '
 let g:ale_set_loclist = 0
@@ -10,6 +10,7 @@ let g:ale_set_quickfix = 0
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+let g:ale_linters_explicit = 1
 
 hi! link ALEError SpellBad
 hi! ALEWarning ctermfg=NONE
@@ -24,19 +25,39 @@ let g:ale_linters = {
       \ 'cpp': ['cpplint'],
       \ 'java': ['checkstyle'],
       \ 'javascript': ['eslint'],
-      \ 'jsx': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
       \ 'rust': ['cargo'],
       \ 'typescript': ['tslint'],
-      \}
+      \ }
 
-let g:ale_cpp_cpplint_options = '--filter=-legal/copyright,-build/include_subdir'
+let g:ale_fixers = {
+      \ 'c': ['clang-format'],
+      \ 'cpp': ['clang-format'],
+      \ 'css': ['prettier'],
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'tslint'],
+      \ }
+
+let g:ale_javascript_prettier_options = '' .
+      \ '--single-quote ' .
+      \ '--print-width 100 ' .
+      \ '--trailing-comma all'
+
+let g:ale_cpp_cpplint_options = '' .
+      \ '--filter=-whitespace,-legal/copyright,' .
+      \ '-build/include_subdir'
+
+let g:ale_c_clangformat_options = '-style="{' .
+      \ 'AccessModifierOffset: -1, ' .
+      \ 'AllowShortFunctionsOnASingleLine: Empty' .
+      \ '}"'
 
 let g:ale_java_javac_classpath = './src/main/java/'
+
 let g:ale_java_javac_options = ''
 
-let g:ale_python_pylint_options = '--disable=' .
-      \ 'missing-docstring,' .
+let g:ale_python_pylint_options = '' .
+      \ '--disable=missing-docstring,' .
       \ 'too-few-public-methods,' .
       \ 'invalid-name,' .
       \ 'no-self-use'

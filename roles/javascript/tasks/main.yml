@@ -1,9 +1,8 @@
 - name: Ensure Node.js is installed with homebrew
   homebrew: name=node state=present
 
-- name: Ensure the JavaScript homebrew packages are installed
-  homebrew: "name={{ item }} state=present"
-  with_items: "{{ homebrew_packages }}"
+- name: Ensure yarn is installed
+  homebrew: name=yarn state=present
 
 - name: Ensure the .npmrc config file exists
   file: "path={{ home }}/.npmrc state=touch mode=0644 owner={{ user }}"

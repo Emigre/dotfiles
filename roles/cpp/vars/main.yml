@@ -4,6 +4,7 @@ homebrew_packages:
   home:
     - bear
     - cgdb
+    - clang-format
     - gcc
     - gdb
     - ninja

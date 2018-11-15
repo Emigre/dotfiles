@@ -40,7 +40,7 @@ Plug 'w0rp/ale', {
       \ 'rust',
       \ 'typescript',
       \ ]
-      \}
+      \ }
 
 Plug 'Valloric/YouCompleteMe', {
       \ 'for': [
