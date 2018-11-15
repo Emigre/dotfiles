@@ -1,13 +1,14 @@
 python_packages:
   common:
+    - autopep8
+    - flake8
     - http-prompt
+    - pylint
     - virtualenv
   home:
     - cpplint
-    - flake8
     - gdbgui
     - ipdb
     - mypy
     - pudb
     - pyinstaller
-    - pylint

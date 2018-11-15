@@ -35,6 +35,7 @@ let g:ale_fixers = {
       \ 'cpp': ['clang-format'],
       \ 'css': ['prettier'],
       \ 'javascript': ['prettier', 'eslint'],
+      \ 'python': ['autopep8'],
       \ 'typescript': ['prettier', 'tslint'],
       \ }
 
