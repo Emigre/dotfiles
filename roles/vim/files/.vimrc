@@ -21,6 +21,7 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/Zenburn'
 Plug 'Yggdroot/indentLine'
 
+Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }

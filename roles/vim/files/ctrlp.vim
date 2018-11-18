@@ -29,7 +29,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v(' . join([
     \ '\.d',
     \ '\.DS_Store',
-    \ '\.h',
     \ '\.o',
     \ '\.out',
     \ '\.plist',

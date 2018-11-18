@@ -43,7 +43,10 @@ let g:ale_javascript_prettier_options = '' .
       \ '--trailing-comma all'
 
 let g:ale_cpp_cpplint_options = '' .
-      \ '--filter=-whitespace,-legal/copyright,' .
+      \ '--filter=' .
+      \ '-whitespace,' .
+      \ '-legal/copyright,' .
+      \ '-build/header_guard,' .
       \ '-build/include_subdir'
 
 let g:ale_java_javac_classpath = './src/main/java/'
