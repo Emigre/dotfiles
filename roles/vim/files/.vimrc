@@ -170,10 +170,10 @@ nnoremap <leader>O O<ESC>
 hi IncSearch cterm=NONE ctermbg=green
 
 " Set some commands that I often write in a wrong way by mistake
-command Q q
-command Qa qa
+command -bang Q q
+command -bang Qa qa
 command W w
-command Wq wq
+command -bang Wq wq
 command Ccl ccl
 
 set timeout         " Do time out on mappings and others
