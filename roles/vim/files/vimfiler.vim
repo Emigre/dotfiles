@@ -53,7 +53,7 @@ endf
 
 au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
-au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx|m)') | call <SID>defineColor('c', 34)
+au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx|m|mm)') | call <SID>defineColor('c', 34)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp)') | call <SID>defineColor('header', 28)
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)
@@ -77,7 +77,7 @@ au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ '\s+(AUTHORS|ChangeLog|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 246)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
-      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|Cargo\.toml|Cargo\.lock)( |$)') | call <SID>defineColor('build', 'lightCyan')
+      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|Cargo\.toml|Cargo\.lock)( |$)') | call <SID>defineColor('build', 75)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
