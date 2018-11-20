@@ -6,8 +6,10 @@ alias tree="tree -I 'node_modules|build|target|dist|bin'"
 alias vi="vim"
 
 # C++
-alias cm='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
-alias cc_init='ln -s ./build/compile_commands.json ./compile_commands.json'
+cm() {
+  cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" \
+    && compdb -p . list > "$@"/compile_commands.json; # adds the headers
+}
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"

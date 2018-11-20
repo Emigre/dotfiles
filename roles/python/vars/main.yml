@@ -1,6 +1,7 @@
 python_packages:
   common:
     - autopep8
+    - compdb
     - flake8
     - http-prompt
     - pylint
