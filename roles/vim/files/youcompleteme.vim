@@ -92,10 +92,10 @@ hi YcmWarningSection ctermfg=5 ctermbg=237
 " let g:ycm_show_diagnostics_ui = 1
 
 " symbol for errors in the Vim gutter
-let g:ycm_error_symbol = '▸'
+let g:ycm_error_symbol = '░'
 
 " symbol for warnings in the Vim gutter
-let g:ycm_warning_symbol = '▸'
+let g:ycm_warning_symbol = '░'
 
 " shows icons in Vim's gutter on lines that have a diagnostic set
 " let g:ycm_enable_diagnostic_signs = 1
