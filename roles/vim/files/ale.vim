@@ -9,7 +9,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
-let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+let g:ale_echo_msg_format = '%s [%linter%]'
 let g:ale_linters_explicit = 1
 
 hi! link ALEError SpellBad
@@ -21,8 +21,8 @@ nmap <silent> \| <Plug>(ale_previous_wrap)
 nmap <silent> \ <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
-      \ 'c': ['cpplint'],
-      \ 'cpp': ['cpplint'],
+      \ 'c': ['clangtidy'],
+      \ 'cpp': ['clangtidy'],
       \ 'java': ['checkstyle'],
       \ 'javascript': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
@@ -42,12 +42,32 @@ let g:ale_javascript_prettier_options = '' .
       \ '--print-width 100 ' .
       \ '--trailing-comma all'
 
-let g:ale_cpp_cpplint_options = '' .
-      \ '--filter=' .
-      \ '-whitespace,' .
-      \ '-legal/copyright,' .
-      \ '-build/header_guard,' .
-      \ '-build/include_subdir'
+" https://clang.llvm.org/extra/clang-tidy/index.html
+" http://clang.llvm.org/extra/clang-tidy/checks/list.html
+let g:ale_cpp_clangtidy_checks = [
+      \ '-*',
+      \ '-abseil-*',
+      \ '-android-*',
+      \ 'boost-*',
+      \ 'bugprone-*',
+      \ 'cert-*',
+      \ 'cppcoreguidelines-*',
+      \ '-clang-analyzer-*',
+      \ '-fuchsia-*',
+      \ 'google-*',
+      \ '-hicpp-*',
+      \ '-llvm-*',
+      \ 'misc-*',
+      \ 'modernize-*',
+      \ 'mpi-*',
+      \ '-objc-*',
+      \ 'performance-*',
+      \ 'portability-*',
+      \ 'readability-*',
+      \ '-zircon-*',
+      \ ]
+
+let g:ale_cpp_clangtidy_executable = '/usr/local/opt/llvm/bin/clang-tidy'
 
 let g:ale_java_javac_classpath = './src/main/java/'
 

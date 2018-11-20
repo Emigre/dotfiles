@@ -2,6 +2,10 @@
   homebrew: "name={{ item }} state=present"
   with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
 
+- name: Ensure llvm is installed
+  homebrew: name=llvm state=present
+  when: is_home
+
 - name: Ensure the depot tools are cloned
   git:
     repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git

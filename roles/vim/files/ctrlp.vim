@@ -27,6 +27,7 @@ let g:ctrlp_custom_ignore = {
     \ 'yesod-devel',
   \ ], '|') . ')$',
   \ 'file': '\v(' . join([
+    \ 'compile_commands.json',
     \ '\.d',
     \ '\.DS_Store',
     \ '\.o',

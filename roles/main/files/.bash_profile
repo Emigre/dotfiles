@@ -7,6 +7,7 @@ alias vi="vim"
 
 # C++
 alias cm='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+alias cc_init='ln -s ./build/compile_commands.json ./compile_commands.json'
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"

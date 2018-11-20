@@ -23,6 +23,7 @@ let g:vimfiler_ignore_pattern = [
       \ '\.o$',
       \ '\.pyc$',
       \ '^\.cache$',
+      \ 'compile_commands.json',
       \ '^\.deps$',
       \ '^\.DS_Store$',
       \ '^\.git$',
