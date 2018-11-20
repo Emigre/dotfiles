@@ -6,8 +6,8 @@ alias tree="tree -I 'node_modules|build|target|dist|bin'"
 alias vi="vim"
 
 # C++
+alias cm='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
-alias cmake='cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/c++/of/openFrameworks"
 
@@ -22,29 +22,29 @@ export M2_HOME='/usr/local/Cellar/maven/3.5.4/libexec'
 export M2=$M2_HOME/bin
 
 # Javascript
+alias npml='npm list --depth=0'
+alias npmlg='npm list -g --depth=0'
+alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 if [ $IS_HOME == true ] ; then
   export PATH="$PATH:$HOME/.node/bin"
 fi
 export PATH="$PATH:$HOME/.yarn/bin"
-alias npml='npm list --depth=0'
-alias npmlg='npm list -g --depth=0'
-alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 
 # Python
-export PIP_CONFIG_FILE="$HOME/.pip_conf"
 alias python='python3'
 alias pip='pip3'
+export PIP_CONFIG_FILE="$HOME/.pip_conf"
 
 # Rust
 export PATH=$PATH:"$HOME/.cargo/bin"
 
 # PostgreSQL
-export PGDATA='/usr/local/var/postgres'
 alias psql_start='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias psql_stop='pg_ctl stop -m fast'
 alias psql_status='pg_ctl status | egrep pg_ctl'
 alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
+export PGDATA='/usr/local/var/postgres'
 
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
