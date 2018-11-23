@@ -12,7 +12,7 @@ cm() {
 }
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias of='make RunRelease'
-export OF_ROOT="$HOME/code/c++/of/openFrameworks"
+export OF_ROOT="$HOME/code/cpp/of/openFrameworks"
 
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"
