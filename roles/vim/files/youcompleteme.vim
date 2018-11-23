@@ -165,7 +165,7 @@ set cot=menuone,preview
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " maximum number of diagnostics shown to the user when errors or warnings are detected
-" let g:ycm_max_diagnostics_to_display = 30
+let g:ycm_max_diagnostics_to_display = 999
 
 " key mappings used to select the first completion string
 " let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
