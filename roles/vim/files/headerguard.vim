@@ -7,7 +7,7 @@ endf
 au BufWritePre *.h,*.hpp silent! call <SID>applyHeaderguardIfNoGuardsInTheFile()
 
 fun! g:HeaderguardName()
-  let l:path = expand('%:s$^src/$$')
+  let l:path = expand('%:s$^\(src\|include\)/$$')
   retu toupper(substitute(l:path, '[^0-9a-zA-Z_]', '_', 'g')) . '_'
 endf
 
