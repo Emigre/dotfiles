@@ -10,6 +10,14 @@ cm() {
   cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" \
     && compdb -p . list > "$@"/compile_commands.json; # adds the headers
 }
+ma() {
+  intercept-build make "$@"
+  compdb -p . list > ./_compile_commands.json; # adds the headers
+  if [ -f "_compile_commands.json" ]; then
+    rm compile_commands.json
+    mv _compile_commands.json compile_commands.json
+  fi
+}
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/cpp/of/openFrameworks"
