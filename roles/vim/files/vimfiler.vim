@@ -29,9 +29,11 @@ let g:vimfiler_ignore_pattern = [
       \ '^\.h$',
       \ '^\.mvn$',
       \ '^autom4te\.cache$',
+      \ '^bin$',
       \ '^build$',
       \ '^compile_commands\.json$',
       \ '^node_modules$',
+      \ '^obj$',
       \ '^tags\.lock$',
       \ '^tags\.temp$',
       \ ]
