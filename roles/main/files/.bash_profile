@@ -1,16 +1,16 @@
-[ "$(scutil --get ComputerName)" == "Gaspar’s MacBook Pro" ] && IS_HOME=true || IS_HOME=false
+[ "$(scutil --get ComputerName)" == 'Gaspar’s MacBook Pro' ] && IS_HOME=true || IS_HOME=false
 
-alias grep="grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}"
+alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
-alias tree="tree -I 'node_modules|build|target|dist|bin'"
-alias vi="vim"
+alias tree='tree -I "node_modules|build|target|dist|bin"'
+alias vi='vim'
 
 # C++
 cm() {
   cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" \
     && compdb -p . list > "$@"/compile_commands.json; # adds the headers
 }
-ma() {
+mk() {
   intercept-build make "$@"
   compdb -p . list > ./_compile_commands.json; # adds the headers
   if [ -f "_compile_commands.json" ]; then
@@ -19,26 +19,26 @@ ma() {
   fi
 }
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
-alias of='make RunRelease'
-export OF_ROOT="$HOME/code/cpp/of/openFrameworks"
+alias clang_includes='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
+alias of_start='make RunRelease'
+export OF_ROOT="$HOME/code/openFrameworks"
 
 # Haskell
 export PATH=$PATH:"$HOME/.cabal/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"
+alias java_home='/usr/libexec/java_home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home'
 export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.5.4/libexec'
-export M2=$M2_HOME/bin
+export M2="$M2_HOME/bin"
 
 # Javascript
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
-if [ $IS_HOME == true ] ; then
-  export PATH="$PATH:$HOME/.node/bin"
-fi
+export PATH="$PATH:$HOME/.node/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 
 # Python
