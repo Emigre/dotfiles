@@ -65,10 +65,6 @@ set rulerformat=%l,%c%=%P
 set noswapfile
 set nofoldenable
 
-" Enable project-specific .vimrc files
-set exrc
-set secure
-
 " leader key
 let mapleader = "\<Space>"
 
@@ -83,6 +79,9 @@ filetype plugin indent on    " required
 " filetype plugin on
 
 set smartindent
+
+" Detect file type of C++ standard headers
+au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
 
 aug TabSettings
   au!
@@ -216,9 +215,6 @@ set clipboard=unnamed
 set wildmenu
 " Allow cursor keys in insert mode
 set esckeys
-" Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
 " Highlight searches
 set hlsearch
 " Ignore case of searches
