@@ -6,21 +6,9 @@ alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='vim'
 
 # C++
-cm() {
-  cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" \
-    && compdb -p . list > "$@"/compile_commands.json; # adds the headers
-}
-mk() {
-  intercept-build make "$@"
-  compdb -p . list > ./_compile_commands.json; # adds the headers
-  if [ -f "_compile_commands.json" ]; then
-    rm compile_commands.json
-    mv _compile_commands.json compile_commands.json
-  fi
-}
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias clang_includes='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
-alias of_start='make RunRelease'
+alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openFrameworks"
 
 # Haskell
