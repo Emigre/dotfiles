@@ -165,7 +165,7 @@ set cot=menuone,preview
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " maximum number of diagnostics shown to the user when errors or warnings are detected
-" let g:ycm_max_diagnostics_to_display = 30
+let g:ycm_max_diagnostics_to_display = 100
 
 " key mappings used to select the first completion string
 " let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
@@ -193,7 +193,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " If using confirmation of .ycm_extra_conf.py files, this allows to set automatic whitelist
 " or blacklist files so they are automatically confirmed or declined without asking the user
-let g:ycm_extra_conf_globlist = ['~/code/c++/chromium/*']
+let g:ycm_extra_conf_globlist = [
+      \ '~/code/c++/chromium/*',
+      \ '~/code/openFrameworks/.ycm_extra_conf.py'
+      \ ]
 
 " by default YCM's filepath completion will interpret relative paths like ../ as being
 " relative to the folder of the file of the currently active buffer. Setting this option will
