@@ -131,18 +131,6 @@ fun! s:doNotExecuteInExplorer(action)
   endif
 endf
 
-fun! s:openMainVimFiler()
-  if &filetype ==# 'vimfiler'
-    retu
-  else
-    let fileName = expand('%:t')
-    let folder = expand('%:p:h')
-    exe 'VimFiler -simple -buffer-name=' . fileName . ' ' . folder
-  endif
-endf
-
-nnoremap <silent> <leader>e :call <SID>openMainVimFiler()<CR>
-
 nnoremap <silent> <C-h> :call <SID>enterAndExitVimFiler()<CR>
 nnoremap <silent> <BS> :call <SID>enterAndExitVimFiler()<CR>
 nnoremap <silent> <leader>t :call <SID>findInVimFiler()<CR>

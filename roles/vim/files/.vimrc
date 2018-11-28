@@ -451,3 +451,29 @@ fun! s:SwitchBetweenHeaderAndImplementation()
 endfun
 
 nnoremap <leader>] :call <SID>SwitchBetweenHeaderAndImplementation()<CR>
+
+fun! s:openFileInAnotherTmuxTab()
+  if &filetype ==# 'vimfiler'
+    retu
+  else
+    let file = expand('%:p')
+    let folder = expand('%:p:h')
+    let cwd = getcwd()
+    if folder =~? '^/usr/local/'
+      let nextCwd = '/usr/local'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/'
+      let nextCwd = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/'
+      let nextCwd = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
+    elseif folder =~? '^/Users/gasparrey/code/'
+      let projectFolder = matchstr(folder, '^\(/Users/gasparrey/code/[^/]\+\)')
+      let nextCwd = projectFolder
+    else
+      let nextCwd = cwd
+    endif
+    exe 'silent !tmux split-window -h vim ' . file . ' ' .
+          \ '-c "cd ' . nextCwd .'"'
+  endif
+endf
+
+nnoremap <silent> <leader>e :call <SID>openFileInAnotherTmuxTab()<CR>
