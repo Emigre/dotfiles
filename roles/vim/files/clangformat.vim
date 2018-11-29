@@ -1,5 +1,5 @@
 " llvm, google, chromium, mozilla are supported
-let g:clang_format#code_style = 'chromium'
+let g:clang_format#code_style = 'google'
 
 fun! s:clangFormatIfInCodeFolder()
     let file = expand('%:p')
