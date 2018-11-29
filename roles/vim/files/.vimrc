@@ -113,11 +113,25 @@ set expandtab
 set nopaste
 
 " Automatically removes all trailing whitespace on save
-au BufWritePre * :silent %s/\s\+$//e
+fun! s:removeTrailingWhitespaceIfInCodeFolder()
+    let file = expand('%:p')
+    if file =~? '^/Users/[^/]\+/code/'
+          \ && file !~?'^/Users/[^/]\+/code/openFrameworks'
+      silent %s/\s\+$//e
+    endif
+endf
+au BufWritePre * :call <SID>removeTrailingWhitespaceIfInCodeFolder()
 
 " Automatically substitutes any no-break spaces (U+00A0) with
 " regular spaces (U+0020) on save
-au BufWritePre * :silent %s/\%u00A0/ /e
+fun! s:removeWeirdNoBreakSpacesIfInCodeFolder()
+    let file = expand('%:p')
+    if file =~? '^/Users/[^/]\+/code/'
+          \ && file !~?'^/Users/[^/]\+/code/openFrameworks'
+      silent %s/\%u00A0/ /e
+    endif
+endf
+au BufWritePre * :call <SID>removeWeirdNoBreakSpacesIfInCodeFolder()
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
