@@ -479,14 +479,17 @@ fun! s:openFileInAnotherTmuxTab()
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
     elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/'
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
-    elseif folder =~? '^/Users/gasparrey/code/'
-      let projectFolder = matchstr(folder, '^\(/Users/gasparrey/code/[^/]\+\)')
+    elseif folder =~? '^/Users/[^/]\+/code/[^/]\+'
+      let projectFolder = matchstr(folder, '^\(/Users/[^/]\+/code/[^/]\+\)')
       let nextCwd = projectFolder
     else
       let nextCwd = cwd
     endif
     exe 'silent !tmux split-window -h vim ' . file . ' ' .
           \ '-c "cd ' . nextCwd .'"'
+    " the terminal retains vim's background colour for some reason
+    " this command restores the default terminal colour
+    exe 'silent !tput sgr0'
   endif
 endf
 
