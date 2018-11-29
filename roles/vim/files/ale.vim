@@ -37,6 +37,13 @@ let g:ale_fixers = {
       \ 'typescript': ['prettier', 'tslint'],
       \ }
 
+" disable ale outside the code folder and in the openFrameworks folder
+let g:ale_pattern_options = {
+      \ '^\(/Users/[^/]\+/code/\)\@!\|\(/Users/[^/]\+/code/openFrameworks\)':
+      \   { 'ale_linters': [], 'ale_fixers': [] },
+      \ }
+let g:ale_pattern_options_enabled = 1
+
 let g:ale_javascript_prettier_options = '' .
       \ '--single-quote ' .
       \ '--print-width 100 ' .
