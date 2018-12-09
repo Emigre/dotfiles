@@ -8,18 +8,18 @@
 
 - name: Ensure servers are installed with homebrew
   homebrew: "name={{ item }} state=present"
-  when: is_home
   with_items: "{{ homebrew_packages_servers }}"
+  when: is_home
 
 - name: Ensure databases are installed with homebrew
   homebrew: "name={{ item }} state=present"
-  when: is_home
   with_items: "{{ homebrew_packages_databases }}"
+  when: is_home
 
 - name: Ensure games are installed with homebrew
   homebrew: "name={{ item }} state=present"
-  when: is_home
   with_items: "{{ homebrew_packages_games }}"
+  when: is_home
 
 - name: Ensure the homebrew cask applications are installed
   homebrew_cask: "name={{ item }}"
