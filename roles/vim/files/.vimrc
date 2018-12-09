@@ -3,37 +3,48 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
-Plug 'bfrg/vim-cpp-modern'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'jlanzarotta/bufexplorer'
+" Colour scheme
+Plug 'vim-scripts/Zenburn'
+
+" Simplified clipboard
+Plug 'svermeulen/vim-easyclip'
+Plug 'tpope/vim-repeat'
+
+" CtrlP
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
+
+" File explorer
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vinarise.vim'
-Plug 'svermeulen/vim-easyclip'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tommcdo/vim-fugitive-blame-ext'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/Zenburn'
+
+" Buffer tabs
+Plug 'ap/vim-buftabline'
+Plug 'jlanzarotta/bufexplorer'
+
+" Indentation lines
 Plug 'Yggdroot/indentLine'
 
-Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp', 'objective-c', 'java']}
-Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+" Git integration
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fugitive-blame-ext'
 
+" Editorconfig integration
+Plug 'editorconfig/editorconfig-vim'
+
+" Improved code commenting
+Plug 'scrooloose/nerdcommenter'
+
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+
+" Linting and code formatting
 Plug 'w0rp/ale', {
       \ 'for': [
       \ 'c',
       \ 'cpp',
+      \ 'css',
       \ 'haskell',
       \ 'java',
       \ 'javascript',
@@ -43,19 +54,32 @@ Plug 'w0rp/ale', {
       \ 'typescript',
       \ ]
       \ }
+Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 
-Plug 'Valloric/YouCompleteMe', {
-      \ 'for': [
-      \ 'c',
-      \ 'cpp',
-      \ 'java',
-      \ 'javascript',
-      \ 'javascript.jsx',
-      \ 'python',
-      \ 'rust',
-      \ 'typescript',
-      \ ]
-      \ }
+" Code analysis: language server
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'junegunn/fzf'
+
+" Code completion
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+
+" JavaScript and TypeScript
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+
+" C and C++
+Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
+Plug 'bfrg/vim-cpp-modern', { 'for': ['c', 'cpp'] }
+
+" Python
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+
+" Other
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 call plug#end()
 

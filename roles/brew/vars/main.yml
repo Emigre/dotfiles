@@ -10,6 +10,7 @@ homebrew_packages:
   common:
     - ack
     - ansible
+    - fzf
     - git
     - htop
     - httperf
@@ -20,7 +21,6 @@ homebrew_packages:
     - tidy-html5
     - tmux
     - tree
-    - vim
     - watchman
     - wget
   home:

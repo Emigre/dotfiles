@@ -2,9 +2,9 @@ node_packages:
   common:
     - eslint
     - n
+    - prettier
     - redux-cli
     - typescript
-    - prettier
     - tslint
   work:
     - react-native-cli

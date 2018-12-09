@@ -66,5 +66,3 @@ fun! CtrlPStatusLine(...)
 endf
 
 :command CtrlPRefresh CtrlPClearCache
-
-nnoremap <leader>q :CtrlPRefresh<CR>

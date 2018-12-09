@@ -31,12 +31,12 @@ let g:vimfiler_ignore_pattern = [
       \ '^autom4te\.cache$',
       \ '^bin$',
       \ '^build$',
-      \ '^compile_commands\.json$',
       \ '^node_modules$',
       \ '^obj$',
       \ '^tags\.lock$',
       \ '^tags\.temp$',
       \ ]
+      " \ '^compile_commands\.json$',
 
 fun! s:defineColor(id, ctermfg)
   if @% ==# 'vimfiler:explorer'
@@ -57,9 +57,10 @@ endf
 
 au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
-au FileType vimfiler exe <SID>defineSyntax('c', '(c|cpp|cc|cxx|m|mm)') | call <SID>defineColor('c', 34)
+au FileType vimfiler exe <SID>defineSyntax('cpp', '(c|cpp|cc|cxx)') | call <SID>defineColor('cpp', 34)
+au FileType vimfiler exe <SID>defineSyntax('objc', '(m|mm)') | call <SID>defineColor('objc', 214)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
-au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp)') | call <SID>defineColor('header', 28)
+au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp|inl)') | call <SID>defineColor('header', 28)
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)
 au FileType vimfiler exe <SID>defineSyntax('java', 'java') | call <SID>defineColor('java', 146)
 au FileType vimfiler exe <SID>defineSyntax('json', 'json') | call <SID>defineColor('json', 71)
@@ -77,7 +78,7 @@ au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID
 au FileType vimfiler exe <SID>defineSyntax('xml', 'xml') | call <SID>defineColor('xml', 136)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
-      \ '\s+(Makefile\.in|aclocal\.m4|compile|depcomp|configure|install-sh|missing|log|tags|.+\.log)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
+      \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|compile|depcomp|configure|install-sh|missing|log|tags|.+\.log)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ '\s+(AUTHORS|ChangeLog|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 246)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',

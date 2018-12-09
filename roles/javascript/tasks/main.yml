@@ -42,6 +42,10 @@
   npm: "name={{ item }} state=present global=yes"
   with_items: "{{ (node_packages.common + node_packages.home) if is_home|bool else (node_packages.common + node_packages.work) }}"
 
+- name: Ensure the JavaScript and TypeScript language server is installed
+  homebrew: name=javascript-typescript-langserver state=present
+  when: is_home
+
 - name: Ensure there is a blueprints folder for the redux cli
   file: "path={{ home }}/Dropbox/blueprints state=directory mode=0755 owner={{ user }}"
   become: yes

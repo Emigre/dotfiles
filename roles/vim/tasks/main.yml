@@ -1,3 +1,6 @@
+- name: Ensure vim is installed with homebrew
+  homebrew: name=vim state=present
+
 - name: Symlink .vimrc
   file:
     src: "{{ item }}"
@@ -44,60 +47,50 @@
     update: no
     accept_hostkey: yes
   with_items:
-    - airblade/vim-gitgutter
-    - ap/vim-buftabline
-    - bfrg/vim-cpp-modern
-    - editorconfig/editorconfig-vim
-    - jlanzarotta/bufexplorer
+    - vim-scripts/Zenburn
+    - vermeulen/vim-easyclip
+    - tpope/vim-repeat
     - kien/ctrlp.vim
-    - scrooloose/nerdcommenter
     - Shougo/unite.vim
     - Shougo/vimfiler.vim
     - Shougo/vinarise.vim
-    - svermeulen/vim-easyclip
-    - terryma/vim-multiple-cursors
-    - tommcdo/vim-fugitive-blame-ext
-    - tpope/vim-fugitive
-    - tpope/vim-repeat
-    - vim-scripts/Zenburn
+    - ap/vim-buftabline
+    - jlanzarotta/bufexplorer
     - Yggdroot/indentLine
-    - elzr/vim-json
-    - leafgarland/typescript-vim
-    - mxw/vim-jsx
-    - pangloss/vim-javascript
-    - plasticboy/vim-markdown
-    - Vimjas/vim-python-pep8-indent
+    - airblade/vim-gitgutter
+    - tpope/vim-fugitive
+    - tommcdo/vim-fugitive-blame-ext
+    - editorconfig/editorconfig-vim
+    - scrooloose/nerdcommenter
+    - terryma/vim-multiple-cursors
     - w0rp/ale
+    - rhysd/vim-clang-format
+    - autozimu/LanguageClient-neovim
+    - junegunn/fzf
+    - roxma/vim-hug-neovim-rpc
+    - roxma/nvim-yarp
+    - ncm2/ncm2
+    - pangloss/vim-javascript
+    - mxw/vim-jsx
+    - leafgarland/typescript-vim
+    - drmikehenry/vim-headerguard
+    - bfrg/vim-cpp-modern
+    - Vimjas/vim-python-pep8-indent
+    - elzr/vim-json
+    - plasticboy/vim-markdown
 
-- name: Clone YouCompleteMe
+- name: Ensure the language server plugin is cloned in the plugged folder
   git:
-    repo: "https://github.com/Valloric/YouCompleteMe.git"
-    version: master
-    dest: "{{ home }}/.vim/plugged/YouCompleteMe"
+    repo: https://github.com/autozimu/LanguageClient-neovim.git
+    version: next
+    dest: "{{ home }}/.vim/plugged/autozimu/LanguageClient-neovim"
     update: no
     accept_hostkey: yes
 
-- name: Compile YouCompleteMe
+- name: Compile the language server plugin
   become: yes
   become_user: "{{ user }}"
-  command: python3 ./install.py --clang-completer --system-libclang --java-completer --rust-completer
+  command: bash ./install.sh
   args:
-    chdir: "{{ home }}/.vim/plugged/YouCompleteMe"
-    creates: "{{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so"
-  environment:
-    PATH: "/usr/local/bin:/usr/bin:/bin:/sbin:{{ home }}/.cargo/bin"
-    RUSTUP_HOME: "{{ home }}/.rustup"
-    CARGO_HOME: "{{ home }}/.cargo"
-
-- name: Ensure the jdt folder inside YouCompleteMe has the right permissions
-  become: yes
-  become_user: "{{ user }}"
-  file:
-    dest: "{{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/third_party/eclipse.jdt.ls"
-    owner: "{{ user }}"
-    recurse: yes
-
-- name: Ensure the workspace folder exists inside the YouCompleteMe jdt folder
-  file: "path={{ home }}/.vim/plugged/YouCompleteMe/third_party/ycmd/third_party/eclipse.jdt.ls/workspace state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
+    chdir: "{{ home }}/.vim/plugged/LanguageClient-neovim"
+    creates: "{{ home }}/.vim/plugged/LanguageClient-neovim/bin/languageclient"

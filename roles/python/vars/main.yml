@@ -3,14 +3,17 @@ python_packages:
     - autopep8
     - flake8
     - http-prompt
+    - neovim
     - pylint
     - virtualenv
   home:
-    - compdb
-    - cpplint
-    - gdbgui
     - ipdb
     - mypy
     - pudb
     - pyinstaller
+
+cpp_python_packages:
+    - cpplint
+    - compdb
+    - gdbgui
     - scan-build

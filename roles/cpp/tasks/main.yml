@@ -3,7 +3,7 @@
   with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
 
 - name: Ensure llvm is installed
-  homebrew: name=llvm state=present
+  homebrew: name=llvm state=present install_options=with-toolchain
   when: is_home
 
 - name: Ensure the depot tools are cloned
