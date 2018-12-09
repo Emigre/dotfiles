@@ -139,8 +139,10 @@ set nopaste
 " Automatically removes all trailing whitespace on save
 fun! s:removeTrailingWhitespaceIfInCodeFolder()
     let file = expand('%:p')
-    if file =~? '^/Users/[^/]\+/code/'
-          \ && file !~?'^/Users/[^/]\+/code/openFrameworks'
+    if (file =~? '^/Users/[^/]\+/code/'
+          \ && file !~?'^/Users/[^/]\+/code/openFrameworks')
+          \ || file !~?'^/Users/[^/]\+/Dropbox/dotfiles/'
+          \ || file !~?'^/Users/[^/]\+/Dropbox/scripts/'
       silent %s/\s\+$//e
     endif
 endf
@@ -150,8 +152,10 @@ au BufWritePre * :call <SID>removeTrailingWhitespaceIfInCodeFolder()
 " regular spaces (U+0020) on save
 fun! s:removeWeirdNoBreakSpacesIfInCodeFolder()
     let file = expand('%:p')
-    if file =~? '^/Users/[^/]\+/code/'
-          \ && file !~?'^/Users/[^/]\+/code/openFrameworks'
+    if (file =~? '^/Users/[^/]\+/code/'
+          \ && file !~?'^/Users/[^/]\+/code/openFrameworks')
+          \ || file !~?'^/Users/[^/]\+/Dropbox/dotfiles/'
+          \ || file !~?'^/Users/[^/]\+/Dropbox/scripts/'
       silent %s/\%u00A0/ /e
     endif
 endf
@@ -199,10 +203,6 @@ vnoremap <silent> } :<C-u>call <SID>mySearch('{', 1, 'gv ')<CR>
 nnoremap <silent> { :call <SID>mySearch('{', 0, ' ')<CR>
 vnoremap <silent> { :<C-u>call <SID>mySearch('{', 0, 'gv ')<CR>
 
-" Insert a new line without entering insert mode
-nnoremap <leader>o o<ESC>
-nnoremap <leader>O O<ESC>
-
 " bright color for search matches
 hi IncSearch cterm=NONE ctermbg=green
 
@@ -234,12 +234,10 @@ endif
 " To show current font use :set guifont?
 set guifont=Meslo\ LG\ M:h12
 
-" status line
-set statusline=%m        "modified flag
-set statusline+=%=       "left/right separator
-set statusline+=%l,      "cursor line
-set statusline+=%c       "cursor column
-set statusline+=\ %P     "percent through file
+
+fun! s:UpdateStatus()
+  retu 'updated!'
+endf
 
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
@@ -296,7 +294,7 @@ endif
 " Return indent (all whitespace at start of a line), converted from
 " tabs to spaces if what = 1, or from spaces to tabs otherwise.
 " When converting to tabs, result has no redundant spaces.
-fun! Indenting(indent, what, cols)
+fun! s:Indenting(indent, what, cols)
   let spccol = repeat(' ', a:cols)
   let result = substitute(a:indent, spccol, '\t', 'g')
   let result = substitute(result, ' \+\ze\t', '', 'g')
@@ -311,26 +309,30 @@ endf
 " cols = string with number of columns per tab, or empty to use 'tabstop'.
 " The cursor position is restored, but the cursor will be in a different
 " column when the number of characters in the indent of the line is changed.
-function! IndentConvert(line1, line2, what, cols)
+fun! s:IndentConvert(line1, line2, what, cols)
   let savepos = getpos('.')
   let cols = empty(a:cols) ? &tabstop : a:cols
-  execute a:line1 . ',' . a:line2 . 's/^\s\+/\=Indenting(submatch(0), a:what, cols)/e'
+  execute a:line1 . ',' .
+        \ a:line2 . 's/^\s\+/\=<SID>Indenting(submatch(0), a:what, cols)/e'
   call histdel('search', -1)
   call setpos('.', savepos)
-endfunction
+endf
 
-command! -nargs=? -range=% Space2Tab call IndentConvert(<line1>,<line2>,0,<q-args>)
-command! -nargs=? -range=% Tab2Space call IndentConvert(<line1>,<line2>,1,<q-args>)
-command! -nargs=? -range=% RetabIndent call IndentConvert(<line1>,<line2>,&et,<q-args>)
+command! -nargs=? -range=% Space2Tab call <SID>IndentConvert(<line1>, <line2>, 0, <q-args>)
+command! -nargs=? -range=% Tab2Space call <SID>IndentConvert(<line1>, <line2>, 1, <q-args>)
+command! -nargs=? -range=% RetabIndent call <SID>IndentConvert(<line1>, <line2>, &et, <q-args>)
 
 " to show all available colors:
 " :so $VIMRUNTIME/syntax/hitest.vim
 
 " yanks path to the clipboard
-nnoremap <silent> <leader>y :let @+ = expand('%')<CR>
-
-" yanks full path to the clipboard
-nnoremap <silent> <leader>Y :let @+ = expand('%:p')<CR>
+fun! s:YankPath(absolute)
+  let path = expand(a:absolute ? '%:p' : '%')
+  let @+ = path
+  echo path
+endf
+nnoremap <silent> <leader>p :call <SID>YankPath(1)<CR>
+nnoremap <silent> <leader>P :call <SID>YankPath(0)<CR>
 
 " Terminal vim on OSX doesn't let you use <Ctrl-6>
 nnoremap <silent> § :b#<CR>
@@ -342,8 +344,18 @@ nnoremap <silent> Q %
 nnoremap <silent> ± :redraw!<CR>
 
 " Shortcut to save
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>
+fun! s:SafeSave()
+  let folder = expand('%:p:h')
+  if folder =~? '^/Applications/Xcode.app/' || folder =~? '^/usr/local/'
+    echo 'Unable to save: saving is disabled inside Xcode.app'
+  elseif folder =~? '^/usr/local/'
+    echo 'Unable to save: saving is disabled indside /urs/local/'
+  else
+    w
+  endif
+endf
+nnoremap <C-s> :call <SID>SafeSave()<CR>
+inoremap <C-s> <Esc>:call <SID>SafeSave()<CR>
 
 " Enable or disable highlight of searches
 map <silent> <leader>/ :set hlsearch!<cr>
@@ -363,7 +375,7 @@ else
 endif
 
 " use ag for searches
-let g:ackprg = 'ag --ignore-case --ignore-dir={.git,node_modules,docs} --vimgrep --hidden'
+let g:ackprg = 'ag --ignore-case --ignore-dir={.git,node_modules,docs,obj} --vimgrep --hidden'
 
 " Shortcut to substitute
 nnoremap <leader>x :%s/\c//gc<Left><Left><Left><Left>
@@ -373,7 +385,9 @@ fun! s:searchContentAndShowFiles(pattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  silent exe '!' . g:ackprg . " --print0 --files-with-matches '" .
+  let ack = getcwd() =~? '^/Users/[^/]\+/code/openFrameworks' ?
+        \ g:ackprg . ' --ignore-dir=openFrameworksCompiled -U' : g:ackprg
+  silent exe '!' . ack . " --print0 --files-with-matches '" .
         \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
@@ -389,7 +403,9 @@ fun! s:searchContentAndReplace(pattern, newpattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  silent exe '!' . g:ackprg . " --print0 --files-with-matches '" .
+  let ack = getcwd() =~? '^/Users/[^/]\+/code/openFrameworks' ?
+        \ g:ackprg . ' --ignore-dir=openFrameworksCompiled -U' : g:ackprg
+  silent exe '!' . ack . " --print0 --files-with-matches '" .
         \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
   set errorformat=%f:%l:%m
   exe "cg ". error_file
@@ -475,6 +491,7 @@ fun! s:SwitchBetweenHeaderAndImplementation()
     let target = 'implementation'
     let search_pattern = substitute(expand('%:t'), '\.h\(.*\)$', '.c*', '')
   else
+    echo 'Failed to switch to header or implementation for this file'
     retu
   endif
   let dir_name = fnamemodify(expand('%:p'), ':h')
@@ -488,7 +505,7 @@ fun! s:SwitchBetweenHeaderAndImplementation()
   endif
 endfun
 
-nnoremap <leader>] :call <SID>SwitchBetweenHeaderAndImplementation()<CR>
+nnoremap <silent> <leader>i :call <SID>SwitchBetweenHeaderAndImplementation()<CR>
 
 fun! s:openFileInAnotherTmuxTab()
   if &filetype ==# 'vimfiler'
@@ -497,11 +514,11 @@ fun! s:openFileInAnotherTmuxTab()
     let file = expand('%:p')
     let folder = expand('%:p:h')
     let cwd = getcwd()
-    if folder =~? '^/usr/local/'
+    if folder =~? '^/usr/local'
       let nextCwd = '/usr/local'
-    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
-    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs'
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
     elseif folder =~? '^/Users/[^/]\+/code/[^/]\+'
       let projectFolder = matchstr(folder, '^\(/Users/[^/]\+/code/[^/]\+\)')

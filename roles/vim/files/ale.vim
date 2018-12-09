@@ -1,7 +1,7 @@
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_filetype_changed = 1
 let g:ale_sign_error = '░ '
 let g:ale_sign_warning = '░ '
@@ -9,7 +9,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
-let g:ale_echo_msg_format = '%s [%linter%]'
+let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_linters_explicit = 1
 
 hi! link ALEError SpellBad
@@ -30,18 +30,17 @@ let g:ale_linters = {
       \ 'typescript': ['tslint'],
       \ }
 
-let g:ale_fixers = {
-      \ 'css': ['prettier'],
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'python': ['autopep8'],
-      \ 'typescript': ['prettier', 'tslint'],
-      \ }
+" Autoformat code, but only inside the code and scripts folders
+if expand('%:p:h') =~? '^/Users/[^/]\+/code'
+      \ || expand('%:p:h') =~? '^/Users/[^/]\+/Dropbox/scripts'
+  let g:ale_fixers = {
+        \ 'css': ['prettier'],
+        \ 'javascript': ['prettier', 'eslint'],
+        \ 'python': ['autopep8'],
+        \ 'typescript': ['prettier', 'tslint'],
+        \ }
+endif
 
-" disable ale outside the code folder and in the openFrameworks folder
-let g:ale_pattern_options = {
-      \ '^\(/Users/[^/]\+/code/\)\@!\|\(/Users/[^/]\+/code/openFrameworks\)':
-      \   { 'ale_linters': [], 'ale_fixers': [] },
-      \ }
 let g:ale_pattern_options_enabled = 1
 
 let g:ale_javascript_prettier_options = '' .
