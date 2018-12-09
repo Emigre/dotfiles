@@ -111,17 +111,63 @@ fun! s:enterAndExitVimFiler()
   endif
 endf
 
+nnoremap <silent> <C-h> :call <SID>enterAndExitVimFiler()<CR>
+
+nnoremap <silent> <BS> :call <SID>enterAndExitVimFiler()<CR>
+
+fun! ExecuteAfterOpeningFileInAnotherTmuxTab(nextCwd)
+  exe 'cd ' . a:nextCwd
+  call <SID>executeVimFiler('-find')
+endfun
+
+fun! s:openFileInAnotherTmuxTab()
+  if &filetype ==# 'vimfiler'
+    retu
+  else
+    let file = expand('%:p')
+    let folder = expand('%:p:h')
+    let cwd = getcwd()
+    if folder =~? '^/usr/local'
+      let nextCwd = '/usr/local'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
+      let nextCwd = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
+    elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs'
+      let nextCwd = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
+    elseif folder =~? '^/Users/[^/]\+/code/[^/]\+'
+      let projectFolder = matchstr(folder, '^\(/Users/[^/]\+/code/[^/]\+\)')
+      let nextCwd = projectFolder
+    else
+      let nextCwd = cwd
+    endif
+    exe 'silent !tmux split-window -h vim ' . file . ' ' .
+          \ '-c ":call ExecuteAfterOpeningFileInAnotherTmuxTab(\"' . nextCwd . '\")"'
+    " the terminal retains vim's background colour for some reason
+    " this command restores the default terminal colour
+    exe 'silent !tput sgr0'
+  endif
+endf
+
 fun! s:findInVimFiler()
   if &filetype ==# 'vimfiler'
     exe 'wincmd w'
   else
-    call <SID>executeVimFiler('-find')
+    let folder = expand('%:p:h')
+    let cwd = getcwd()
+    if folder =~? cwd
+      call <SID>executeVimFiler('-find')
+    else
+      call <SID>openFileInAnotherTmuxTab()
+    endif
   endif
 endf
+
+nnoremap <silent> <leader>t :call <SID>findInVimFiler()<CR>
 
 fun! s:toggleVimFiler()
   call <SID>executeVimFiler()
 endf
+
+nnoremap <silent> <leader>h :call <SID>toggleVimFiler()<CR>
 
 fun! s:doNotExecuteInExplorer(action)
   if @% ==# 'vimfiler:explorer'
@@ -131,10 +177,6 @@ fun! s:doNotExecuteInExplorer(action)
   endif
 endf
 
-nnoremap <silent> <C-h> :call <SID>enterAndExitVimFiler()<CR>
-nnoremap <silent> <BS> :call <SID>enterAndExitVimFiler()<CR>
-nnoremap <silent> <leader>t :call <SID>findInVimFiler()<CR>
-nnoremap <silent> <leader>h :call <SID>toggleVimFiler()<CR>
 nmap <LeftMouse> <LeftMouse><Plug>(vimfiler_smart_l)
 
 aug MyVimfilerMaps
