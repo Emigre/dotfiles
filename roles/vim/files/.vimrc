@@ -58,7 +58,6 @@ Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 
 " Code analysis: language server
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'junegunn/fzf'
 
 " Code completion
 Plug 'roxma/vim-hug-neovim-rpc'

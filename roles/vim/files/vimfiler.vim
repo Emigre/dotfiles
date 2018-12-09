@@ -36,7 +36,6 @@ let g:vimfiler_ignore_pattern = [
       \ '^tags\.lock$',
       \ '^tags\.temp$',
       \ ]
-      " \ '^compile_commands\.json$',
 
 fun! s:defineColor(id, ctermfg)
   if @% ==# 'vimfiler:explorer'

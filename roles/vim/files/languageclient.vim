@@ -35,53 +35,36 @@ let g:LanguageClient_diagnosticsDisplay = {
     \ }
 
 " Valid options: Quickfix | Location | Disabled
-let g:LanguageClient_diagnosticsList = "Location"
+" let g:LanguageClient_diagnosticsList = "Location"
 
 " Valid options: Never, Auto, Always
 let g:LanguageClient_hoverPreview = 'Auto'
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" preview window at bottom (with the type info)
+set splitbelow
+set previewheight=3
+
+fun! s:disableStatusline(bn)
+  if a:bn == bufname('%')
+    set laststatus=0
+  endif
+endfun
+
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call <SID>disableStatusline('__LanguageClient__')
+
+fun! s:toggleHover()
+  for nr in range(1, winnr('$'))
+    if getwinvar(nr, "&pvw") == 1
+      " found a preview window: close it
+      exe 'pc'
+      retu 1
+    endif
+  endfor
+  call LanguageClient#textDocument_hover()
+endfun
+
+nnoremap <silent> t :call <SID>toggleHover()<CR>
+
+nnoremap <silent> T :call LanguageClient#textDocument_hover()<CR>
+
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" LanguageClient#textDocument_implementation()
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-" LanguageClient#textDocument_documentSymbol()
-" LanguageClient#textDocument_references()
-" LanguageClient#textDocument_documentHighlight()
-" LanguageClient#clearDocumentHighlight()
-" LanguageClient#workspace_symbol()
-
-" LanguageClient#serverStatus()
-" LanguageClient#serverStatusMessage()
-" LanguageClient#explainErrorAtPoint
-
-" :LspCodeAction	Gets a list of possible commands that can be applied to a file so it can be fixed (quick fix)
-" :LspDocumentDiagnostics	Get current document diagnostics information
-" :LspDefinition	Go to definition
-" :LspDocumentFormat	Format entire document
-" :LspDocumentRangeFormat	Format document selection
-" :LspDocumentSymbol	Show document symbols
-" :LspHover	Show hover information
-" :LspNextError	jump to next error
-" :LspPreviousError	jump to previous error
-" :LspImplementation	Show implementation of interface
-" :LspReferences	Find references
-" :LspRename	Rename symbol
-" :LspTypeDefinition	Go to type definition
-" :LspWorkspaceSymbol	Search/Show workspace symbol
-
-
-
-
-" fun! UpdateRuf(timer)
-"   if get(g:, 'LanguageClient_serverStatus', 'no LSP server') == 0
-"     echo g:LanguageClient_serverStatus() . ' "' .  g:LanguageClient_serverStatusMessage() . '"'
-"   endif
-"
-"   " set ruf=%l,%c%=%{call('LanguageClient#statusLine')}%P
-" endf
-
-" call timer_start(1000, function('UpdateRuf'), {'repeat': -1})
-" call UpdateRuf(0)
-set ruf=%l,%c%=%P
