@@ -63,11 +63,16 @@ homebrew_cask_apps:
     - sublime-text
     - the-unarchiver
   home:
+    - colloquy
+    - discord
     - docker
     - evernote
+    - gitter
     - nosleep
     - skype
+    - slack
     - vagrant
     - virtualbox
     - virtualbox-extension-pack
     - vlc
+    - whatsapp
