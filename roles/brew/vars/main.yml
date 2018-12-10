@@ -62,6 +62,7 @@ homebrew_cask_apps:
     - postman
     - sublime-text
     - the-unarchiver
+    - zeplin
   home:
     - colloquy
     - discord
