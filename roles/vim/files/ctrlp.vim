@@ -8,6 +8,7 @@ let g:ctrlp_custom_ignore = {
     \ '\.cache',
     \ '\.git',
     \ '\.stack-work',
+    \ '\.svn',
     \ '\.temp',
     \ '\.xcodeproj',
     \ 'android',

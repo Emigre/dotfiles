@@ -28,6 +28,7 @@ let g:vimfiler_ignore_pattern = [
       \ '^\.git$',
       \ '^\.h$',
       \ '^\.mvn$',
+      \ '^\.svn$',
       \ '^autom4te\.cache$',
       \ '^bin$',
       \ '^build$',
@@ -64,8 +65,7 @@ au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>def
 au FileType vimfiler exe <SID>defineSyntax('java', 'java') | call <SID>defineColor('java', 146)
 au FileType vimfiler exe <SID>defineSyntax('json', 'json') | call <SID>defineColor('json', 71)
 au FileType vimfiler exe <SID>defineSyntax('jsx', 'jsx') | call <SID>defineColor('jsx', 150)
-au FileType vimfiler exe <SID>defineSyntax('lua', 'lua') | call <SID>defineColor('lua', 214)
-au FileType vimfiler exe <SID>defineSyntax('pascal', '(pas|pp)') | call <SID>defineColor('pascal', 214)
+au FileType vimfiler exe <SID>defineSyntax('misc', '(lua|pas|pp|php)') | call <SID>defineColor('misc', 214)
 au FileType vimfiler exe <SID>defineSyntax('markdown', 'md') | call <SID>defineColor('markdown', 249)
 au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineColor('python', 214)
 au FileType vimfiler exe <SID>defineSyntax('ruby', 'rb') | call <SID>defineColor('ruby', 169)
