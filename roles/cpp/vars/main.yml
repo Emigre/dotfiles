@@ -5,6 +5,7 @@ homebrew_packages:
     - bear
     - cgdb
     - clang-format
+    - cling
     - gcc
     - gdb
     - ninja
