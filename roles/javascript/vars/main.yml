@@ -1,6 +1,7 @@
 node_packages:
   common:
     - eslint
+    - flow-bin
     - n
     - prettier
     - redux-cli
@@ -11,4 +12,3 @@ node_packages:
     - lerna
   home:
     - elm
-    - flow-bin
