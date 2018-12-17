@@ -2,6 +2,7 @@ node_packages:
   common:
     - eslint
     - flow-bin
+    - flow-language-server
     - n
     - prettier
     - redux-cli
