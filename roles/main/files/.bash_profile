@@ -7,7 +7,8 @@ alias vi='vim'
 
 # C++
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
-alias clang_includes='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
+alias clang_include_paths='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
+alias clang_search_paths='clang -Xlinker -v 2>&1 | grep "^\s*\/" | sed -E $"s/^[^\/]*//"'
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openFrameworks"
 
