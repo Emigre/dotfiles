@@ -79,7 +79,7 @@ au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>def
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
       \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|compile|depcomp|configure|install-sh|missing|log|tags|.+\.log)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
-      \ '\s+(AUTHORS|ChangeLog|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 246)
+      \ '\s+(AUTHORS|ChangeLog|CHANGELOG|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|CODEOWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 249)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
       \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|Cargo\.toml|Cargo\.lock)( |$)') | call <SID>defineColor('build', 75)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
