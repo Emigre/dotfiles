@@ -77,11 +77,15 @@ au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID
 au FileType vimfiler exe <SID>defineSyntax('xml', 'xml') | call <SID>defineColor('xml', 136)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
-      \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|compile|depcomp|configure|install-sh|missing|log|tags|.+\.log)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
+      \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|' .
+      \ 'compile|depcomp|configure|install-sh|missing|log|tags|.+\.log|' .
+      \ '.+\.lock|package-lock\.json|npm-shrinkwrap\.json)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
-      \ '\s+(AUTHORS|ChangeLog|CHANGELOG|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|CODEOWNERS|WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 249)
+      \ '\s+(AUTHORS|ChangeLog|CHANGELOG|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|CODEOWNERS|' .
+      \ 'WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 249)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
-      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|Cargo\.toml|Cargo\.lock)( |$)') | call <SID>defineColor('build', 75)
+      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|' .
+      \ 'Cargo\.toml)( |$)') | call <SID>defineColor('build', 75)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
