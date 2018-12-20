@@ -9,7 +9,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
-let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_echo_msg_format = '[%linter%]%s'
 let g:ale_linters_explicit = 1
 
 hi! link ALEError SpellBad
@@ -40,6 +40,20 @@ if expand('%:p:h') =~? '^/Users/[^/]\+/code'
         \ 'typescript': ['prettier', 'tslint'],
         \ }
 endif
+
+" do not run language server outside the code folders
+fun! s:disableAleIfNeeded()
+  if &filetype ==# 'vimfiler'
+    retu
+  else
+    let folder = expand('%:p:h')
+    if folder !~? '^/Users/[^/]\+/code/[^/]\+'
+      ALEDisableBuffer
+    endif
+  endif
+endfun
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.jsx,*.ts
+      \ call <SID>disableAleIfNeeded()
 
 let g:ale_pattern_options_enabled = 1
 

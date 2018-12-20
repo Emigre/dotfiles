@@ -35,6 +35,7 @@ let g:LanguageClient_diagnosticsDisplay = {
     \ }
     \ }
 
+
 " Valid options: Quickfix | Location | Disabled
 " let g:LanguageClient_diagnosticsList = "Location"
 
@@ -45,12 +46,25 @@ let g:LanguageClient_hoverPreview = 'Auto'
 set splitbelow
 set previewheight=3
 
+" do not run language server outside the code folders
+fun! s:disableLanguageClientIfNeeded()
+  if &filetype ==# 'vimfiler'
+    retu
+  else
+    let folder = expand('%:p:h')
+    if folder !~? '^/Users/[^/]\+/code/[^/]\+'
+      LanguageClientStop
+    endif
+  endif
+endfun
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.jsx,*.ts
+      \ call <SID>disableLanguageClientIfNeeded()
+
 fun! s:disableStatusline(bn)
   if a:bn == bufname('%')
     set laststatus=0
   endif
 endfun
-
 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call <SID>disableStatusline('__LanguageClient__')
 
 fun! s:toggleHover()
