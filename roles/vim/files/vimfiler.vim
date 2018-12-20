@@ -226,6 +226,7 @@ aug MyVimfilerMaps
   au FileType vimfiler nnoremap <silent> <buffer> <C-k> :call <SID>doNotExecuteInExplorer('bp')<CR>
   au FileType vimfiler noremap <silent> <buffer> <C-l> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <C-o> <Nop>
+  au FileType vimfiler noremap <silent> <buffer> <C-s> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <C-v> <C-v>
   au FileType vimfiler noremap <buffer> <2-LeftMouse> <Nop>
   au FileType vimfiler noremap <silent> <buffer> <RightMouse> <Nop>
