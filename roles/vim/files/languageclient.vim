@@ -84,7 +84,7 @@ nnoremap <silent> T :call LanguageClient#textDocument_hover()<CR>
 
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
-fun! s:SwitchBetweenHeaderAndImplementation()
+fun! s:switchBetweenHeaderAndImplementation()
   if match(expand('%'), '\.\(c\|cc\|cpp\)$') > 0
     let target = 'header'
     let search_pattern = substitute(expand('%:t'), '\.c\(.*\)$', '.h*', '')
@@ -105,5 +105,30 @@ fun! s:SwitchBetweenHeaderAndImplementation()
     echo 'No ' . target . ' file found for ' . expand('%:t')
   endif
 endfun
+nnoremap <silent> <leader>o :call <SID>switchBetweenHeaderAndImplementation()<CR>
 
-nnoremap <silent> <leader>i :call <SID>SwitchBetweenHeaderAndImplementation()<CR>
+fun! s:addInclude(...)
+  let include_item = ''
+  if a:0
+    if match(a:0, '\.\(h\|hpp\)$') > 0
+      let include_item = '"' . a:1 . '"'
+    else
+      let include_item = '<' . a:1 . '>'
+    endif
+  else
+    let path = expand('%')
+    if match(path, '\.\(c\|cc\|cpp\)$') > 0
+      let file_path = substitute(path, '^src\/', '', '')
+      let header_path = substitute(file_path, '\.\(c\|cc\|cpp\)$', '.h', '')
+      let include_item = '"' . header_path . '"'
+    endif
+  endif
+  if include_item != ''
+    echo include_item
+    exe 'normal! gg}k'
+    call append(line('.'), '#include ' . include_item)
+    exe 'normal jj'
+  endif
+endf
+command! -nargs=* Include call <SID>addInclude(<f-args>)
+nnoremap <leader>i :Include<space>
