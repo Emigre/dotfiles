@@ -3,6 +3,7 @@ node_packages:
     - eslint
     - flow-bin
     - flow-language-server
+    - graphql-cli
     - n
     - prettier
     - redux-cli
