@@ -2,7 +2,7 @@
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript': ['flow-language-server', '--stdio'],
     \ 'javascript.jsx': ['flow-language-server', '--stdio'],
     \ 'cpp': ['/usr/local/opt/llvm/bin/clangd'],
@@ -35,16 +35,14 @@ let g:LanguageClient_diagnosticsDisplay = {
     \ }
     \ }
 
-
-" Valid options: Quickfix | Location | Disabled
-" let g:LanguageClient_diagnosticsList = "Location"
+let g:LanguageClient_diagnosticsList = "Location"
 
 " Valid options: Never, Auto, Always
-let g:LanguageClient_hoverPreview = 'Auto'
+let g:LanguageClient_hoverPreview = 'Always'
 
 " preview window at bottom (with the type info)
 set splitbelow
-set previewheight=3
+set previewheight=6
 
 " do not run language server outside the code folders
 fun! s:disableLanguageClientIfNeeded()
@@ -59,30 +57,6 @@ fun! s:disableLanguageClientIfNeeded()
 endfun
 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.jsx,*.ts
       \ call <SID>disableLanguageClientIfNeeded()
-
-fun! s:disableStatusline(bn)
-  if a:bn == bufname('%')
-    set laststatus=0
-  endif
-endfun
-au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * call <SID>disableStatusline('__LanguageClient__')
-
-fun! s:toggleHover()
-  for nr in range(1, winnr('$'))
-    if getwinvar(nr, "&pvw") == 1
-      " found a preview window: close it
-      exe 'pc'
-      retu 1
-    endif
-  endfor
-  call LanguageClient#textDocument_hover()
-endfun
-
-nnoremap <silent> t :call <SID>toggleHover()<CR>
-
-nnoremap <silent> T :call LanguageClient#textDocument_hover()<CR>
-
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
 fun! s:switchBetweenHeaderAndImplementation()
   if match(expand('%'), '\.\(c\|cc\|cpp\)$') > 0
@@ -132,3 +106,62 @@ fun! s:addInclude(...)
 endf
 command! -nargs=* Include call <SID>addInclude(<f-args>)
 nnoremap <leader>i :Include<space>
+
+fun! MyLanguageClientHoverCallback(output, ...) abort
+    if has_key(a:output, 'result')
+        let tmp = tempname()
+        try
+          let result = get(a:output, 'result')
+          let contents = get(result, 'contents')
+          let firstContent = contents[0]
+          let value = get(firstContent, 'value')
+          let language = get(firstContent, 'language')
+          silent exe ':pedit! __MyLanguageClient__'
+          wincmd P
+          silent put=value
+          execute '1delete'
+          setlocal laststatus=0
+          setlocal buftype=nofile
+          setlocal noswapfile
+          exe 'setlocal syntax=' . language
+          setlocal bufhidden=delete
+          setlocal nobuflisted
+          setlocal readonly
+          execute "resize " . line('$')
+          wincmd p
+        catch
+        endtry
+        return get(a:output, 'result')
+    elseif has_key(a:output, 'error')
+        let l:error = get(a:output, 'error')
+        let l:message = get(l:error, 'message')
+        echo l:error
+        echo l:message
+        call input('ERROR: ' . l:error . ' ' . l:message)
+        return v:null
+    else
+        call input('ERROR: Unknown output type:' . json_encode(a:output))
+      return v:null
+    endif
+endfun
+nnoremap <silent> t :call LanguageClient#textDocument_hover({}, function('MyLanguageClientHoverCallback'))<CR>
+
+nnoremap <silent> T :pc<CR>
+
+" go to the declaration
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" go to the implementation
+nnoremap <silent> gi :call LanguageClient#textDocument_implementation()<CR>
+
+" LanguageClient#textDocument_typeDefinition()
+
+" LanguageClient#textDocument_rename()
+
+" LanguageClient#textDocument_documentSymbol()
+
+" LanguageClient#textDocument_codeAction()
+
+" LanguageClient#textDocument_completion()
+
+" LanguageClient#serverStatus()

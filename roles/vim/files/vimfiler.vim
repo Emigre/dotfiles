@@ -30,9 +30,6 @@ let g:vimfiler_ignore_pattern = [
       \ '^\.mvn$',
       \ '^\.svn$',
       \ '^autom4te\.cache$',
-      \ '^bin$',
-      \ '^build$',
-      \ '^node_modules$',
       \ '^obj$',
       \ '^tags\.lock$',
       \ '^tags\.temp$',
@@ -55,7 +52,7 @@ fun! s:defineSyntax(id, extension)
   endif
 endf
 
-au FileType vimfiler exe <SID>defineSyntax('javascript', 'js') | call <SID>defineColor('javascript', 150)
+au FileType vimfiler exe <SID>defineSyntax('javascript', '(js|jsx)') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
 au FileType vimfiler exe <SID>defineSyntax('cpp', '(c|cpp|cc|cxx)') | call <SID>defineColor('cpp', 34)
 au FileType vimfiler exe <SID>defineSyntax('objc', '(m|mm)') | call <SID>defineColor('objc', 214)
@@ -64,7 +61,6 @@ au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp|inl)') | call <SID>
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)
 au FileType vimfiler exe <SID>defineSyntax('java', 'java') | call <SID>defineColor('java', 146)
 au FileType vimfiler exe <SID>defineSyntax('json', 'json') | call <SID>defineColor('json', 71)
-au FileType vimfiler exe <SID>defineSyntax('jsx', 'jsx') | call <SID>defineColor('jsx', 150)
 au FileType vimfiler exe <SID>defineSyntax('misc', '(lua|pas|pp|php)') | call <SID>defineColor('misc', 214)
 au FileType vimfiler exe <SID>defineSyntax('markdown', 'md') | call <SID>defineColor('markdown', 249)
 au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineColor('python', 214)
@@ -73,7 +69,8 @@ au FileType vimfiler exe <SID>defineSyntax('rust', 'rs') | call <SID>defineColor
 au FileType vimfiler exe <SID>defineSyntax('shell', '(sh|bash)') | call <SID>defineColor('shell', 'lightCyan')
 au FileType vimfiler exe <SID>defineSyntax('stylesheet', '(css|sass|less|scss)') | call <SID>defineColor('stylesheet', 115)
 au FileType vimfiler exe <SID>defineSyntax('template', '(tpl|jade)') | call <SID>defineColor('template', 40)
-au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID>defineColor('typescript', 147)
+au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID>defineColor('typescript', 75)
+au FileType vimfiler exe <SID>defineSyntax('graphql', 'graphql') | call <SID>defineColor('graphql', 169)
 au FileType vimfiler exe <SID>defineSyntax('xml', 'xml') | call <SID>defineColor('xml', 136)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',

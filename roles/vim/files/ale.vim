@@ -35,9 +35,9 @@ if expand('%:p:h') =~? '^/Users/[^/]\+/code'
       \ || expand('%:p:h') =~? '^/Users/[^/]\+/Dropbox/scripts'
   let g:ale_fixers = {
         \ 'css': ['prettier'],
-        \ 'javascript': ['prettier', 'eslint'],
+        \ 'javascript': ['prettier'],
         \ 'python': ['autopep8'],
-        \ 'typescript': ['prettier', 'tslint'],
+        \ 'typescript': ['prettier'],
         \ }
 endif
 
@@ -57,10 +57,7 @@ au BufEnter,BufWinEnter,WinEnter,CmdwinEnter *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.j
 
 let g:ale_pattern_options_enabled = 1
 
-let g:ale_javascript_prettier_options = '' .
-      \ '--single-quote ' .
-      \ '--print-width 100 ' .
-      \ '--trailing-comma all'
+let g:ale_javascript_prettier_use_local_config = 1
 
 " https://clang.llvm.org/extra/clang-tidy/index.html
 " http://clang.llvm.org/extra/clang-tidy/checks/list.html

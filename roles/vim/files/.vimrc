@@ -58,6 +58,7 @@ Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 
 " Code analysis: language server
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'junegunn/fzf'
 
 " Code completion
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -68,6 +69,7 @@ Plug 'ncm2/ncm2'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'jparise/vim-graphql'
 
 " C and C++
 Plug 'drmikehenry/vim-headerguard', { 'for': ['c', 'cpp'] }
@@ -457,15 +459,21 @@ fun! s:enterAndExitQuickFix()
   endif
 endf
 
-fun! s:toggleQuickFix()
+fun! s:toggleQuickFix(useLocationList)
   if <SID>isQuickFixOpen()
     ccl
+    lcl
   else
-    cope
+    if a:useLocationList
+      lope
+    else
+      cope
+    endif
   endif
 endf
 
-nnoremap <silent> <leader>m :call <SID>toggleQuickFix()<CR>
+nnoremap <silent> <leader>m :call <SID>toggleQuickFix(0)<CR>
+nnoremap <silent> <leader>M :call <SID>toggleQuickFix(1)<CR>
 nnoremap <silent> <CR> :call <SID>enterAndExitQuickFix()<CR>
 
 aug MyQuickfixMaps

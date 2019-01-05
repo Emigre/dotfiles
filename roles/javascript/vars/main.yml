@@ -9,6 +9,8 @@ node_packages:
     - redux-cli
     - typescript
     - tslint
+    - tslint-language-service
+    - typescript-language-server
   work:
     - react-native-cli
     - lerna
