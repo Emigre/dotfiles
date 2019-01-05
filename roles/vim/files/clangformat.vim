@@ -9,8 +9,8 @@ fun! s:clangFormatIfInCodeFolder()
     let file = expand('%:p')
     if file =~? '^/Users/[^/]\+/code/'
           \ && (
-          \   file !~? '^/Users/[^/]\+/code/openFrameworks'
-          \   || file =~? '^/Users/[^/]\+/code/openFrameworks/apps'
+          \   file !~? '^/Users/[^/]\+/code/openframeworks'
+          \   || file =~? '^/Users/[^/]\+/code/openframeworks/apps'
           \ )
       ClangFormat
     endif

@@ -141,7 +141,7 @@ set nopaste
 fun! s:removeTrailingWhitespaceIfInCodeFolder()
     let file = expand('%:p')
     if (file =~? '^/Users/[^/]\+/code/'
-          \ && file !~?'^/Users/[^/]\+/code/openFrameworks')
+          \ && file !~?'^/Users/[^/]\+/code/openframeworks')
           \ || file !~?'^/Users/[^/]\+/Dropbox/dotfiles/'
           \ || file !~?'^/Users/[^/]\+/Dropbox/scripts/'
       silent %s/\s\+$//e
@@ -154,7 +154,7 @@ au BufWritePre * :call <SID>removeTrailingWhitespaceIfInCodeFolder()
 fun! s:removeWeirdNoBreakSpacesIfInCodeFolder()
     let file = expand('%:p')
     if (file =~? '^/Users/[^/]\+/code/'
-          \ && file !~?'^/Users/[^/]\+/code/openFrameworks')
+          \ && file !~?'^/Users/[^/]\+/code/openframeworks')
           \ || file !~?'^/Users/[^/]\+/Dropbox/dotfiles/'
           \ || file !~?'^/Users/[^/]\+/Dropbox/scripts/'
       silent %s/\%u00A0/ /e
@@ -386,7 +386,7 @@ fun! s:searchContentAndShowFiles(pattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  let ack = getcwd() =~? '^/Users/[^/]\+/code/openFrameworks' ?
+  let ack = getcwd() =~? '^/Users/[^/]\+/code/openframeworks' ?
         \ g:ackprg . ' --ignore-dir=openFrameworksCompiled -U' : g:ackprg
   silent exe '!' . ack . " --print0 --files-with-matches '" .
         \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
@@ -404,7 +404,7 @@ fun! s:searchContentAndReplace(pattern, newpattern, ...)
   let error_file = tempname()
   let path = a:0 < 1 ? '' : a:1
   let search = substitute(a:pattern, "\'", "\\\\x27", "g")
-  let ack = getcwd() =~? '^/Users/[^/]\+/code/openFrameworks' ?
+  let ack = getcwd() =~? '^/Users/[^/]\+/code/openframeworks' ?
         \ g:ackprg . ' --ignore-dir=openFrameworksCompiled -U' : g:ackprg
   silent exe '!' . ack . " --print0 --files-with-matches '" .
         \ search . "' " . path . " | xargs -0 file | sed 's/:/:1:/' > " . error_file
