@@ -82,7 +82,7 @@ au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ 'WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 249)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
       \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|' .
-      \ 'Cargo\.toml|Dockerfile)( |$)') | call <SID>defineColor('build', 75)
+      \ 'Cargo\.toml|Dockerfile|Dockerfile-dev)( |$)') | call <SID>defineColor('build', 75)
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
