@@ -11,11 +11,7 @@ let g:vimfiler_file_icon = ' '
 let g:vimfiler_marked_file_icon = '░'
 let g:vimfiler_expand_jump_to_first_child = 0
 
-if system('scutil --get ComputerName') ==# "Gaspar’s MacBook Pro\n"
-  let g:vimfiler_window_width = 30
-else
-  let g:vimfiler_window_width = 40
-endif
+let g:vimfiler_window_width = 32
 
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
@@ -96,7 +92,7 @@ endf
 
 fun! s:executeVimFiler(...)
   let options = a:0 ? ' ' . a:1 : ''
-  exe 'VimFiler -explorer -winwidth=' . g:vimfiler_window_width . options
+  exe 'VimFiler -auto-expand -explorer -winwidth=' . g:vimfiler_window_width . options
 endf
 
 fun! s:enterAndExitVimFiler()
