@@ -55,7 +55,7 @@ endf
 au FileType vimfiler exe <SID>defineSyntax('javascript', '(js|jsx)') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
 au FileType vimfiler exe <SID>defineSyntax('cpp', '(c|cpp|cc|cxx)') | call <SID>defineColor('cpp', 34)
-au FileType vimfiler exe <SID>defineSyntax('objc', '(m|mm)') | call <SID>defineColor('objc', 214)
+au FileType vimfiler exe <SID>defineSyntax('objc_and_swift', '(m|mm|swift)') | call <SID>defineColor('objc_and_swift', 214)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
 au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp|inl)') | call <SID>defineColor('header', 28)
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)

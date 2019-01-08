@@ -78,6 +78,9 @@ Plug 'bfrg/vim-cpp-modern', { 'for': ['c', 'cpp'] }
 " Python
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 
+" Swift
+Plug 'keith/swift.vim', { 'for': 'swift' }
+
 " Other
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
