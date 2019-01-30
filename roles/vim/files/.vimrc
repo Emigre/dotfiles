@@ -295,8 +295,10 @@ endif
 if has('autocmd')
   " Enable file type detection
   filetype on
-  " Treat .json files as .js
-  au BufNewFile,BufRead *.json setfiletype json syntax=javascript
+  au BufNewFile,BufRead *.json setf json syntax=javascript
+  au BufNewFile,BufRead Jenkinsfile setf groovy
+  au BufNewFile,BufRead Dockerfile-dev setf dockerfile
+  au BufNewFile,BufRead Podfile setf ruby
 endif
 
 " Return indent (all whitespace at start of a line), converted from
