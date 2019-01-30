@@ -171,9 +171,9 @@ if &term =~ '256color'
 endif
 
 " Set a character for the tabs
-set listchars=nbsp:␣,tab:\▹\ "
+set listchars=nbsp:␣,tab:\᠁\ "
 set list
-hi SpecialKey ctermfg=8
+hi SpecialKey ctermfg=244
 
 fun! s:mySearch(searchText, searchForward, mode)
   let command = a:searchForward ? "/" : "?"
