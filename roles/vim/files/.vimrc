@@ -111,11 +111,17 @@ au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
 
 aug TabSettings
   au!
+  au Filetype groovy setlocal ts=4 sts=4 sw=4 et
+  " fixes weird underline problem in the groovy syntax
+  au Filetype groovy syn clear groovyUserLabel
   au Filetype java setlocal ts=4 sw=4 et
-  au Filetype haskell setlocal ts=4 sw=4 et
   au Filetype python setlocal ts=4 sts=4 sw=4 et
+  au Filetype swift setlocal ts=4 sts=4 sw=4 et
   au Filetype tags setlocal ts=32
   au Filetype tags setlocal nowrap
+  au Filetype xml setlocal ts=4 sts=4 sw=4 et
+  " fixes weird underline problem in the yaml syntax
+  au Filetype yaml syn clear yamlBlockCollectionItemStart
 aug END
 
 " The width of a TAB is set to 4
