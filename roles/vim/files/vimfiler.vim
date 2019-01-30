@@ -130,8 +130,8 @@ fun! s:openFileInAnotherTmuxTab()
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain'
     elseif folder =~? '^/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs'
       let nextCwd = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
-    elseif folder =~? '^/Users/[^/]\+/code/[^/]\+'
-      let projectFolder = matchstr(folder, '^\(/Users/[^/]\+/code/[^/]\+\)')
+    elseif folder =~? '^/Users/[^/]\+/code/[^/]\+/[^/]\+'
+      let projectFolder = matchstr(folder, '^\(/Users/[^/]\+/code/[^/]\+/[^/]\+\)')
       let nextCwd = projectFolder
     else
       let nextCwd = cwd

@@ -1,7 +1,10 @@
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
+" to set up the language server for Java, check
+" https://github.com/eclipse/eclipse.jdt.ls
 let g:LanguageClient_serverCommands = {
+    \ 'go': ['go-langserver'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'javascript': ['flow-language-server', '--stdio'],
     \ 'javascript.jsx': ['flow-language-server', '--stdio'],
@@ -50,12 +53,13 @@ fun! s:disableLanguageClientIfNeeded()
     retu
   else
     let folder = expand('%:p:h')
-    if folder !~? '^/Users/[^/]\+/code/[^/]\+'
+    if folder !~? '^/Users/[^/]\+/code/[^/]\+/[^/]\+'
       LanguageClientStop
     endif
   endif
 endfun
-au BufEnter,BufWinEnter,WinEnter,CmdwinEnter *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.jsx,*.ts
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter
+      \ *.cpp,*.c,*.incl,*.hpp,*.h,*.js,*.jsx,*.ts,*.rs,*.go
       \ call <SID>disableLanguageClientIfNeeded()
 
 fun! s:switchBetweenHeaderAndImplementation()

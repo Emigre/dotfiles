@@ -23,7 +23,7 @@ nmap <silent> \ <Plug>(ale_next_wrap)
 let g:ale_linters = {
       \ 'c': ['clangtidy'],
       \ 'cpp': ['clangtidy'],
-      \ 'java': ['checkstyle'],
+      \ 'go': ['golint'],
       \ 'javascript': ['eslint'],
       \ 'python': ['flake8', 'pylint'],
       \ 'rust': ['cargo'],
@@ -31,12 +31,15 @@ let g:ale_linters = {
       \ }
 
 " Autoformat code, but only inside the code and scripts folders
-if expand('%:p:h') =~? '^/Users/[^/]\+/code'
+if expand('%:p:h') =~? '^/Users/[^/]\+/code/[^/]\+/[^/]\+'
       \ || expand('%:p:h') =~? '^/Users/[^/]\+/Dropbox/scripts'
+  " C and C++ are formatted with vim-clang-format
   let g:ale_fixers = {
         \ 'css': ['prettier'],
+        \ 'go': ['gofmt'],
         \ 'javascript': ['prettier'],
         \ 'python': ['autopep8'],
+        \ 'rust': ['rustfmt'],
         \ 'typescript': ['prettier'],
         \ }
 endif
@@ -47,7 +50,7 @@ fun! s:disableAleIfNeeded()
     retu
   else
     let folder = expand('%:p:h')
-    if folder !~? '^/Users/[^/]\+/code/[^/]\+'
+    if folder !~? '^/Users/[^/]\+/code/[^/]\+/[^/]\+'
       ALEDisableBuffer
     endif
   endif

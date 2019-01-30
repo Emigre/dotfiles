@@ -12,5 +12,7 @@
     - cpp
     - python
     - javascript
+    - go
+    - rust
     - iterm
     - vim

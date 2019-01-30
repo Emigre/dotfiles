@@ -14,9 +14,9 @@ alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xc
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openframeworks"
 
-# Haskell
-export PATH=$PATH:"$HOME/.cabal/bin"
-export PATH=$PATH:"$HOME/.local/bin"
+# Go
+export GOPATH=$HOME/code/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # Java
 alias java_home='/usr/libexec/java_home'

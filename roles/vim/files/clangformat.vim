@@ -1,5 +1,5 @@
 " llvm, google, chromium, mozilla are supported
-if getcwd() =~? '^/Users/[^/]\+/code/chromium'
+if getcwd() =~? '^/Users/[^/]\+/code/cpp/chromium'
   let g:clang_format#code_style = 'chromium'
 else
   let g:clang_format#code_style = 'google'
@@ -7,10 +7,10 @@ endif
 
 fun! s:clangFormatIfInCodeFolder()
     let file = expand('%:p')
-    if file =~? '^/Users/[^/]\+/code/'
+    if file =~? '^/Users/[^/]\+/code/[^/]\+/[^/]\+'
           \ && (
-          \   file !~? '^/Users/[^/]\+/code/openframeworks'
-          \   || file =~? '^/Users/[^/]\+/code/openframeworks/apps'
+          \   file !~? '^/Users/[^/]\+/code/cpp/openframeworks'
+          \   || file =~? '^/Users/[^/]\+/code/cpp/openframeworks/apps'
           \ )
       ClangFormat
     endif
