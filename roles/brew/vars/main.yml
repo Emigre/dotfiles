@@ -5,11 +5,13 @@ homebrew_taps:
     - homebrew/cask
     - homebrew/cask-fonts
     - homebrew/cask-versions
+    - kong/kong
 
 homebrew_packages:
   common:
     - ack
     - ansible
+    - carthage
     - expect
     - fzf
     - git
@@ -17,11 +19,19 @@ homebrew_packages:
     - httperf
     - httpie
     - jq
+    - kong
+    - kops
+    - kubernetes-cli
+    - kubernetes-helm
+    - mutt
     - nmap
     - the_silver_searcher
+    - terraform
     - tidy-html5
     - tmux
     - tree
+    - w3m
+    - weechat
     - watchman
     - wget
   home:
@@ -35,8 +45,8 @@ homebrew_packages:
     - wireshark
 
 homebrew_packages_servers:
+  - openresty
   - tomcat
-  - nginx
 
 homebrew_packages_databases:
   - mysql
@@ -60,7 +70,9 @@ homebrew_cask_apps:
     - firefox
     - font-meslo-lg
     - google-chrome
+    - minikube
     - postman
+    - slack
     - sublime-text
     - the-unarchiver
     - zeplin
@@ -72,7 +84,7 @@ homebrew_cask_apps:
     - gitter
     - nosleep
     - skype
-    - slack
+    - steam
     - vagrant
     - virtualbox
     - virtualbox-extension-pack
