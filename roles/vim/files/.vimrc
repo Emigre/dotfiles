@@ -320,8 +320,8 @@ fun! s:IndentConvert(line1, line2, what, cols)
   call setpos('.', savepos)
 endf
 
-command! -nargs=? -range=% Space2Tab call <SID>IndentConvert(<line1>, <line2>, 0, <q-args>)
-command! -nargs=? -range=% Tab2Space call <SID>IndentConvert(<line1>, <line2>, 1, <q-args>)
+command! -nargs=? -range=% SpacesToTabs call <SID>IndentConvert(<line1>, <line2>, 0, <q-args>)
+command! -nargs=? -range=% TabsToSpaces call <SID>IndentConvert(<line1>, <line2>, 1, <q-args>)
 command! -nargs=? -range=% RetabIndent call <SID>IndentConvert(<line1>, <line2>, &et, <q-args>)
 
 " to show all available colors:
