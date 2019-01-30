@@ -56,7 +56,7 @@
     repo: https://github.com/Emigre/blueprints.git
     version: master
     dest: "{{ home }}/Dropbox/blueprints"
-    update: yes
+    update: no
     accept_hostkey: yes
 
 - name: Ensure there is a symlink to the blueprints folder in the home folder
