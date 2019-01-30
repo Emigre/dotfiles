@@ -89,10 +89,6 @@ let g:ale_cpp_clangtidy_checks = [
 
 let g:ale_cpp_clangtidy_executable = '/usr/local/opt/llvm/bin/clang-tidy'
 
-let g:ale_java_javac_classpath = './src/main/java/'
-
-let g:ale_java_javac_options = ''
-
 let g:ale_python_pylint_options = '' .
       \ '--disable=missing-docstring,' .
       \ 'too-few-public-methods,' .
