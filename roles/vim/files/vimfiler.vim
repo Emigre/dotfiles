@@ -11,7 +11,7 @@ let g:vimfiler_file_icon = ' '
 let g:vimfiler_marked_file_icon = '░'
 let g:vimfiler_expand_jump_to_first_child = 0
 
-let g:vimfiler_window_width = 32
+let g:vimfiler_window_width = 36
 
 let g:vimfiler_ignore_filters = ['matcher_ignore_pattern']
 
@@ -48,37 +48,40 @@ fun! s:defineSyntax(id, extension)
   endif
 endf
 
-au FileType vimfiler exe <SID>defineSyntax('javascript', '(js|jsx)') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('autotools', '(ac|am)') | call <SID>defineColor('autotools', 249)
-au FileType vimfiler exe <SID>defineSyntax('cpp', '(c|cpp|cc|cxx)') | call <SID>defineColor('cpp', 34)
-au FileType vimfiler exe <SID>defineSyntax('objc_and_swift', '(m|mm|swift)') | call <SID>defineColor('objc_and_swift', 214)
 au FileType vimfiler exe <SID>defineSyntax('compiled', '(o|pyc)') | call <SID>defineColor('compiled', 'darkGrey')
+au FileType vimfiler exe <SID>defineSyntax('cpp', '(c|cpp|cc|cxx)') | call <SID>defineColor('cpp', 34)
+au FileType vimfiler exe <SID>defineSyntax('go', 'go') | call <SID>defineColor('go', 36)
+au FileType vimfiler exe <SID>defineSyntax('graphql', 'graphql') | call <SID>defineColor('graphql', 169)
 au FileType vimfiler exe <SID>defineSyntax('header', '(h|hpp|inl)') | call <SID>defineColor('header', 28)
 au FileType vimfiler exe <SID>defineSyntax('html', '(htm|html)') | call <SID>defineColor('html', 130)
-au FileType vimfiler exe <SID>defineSyntax('java', 'java') | call <SID>defineColor('java', 146)
+au FileType vimfiler exe <SID>defineSyntax('java_groovy_scala', '(java|groovy|scala)') | call <SID>defineColor('java_groovy_scala', 169)
+au FileType vimfiler exe <SID>defineSyntax('javascript', '(js|jsx)') | call <SID>defineColor('javascript', 150)
 au FileType vimfiler exe <SID>defineSyntax('json', 'json') | call <SID>defineColor('json', 71)
-au FileType vimfiler exe <SID>defineSyntax('misc', '(lua|pas|pp|php)') | call <SID>defineColor('misc', 214)
 au FileType vimfiler exe <SID>defineSyntax('markdown', 'md') | call <SID>defineColor('markdown', 249)
+au FileType vimfiler exe <SID>defineSyntax('objc_swift', '(m|mm|swift)') | call <SID>defineColor('objc_swift', 214)
 au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineColor('python', 214)
-au FileType vimfiler exe <SID>defineSyntax('ruby', 'rb') | call <SID>defineColor('ruby', 169)
-au FileType vimfiler exe <SID>defineSyntax('rust', 'rs') | call <SID>defineColor('rust', 214)
+au FileType vimfiler exe <SID>defineSyntax('rust', 'rust') | call <SID>defineColor('rust', 166)
 au FileType vimfiler exe <SID>defineSyntax('shell', '(sh|bash)') | call <SID>defineColor('shell', 'lightCyan')
 au FileType vimfiler exe <SID>defineSyntax('stylesheet', '(css|sass|less|scss)') | call <SID>defineColor('stylesheet', 115)
 au FileType vimfiler exe <SID>defineSyntax('template', '(tpl|jade)') | call <SID>defineColor('template', 40)
 au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID>defineColor('typescript', 75)
-au FileType vimfiler exe <SID>defineSyntax('graphql', 'graphql') | call <SID>defineColor('graphql', 169)
-au FileType vimfiler exe <SID>defineSyntax('xml', 'xml') | call <SID>defineColor('xml', 136)
+au FileType vimfiler exe <SID>defineSyntax('xml', '(xml|plist|nib|xib|storyboard)') | call <SID>defineColor('xml', 31)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
+
+au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
+      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|' .
+      \ 'Cargo\.toml|Jenkinsfile|Dockerfile|Dockerfile-dev|docker-compose\.yml|Cartfile)( |$)') | call <SID>defineColor('build', 75)
+
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
       \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|' .
       \ 'compile|depcomp|configure|install-sh|missing|log|tags|.+\.log|' .
       \ '.+\.lock|package-lock\.json|npm-shrinkwrap\.json)( |$)') | call <SID>defineColor('temporary', 'darkGrey')
+
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('other',
       \ '\s+(AUTHORS|ChangeLog|CHANGELOG|COPYING|INSTALL|NEWS|README|LICENSE|OWNERS|CODEOWNERS|' .
       \ 'WATCHLISTS|DEPS|LICENSE\..+|BUILD.gn)( |$)') | call <SID>defineColor('other', 249)
-au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
-      \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|' .
-      \ 'Cargo\.toml|Dockerfile|Dockerfile-dev)( |$)') | call <SID>defineColor('build', 75)
+
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('dotfiles', '\s+\..+') | call <SID>defineColor('dotfiles', 'darkGrey')
 
 fun! s:isVimFilerOpen()
