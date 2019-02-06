@@ -70,6 +70,7 @@ homebrew_cask_apps:
     - firefox
     - font-meslo-lg
     - google-chrome
+    - insomnia
     - minikube
     - postman
     - slack
