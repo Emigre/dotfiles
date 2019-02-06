@@ -6,7 +6,6 @@ node_packages:
     - graphql-cli
     - n
     - prettier
-    - redux-cli
     - typescript
     - tslint
     - tslint-language-service
