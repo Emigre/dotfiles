@@ -2,7 +2,7 @@
   homebrew: name=go state=present
 
 - name: Ensure the Go workspace exists and has the right permissions
-  file: "path={{ home }}/go state=directory mode=0755 owner={{ user }}"
+  file: "path={{ home }}/code/go state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
 
@@ -11,9 +11,9 @@
   become: yes
   become_user: "{{ user }}"
   args:
-    creates: "{{ home }}/go/bin/golint"
+    creates: "{{ home }}/code/go/bin/golint"
   environment:
-    GOPATH: "{{ home }}/go"
+    GOPATH: "{{ home }}/code/go"
   changed_when: false
 
 - name: Ensure the Go language serger is installed
@@ -21,7 +21,7 @@
   become: yes
   become_user: "{{ user }}"
   args:
-    creates: "{{ home }}/go/bin/go-langserver"
+    creates: "{{ home }}/code/go/bin/go-langserver"
   environment:
-    GOPATH: "{{ home }}/go"
+    GOPATH: "{{ home }}/code/go"
   changed_when: false
