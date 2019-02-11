@@ -64,14 +64,13 @@ au FileType vimfiler exe <SID>defineSyntax('python', 'py') | call <SID>defineCol
 au FileType vimfiler exe <SID>defineSyntax('rust', 'rust') | call <SID>defineColor('rust', 166)
 au FileType vimfiler exe <SID>defineSyntax('shell', '(sh|bash)') | call <SID>defineColor('shell', 'lightCyan')
 au FileType vimfiler exe <SID>defineSyntax('stylesheet', '(css|sass|less|scss)') | call <SID>defineColor('stylesheet', 115)
-au FileType vimfiler exe <SID>defineSyntax('template', '(tpl|jade)') | call <SID>defineColor('template', 40)
 au FileType vimfiler exe <SID>defineSyntax('typescript', '(ts|tsx)') | call <SID>defineColor('typescript', 75)
 au FileType vimfiler exe <SID>defineSyntax('xml', '(xml|plist|nib|xib|storyboard)') | call <SID>defineColor('xml', 31)
 au FileType vimfiler exe <SID>defineSyntax('yaml', '(yml|yaml)') | call <SID>defineColor('yaml', 33)
 
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('build',
       \ '\s+(CMakeLists\.txt|Makefile\.am|Makefile|config\.make|configure\.ac|' .
-      \ 'Cargo\.toml|Jenkinsfile|Dockerfile|Dockerfile-dev|docker-compose\.yml|Cartfile)( |$)') | call <SID>defineColor('build', 75)
+      \ 'Cargo\.toml|Jenkinsfile|Dockerfile|Dockerfile-dev|Cartfile)( |$)') | call <SID>defineColor('build', 75)
 
 au FileType vimfiler exe <SID>defineSyntaxFromRegex('temporary',
       \ '\s+(compile_commands\.json|Makefile\.in|aclocal\.m4|' .
