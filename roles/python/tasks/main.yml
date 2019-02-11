@@ -18,3 +18,10 @@
   pip: "executable=pip3 state=present name={{ item }}"
   with_items: "{{ cpp_python_packages }}"
   when: is_home
+
+- Ensure the AWS CLI is installed
+  become: yes
+  become_user: "{{ user }}"
+  command: python3.7 -m pip install awscli
+  args:
+    creates: /usr/local/bin/aws
