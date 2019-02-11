@@ -25,6 +25,7 @@ homebrew_packages:
     - kubernetes-helm
     - mutt
     - nmap
+    - skaffold
     - the_silver_searcher
     - terraform
     - tidy-html5
