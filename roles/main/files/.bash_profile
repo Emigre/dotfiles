@@ -3,7 +3,6 @@
 alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
 alias tree='tree -I "node_modules|build|target|dist|bin"'
-alias vi='vim'
 
 # C++
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
