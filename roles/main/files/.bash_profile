@@ -6,6 +6,10 @@ alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
 
+alias evernote='open /Applications/Evernote.app'
+alias itunes='open /Applications/iTunes.app'
+alias steam='open /Applications/Steam.app'
+
 # C++
 alias depot_tools_start='export PATH="$HOME/depot_tools:$PATH"'
 alias clang_include_paths='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
