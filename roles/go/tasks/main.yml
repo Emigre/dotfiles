@@ -16,7 +16,7 @@
     GOPATH: "{{ home }}/code/go"
   changed_when: false
 
-- name: Ensure the Go language serger is installed
+- name: Ensure the Go language server is installed
   shell: /usr/local/bin/go get -u github.com/sourcegraph/go-langserver
   become: yes
   become_user: "{{ user }}"
