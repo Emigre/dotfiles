@@ -19,5 +19,18 @@
   with_fileglob:
     - "*.json"
 
+- name: Ensure an iTerm preferences folder exists and has the right permissions
+  file:
+    path: "{{ home }}/.iterm2.d"
+    state: directory
+    mode: 0755
+    owner: "{{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
 # Settings are saved when iTerm quits - ensure that 'Load preferences from a custom folder or URL'
-# points to the 'roles/iterm/preferences' folder that contains 'com.googlecode.iterm2.plist'
+# points to ~/.iterm2.d/
+- copy:
+  src: com.googlecode.iterm2.plist
+  dest: "{{ home }}/.iterm2.d/com.googlecode.iterm2.plist"
+  force: no
