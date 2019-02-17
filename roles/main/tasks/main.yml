@@ -1,13 +1,10 @@
-- name: Ensure the dotfiles folder exists and has the right permissions
-  file: "path={{ home }}/Dropbox/dotfiles state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
-- name: Ensure there is a symlink to the dotfiles folder in the home folder
-  file:
-    src: "{{ home }}/Dropbox/dotfiles"
+- name: Ensure the dotfiles repo is cloned
+  git:
+    repo: https://github.com/Emigre/dotfiles.git
+    version: master
     dest: "{{ home }}/dotfiles"
-    state: link
+    update: no
+    accept_hostkey: yes
 
 - name: Symlink the dotfiles
   file:
@@ -16,6 +13,22 @@
     state: link
   with_fileglob:
     - ".*"
+
+- name: Ensure the scripts repo is cloned
+  git:
+    repo: https://github.com/Emigre/scripts.git
+    version: master
+    dest: "{{ home }}/scripts"
+    update: no
+    accept_hostkey: yes
+
+- name: Ensure the vim repo is cloned
+  git:
+    repo: https://github.com/Emigre/vim.git
+    version: master
+    dest: "{{ home }}/vim"
+    update: no
+    accept_hostkey: yes
 
 - name: Ensure the code folder exists and has the right permissions
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
@@ -26,39 +39,6 @@
   file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
-
-- name: Ensure there is a vagrant folder
-  file: "path={{ home }}/vagrant state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
-- name: Ensure the vagrant repo is cloned
-  git:
-    repo: https://github.com/Emigre/vagrant.git
-    version: master
-    dest: "{{ home }}/vagrant"
-    update: yes
-    accept_hostkey: yes
-  when: is_home
-
-- name: Ensure there is a scripts folder
-  file: "path={{ home }}/Dropbox/scripts state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
-- name: Ensure the scripts repo is cloned
-  git:
-    repo: https://github.com/Emigre/scripts.git
-    version: master
-    dest: "{{ home }}/Dropbox/scripts"
-    update: yes
-    accept_hostkey: yes
-
-- name: Ensure there is a symlink to the scripts folder in the home folder
-  file:
-    src: "{{ home }}/Dropbox/scripts"
-    dest: "{{ home }}/scripts"
-    state: link
 
 - name: Ensure there is a bash completions folder
   file: "path={{ home }}/.bash_completion.d state=directory mode=0755 owner={{ user }}"

@@ -25,12 +25,14 @@ homebrew_packages:
     - kubernetes-helm
     - mutt
     - nmap
+    - nvim
     - skaffold
     - the_silver_searcher
     - terraform
     - tidy-html5
     - tmux
     - tree
+    - vim
     - w3m
     - weechat
     - watchman
