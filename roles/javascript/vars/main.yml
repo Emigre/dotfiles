@@ -13,6 +13,5 @@ node_packages:
     - typescript-language-server
   work:
     - react-native-cli
-    - lerna
   home:
     - elm
