@@ -1,15 +1,18 @@
 #### Requirements
 
-- [Homebrew](https://brew.sh/)
+[Homebrew](https://brew.sh/)
 
 #### Setup
 
 ```
-brew install Emigre/tap/dotfiles && dotfiles setup
+brew install ansible
+brew install git
+git clone git@github.com:Emigre/dotfiles.git ~/dotfiles
 ```
 
 #### Usage
 
 ```
-dotfiles update
+cd ~/dotfiles
+make start
 ```
