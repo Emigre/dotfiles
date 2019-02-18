@@ -1,29 +1,16 @@
 ## Requirements
 
-[Homebrew](https://brew.sh/)
+1. Install [homebrew](https://brew.sh/)
 
-## Setup
+2. Install ansible and git: `brew install ansible git`
 
-Install ansible and git
+## Set up ssh access to github
 
-```
-brew install ansible
-brew install git
-```
+1. Generate a ssh key: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
-Generate a ssh key
+2. Start the ssh agent: eval `"$(ssh-agent -s)"`
 
-```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
-
-Start the ssh agent
-
-```
-eval "$(ssh-agent -s)"
-```
-
-Add the following `~/.ssh/config` file:
+3. Add the following `~/.ssh/config` file:
 
 ```
 Host *
@@ -32,20 +19,12 @@ Host *
  IdentityFile ~/.ssh/id_rsa
 ```
 
-Add the ssh key to the ssh agent
+4. Add the ssh key to the ssh agent `ssh-add -K ~/.ssh/id_rsa`
 
-```
-ssh-add -K ~/.ssh/id_rsa
-```
-
-[Add the ssh key to the github account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
-
-Clone the dotfiles repo
-
-```
-git clone git@github.com:Emigre/dotfiles.git ~/dotfiles
-```
+5. [Add the ssh key to the github account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 ## Usage
 
-Run `make start` in the `dotfiles` folder
+1. Clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git ~/dotfiles`
+
+2. Run `make start` in the `dotfiles` folder
