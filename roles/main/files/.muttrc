@@ -1,0 +1,73 @@
+# vim: filetype=muttrc
+
+# set mailcap_path = ~/.mutt/mailcap
+# text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Folder hooks
+folder-hook 'account.com.gmail.gaspartrek' 'source ~/.mutt/account.com.gmail.gaspartrek'
+
+# Default account
+source ~/.mutt/account.com.gmail.gaspartrek
+
+# Macros for switching accounts
+# macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.foo<enter><change-folder>!<enter>'
+# macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.bar<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+set timeout=10
+
+# auto_view text/html
+# alternative_order text/plain text text/html #prefer plaintext over dumped html
+#
+# bind attach <return> view-mailcap
+
+set index_format="%(%Y %b %e) %-15.15L %s"
+
+# colour scheme
+# -------------
+
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+color normal		color15 color24
+# color normal		color15 color18
+color indicator		color16	color37
+color status 		color16	color250
+
+# general ------------ foreground ---- background -----------------------------
+color error		color231	color1
+color markers		color210	color24
+color message		color7 color24
+color prompt		color16 color24
+color search		color84		color24
+color tilde		color231 color24
+color tree		color141 color24
+
+# message index ------ foreground ---- background -----------------------------
+color index		color210	color24 ~D # deleted messages
+color index		color84		color24 ~F # flagged messages
+color index		color117	color24 ~N # new messages
+color index		color11	color24 ~Q # messages which have been replied to
+color index		color215	color24 ~T # tagged messages
+color index		color141	color24 ~v # messages part of a collapsed thread
+
+# message headers ---- foreground ---- background -----------------------------
+color hdrdefault	color117 color24
+color header		color231	color24 ^Subject:.*
+
+# message body ------- foreground ---- background -----------------------------
+color attachment	color228	color24
+color body		color231	color24		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
+color body		color247	color24		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
+color body		color231	color24		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body		color231	color24		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
+color body		color231	color24		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
+color quoted		color61		color24
+color quoted1		color117	color24
+color quoted2		color84		color24
+color quoted3		color215	color24
+color quoted4		color212	color24
+color signature		color212	color24

@@ -23,7 +23,7 @@ homebrew_packages:
     - kops
     - kubernetes-cli
     - kubernetes-helm
-    - mutt
+    - neomutt
     - nmap
     - nvim
     - skaffold
