@@ -7,7 +7,7 @@
   { "keys": ["Z", "PAGE_UP"], "type": "function", "command": "page_up" },
   { "keys": ["z", "PAGE_DOWN"], "type": "function", "command": "page_down" },
   { "keys": ["ENTER"], "type": "function", "command": "activate" },
-  { "keys": ["CTRL_X"], "type": "function", "command": "delete" },
+  { "keys": ["d"], "type": "function", "command": "delete" },
   { "keys": ["tt"], "command": "todo toggle $n" },
   { "keys": ["tc"], "type": "function", "command": "toggle_console" },
   { "keys": ["tm"], "type": "function", "command": "toggle_metadata" },
@@ -16,6 +16,5 @@
   { "keys": ["mt"], "type": "prompt", "command": "mktodo \"\"", "cursorPosition": -2 },
   { "keys": ["mb"], "type": "prompt", "command": "mkbook \"\"", "cursorPosition": -2 },
   { "keys": ["yn"], "type": "prompt", "command": "cp $n \"\"", "cursorPosition": -2 },
-  { "keys": ["dn"], "type": "prompt", "command": "mv $n \"\"", "cursorPosition": -2 },
   { "keys": ["q"], "type": "exec", "command": "exit" }
 ]
