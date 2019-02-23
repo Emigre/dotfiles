@@ -5,7 +5,7 @@ alias less='less -R '
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
-alias mutt='neomutt'
+alias mutt="pushd $HOME/Desktop 1>/dev/null;neomutt;popd 1>/dev/null"
 
 alias evernote='open /Applications/Evernote.app'
 alias itunes='open /Applications/iTunes.app'

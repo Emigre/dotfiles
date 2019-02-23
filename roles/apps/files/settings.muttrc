@@ -31,7 +31,7 @@ macro index o '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.gas
 set mail_check_stats
 set sidebar_visible
 set sidebar_width = 20
-set sidebar_divider_char = ' ' 
+set sidebar_divider_char = ' '
 set sidebar_short_path
 set sidebar_delim_chars="/"
 # set sidebar_folder_indent
