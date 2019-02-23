@@ -1,11 +1,12 @@
 [ "$(scutil --get ComputerName)" == 'Gaspar’s MacBook Pro' ] && IS_HOME=true || IS_HOME=false
 
+alias gcal='gcalcli'
 alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
+alias mutt="pushd $HOME/Desktop 1>/dev/null;neomutt;popd 1>/dev/null"
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
-alias mutt="pushd $HOME/Desktop 1>/dev/null;neomutt;popd 1>/dev/null"
 
 alias evernote='open /Applications/Evernote.app'
 alias itunes='open /Applications/iTunes.app'

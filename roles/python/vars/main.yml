@@ -2,6 +2,7 @@ python_packages:
   common:
     - autopep8
     - flake8
+    - gcalcli
     - http-prompt
     - neovim
     - pylint
