@@ -8,7 +8,7 @@
     - is_work: "{{ computer_name!='Gaspar’s MacBook Pro' }}"
   roles:
     - main
-    - brew
+    - apps
     - cpp
     - python
     - javascript

@@ -1,0 +1,39 @@
+# vim: filetype=muttrc
+
+set editor="vim -N -u ~/vim/init.mutt.vim"
+set sleep_time=0
+set timeout=10 # Auto fetch timeout
+set beep=no
+set sort=reverse-date
+set sort_aux=last-date-received
+set imap_check_subscribed
+set index_format="%S %(%Y %b %e) %-15.15L %s"
+
+bind index G imap-fetch-mail
+bind index,pager \CJ sidebar-next
+bind index,pager \CK sidebar-prev
+bind index,pager \CI sidebar-open
+
+# mailcap
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text text/html # prefer plaintext over dumped html
+
+# Folder hooks
+folder-hook 'account.com.gmail.gaspartrek' 'source ~/.mutt/account.com.gmail.gaspartrek'
+folder-hook 'account.com.gasparrey.info' 'source ~/.mutt/account.com.gasparrey.info'
+
+# Macros for switching accounts
+macro index i '<sync-mailbox><enter-command>source ~/.mutt/account.com.gasparrey.info<enter><change-folder>!<enter>'
+macro index o '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail.gaspartrek<enter><change-folder>!<enter>'
+
+# Sidebar
+set mail_check_stats
+set sidebar_visible
+set sidebar_width = 20
+set sidebar_divider_char = ' ' 
+set sidebar_short_path
+set sidebar_delim_chars="/"
+# set sidebar_folder_indent
+# set sidebar_indent_string=" "
+set sidebar_format="%B%* %?N?%N/?%S"

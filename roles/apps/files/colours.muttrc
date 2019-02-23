@@ -1,0 +1,49 @@
+# vim: filetype=muttrc
+
+color normal color15 color24
+color indicator color16 color37
+color status  color16 color250
+
+# general
+color error color231 color1
+color markers color210 color24
+color message color7 color24
+color prompt color16 color24
+color search color84 color24
+color tilde color231 color24
+color tree color141 color24
+
+# message index
+color index color210 color24 ~D # deleted messages
+color index color84 color24 ~F # flagged messages
+color index color117 color24 ~N # new messages
+color index color11 color24 ~Q # messages which have been replied to
+color index color215 color24 ~T # tagged messages
+color index color141 color24 ~v # messages part of a collapsed thread
+
+# message headers
+color hdrdefault color117 color24
+color header color231 color24 ^Subject:.*
+
+# message body
+color attachment color228 color24
+color body color231 color24 [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+ # email addresses
+color body color247 color24 (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+ # URLs
+color body color231 color24 (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body color231 color24 (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$) # _underlined_ text
+color body color231 color24 (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$) # /italic/ text
+color quoted color61 color24
+color quoted1 color117 color24
+color quoted2 color84 color24
+color quoted3 color215 color24
+color quoted4 color212 color24
+color signature color212 color24
+
+# sidebar
+color sidebar_divider color8 color24
+color sidebar_flagged color3 color24
+color sidebar_highlight color33 color24
+color sidebar_indicator color15 color24
+color sidebar_new green color24
+color sidebar_ordinary color248 color24
+color sidebar_spoolfile yellow color24

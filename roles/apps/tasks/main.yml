@@ -24,3 +24,45 @@
 - name: Ensure the homebrew cask applications are installed
   homebrew_cask: "name={{ item }}"
   with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.home) if is_home|bool else homebrew_cask_apps.common }}"
+
+# mutt
+# ----
+
+- name: Ensure the joplin config folder exists
+  file: "path={{ home }}/.mutt state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Symlink mutt config files
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ".muttrc"
+    - "*.muttrc"
+    - "mailcap"
+
+# weechat
+# -------
+
+# TODO configure weechat
+
+# joplin
+# ------
+
+- name: Ensure the joplin config folder exists
+  file: "path={{ home }}/.config/joplin state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Symlink the joplin keymap file
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/.config/joplin/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - keymap.json
+
+# apart from the keymap joplin stores its data and config
+# info in the sqlite file inside ~/.config/joplin
