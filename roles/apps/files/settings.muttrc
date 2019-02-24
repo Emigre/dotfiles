@@ -4,10 +4,16 @@ set editor="vim -N -u ~/vim/init.mutt.vim"
 set sleep_time=0
 set timeout=10 # Auto fetch timeout
 set beep=no
-set sort=reverse-date
-set sort_aux=last-date-received
 set imap_check_subscribed
 set index_format="%S %(%Y %b %e) %-15.15L %s"
+
+set sort=threads
+set strict_threads=yes
+set sort_browser=date
+set sort_aux=reverse-last-date-received
+
+bind index - collapse-thread
+bind index _ collapse-all
 
 bind index G imap-fetch-mail
 bind index,pager \CJ sidebar-next
