@@ -19,7 +19,7 @@
   with_items: "{{ cpp_python_packages }}"
   when: is_home
 
-- Ensure the AWS CLI is installed
+- name: Ensure the AWS CLI is installed
   become: yes
   become_user: "{{ user }}"
   command: python3.7 -m pip install awscli
