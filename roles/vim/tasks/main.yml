@@ -1,0 +1,136 @@
+- name: Ensure the vim repo is cloned
+  git:
+    repo: https://github.com/Emigre/vim.git
+    version: master
+    dest: "{{ home }}/vim"
+    update: no
+    accept_hostkey: yes
+
+- name: Ensure the vim configuration folder exists and has the right permissions
+  file: "path={{ home }}/.vim state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the subfolders inside the vim configuration folder exist and have the right permissions
+  file: "path={{ home }}/.vim/{{ item }} state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+  with_items:
+    - backups
+    - undo
+    - swaps
+    - plugged
+
+- name: Ensure the config folder exists and has the right permissions
+  file: "path={{ home }}/.config state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the neovim config folder is a symlink to the vim config folder
+  file:
+    src: "{{ home }}/.vim"
+    dest: "{{ home }}/.config/nvim"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the coc folder exists and has the right permissions
+  file: "path={{ home }}/.config/coc state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the coc extensions folder exists and has the right permissions
+  file: "path={{ home }}/.config/coc/extensions state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure some files inside the vim configuration folder are symlinked to the vim repo
+  file:
+    src: "{{ home }}/vim/{{ item }}"
+    dest: "{{ home }}/.vim/{{ item }}"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+  with_items:
+    - init.vim
+    - coc-settings.json
+    - autoload
+    - colors
+    - plugin
+
+- name: Ensure the coc extensions package.json is symlinked to the vim repo
+  file:
+    src: "{{ home }}/vim/coc-extensions-package.json"
+    dest: "{{ home }}/.config/coc/extensions/package.json"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the vim plugins are cloned in the plugged folder
+  git:
+    repo: "https://github.com/{{ item }}"
+    version: master
+    dest: "{{ home }}/.vim/plugged/{{ item | basename }}"
+    update: no
+    accept_hostkey: yes
+  with_items:
+    - airblade/vim-gitgutter
+    - ap/vim-buftabline
+    - bfrg/vim-cpp-modern
+    - drmikehenry/vim-headerguard
+    - editorconfig/editorconfig-vim
+    - elzr/vim-json
+    - fatih/vim-go
+    - hashivim/vim-terraform
+    - jlanzarotta/bufexplorer
+    - jparise/vim-graphql
+    - keith/swift.vim
+    - kien/ctrlp.vim
+    - leafgarland/typescript-vim
+    - mxw/vim-jsx
+    - neoclide/coc.nvim
+    - pangloss/vim-javascript
+    - plasticboy/vim-markdown
+    - rhysd/vim-clang-format
+    - scrooloose/nerdcommenter
+    - Shougo/unite.vim
+    - Shougo/vimfiler.vim
+    - Shougo/vinarise.vim
+    - svermeulen/vim-easyclip
+    - tommcdo/vim-fugitive-blame-ext
+    - tpope/vim-fugitive
+    - tpope/vim-repeat
+    - Vimjas/vim-python-pep8-indent
+    - w0rp/ale
+    - Yggdroot/indentLine
+
+- name: Ensure node and yarn are present to build coc.nvim
+  homebrew:
+    name: ["{{ item }}"]
+    state: present
+  with_items:
+    - node
+    - yarn
+
+- name: Ensure coc.nvim is built
+  shell: "{{ home }}/.vim/plugged/coc.nvim/install.sh"
+  args:
+    chdir: "{{ home }}/.vim/plugged/coc.nvim/"
+    creates: "{{ home }}/.vim/plugged/coc.nvim/build/coc-macos"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the coc.nvim extensions are installed
+  yarn:
+    path: "{{ home }}/.config/coc/extensions/"
+  changed_when: false
+
+- name: Ensure vim is installed
+  homebrew:
+    name: vim
+    state: present
+
+- name: Ensure neovim is installed
+  homebrew:
+    name: nvim
+    state: present

@@ -3,8 +3,12 @@
 # ===
 
 .PHONY: start
-start: ## runs the ansible playbook
+start: ## configures the system
 	@ansible-playbook main.yml
+
+.PHONY: vim
+vim: ## configures vim only
+	@ansible-playbook vim.yml
 
 # ==
 

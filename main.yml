@@ -1,13 +1,10 @@
 - hosts: localhost
   connection: local
-  vars:
-    - user: "{{ lookup('env','USER') }}"
-    - home: "{{ lookup('env','HOME') }}"
-    - computer_name: "{{ lookup('pipe', 'scutil --get ComputerName') }}"
-    - is_home: "{{ computer_name=='Gaspar’s MacBook Pro' }}"
-    - is_work: "{{ computer_name!='Gaspar’s MacBook Pro' }}"
+  vars_files:
+    - vars/common.yml
   roles:
     - main
+    - vim
     - apps
     - cpp
     - python

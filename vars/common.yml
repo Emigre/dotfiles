@@ -1,0 +1,5 @@
+user: "{{ lookup('env','USER') }}"
+home: "{{ lookup('env','HOME') }}"
+computer_name: "{{ lookup('pipe', 'scutil --get ComputerName') }}"
+is_home: "{{ computer_name=='Gaspar’s MacBook Pro' or computer_name=='Gaspar’s Mac mini' }}"
+is_work: "{{ False }}"
