@@ -13,7 +13,7 @@ vim: ## configures vim only
 .PHONY: backup
 backup: ## creates security copies
 	@echo '- Creating a compressed copy of the installed coc extensions and vim plugins'
-	@zip -9 -r ~/Dropbox/backups/vim-plugins-$(shell bash -c "date +\"%Y%m%dT%H%M%S%z\"").zip \
+	@zip -9 -r ~/Dropbox/backups/vim-plugins-$(shell bash -c "date +\"%Y%m%dT%H%M%S\"").zip \
 		~/.vim/plugged \
 		~/.config/coc/extensions
 
