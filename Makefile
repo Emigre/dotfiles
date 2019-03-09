@@ -10,6 +10,13 @@ start: ## configures the system
 vim: ## configures vim only
 	@ansible-playbook vim.yml
 
+.PHONY: backup
+backup: ## creates security copies
+	@echo '- Creating a compressed copy of the installed coc extensions and vim plugins'
+	@zip -9 -r ~/Dropbox/backups/vim-plugins-$(shell bash -c "date +\"%Y%m%dT%H%M%S%z\"").zip \
+		~/.vim/plugged \
+		~/.config/coc/extensions
+
 .PHONY: update
 update: ## pulls the repos
 	@echo '- Update the dotfiles repo'
