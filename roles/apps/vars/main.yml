@@ -61,7 +61,7 @@ homebrew_packages_games:
   - glulxe
 
 homebrew_cask_apps:
-  - android-studio
+  # - android-studio
   - caffeine
   - dropbox
   - firefox
