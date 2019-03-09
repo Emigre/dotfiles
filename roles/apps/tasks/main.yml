@@ -9,7 +9,7 @@
   with_items: "{{ homebrew_packages }}"
 
 - name: Ensure servers are installed with homebrew
-  homebrew: 
+  homebrew:
     name: ["{{ item }}"]
     state: present
   with_items: "{{ homebrew_packages_servers }}"
@@ -17,14 +17,14 @@
 
 - name: Ensure databases are installed with homebrew
   homebrew:
-    name: ["{{ item }}"] 
+    name: ["{{ item }}"]
     state: present
   with_items: "{{ homebrew_packages_databases }}"
   when: is_home
 
 - name: Ensure games are installed with homebrew
   homebrew:
-    name: ["{{ item }}"] 
+    name: ["{{ item }}"]
     state: present
   with_items: "{{ homebrew_packages_games }}"
   when: is_home
@@ -42,7 +42,15 @@
 # mutt
 # ----
 
-- name: Ensure the joplin config folder exists
+- name: Symlink .muttrc
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ".muttrc"
+
+- name: Ensure the mutt config folder exists
   file: "path={{ home }}/.mutt state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
@@ -50,10 +58,9 @@
 - name: Symlink mutt config files
   file:
     src: "{{ item }}"
-    dest: "{{ home }}/{{ item | basename }}"
+    dest: "{{ home }}/.mutt/{{ item | basename }}"
     state: link
   with_fileglob:
-    - ".muttrc"
     - "*.muttrc"
     - "mailcap"
 
