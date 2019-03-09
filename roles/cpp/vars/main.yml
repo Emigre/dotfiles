@@ -1,16 +1,14 @@
 homebrew_packages:
-  common:
-    - cmake
-  home:
-    - bear
-    - cgdb
-    - clang-format
-    - cling
-    - dwarfutils
-    - gcc
-    - gdb
-    - ninja
-    - sdl2
-    - sdl2_image
-    - sdl2_mixer
-    - sdl2_ttf
+  - cmake
+  - bear
+  - cgdb
+  - clang-format
+  - cling
+  - dwarfutils
+  - gcc
+  - gdb
+  - ninja
+  - sdl2
+  - sdl2_image
+  - sdl2_mixer
+  - sdl2_ttf

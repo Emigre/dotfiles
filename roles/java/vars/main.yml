@@ -2,3 +2,4 @@ homebrew_packages:
   - checkstyle
   - jenv
   - maven
+  - tomcat

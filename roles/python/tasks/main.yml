@@ -5,17 +5,26 @@
   homebrew: name=pipenv state=present
 
 - name: Ensure configured python packages are installed
-  pip: "executable=pip3 state=present name={{ item }}"
-  with_items: "{{ (python_packages.common + python_packages.home) if is_home|bool else python_packages.common }}"
+  pip:
+    executable: pip3 
+    name: ["{{ item }}"]
+    state: present 
+  with_items: "{{ python_packages }}"
 
 - name: Ensure the Python language server is installed
-  homebrew: "name={{ item }} state=present"
+  pip: 
+    executable: pip3 
+    name: ["{{ item }}"] 
+    state: present
   with_items:
     - jedi
     - python-language-server
 
 - name: Ensure python packages related to C++ are installed
-  pip: "executable=pip3 state=present name={{ item }}"
+  pip: 
+    executable: pip3 
+    name: ["{{ item }}"]
+    state: present
   with_items: "{{ cpp_python_packages }}"
   when: is_home
 
@@ -25,3 +34,10 @@
   command: python3.7 -m pip install awscli
   args:
     creates: /usr/local/bin/aws
+
+- name: Ensure gcalcli installed
+  pip:
+    executable: pip3 
+    state: present 
+    extra_args: --user
+    name: gcalcli

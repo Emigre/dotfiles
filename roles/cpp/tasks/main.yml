@@ -1,9 +1,11 @@
 - name: Ensure the C++ homebrew packages are installed
-  homebrew: "name={{ item }} state=present"
-  with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
+  homebrew:
+    name: ["{{ item }}"] 
+    state: present
+  with_items: "{{ homebrew_packages }}"
 
 - name: Ensure llvm is installed
-  homebrew: name=llvm state=present install_options=with-toolchain
+  homebrew: name=llvm state=present
   when: is_home
 
 - name: Ensure the depot tools are cloned
@@ -32,7 +34,7 @@
     dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
     state: link
   become: yes
-  become_user: "{{ user }}"
+  become_user: root
   with_fileglob:
     - "*dbinit.py"
   when: is_home

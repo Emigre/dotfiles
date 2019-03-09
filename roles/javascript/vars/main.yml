@@ -1,17 +1,23 @@
 node_packages:
-  common:
-    - eslint
-    - flow-bin
-    - flow-language-server
-    - graphql-cli
-    - n
-    - prettier
-    - swagger
-    - typescript
-    - tslint
-    - tslint-language-service
-    - typescript-language-server
-  work:
-    - react-native-cli
-  home:
-    - elm
+  - eslint
+  - flow-bin
+  - flow-language-server
+  - graphql-cli
+  - n
+  - prettier
+  - swagger
+  - typescript
+  - tslint
+  - tslint-language-service
+  - typescript-language-server
+  - react-native-cli
+  - elm
+
+node_packages_eslint:
+  - eslint
+  - babel-eslint
+  - eslint-config-airbnb
+  - eslint-plugin-babel
+  - eslint-plugin-import
+  - eslint-plugin-react
+  - eslint-plugin-jsx-a11y

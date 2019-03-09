@@ -26,22 +26,15 @@
     - .node/lib
     - .node/lib/node_modules
 
-- name: Ensure eslint is installed globally
-  npm: "name={{ item }} state=present global=yes"
-  with_items:
-    - eslint
-    - babel-eslint
-    - eslint-config-airbnb
-    - eslint-plugin-babel
-    - eslint-plugin-import
-    - eslint-plugin-react
-    - eslint-plugin-jsx-a11y
-  changed_when: false
-
 - name: Ensure configured global node packages are installed
   npm: "name={{ item }} state=present global=yes"
-  with_items: "{{ (node_packages.common + node_packages.home) if is_home|bool else (node_packages.common + node_packages.work) }}"
+  with_items: "{{ node_packages }}"
+
+- name: Ensure eslint is installed globally
+  npm: "name={{ item }} state=present global=yes"
+  with_items: "{{ node_packages_eslint }}"
+  changed_when: false
 
 - name: Ensure the JavaScript and TypeScript language server is installed
-  homebrew: name=javascript-typescript-langserver state=present
+  npm: name=javascript-typescript-langserver state=present global=yes
   when: is_home

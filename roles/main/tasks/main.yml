@@ -22,18 +22,23 @@
     update: no
     accept_hostkey: yes
 
-- name: Ensure the vim repo is cloned
-  git:
-    repo: https://github.com/Emigre/vim.git
-    version: master
-    dest: "{{ home }}/vim"
-    update: no
-    accept_hostkey: yes
-
 - name: Ensure the code folder exists and has the right permissions
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
+
+- name: Ensure the subfolders inside code exist and have the right permissions
+  file: "path={{ home }}/code/{{ item }} state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+  with_items:
+    - cpp
+    - devops
+    - go
+    - java
+    - mobile
+    - rust
+    - web
 
 - name: Ensure the envs folder exists and has the right permissions
   file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"

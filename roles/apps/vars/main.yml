@@ -1,56 +1,50 @@
 homebrew_upgrade: no
 
 homebrew_taps:
-  common:
-    - homebrew/cask
-    - homebrew/cask-fonts
-    - homebrew/cask-versions
-    - kong/kong
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+  - kong/kong
 
 homebrew_packages:
-  common:
-    - ack
-    - ansible
-    - aws-iam-authenticator
-    - carthage
-    - expect
-    - fzf
-    - git
-    - htop
-    - httperf
-    - httpie
-    - jq
-    - kong
-    - kops
-    - kubernetes-cli
-    - kubernetes-helm
-    - neomutt
-    - nmap
-    - nvim
-    - skaffold
-    - the_silver_searcher
-    - terraform
-    - tidy-html5
-    - tmux
-    - tree
-    - vim
-    - w3m
-    - weechat
-    - watchman
-    - wget
-  home:
-    - arp-scan
-    - fpc
-    - mercurial
-    - rlwrap
-    - tcptrace
-    - tcptraceroute
-    - watch
-    - wireshark
+  - ack
+  - ansible
+  - arp-scan
+  - aws-iam-authenticator
+  - carthage
+  - expect
+  - fpc
+  - fzf
+  - git
+  - htop
+  - httperf
+  - httpie
+  - jq
+  - kong
+  - kops
+  - kubernetes-cli
+  - kubernetes-helm
+  - mercurial
+  - neomutt
+  - nmap
+  - rlwrap
+  - skaffold
+  - tcptrace
+  - tcptraceroute
+  - terraform
+  - the_silver_searcher
+  - tidy-html5
+  - tmux
+  - tree
+  - w3m
+  - watch
+  - watchman
+  - weechat
+  - wget
+  - wireshark
 
 homebrew_packages_servers:
   - openresty
-  - tomcat
 
 homebrew_packages_databases:
   - mysql
@@ -67,31 +61,31 @@ homebrew_packages_games:
   - glulxe
 
 homebrew_cask_apps:
-  common:
-    - android-studio
-    - caffeine
-    - dropbox
-    - firefox
-    - font-meslo-lg
-    - google-chrome
-    - insomnia
-    - minikube
-    - postman
-    - slack
-    - sublime-text
-    - the-unarchiver
-    - zeplin
-  home:
-    - colloquy
-    - discord
-    - docker
-    - evernote
-    - gitter
-    - nosleep
-    - skype
-    - steam
-    - vagrant
-    - virtualbox
-    - virtualbox-extension-pack
-    - vlc
-    - whatsapp
+  - android-studio
+  - caffeine
+  - dropbox
+  - firefox
+  - font-meslo-lg
+  - google-chrome
+  - insomnia
+  - minikube
+  - postman
+  - slack
+  - sublime-text
+  - the-unarchiver
+  - zeplin
+
+homebrew_cask_apps_home:
+  - colloquy
+  - discord
+  - docker
+  - evernote
+  - gitter
+  - nosleep
+  - skype
+  - steam
+  - vagrant
+  # - virtualbox
+  # - virtualbox-extension-pack
+  - vlc
+  - whatsapp

@@ -29,7 +29,7 @@
   become_user: "{{ user }}"
 
 # Settings are saved when iTerm quits - ensure that 'Load preferences from a custom folder or URL'
-# points to ~/.iterm2.d/
+# points to {{ home }}/.iterm2.d/
 - copy:
     src: com.googlecode.iterm2.plist
     dest: "{{ home }}/.iterm2.d/com.googlecode.iterm2.plist"

@@ -1,29 +1,43 @@
 - name: Ensure configured taps are tapped
   homebrew_tap: "tap={{ item }} state=present"
-  with_items: "{{ homebrew_taps.common }}"
+  with_items: "{{ homebrew_taps }}"
 
 - name: Ensure the homebrew packages are installed
-  homebrew: "name={{ item }} state=present"
-  with_items: "{{ (homebrew_packages.common + homebrew_packages.home) if is_home|bool else homebrew_packages.common }}"
+  homebrew:
+    name: ["{{ item }}"]
+    state: present
+  with_items: "{{ homebrew_packages }}"
 
 - name: Ensure servers are installed with homebrew
-  homebrew: "name={{ item }} state=present"
+  homebrew: 
+    name: ["{{ item }}"]
+    state: present
   with_items: "{{ homebrew_packages_servers }}"
   when: is_home
 
 - name: Ensure databases are installed with homebrew
-  homebrew: "name={{ item }} state=present"
+  homebrew:
+    name: ["{{ item }}"] 
+    state: present
   with_items: "{{ homebrew_packages_databases }}"
   when: is_home
 
 - name: Ensure games are installed with homebrew
-  homebrew: "name={{ item }} state=present"
+  homebrew:
+    name: ["{{ item }}"] 
+    state: present
   with_items: "{{ homebrew_packages_games }}"
   when: is_home
 
 - name: Ensure the homebrew cask applications are installed
-  homebrew_cask: "name={{ item }}"
-  with_items: "{{ (homebrew_cask_apps.common + homebrew_cask_apps.home) if is_home|bool else homebrew_cask_apps.common }}"
+  homebrew_cask:
+    name: ["{{ item }}"]
+  with_items: "{{ homebrew_cask_apps }}"
+
+- name: Ensure the homebrew cask applications for home are installed
+  homebrew_cask:
+    name: ["{{ item }}"]
+  with_items: "{{ homebrew_cask_apps_home }}"
 
 # mutt
 # ----
