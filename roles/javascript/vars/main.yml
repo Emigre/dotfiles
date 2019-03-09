@@ -6,7 +6,6 @@ node_packages:
   - n
   - prettier
   - swagger
-  - typescript
   - tslint
   - tslint-language-service
   - typescript-language-server

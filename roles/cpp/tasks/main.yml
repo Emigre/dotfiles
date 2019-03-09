@@ -1,6 +1,6 @@
 - name: Ensure the C++ homebrew packages are installed
   homebrew:
-    name: ["{{ item }}"] 
+    name: ["{{ item }}"]
     state: present
   with_items: "{{ homebrew_packages }}"
 

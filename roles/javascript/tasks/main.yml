@@ -26,6 +26,13 @@
     - .node/lib
     - .node/lib/node_modules
 
+- name: Ensure typescript is installed
+  npm:
+    name: typescript
+    state: present
+    global: yes
+  changed_when: false
+
 - name: Ensure configured global node packages are installed
   npm: "name={{ item }} state=present global=yes"
   with_items: "{{ node_packages }}"

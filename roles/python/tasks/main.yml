@@ -6,23 +6,37 @@
 
 - name: Ensure configured python packages are installed
   pip:
-    executable: pip3 
+    executable: pip3
     name: ["{{ item }}"]
-    state: present 
+    state: present
   with_items: "{{ python_packages }}"
 
+- name: Ensure http-prompt is installed
+  pip:
+    executable: pip3
+    name: http-prompt
+    state: present
+  changed_when: false
+
+- name: Ensure ipdb is installed
+  pip:
+    executable: pip3
+    name: ipdb
+    state: present
+  changed_when: false
+
 - name: Ensure the Python language server is installed
-  pip: 
-    executable: pip3 
-    name: ["{{ item }}"] 
+  pip:
+    executable: pip3
+    name: ["{{ item }}"]
     state: present
   with_items:
     - jedi
     - python-language-server
 
 - name: Ensure python packages related to C++ are installed
-  pip: 
-    executable: pip3 
+  pip:
+    executable: pip3
     name: ["{{ item }}"]
     state: present
   with_items: "{{ cpp_python_packages }}"
@@ -37,7 +51,7 @@
 
 - name: Ensure gcalcli installed
   pip:
-    executable: pip3 
-    state: present 
+    executable: pip3
+    state: present
     extra_args: --user
     name: gcalcli
