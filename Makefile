@@ -10,6 +10,15 @@ start: ## configures the system
 vim: ## configures vim only
 	@ansible-playbook vim.yml
 
+.PHONY: update
+update: ## pulls the repos
+	@echo '- Update the dotfiles repo'
+	@git pull
+	@echo '- Update the vim repo'
+	@cd ~/vim && git pull
+	@echo '- Update the scripts repo'
+	@cd ~/scripts && git pull
+
 # ==
 
 .PHONY: help
