@@ -104,7 +104,7 @@
     - w0rp/ale
     - Yggdroot/indentLine
 
-- name: Ensure node and yarn are present to build coc.nvim
+- name: Ensure node and yarn are present to be able to build coc.nvim from source if needed
   homebrew:
     name: ["{{ item }}"]
     state: present
@@ -112,7 +112,13 @@
     - node
     - yarn
 
-- name: Ensure coc.nvim is built
+- name: Ensure pkg is installed to be able to build coc.nvim from source if needed
+  npm:
+    name: pkg
+    state: present
+    global: yes
+
+- name: Ensure the latest release of the coc.nvim binary is downloaded
   shell: "{{ home }}/.vim/plugged/coc.nvim/install.sh"
   args:
     chdir: "{{ home }}/.vim/plugged/coc.nvim/"

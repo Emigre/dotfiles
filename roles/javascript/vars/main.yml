@@ -4,6 +4,7 @@ node_packages:
   - flow-language-server
   - graphql-cli
   - n
+  - pkg
   - prettier
   - swagger
   - tslint
