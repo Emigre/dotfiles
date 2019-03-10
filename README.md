@@ -22,6 +22,8 @@
 
 ## Other
 
+* Refer to the vim repo README to fix issues with autocomplete in coc.nvim
+
 * [Set up e-mail accounts with Mutt](MUTT.md)
 
 * Start [docker for mac](https://www.docker.com/products/docker-desktop), [dropbox](https://www.dropbox.com/) and the [mail notifr](https://ashchan.com/projects/gmail-notifr)
