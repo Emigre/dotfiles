@@ -26,7 +26,7 @@ export OF_ROOT="$HOME/code/openframeworks"
 
 # Go
 export GOPATH=$HOME/code/go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+export PATH=$PATH:"/usr/local/opt/go/libexec/bin:$GOPATH/bin"
 
 # Java
 alias java_home='/usr/libexec/java_home'
@@ -39,8 +39,8 @@ export M2="$M2_HOME/bin"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
-export PATH="$PATH:$HOME/.node/bin"
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH=$PATH:"$HOME/.node/bin"
+export PATH=$PATH:"$HOME/.yarn/bin"
 
 # Python
 alias python='python3'
