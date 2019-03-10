@@ -1,11 +1,9 @@
 python_packages:
   - autopep8
   - flake8
-  - http-prompt
   - neovim
   - pylint
   - virtualenv
-  - ipdb
   - mypy
   - pudb
   - pyinstaller
