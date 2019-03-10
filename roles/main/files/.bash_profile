@@ -1,5 +1,3 @@
-[ "$(scutil --get ComputerName)" == 'Gaspar’s MacBook Pro' ] && IS_HOME=true || IS_HOME=false
-
 alias gcal='gcalcli --nocolor '
 alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias joplin='joplin;clear'
@@ -25,8 +23,10 @@ alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openframeworks"
 
 # Go
-export GOPATH=$HOME/code/go
-export PATH=$PATH:"/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+if ! [ -n "$TMUX" ]; then
+  export GOPATH=$HOME/code/go
+  export PATH=$PATH:"/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+fi
 
 # Java
 alias java_home='/usr/libexec/java_home'
@@ -39,8 +39,10 @@ export M2="$M2_HOME/bin"
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
 alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
-export PATH=$PATH:"$HOME/.node/bin"
-export PATH=$PATH:"$HOME/.yarn/bin"
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"$HOME/.node/bin"
+  export PATH=$PATH:"$HOME/.yarn/bin"
+fi
 
 # Python
 alias python='python3'
@@ -48,7 +50,9 @@ alias pip='pip3'
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
 
 # Rust
-export PATH=$PATH:"$HOME/.cargo/bin"
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"$HOME/.cargo/bin"
+fi
 
 # PostgreSQL
 alias psql_start='pg_ctl -l /usr/local/var/postgres/server.log start'
@@ -71,4 +75,6 @@ for bcfile in ~/.bash_completion.d/* ; do
 done
 
 # Utility scripts
-export PATH=$PATH:"$HOME/scripts"
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"$HOME/scripts"
+fi
