@@ -17,8 +17,8 @@ backup: ## creates security copies
 		~/.vim/plugged \
 		~/.config/coc/extensions
 
-.PHONY: update
-update: ## pulls the repos
+.PHONY: pull
+pull: ## pulls the repos
 	@echo '- Update the dotfiles repo'
 	@git pull
 	@echo '- Update the vim repo'
