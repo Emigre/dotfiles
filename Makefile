@@ -17,8 +17,11 @@ backup: ## creates a backup of the current state of the vim plugins and coc exte
 	@zip -9 -r $$HOME/Dropbox/backups/$(BACKUP_FILE_NAME) \
 		~/.vim/plugged \
 		~/.config/coc/extensions
-	@echo "- Backup '$(BACKUP_FILE_NAME)' created in ~/Dropbox/backups/"
-
+	@echo "------------------------------------------------------------------------"
+	@echo ""
+	@echo "$(BACKUP_FILE_NAME)"
+	@du -h $$HOME/Dropbox/backups/$(BACKUP_FILE_NAME) | head -n1 | awk '{print $$1;}'
+	@echo ""
 
 .PHONY: clean
 clean: ## removes the currently installed vim plugins and coc extensions
