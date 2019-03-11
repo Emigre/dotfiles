@@ -16,6 +16,7 @@
     src: "{{ item }}"
     dest: "{{ home }}/Library/Application\ Support/iTerm2/DynamicProfiles/{{ item | basename }}"
     state: link
+    follow: False
   with_fileglob:
     - "*.json"
 

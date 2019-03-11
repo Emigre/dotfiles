@@ -41,7 +41,3 @@
   npm: "name={{ item }} state=present global=yes"
   with_items: "{{ node_packages_eslint_tslint }}"
   changed_when: false
-
-- name: Ensure the JavaScript and TypeScript language server is installed
-  npm: name=javascript-typescript-langserver state=present global=yes
-  when: is_home

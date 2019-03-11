@@ -1,14 +1,13 @@
 node_packages:
+  - elm
   - flow-bin
   - flow-language-server
   - graphql-cli
   - n
   - pkg
   - prettier
-  - swagger
-  - typescript-language-server
   - react-native-cli
-  - elm
+  - swagger
 
 node_packages_eslint_tslint:
   - babel-eslint
