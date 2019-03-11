@@ -2,8 +2,8 @@
 
 # ===
 
-.PHONY: start
-start: ## configures the system
+.PHONY: osx
+osx: ## configures the system
 	@ansible-playbook main.yml
 
 .PHONY: vim
