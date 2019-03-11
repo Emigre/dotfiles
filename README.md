@@ -44,7 +44,7 @@
     - In 'Minimize windows using:' select 'scale effect'
   - In Accessibility
     - In Mouse & Trackpad, under Trackpad Options, check 'Enable dragging' and select 'three finger drag'
-    - In Display, enable 'Reduce motion'
+    - In Display, enable 'Reduce motion' and disable 'Shake mouse pointer to locate'
   - In Mission Control deselect 'Show Desktop' and 'Show Dashboard'
   - In Bluetooth select 'Show Bluetooth in menu bar'
   - In Volume select 'Show volume in menu bar'
