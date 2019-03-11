@@ -1,5 +1,4 @@
 node_packages:
-  - eslint
   - flow-bin
   - flow-language-server
   - graphql-cli
@@ -7,17 +6,17 @@ node_packages:
   - pkg
   - prettier
   - swagger
-  - tslint
-  - tslint-language-service
   - typescript-language-server
   - react-native-cli
   - elm
 
-node_packages_eslint:
-  - eslint
+node_packages_eslint_tslint:
   - babel-eslint
+  - eslint
   - eslint-config-airbnb
   - eslint-plugin-babel
   - eslint-plugin-import
   - eslint-plugin-react
   - eslint-plugin-jsx-a11y
+  - tslint
+  - tslint-language-service
