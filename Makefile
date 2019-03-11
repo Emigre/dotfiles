@@ -3,27 +3,39 @@
 # ===
 
 .PHONY: start
-start: ## configures the system
+start: ## runs ansible to configure the system
 	@ansible-playbook main.yml
 
 .PHONY: vim
-vim: ## configures vim only
+vim: ## runs ansible to configures vim only
 	@ansible-playbook vim.yml
 
 .PHONY: backup
-backup: ## creates security copies
-	@echo '- Creating a compressed copy of the installed coc extensions and vim plugins'
-	@zip -9 -r ~/Dropbox/backups/vim-plugins-$(shell bash -c "date +\"%Y%m%dT%H%M%S\"").zip \
+backup: ## creates a backup of the current state of the vim plugins and coc extensions
+	@echo '- Creating a backup  of the current state of the vim plugins and coc extensions'
+	$(eval BACKUP_FILE_NAME := "vim-plugins-$(shell bash -c "date +\"%Y%m%dT%H%M%S\"").zip")
+	@zip -9 -r $$HOME/Dropbox/backups/$(BACKUP_FILE_NAME) \
 		~/.vim/plugged \
 		~/.config/coc/extensions
+	@echo "- Backup '$(BACKUP_FILE_NAME)' created in ~/Dropbox/backups/"
+
+
+.PHONY: clean
+clean: ## removes the currently installed vim plugins and coc extensions
+	@echo '- This will delete all the files in ~/.vim/plugged/ and ~/.config/coc/extensions/node_modules/'
+	@( read -p "- Are you sure that you want to do this? [y/N]: " sure && case "$$sure" in [yY]) true;; *) false;; esac )
+	@echo '- Deleting the vim plugins'
+	@rm -rf $$HOME/.vim/plugged/*
+	@echo '- Deleting the coc extensions'
+	@rm -rf $$HOME/.config/coc/extensions/node_modules
 
 .PHONY: pull
-pull: ## pulls the repos
-	@echo '- Update the dotfiles repo'
+pull: ## pulls the changes for the vim, scripts and dotfiles repos
+	@echo '- Updating the dotfiles repo'
 	@git pull
-	@echo '- Update the vim repo'
+	@echo '- Updating the vim repo'
 	@cd ~/vim && git pull
-	@echo '- Update the scripts repo'
+	@echo '- Updating the scripts repo'
 	@cd ~/scripts && git pull
 
 # ==
