@@ -7,7 +7,7 @@ start: ## runs ansible to configure the system
 	@ansible-playbook main.yml
 
 .PHONY: vim
-vim: ## runs ansible to configures vim only
+vim: ## runs ansible to configure vim only
 	@ansible-playbook vim.yml
 
 .PHONY: backup
