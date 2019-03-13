@@ -22,6 +22,7 @@ alias sdk_path='xcrun --show-sdk-path'
 alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xctoolchain"
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openframeworks"
+alias clang_tidy='/usr/local/opt/llvm/bin/clang-tidy'
 
 # Go
 if ! [ -n "$TMUX" ]; then
