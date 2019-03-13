@@ -4,11 +4,14 @@ homebrew_packages:
   - cgdb
   - clang-format
   - cling
+  - doxygen
   - dwarfutils
   - gcc
   - gdb
+  - graphviz
   - ninja
   - sdl2
   - sdl2_image
   - sdl2_mixer
   - sdl2_ttf
+  - swig
