@@ -15,3 +15,4 @@ homebrew_packages:
   - sdl2_mixer
   - sdl2_ttf
   - swig
+  - tbb
