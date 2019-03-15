@@ -50,7 +50,7 @@
   - In Volume select 'Show volume in menu bar'
   - In Time Machine select 'Show Time Machine in menu bar'
 
-#### iTerm2
+### iTerm2
 
 - In Preferences > General
   - Check 'Load preferences from a custom folder or URL' and set it to `/Users/gasparrey/.iterm2.d`
