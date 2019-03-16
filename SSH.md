@@ -15,5 +15,5 @@ Host *
 
 4. Add the ssh key to the ssh agent `ssh-add -K ~/.ssh/id_rsa`
 
-5. [Add the ssh key to the github account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+5. [Add the key to github](https://github.com/settings/keys) / [Add the key to bitbucket](https://bitbucket.org/account/user/Emigre/ssh-keys/)
 
