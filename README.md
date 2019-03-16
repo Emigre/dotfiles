@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Usage
+## Usage
 
 1. Install [homebrew](https://brew.sh/)
 
