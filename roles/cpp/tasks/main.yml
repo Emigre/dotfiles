@@ -6,16 +6,38 @@
 
 - name: Ensure llvm is installed
   homebrew: name=llvm state=present
-  when: is_home
 
 - name: Ensure the depot tools are cloned
   git:
     repo: https://chromium.googlesource.com/chromium/tools/depot_tools.git
     version: master
-    dest: "{{ home }}/depot_tools"
+    dest: "{{ home }}/code/cpp/depot_tools"
     update: no
     accept_hostkey: yes
   when: is_home
+
+- name: Ensure the llvm project is cloned
+  # to build clangd:
+  # cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" ../llvm
+  git:
+    repo: git@github.com:llvm/llvm-project.git
+    version: master
+    dest: "{{ home }}/code/cpp/llvm-project"
+    update: no
+    accept_hostkey: yes
+  when: is_home
+
+- name: Symlink clangd
+  file:
+    src: "{{ item }}"
+    dest: /usr/local/bin/clangd
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+  with_first_found:
+    - files:
+      - "{{ home }}/code/cpp/llvm-project/build/bin/clangd"
+      - /usr/local/Cellar/llvm/7.0.1/bin/clangd
 
 - name: Symlink the C++ dotfiles
   file:
