@@ -5,6 +5,7 @@
   roles:
     - main
     - vim
+    - ranger
     - apps
     - cpp
     - python
