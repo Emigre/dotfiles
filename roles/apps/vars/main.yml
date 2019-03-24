@@ -27,7 +27,6 @@ homebrew_packages:
   - mercurial
   - neomutt
   - nmap
-  - ranger
   - rlwrap
   - skaffold
   - tcptrace
