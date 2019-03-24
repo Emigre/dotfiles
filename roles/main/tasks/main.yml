@@ -1,3 +1,8 @@
+- name: Ensure the .config folder exists and has the right permissions
+  file: "path={{ home }}/.config state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
 - name: Ensure the dotfiles repo is cloned
   git:
     repo: https://github.com/Emigre/dotfiles.git
@@ -37,6 +42,7 @@
     - go
     - java
     - mobile
+    - python
     - rust
     - web
 
