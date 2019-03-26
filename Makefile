@@ -14,7 +14,8 @@ vim: ## runs ansible to configure vim only
 backup: ## creates a backup of the current state of the vim plugins and coc extensions
 	@echo '- Creating a backup  of the current state of the vim plugins and coc extensions'
 	$(eval BACKUP_FILE_NAME := "vim-$(shell bash -c "date +\"%Y%m%dT%H%M%S\"").zip")
-	@zip -9 -r $$HOME/Dropbox/backups/$(BACKUP_FILE_NAME) $$HOME/vim
+	@zip -9 -r $$HOME/Dropbox/backups/$(BACKUP_FILE_NAME) \
+		$$HOME/vim --exclude=backups --exclude=swaps --exclude=undo --exclude=.netrwhist
 	@echo "------------------------------------------------------------------------"
 	@echo ""
 	@echo "$(BACKUP_FILE_NAME)"
