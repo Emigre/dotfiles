@@ -11,13 +11,8 @@
     update: no
     accept_hostkey: yes
 
-- name: Ensure the vim configuration folder exists and has the right permissions
-  file: "path={{ home }}/.vim state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
 - name: Ensure the subfolders inside the vim configuration folder exist and have the right permissions
-  file: "path={{ home }}/.vim/{{ item }} state=directory mode=0755 owner={{ user }}"
+  file: "path={{ home }}/vim/{{ item }} state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
   with_items:
