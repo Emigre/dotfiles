@@ -35,9 +35,11 @@ pull: ## pulls the changes for the vim, scripts and dotfiles repos
 	@echo '- Updating the dotfiles repo'
 	@git pull
 	@echo '- Updating the vim repo'
-	@cd ~/vim && git pull
+	@cd $$HOME/vim && git pull
+	@echo '- Updating the ranger repo'
+	@cd $$HOME/ranger && git pull
 	@echo '- Updating the scripts repo'
-	@cd ~/scripts && git pull
+	@cd $$HOME/scripts && git pull
 
 # ==
 
