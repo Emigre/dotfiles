@@ -24,12 +24,12 @@ backup: ## creates a backup of the current state of the vim plugins and coc exte
 
 .PHONY: clean
 clean: ## removes the currently installed vim plugins and coc extensions
-	@echo '- This will delete all the files in ~/.vim/plugged/ and ~/.config/coc/extensions/node_modules/'
+	@echo '- This will delete all the files in ~/vim/plugged/ and ~/vim/coc/extensions/node_modules/'
 	@( read -p "- Are you sure that you want to do this? [y/N]: " sure && case "$$sure" in [yY]) true;; *) false;; esac )
 	@echo '- Deleting the vim plugins'
-	@rm -rf $$HOME/.vim/plugged/*
+	@rm -rf $$HOME/vim/plugged/*
 	@echo '- Deleting the coc extensions'
-	@rm -rf $$HOME/.config/coc/extensions/node_modules
+	@rm -rf $$HOME/vim/coc/extensions/node_modules
 
 .PHONY: pull
 pull: ## pulls the changes for the vim, scripts and dotfiles repos
