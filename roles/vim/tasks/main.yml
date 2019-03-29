@@ -78,6 +78,7 @@
     - plasticboy/vim-markdown
     - rhysd/vim-clang-format
     - scrooloose/nerdcommenter
+    - scrooloose/nerdtree
     - svermeulen/vim-easyclip
     - tommcdo/vim-fugitive-blame-ext
     - tpope/vim-fugitive
