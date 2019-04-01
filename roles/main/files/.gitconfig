@@ -33,7 +33,7 @@
 [color]
   ui = true
 [core]
-  editor = nvim
+  editor = "vim -N -u ~/vim/init.git.vim"
   excludesfile = ~/.gitignore_global
   protectHFS = true
   protectNTFS = true
