@@ -5,6 +5,7 @@ homebrew_taps:
   - homebrew/cask-fonts
   - homebrew/cask-versions
   - kong/kong
+  - mongodb/brew
 
 homebrew_packages:
   - ack

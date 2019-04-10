@@ -64,6 +64,9 @@ alias psql_reload='pg_ctl reload'
 alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 export PGDATA='/usr/local/var/postgres'
 
+# mongoDB
+alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
+
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
 bind '"\e[1;5D": backward-word'
