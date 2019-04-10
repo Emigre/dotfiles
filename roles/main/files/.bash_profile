@@ -65,6 +65,9 @@ alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/
 export PGDATA='/usr/local/var/postgres'
 
 # mongoDB
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"/usr/local/opt/mongodb-community@3.6/bin"
+fi
 alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
 
 # Ensure the xterm ctrl-arrow combinations function

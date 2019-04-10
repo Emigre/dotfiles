@@ -51,7 +51,7 @@ homebrew_packages_databases:
   - mysql
   - postgresql
   - couchdb
-  - mongodb
+  - mongodb-community@3.6
   - redis
   - sqlite
 
