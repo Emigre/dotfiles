@@ -68,7 +68,7 @@ export PGDATA='/usr/local/var/postgres'
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"/usr/local/opt/mongodb-community@3.6/bin"
 fi
-alias mongo_start='mongod --config /usr/local/etc/mongod.conf'
+alias mongo_start='mongod --fork --config /usr/local/etc/mongod.conf'
 
 # Ensure the xterm ctrl-arrow combinations function
 bind '"\e[1;5C": forward-word'
