@@ -24,12 +24,6 @@ alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xc
 alias of='make RunRelease'
 export OF_ROOT="$HOME/code/openframeworks"
 
-# Go
-if ! [ -n "$TMUX" ]; then
-  export GOPATH=$HOME/code/go
-  export PATH=$PATH:"/usr/local/opt/go/libexec/bin:$GOPATH/bin"
-fi
-
 # Java
 alias java_home='/usr/libexec/java_home'
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home'
@@ -50,11 +44,6 @@ fi
 alias python='python3'
 alias pip='pip3'
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
-
-# Rust
-if ! [ -n "$TMUX" ]; then
-  export PATH=$PATH:"$HOME/.cargo/bin"
-fi
 
 # PostgreSQL
 alias psql_start='pg_ctl -l /usr/local/var/postgres/server.log start'
