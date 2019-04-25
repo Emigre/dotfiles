@@ -5,6 +5,7 @@ node_packages:
   - graphql-cli
   - live-server
   - n
+  - node-inspect
   - pkg
   - prettier
   - react-native-cli
