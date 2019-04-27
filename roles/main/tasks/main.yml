@@ -37,6 +37,7 @@
   become: yes
   become_user: "{{ user }}"
   with_items:
+    - c
     - cpp
     - java
     - javascript
