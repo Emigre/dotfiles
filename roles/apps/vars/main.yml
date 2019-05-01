@@ -25,6 +25,7 @@ homebrew_packages:
   - kops
   - kubernetes-cli
   - kubernetes-helm
+  - lnav
   - mercurial
   - neomutt
   - nmap
