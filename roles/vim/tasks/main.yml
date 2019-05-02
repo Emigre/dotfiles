@@ -100,13 +100,10 @@
     state: present
     global: yes
 
-- name: Ensure the latest release of the coc.nvim binary is downloaded
-  shell: "{{ home }}/vim/plugged/coc.nvim/install.sh"
-  args:
-    chdir: "{{ home }}/vim/plugged/coc.nvim/"
-    creates: "{{ home }}/vim/plugged/coc.nvim/build/coc-macos"
-  become: yes
-  become_user: "{{ user }}"
+- name: Ensure the coc.nvim extensions are installed
+  yarn:
+    path: "{{ home }}/vim/plugged/coc.nvim/"
+  changed_when: false
 
 - name: Ensure the coc.nvim extensions are installed
   yarn:

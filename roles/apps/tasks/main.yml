@@ -34,10 +34,16 @@
     name: ["{{ item }}"]
   with_items: "{{ homebrew_cask_apps }}"
 
+- name: Ensure Evernote is installed
+  homebrew_cask:
+    name: evernote
+  when: is_home # evernote seems to be disabled in the vpn
+
 - name: Ensure the homebrew cask applications for home are installed
   homebrew_cask:
     name: ["{{ item }}"]
   with_items: "{{ homebrew_cask_apps_home }}"
+  when: is_home
 
 # mutt
 # ----

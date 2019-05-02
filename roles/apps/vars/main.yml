@@ -65,6 +65,7 @@ homebrew_packages_games:
 homebrew_cask_apps:
   # - android-studio
   - caffeine
+  - docker
   - dropbox
   - firefox
   - font-meslo-lg
@@ -73,22 +74,20 @@ homebrew_cask_apps:
   - keybase
   - minikube
   - postman
+  - skype
   - slack
   - sublime-text
   - the-unarchiver
+  - whatsapp
   - zeplin
 
 homebrew_cask_apps_home:
   - colloquy
   - discord
-  - docker
-  - evernote
   - gitter
-  - nosleep
-  - skype
+  # - nosleep
   - steam
   - vagrant
   # - virtualbox
   # - virtualbox-extension-pack
   - vlc
-  - whatsapp

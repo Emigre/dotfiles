@@ -7,7 +7,7 @@
     - vim
     - ranger
     - apps
-    - cpp
+    - { role: cpp, when: is_home }
     - python
     - java
     - javascript
