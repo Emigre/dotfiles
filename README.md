@@ -16,11 +16,13 @@
 
 7. [Set up SSH access to GitHub](SSH.md)
 
-8. Clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git ~/dotfiles`
+8. Edit `~/.gituser` with git user name and email
 
-9. Run `make start` in the `dotfiles` folder
+9. Clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git ~/dotfiles`
 
-10. Compile coc.nvim: `cd ~/vim/plugged/coc.nvim/ && yarn release` (rignt now it needs node 10: `sudo n 10.12.0` -- see [issue #673 in pkg](https://github.com/zeit/pkg/issues/673))
+10. Run `make start` in the `dotfiles` folder
+
+11. Compile coc.nvim: `cd ~/vim/plugged/coc.nvim/ && yarn release` (rignt now it needs node 10: `sudo n 10.12.0` -- see [issue #673 in pkg](https://github.com/zeit/pkg/issues/673))
 
 ## Other
 
