@@ -41,7 +41,6 @@
     - cpp
     - java
     - python
-    - web
 
 - name: Ensure the envs folder exists and has the right permissions
   file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"
@@ -66,13 +65,6 @@
   become: yes
   become_user: "{{ user }}"
   changed_when: false
-
-- name: Set the .gituser file
-  template:
-    src: "gituser.j2"
-    dest: "{{ home }}/.gituser"
-    group: admin
-    mode: 0664
 
 - name: Ensure the Dropbox folder exists and has the right permissions
   file: "path={{ home }}/Dropbox state=directory mode=0755 owner={{ user }}"
