@@ -1,6 +1,6 @@
 ## Set up SSH access to GitHub
 
-1. Generate a ssh key: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+1. Generate a ssh key: `ssh-keygen -t rsa -b 4096 -C "info@gasparrey.com"`
 
 2. Start the ssh agent: `eval "$(ssh-agent -s)"`
 
