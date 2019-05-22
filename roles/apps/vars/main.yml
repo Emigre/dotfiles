@@ -72,6 +72,7 @@ homebrew_cask_apps:
   - google-chrome
   - insomnia
   - keybase
+  - mactex-no-gui
   - minikube
   - postman
   - skype
