@@ -77,6 +77,7 @@ homebrew_cask_apps:
   - skype
   - slack
   - sublime-text
+  - textpad
   - the-unarchiver
   - whatsapp
   - zeplin
