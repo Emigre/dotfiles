@@ -15,6 +15,16 @@ alias steam='open /Applications/Steam.app'
 
 export EDITOR='nvim'
 
+# Kubernetes
+export KUBECONFIG="$HOME/.kube/wd-audio-platform-admin-dev.kubeconfig"
+
+# AWS
+export AWS_SDK_LOAD_CONFIG="true"
+export AWS_DEFAULT_PROFILE=wd
+
+# Terraform
+export AWS_PROFILE=wd
+
 # C++
 alias depot_tools_start='export PATH="$HOME/code/cpp/depot_tools:$PATH"'
 alias clang_include_paths='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
