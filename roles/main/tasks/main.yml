@@ -37,10 +37,8 @@
   become: yes
   become_user: "{{ user }}"
   with_items:
-    - c
     - cpp
     - java
-    - python
 
 - name: Ensure the envs folder exists and has the right permissions
   file: "path={{ home }}/envs state=directory mode=0755 owner={{ user }}"
