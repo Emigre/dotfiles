@@ -85,6 +85,7 @@ homebrew_cask_apps_home:
   - colloquy
   - discord
   - gitter
+  - gimp
   # - nosleep
   - steam
   - vagrant
