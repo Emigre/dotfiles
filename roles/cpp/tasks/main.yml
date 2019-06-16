@@ -8,7 +8,7 @@
   homebrew: name=llvm state=present
 
 - name: Ensure the llvm project is cloned
-  # to build clangd:
+  # to build clangd and clang-format:
   # cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" ../llvm
   git:
     repo: git@github.com:llvm/llvm-project.git
@@ -29,6 +29,18 @@
     - files:
       - "{{ home }}/llvm/build/bin/clangd"
       - /usr/local/Cellar/llvm/7.0.1/bin/clangd
+
+- name: Symlink clang-format
+  file:
+    src: "{{ item }}"
+    dest: /usr/local/bin/clang-format
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+  with_first_found:
+    - files:
+      - "{{ home }}/llvm/build/bin/clang-format"
+      - /usr/local/Cellar/llvm/7.0.1/bin/clang-format
 
 - name: Symlink the C++ dotfiles
   file:

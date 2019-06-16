@@ -2,7 +2,6 @@ homebrew_packages:
   - cmake
   - bear
   - cgdb
-  - clang-format
   - cling
   - doxygen
   - dwarfutils
