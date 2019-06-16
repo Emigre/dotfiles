@@ -74,5 +74,3 @@
 
 1. Run `git clone --recursive git@github.com:openframeworks/openFrameworks.git` in `~/code/cpp/`
 2. Inside the openFrameworks folder run `/bin/bash scripts/osx/download_libs.sh` to download the libraries
-
-openFrameworks can be compiled running `make` in the `libs/openFrameworksCompiled/project` subfolder
