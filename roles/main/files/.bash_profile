@@ -30,7 +30,6 @@ alias clang_include_paths='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" 
 alias clang_search_paths='clang -Xlinker -v 2>&1 | grep "^\s*\/" | sed -E $"s/^[^\/]*//"'
 alias sdk_path='xcrun --show-sdk-path'
 alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xctoolchain"
-alias of='make RunRelease'
 export OF_ROOT="$HOME/code/cpp/openFrameworks"
 
 # Java
