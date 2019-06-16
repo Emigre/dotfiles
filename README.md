@@ -59,7 +59,7 @@
 ### iTerm2
 
 - In Preferences > General
-  - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d`
+  - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
   - Check 'Save changes to folder when iTerm2 quits'
   - Check 'Applications in terminal may access clipboard'
 - In Preferences > Profiles
@@ -69,3 +69,10 @@
   - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
 - In Preferences > Pointer
   - Remove the defaults
+
+### openFrameworks
+
+1. Run `git clone --recursive git@github.com:openframeworks/openFrameworks.git` in `~/code/cpp/`
+2. Inside the openFrameworks folder run `/bin/bash scripts/osx/download_libs.sh` to download the libraries
+
+openFrameworks can be compiled running `make` in the `libs/openFrameworksCompiled/project` subfolder
