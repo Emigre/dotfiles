@@ -2,3 +2,14 @@
   homebrew: "name={{ item }} state=present"
   with_items: "{{ homebrew_packages }}"
   when: is_home
+
+- name: Ensure the haskell language server project is cloned
+  # to build:
+  # stack ./install.hs hie-8.6.5
+  git:
+    repo: git@github.com:haskell/haskell-ide-engine.git
+    version: master
+    dest: "{{ home }}/hie"
+    update: no
+    accept_hostkey: yes
+  when: is_home
