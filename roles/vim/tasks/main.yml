@@ -72,6 +72,7 @@
     - keith/swift.vim
     - kien/ctrlp.vim
     - leafgarland/typescript-vim
+    - majutsushi/tagbar
     - mxw/vim-jsx
     - neoclide/coc.nvim
     - pangloss/vim-javascript
