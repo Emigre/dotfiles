@@ -1,7 +1,5 @@
 [include]
   path = ~/.gituser
-[includeIf "gitdir:~/code/capita/"]
-  path = ~/.gituser_bjss
 [alias]
   a = "add"
   b = "branch"
