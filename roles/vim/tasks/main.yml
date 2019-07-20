@@ -74,6 +74,7 @@
     - elzr/vim-json
     - fatih/vim-go
     - hashivim/vim-terraform
+    - ianks/vim-tsx
     - jlanzarotta/bufexplorer
     - jparise/vim-graphql
     - keith/swift.vim
