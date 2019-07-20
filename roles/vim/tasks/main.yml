@@ -77,10 +77,11 @@
     - ianks/vim-tsx
     - jlanzarotta/bufexplorer
     - jparise/vim-graphql
+    - junegunn/fzf.vim
     - keith/swift.vim
     - kien/ctrlp.vim
     - leafgarland/typescript-vim
-    - majutsushi/tagbar
+    - liuchengxu/vista.vim
     - mxw/vim-jsx
     - neoclide/coc.nvim
     - pangloss/vim-javascript
