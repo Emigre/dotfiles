@@ -69,6 +69,7 @@
   - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
 - In Preferences > Pointer
   - Remove the defaults
+- In the iTerm2 menu, select 'Make iTerm2 Default Term'
 
 ### openFrameworks
 
