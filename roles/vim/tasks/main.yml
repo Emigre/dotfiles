@@ -29,6 +29,14 @@
   become: yes
   become_user: "{{ user }}"
 
+- name: Ensure .vimrc is a symlink to init.vim
+  file:
+    src: "{{ home }}/vim/init.vim"
+    dest: "{{ home }}/.vimrc"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+
 - name: Ensure the neovim config folder is a symlink to the vim config folder
   file:
     src: "{{ home }}/vim"
@@ -44,7 +52,6 @@
     state: link
   become: yes
   become_user: "{{ user }}"
-
 
 - name: Ensure the coc extensions folder exists and has the right permissions
   file: "path={{ home }}/.config/coc/extensions state=directory mode=0755 owner={{ user }}"
