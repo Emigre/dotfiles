@@ -49,8 +49,6 @@ if ! [ -n "$TMUX" ]; then
 fi
 
 # Python
-alias python='python3'
-alias pip='pip3'
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
 
 # PostgreSQL
