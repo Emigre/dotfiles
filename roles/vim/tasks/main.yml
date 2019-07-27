@@ -78,6 +78,7 @@
     - jlanzarotta/bufexplorer
     - jparise/vim-graphql
     - junegunn/fzf.vim
+    - justinmk/vim-sneak
     - keith/swift.vim
     - kien/ctrlp.vim
     - leafgarland/typescript-vim
