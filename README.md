@@ -61,7 +61,6 @@
   - In 'New Finder window show:' select the home folder
   - Enable 'Open folders in tabs instead of new windows'
 - In Sidebar select the home folder
-- In Advanced select 'Show all filename extensions'
 
 ### iTerm2
 
