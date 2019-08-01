@@ -58,7 +58,34 @@
   become: yes
   become_user: "{{ user }}"
 
-- name: Ensure the vim plugins are cloned in the plugged folder
+- name: Ensure coc.nvim is cloned in the plugged folder
+  git:
+    repo: "https://github.com/neoclide/coc.nvim.git"
+    version: 371d38786f401d18a210468475f8d6f5d9a71836
+    dest: "{{ home }}/.vim/plugged/coc.nvim"
+    update: no
+    accept_hostkey: yes
+
+- name: Ensure Node.js is installed to be able to build coc.nvim
+  homebrew: name=node state=present
+
+- name: Ensure yarn is installed to be able to build coc.nvim
+  homebrew: name=yarn state=present
+
+- name: Ensure typescript is installed to be able to build coc.nvim
+  npm:
+    name: typescript
+    state: present
+    global: yes
+  changed_when: false
+
+- name: Ensure coc.nvim is built with yarn
+  command: yarn install --frozen-lockfile
+  args:
+    chdir: "{{ home }}/.vim/plugged/coc.nvim"
+    creates: "{{ home }}/.vim/plugged/coc.nvim/lib/index.js"
+
+- name: Ensure the other vim plugins are cloned in the plugged folder
   git:
     repo: "https://github.com/{{ item }}"
     version: master
@@ -84,7 +111,6 @@
     - leafgarland/typescript-vim
     - liuchengxu/vista.vim
     - mxw/vim-jsx
-    - neoclide/coc.nvim
     - pangloss/vim-javascript
     - plasticboy/vim-markdown
     - rhysd/vim-clang-format
