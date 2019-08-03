@@ -61,7 +61,7 @@
 - name: Ensure coc.nvim is cloned in the plugged folder
   git:
     repo: "https://github.com/neoclide/coc.nvim.git"
-    version: 371d38786f401d18a210468475f8d6f5d9a71836
+    version: master
     dest: "{{ home }}/.vim/plugged/coc.nvim"
     update: no
     accept_hostkey: yes
