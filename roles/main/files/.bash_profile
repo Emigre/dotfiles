@@ -32,6 +32,11 @@ alias sdk_path='xcrun --show-sdk-path'
 alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xctoolchain"
 export OF_ROOT="$HOME/code/cpp/openFrameworks"
 
+# Haskell
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"$HOME/.local/bin"
+fi
+
 # Java
 alias java_home='/usr/libexec/java_home'
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home'
