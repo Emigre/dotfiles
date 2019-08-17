@@ -38,7 +38,7 @@ export OF_ROOT="$HOME/code/cpp/openFrameworks"
 
 # Java
 alias java_home='/usr/libexec/java_home'
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home'
 export GRADLE_USER_HOME="$HOME/.gradle"
 export M2_HOME='/usr/local/Cellar/maven/3.5.4/libexec'
 export M2="$M2_HOME/bin"
