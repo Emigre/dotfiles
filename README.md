@@ -22,11 +22,15 @@
 
 10. Run `make start` in the `dotfiles` folder
 
-11. Compile coc.nvim: `cd ~/vim/plugged/coc.nvim/ && yarn release` (rignt now it needs node 10: `sudo n 10.12.0` -- see [issue #673 in pkg](https://github.com/zeit/pkg/issues/673))
+## Vim and Language Server Support
+
+* Run `make` in `~/vim` for instructions on how to install the vim plugins and build coc.nvim
+
+* Run `make` in `~/language-servers` for instructions on how to install and compile the language servers
+
+---
 
 ## Other
-
-* Refer to the vim repo README to fix issues with autocomplete in coc.nvim
 
 * [Set up e-mail accounts with Mutt](MUTT.md)
 
@@ -55,7 +59,7 @@
 - In Sound select 'Show volume in menu bar'
 - In Time Machine select 'Show Time Machine in menu bar'
 
-### Finder Preferences
+### Finder Preferences
 
 - In General
   - In 'New Finder window show:' select the home folder

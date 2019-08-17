@@ -15,6 +15,10 @@ alias steam='open /Applications/Steam.app'
 
 export EDITOR='nvim'
 
+if ! [ -n "$TMUX" ]; then
+  export PATH=$PATH:"$HOME/.local/bin"
+fi
+
 # Kubernetes
 export KUBECONFIG="$HOME/.kube/wd-audio-platform-admin-dev.kubeconfig"
 
@@ -31,11 +35,6 @@ alias clang_search_paths='clang -Xlinker -v 2>&1 | grep "^\s*\/" | sed -E $"s/^[
 alias sdk_path='xcrun --show-sdk-path'
 alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xctoolchain"
 export OF_ROOT="$HOME/code/cpp/openFrameworks"
-
-# Haskell
-if ! [ -n "$TMUX" ]; then
-  export PATH=$PATH:"$HOME/.local/bin"
-fi
 
 # Java
 alias java_home='/usr/libexec/java_home'
