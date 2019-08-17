@@ -55,13 +55,3 @@
   become: yes
   become_user: "{{ user }}"
   changed_when: false
-
-- name: Ensure the Dropbox folder exists and has the right permissions
-  file: "path={{ home }}/Dropbox state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
-- name: Ensure the Dropbox folder has a backups subfolder
-  file: "path={{ home }}/Dropbox/backups state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
