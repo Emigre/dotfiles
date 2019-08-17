@@ -18,15 +18,17 @@
 
 8. Edit `~/.gituser` with git user name and email
 
-9. Clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git ~/dotfiles`
+9. Clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git $HOME/dotfiles`
 
 10. Run `make start` in the `dotfiles` folder
 
+* Folders `vim`, `language-servers`, `scripts`, `envs` and `ranger` will be created at `$HOME`
+
 ## Vim and Language Server Support
 
-* Run `make` in `~/vim` for instructions on how to install the vim plugins and build coc.nvim
+* Run `make` in `$HOME/vim` for instructions on how to install the vim plugins and build coc.nvim
 
-* Run `make` in `~/language-servers` for instructions on how to install and compile the language servers
+* Run `make` in `$HOME/language-servers` for instructions on how to install and compile the language servers
 
 ---
 
