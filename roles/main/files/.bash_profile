@@ -67,7 +67,6 @@ fi
 # Javascript
 alias npml='npm list --depth=0'
 alias npmlg='npm list -g --depth=0'
-alias flow_watch='flow status; fswatch -e "/\." -o . | xargs -n1 -I{} flow status'
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"$HOME/.node/bin"
   export PATH=$PATH:"$HOME/.yarn/bin"
