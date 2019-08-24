@@ -30,6 +30,8 @@
   changes = log -p --follow -1
   # Lists all files in a commit
   files = show --pretty="" --name-only
+  # lists branches that have been merged to master
+  merged = branch -r --merged master --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=-committerdate
 [color]
   ui = true
 [core]
