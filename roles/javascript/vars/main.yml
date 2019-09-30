@@ -5,7 +5,6 @@ node_packages:
   - graphql-cli
   - ignite-cli
   - live-server
-  - n
   - node-inspect
   - nodemon
   - pkg

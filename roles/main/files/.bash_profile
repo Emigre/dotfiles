@@ -8,6 +8,7 @@ alias ranger="python3 $HOME/ranger/ranger.py"
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
+alias n='navi'
 
 export EDITOR='nvim'
 
