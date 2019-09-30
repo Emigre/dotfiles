@@ -24,14 +24,6 @@
   rp = "remote prune origin"
   s = "status"
   sl = "stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%Creset%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(blue)<%an>%C(reset)\""
-  # Show files with conflicts
-  conflicts = diff --name-only --diff-filter=U
-  # Diffs a file agains its last changes
-  changes = log -p --follow -1
-  # Lists all files in a commit
-  files = show --pretty="" --name-only
-  # lists branches that have been merged to master
-  merged = branch -r --merged master --format='%(committerdate) %09 %(authorname) %09 %(refname)' --sort=-committerdate
 [color]
   ui = true
 [core]
