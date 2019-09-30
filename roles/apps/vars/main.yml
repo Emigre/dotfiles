@@ -13,7 +13,9 @@ homebrew_packages:
   - arp-scan
   - aws-iam-authenticator
   - carthage
+  - coreutils
   - ctags
+  - denisidoro/tools/navi
   - expect
   - fpc
   - fzf

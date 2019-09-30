@@ -9,11 +9,9 @@ alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
 
-alias evernote='open /Applications/Evernote.app'
-alias itunes='open /Applications/iTunes.app'
-alias steam='open /Applications/Steam.app'
-
 export EDITOR='nvim'
+
+export NAVI_PATH="$HOME/cheats"
 
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"$HOME/.local/bin"
@@ -37,14 +35,9 @@ if ! [ -n "$TMUX" ]; then
 fi
 
 # C++
-alias clang_include_paths='clang -E -Wp,-v -xc++ /dev/null 2>&1 | grep "^\s*\/" | sed "s/^ *//"'
-alias clang_search_paths='clang -Xlinker -v 2>&1 | grep "^\s*\/" | sed -E $"s/^[^\/]*//"'
-alias sdk_path='xcrun --show-sdk-path'
-alias toolchain_path="echo `xcode-select -print-path`/Toolchains/XcodeDefault.xctoolchain"
 export OF_ROOT="$HOME/code/cpp/openFrameworks"
 
 # Java
-alias java_home='/usr/libexec/java_home'
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home'
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"$JAVA_HOME/bin"
@@ -65,8 +58,6 @@ if ! [ -n "$TMUX" ]; then
 fi
 
 # Javascript
-alias npml='npm list --depth=0'
-alias npmlg='npm list -g --depth=0'
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"$HOME/.node/bin"
   export PATH=$PATH:"$HOME/.yarn/bin"
@@ -76,18 +67,12 @@ fi
 export PIP_CONFIG_FILE="$HOME/.pip_conf"
 
 # PostgreSQL
-alias psql_start='pg_ctl -l /usr/local/var/postgres/server.log start'
-alias psql_stop='pg_ctl stop -m fast'
-alias psql_status='pg_ctl status | egrep pg_ctl'
-alias psql_reload='pg_ctl reload'
-alias psql_port="egrep -o '#listen_addresses\s*=\s*\S+|#port\s*=\s*[0-9]+' /usr/local/var/postgres/postgresql.conf | sed -e s/^#[a-zA-Z_]*\ *=\ *\'*//g | sed -e s/\'*$//g | xargs -n2"
 export PGDATA='/usr/local/var/postgres'
 
 # MongoDB
 if ! [ -n "$TMUX" ]; then
   export PATH=$PATH:"/usr/local/opt/mongodb-community@3.6/bin"
 fi
-alias mongo_start='mongod --fork --config /usr/local/etc/mongod.conf'
 
 # Kubernetes
 export KUBECONFIG="$HOME/.kube/wd-audio-platform-admin-dev.kubeconfig"
