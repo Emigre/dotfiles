@@ -1,8 +1,0 @@
-- name: Ensure the ranger repo is cloned
-  git:
-    repo: https://github.com/Emigre/ranger.git
-    version: master
-    dest: "{{ home }}/ranger"
-    update: no
-    accept_hostkey: yes
-

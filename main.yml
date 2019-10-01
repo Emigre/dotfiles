@@ -5,7 +5,6 @@
   roles:
     - main
     - vim
-    - ranger
     - apps
     - { role: cpp, when: is_home }
     - python

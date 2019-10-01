@@ -15,7 +15,6 @@ homebrew_packages:
   - carthage
   - coreutils
   - ctags
-  - denisidoro/tools/navi
   - expect
   - fpc
   - fzf
