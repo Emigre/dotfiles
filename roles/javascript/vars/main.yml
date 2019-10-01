@@ -7,6 +7,7 @@ node_packages:
   - live-server
   - node-inspect
   - nodemon
+  - n
   - pkg
   - prettier
   - react-native-cli

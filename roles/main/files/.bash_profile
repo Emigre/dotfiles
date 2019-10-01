@@ -4,11 +4,12 @@ alias joplin='joplin;clear'
 alias k='kubectl'
 alias less='less -R '
 alias mutt="pushd $HOME/Desktop 1>/dev/null;neomutt;popd 1>/dev/null"
+alias n='navi'
+alias nv="$HOME/.node/bin/n"
 alias ranger="python3 $HOME/ranger/ranger.py"
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 alias vi='nvim'
 alias vim='nvim'
-alias n='navi'
 
 export EDITOR='nvim'
 
