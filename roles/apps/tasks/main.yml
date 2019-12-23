@@ -61,6 +61,14 @@
     update: no
     accept_hostkey: yes
 
+- name: Ensure the cheats repo for navi is cloned
+  git:
+    repo: https://github.com/Emigre/cheats.git
+    version: master
+    dest: "{{ home }}/cheats"
+    update: no
+    accept_hostkey: yes
+
 # mutt
 # ----
 
