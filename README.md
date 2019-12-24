@@ -76,7 +76,9 @@
   - Check 'Applications in terminal may access clipboard'
 - In Preferences > Profiles
   - In the 'Window' menu, select 'Full-Height Left of Screen' in the 'Style' selector
-  - In the profile keys, ensure that the 'xterm Defaults' preset is on, that alt-left sends ESC + [1;5D and alt-right ESC + [1;5C
+  - In the profile 'Keys'
+    - Ensure that the 'xterm Defaults' preset is on
+    - Ensure that both option keys are mapped to Esc+
 - In Preferences > Keys
   - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
 - In Preferences > Pointer

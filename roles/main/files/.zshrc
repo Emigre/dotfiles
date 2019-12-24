@@ -15,5 +15,9 @@ alias vim='nvim'
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
+# Ensure alt-arrow combinations work
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
+
 # Enable completion
 autoload -Uz compinit && compinit
