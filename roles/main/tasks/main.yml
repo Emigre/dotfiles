@@ -37,18 +37,13 @@
   become: yes
   become_user: "{{ user }}"
 
-- name: Ensure there is a bash completions folder
-  file: "path={{ home }}/.bash_completion.d state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
 - name: Symlink the completion scripts
   file:
     src: "{{ item }}"
-    dest: "{{ home }}/.bash_completion.d/{{ item | basename }}"
+    dest: "{{ home }}/.git-completion.zsh"
     state: link
   with_fileglob:
-    - "*_completion.bash"
+    - "git-completion.zsh"
 
 - name: Ensure there is a .h_config file
   file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"
