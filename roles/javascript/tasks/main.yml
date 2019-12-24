@@ -4,27 +4,14 @@
 - name: Ensure yarn is installed
   homebrew: name=yarn state=present
 
+# Example .npmrc:
+# _auth=...
+# email=...
 - name: Ensure the .npmrc config file exists
   file: "path={{ home }}/.npmrc state=touch mode=0644 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
   changed_when: false
-
-- name: Ensure .npmrc has ~/.node as the global items location
-  lineinfile:
-    dest: "{{ home }}/.npmrc"
-    regexp: "^prefix"
-    line: "prefix={{ home }}/.node"
-
-- name: Ensure several node folders exist and have the right permissions
-  file: "path={{ home }}/{{ item }} state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-  with_items:
-    - .npm
-    - .node/bin
-    - .node/lib
-    - .node/lib/node_modules
 
 - name: Ensure typescript is installed
   npm:
