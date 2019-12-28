@@ -88,6 +88,7 @@ homebrew_cask_apps_home:
   - discord
   - gitter
   - gimp
+  - maxtex
   # - nosleep
   - steam
   - vagrant
