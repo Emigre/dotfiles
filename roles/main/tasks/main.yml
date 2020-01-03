@@ -37,14 +37,6 @@
   become: yes
   become_user: "{{ user }}"
 
-- name: Symlink the completion scripts
-  file:
-    src: "{{ item }}"
-    dest: "{{ home }}/.git-completion.zsh"
-    state: link
-  with_fileglob:
-    - "git-completion.zsh"
-
 - name: Ensure there is a .h_config file
   file: "path={{ home }}/.h_config state=touch mode=0644 owner={{ user }}"
   become: yes
