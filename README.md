@@ -30,15 +30,37 @@
 
 * Run `make` in `$HOME/language-servers` for instructions on how to install and compile the language servers
 
----
+## zshell Setup
 
-## Other
+* To update the account to use zsh, run `chsh -s /bin/zsh`. For more details: https://support.apple.com/kb/HT208050.
 
-* [Set up e-mail accounts with Mutt](MUTT.md)
+```bash
+# load order
+# ----------
+# - tmux starts as login shell, then loads windows as not login
+# .zshenv
+# .zprofile (only in login shells)
+# .zshrc
+# .zlogin (only in login shells)
 
-* Start [docker for mac](https://www.docker.com/products/docker-desktop), [dropbox](https://www.dropbox.com/) and the [mail notifr](https://ashchan.com/projects/gmail-notifr)
+# always loaded
+# -------------
+# .zshenv is always sourced, it often contains exported variables (always read)
 
-### System Preferences
+# loaded if interactive
+# ---------------------
+# .zshrc is for interactive shell configuration
+
+# loaded only in login shells
+# ---------------------------
+# - tmux is configured to use non-loging shells
+# .zprofile is an alternative to .zlogin, but it's loaded _before_ .zshrc
+# - put here if it may take some time to complete
+# .zlogin is sourced on the start of a login shell, loaded _after_ .zshrc
+# - put here if it is a command to be run when the shell is fully setup
+```
+
+## System Preferences
 
 - In Keyboard
   - Click on 'Modifier Keys...' and Select '^ Control' for the 'Caps Lock Key'
@@ -61,14 +83,14 @@
 - In Sound select 'Show volume in menu bar'
 - In Time Machine select 'Show Time Machine in menu bar'
 
-### Finder Preferences
+## Finder Preferences
 
 - In General
   - In 'New Finder window show:' select the home folder
   - Enable 'Open folders in tabs instead of new windows'
 - In Sidebar select the home folder
 
-### iTerm2
+## iTerm2
 
 - In Preferences > General
   - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
@@ -85,7 +107,14 @@
   - Remove the defaults
 - In the iTerm2 menu, select 'Make iTerm2 Default Term'
 
-### openFrameworks
+## Other
+
+* [Set up e-mail accounts with Mutt](MUTT.md)
+
+* Start [docker for mac](https://www.docker.com/products/docker-desktop), [dropbox](https://www.dropbox.com/) and the [mail notifr](https://ashchan.com/projects/gmail-notifr)
+
+
+## openFrameworks
 
 1. Run `git clone --recursive git@github.com:openframeworks/openFrameworks.git` in `~/code/cpp/`
 2. Inside the openFrameworks folder run `/bin/bash scripts/osx/download_libs.sh` to download the libraries
