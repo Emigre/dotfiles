@@ -15,6 +15,9 @@ if ! [ -n "$TMUX" ]; then
   # Utility scripts
   export PATH="$PATH:$HOME/scripts"
 
+  # LaTeX
+  export PATH="$PATH:/Library/Tex/textbin"
+
   # C++
   export OF_ROOT="$HOME/code/cpp/openFrameworks"
 
