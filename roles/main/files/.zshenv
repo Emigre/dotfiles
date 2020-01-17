@@ -45,6 +45,9 @@ if ! [ -n "$TMUX" ]; then
   # Ruby
   export PATH="$PATH:$HOME/.rvm/bin"
 
+  # Swift
+  export SOURCEKIT_TOOLCHAIN_PATH='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/'
+
   # PostgreSQL
   export PGDATA='/usr/local/var/postgres'
 
