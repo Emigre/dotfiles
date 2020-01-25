@@ -23,6 +23,12 @@ pull: ## pulls the changes for the vim, scripts, language servers and dotfiles r
 	@echo '- Updating the language servers repo'
 	@cd $$HOME/language-servers && git pull
 
+.PHONY: code-tree
+code-tree: ## saves a text file of the code folder structure in the dropbox folder
+	@mkdir -p ~/Dropbox/code-tree
+	@cd ~/code && \
+		tree -L 2 > ~/Dropbox/code-tree/`uname -n`.txt
+
 # ==
 
 .PHONY: help
