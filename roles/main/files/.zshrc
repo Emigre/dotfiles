@@ -19,4 +19,15 @@ bindkey "\e[1;3C" forward-word
 bindkey "\e[1;3D" backward-word
 
 # Enable completion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+
+if ! [ -n "$TMUX" ]; then
+  typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+  if [ $(date +'%j') != $updated_at ]; then
+    compinit
+  else
+    compinit -C
+  fi
+else
+  compinit -C
+fi
