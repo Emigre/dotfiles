@@ -13,7 +13,6 @@ homebrew_packages:
   - arp-scan
   - aws-iam-authenticator
   - carthage
-  - chicken
   - coreutils
   - ctags
   - expect
@@ -30,6 +29,7 @@ homebrew_packages:
   - kubernetes-helm
   - lnav
   - mercurial
+  - mit-scheme
   - neomutt
   - nmap
   - rlwrap
