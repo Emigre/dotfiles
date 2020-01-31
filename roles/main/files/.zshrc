@@ -1,4 +1,4 @@
-alias csi='rlwrap csi'
+alias scheme='rlwrap scheme'
 alias gcal='gcalcli --nocolor '
 alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias joplin='joplin;clear'
