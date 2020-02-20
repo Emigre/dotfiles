@@ -22,6 +22,8 @@ pull: ## pulls the changes for the vim, scripts, language servers and dotfiles r
 	@cd $$HOME/scripts && git pull
 	@echo '- Updating the language servers repo'
 	@cd $$HOME/language-servers && git pull
+	@echo '- Updating the cheats repo'
+	@cd $$HOME/cheats && git pull
 
 .PHONY: code-tree
 code-tree: ## saves a text file of the code folder structure in the dropbox folder
