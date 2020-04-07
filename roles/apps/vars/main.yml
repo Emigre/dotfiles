@@ -83,6 +83,7 @@ homebrew_cask_apps:
   - the-unarchiver
   - whatsapp
   - zeplin
+  - zoomus
 
 homebrew_cask_apps_home:
   - colloquy
