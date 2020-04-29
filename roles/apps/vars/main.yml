@@ -32,6 +32,7 @@ homebrew_packages:
   - mit-scheme
   - neomutt
   - nmap
+  - openssl
   - rlwrap
   - skaffold
   - tcptrace
