@@ -4,98 +4,44 @@ homebrew_taps:
   - homebrew/cask
   - homebrew/cask-fonts
   - homebrew/cask-versions
-  - kong/kong
-  - mongodb/brew
 
 homebrew_packages:
   - ack
   - ansible
   - arp-scan
-  - aws-iam-authenticator
   - carthage
   - coreutils
-  - ctags
-  - expect
-  - fpc
-  - fzf
   - git
   - htop
   - httperf
-  - httpie
   - jq
-  - kong
-  - kops
-  - kubernetes-cli
-  - kubernetes-helm
   - lnav
-  - mercurial
-  - mit-scheme
-  - neomutt
   - nmap
   - openssl
   - rlwrap
-  - skaffold
   - tcptrace
   - tcptraceroute
-  - terraform
-  - the_silver_searcher
-  - tidy-html5
   - tmux
   - tree
-  - w3m
-  - watch
   - watchman
-  - weechat
   - wget
-  - wireshark
-
-homebrew_packages_servers:
-  - openresty
-
-homebrew_packages_databases:
-  - mysql
-  - postgresql
-  - couchdb
-  - mongodb-community@3.6
-  - redis
-  - sqlite
-
-homebrew_packages_games:
-  - nethack
-  - frobtads
-  - frotz
-  - glulxe
 
 homebrew_cask_apps:
-  # - android-studio
   - caffeine
-  - docker
   - dropbox
+  - evernote
+  - expressvpn
   - firefox
   - font-meslo-lg
   - google-chrome
-  - insomnia
+  - iterm2
   - keybase
-  - minikube
+  - mactex-no-gui
   - postman
   - skype
   - slack
   - sublime-text
   - the-unarchiver
-  - whatsapp
-  - zeplin
-  - zoomus
-
-homebrew_cask_apps_home:
-  - colloquy
-  - discord
-  - expressvpn
-  - gitter
-  - gimp
-  - maxtex
-  # - nosleep
-  - steam
-  - vagrant
-  # - virtualbox
-  # - virtualbox-extension-pack
   - vlc
+  - whatsapp
+  - zoomus

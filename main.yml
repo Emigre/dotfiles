@@ -3,11 +3,11 @@
   vars_files:
     - vars/common.yml
   roles:
-    - main
-    - vim
-    - apps
-    - { role: cpp, when: is_home }
-    - python
-    - java
-    - javascript
-    - iterm
+    - { role: apps, tags: 'apps' }
+    - { role: cpp, tags: 'cpp' }
+    - { role: dotfiles, tags: 'dotfiles' }
+    - { role: erlang, tags: 'erlang' }
+    - { role: haskell, tags: 'haskell' }
+    - { role: java, tags: 'java' }
+    - { role: javascript, tags: 'javascript' }
+    - { role: python, tags: 'python' }

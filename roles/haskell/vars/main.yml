@@ -1,4 +1,3 @@
 homebrew_packages:
   - cabal-install
-  - ghc
   - haskell-stack

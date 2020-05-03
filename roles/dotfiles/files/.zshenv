@@ -10,10 +10,7 @@ if ! [ -n "$TMUX" ]; then
 
   export PATH="$PATH:$HOME/.local/bin"
   export EDITOR='nvim'
-  export NAVI_PATH="$HOME/cheats"
-
-  # Utility scripts
-  export PATH="$PATH:$HOME/scripts"
+  export NAVI_PATH="$HOME/navi/cheats"
 
   # LaTeX
   export PATH="$PATH:/Library/Tex/textbin"
@@ -30,10 +27,10 @@ if ! [ -n "$TMUX" ]; then
   export M2="$M2_HOME/bin"
   export PATH="$PATH:$M2"
   export JDK_HOME=${JAVA_HOME}
-  export PATH="$PATH:$ANDROID_HOME/emulator"
-  export PATH="$PATH:$ANDROID_HOME/tools"
-  export PATH="$PATH:$ANDROID_HOME/tools/bin"
-  export PATH="$PATH:$ANDROID_HOME/platform-tools"
+  # export PATH="$PATH:$ANDROID_HOME/emulator"
+  # export PATH="$PATH:$ANDROID_HOME/tools"
+  # export PATH="$PATH:$ANDROID_HOME/tools/bin"
+  # export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
   # JavaScript
   export PATH="$PATH:$HOME/.node/bin"
@@ -47,15 +44,6 @@ if ! [ -n "$TMUX" ]; then
 
   # Swift
   export SOURCEKIT_TOOLCHAIN_PATH='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/'
-
-  # PostgreSQL
-  export PGDATA='/usr/local/var/postgres'
-
-  # MongoDB
-  export PATH="$PATH:/usr/local/opt/mongodb-community@3.6/bin"
-
-  # Kubernetes
-  export KUBECONFIG="$HOME/.kube/wd-audio-platform-admin-dev.kubeconfig"
 
   # AWS
   export AWS_SDK_LOAD_CONFIG="true"

@@ -8,50 +8,10 @@
     state: present
   with_items: "{{ homebrew_packages }}"
 
-- name: Ensure servers are installed with homebrew
-  homebrew:
-    name: ["{{ item }}"]
-    state: present
-  with_items: "{{ homebrew_packages_servers }}"
-  when: is_home
-
-- name: Ensure databases are installed with homebrew
-  homebrew:
-    name: ["{{ item }}"]
-    state: present
-  with_items: "{{ homebrew_packages_databases }}"
-  when: is_home
-
-- name: Ensure games are installed with homebrew
-  homebrew:
-    name: ["{{ item }}"]
-    state: present
-  with_items: "{{ homebrew_packages_games }}"
-  when: is_home
-
 - name: Ensure the homebrew cask applications are installed
   homebrew_cask:
     name: ["{{ item }}"]
   with_items: "{{ homebrew_cask_apps }}"
-
-- name: Ensure Evernote is installed
-  homebrew_cask:
-    name: evernote
-  when: is_home # evernote seems to be disabled in the vpn
-
-- name: Ensure the homebrew cask applications for home are installed
-  homebrew_cask:
-    name: ["{{ item }}"]
-  with_items: "{{ homebrew_cask_apps_home }}"
-  when: is_home
-
-- name: Ensure the ranger repo is cloned
-  git:
-    repo: https://github.com/Emigre/ranger.git
-    version: master
-    dest: "{{ home }}/ranger"
-    update: no
-    accept_hostkey: yes
 
 - name: Ensure the navi repo is cloned
   git:
@@ -61,59 +21,70 @@
     update: no
     accept_hostkey: yes
 
-- name: Ensure the cheats repo for navi is cloned
-  git:
-    repo: https://github.com/Emigre/cheats.git
-    version: master
-    dest: "{{ home }}/cheats"
-    update: no
-    accept_hostkey: yes
+# Neovim
 
-# mutt
-# ----
-
-- name: Symlink .muttrc
-  file:
-    src: "{{ item }}"
-    dest: "{{ home }}/{{ item | basename }}"
-    state: link
-  with_fileglob:
-    - ".muttrc"
-
-- name: Ensure the mutt config folder exists
-  file: "path={{ home }}/.mutt state=directory mode=0755 owner={{ user }}"
+- name: Ensure the .config folder exists and has the right permissions
+  file: "path={{ home }}/.config state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
 
-- name: Symlink mutt config files
-  file:
-    src: "{{ item }}"
-    dest: "{{ home }}/.mutt/{{ item | basename }}"
-    state: link
-  with_fileglob:
-    - "*.muttrc"
-    - "mailcap"
-
-# weechat
-# -------
-
-# TODO configure weechat
-
-# joplin
-# ------
-
-- name: Ensure the joplin config folder exists
-  file: "path={{ home }}/.config/joplin state=directory mode=0755 owner={{ user }}"
+- name: Ensure the .vim folder exists and has the right permissions
+  file: "path={{ home }}/.vim state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
 
-- name: Symlink the joplin keymap file
+- name: Ensure the neovim config folder is a symlink to the vim config folder
+  file:
+    src: "{{ home }}/.vim"
+    dest: "{{ home }}/.config/nvim"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the subfolders inside .vim exist and have the right permissions
+  file: "path={{ home }}/.vim/{{ item }} state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+  with_items:
+    - autoload
+    - backups
+    - colors
+    - plugged
+    - plugin
+    - swaps
+    - undo
+
+- name: Symlink init.vim
   file:
     src: "{{ item }}"
-    dest: "{{ home }}/.config/joplin/{{ item | basename }}"
+    dest: "{{ home }}/.vim/{{ item | basename }}"
     state: link
   with_fileglob:
-    - keymap.json
+    - "init.vim"
 
-# apart from the keymap joplin stores its data and config
-# info in the sqlite file inside ~/.config/joplin
+- name: Symlink plug.vim
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/.vim/autoload/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - "plug.vim"
+
+- name: Symlink the vim color scheme
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/.vim/colors/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - "zenburn.vim"
+
+- name: Ensure .vimrc is a symlink to init.vim
+  file:
+    src: "{{ home }}/.vim/init.vim"
+    dest: "{{ home }}/.vimrc"
+    state: link
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure Neovim is installed
+  homebrew: name=nvim state=present

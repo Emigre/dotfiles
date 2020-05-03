@@ -1,0 +1,44 @@
+# load order
+# ----------
+# - tmux starts as login shell, then loads windows as not login
+# .zshenv
+# .zprofile (only in login shells)
+# .zshrc
+# .zlogin (only in login shells)
+
+# always loaded
+# -------------
+# .zshenv is always sourced, it often contains exported variables (always read)
+
+# loaded if interactive
+# ---------------------
+# .zshrc is for interactive shell configuration
+
+# loaded only in login shells
+# ---------------------------
+# - tmux is configured to use non-loging shells
+# .zprofile is an alternative to .zlogin, but it's loaded _before_ .zshrc
+# - put here if it may take some time to complete
+# .zlogin is sourced on the start of a login shell, loaded _after_ .zshrc
+# - put here if it is a command to be run when the shell is fully setup
+
+- name: Ensure the dotfiles repo is cloned
+  git:
+    repo: https://github.com/Emigre/dotfiles.git
+    version: master
+    dest: "{{ home }}/dotfiles"
+    update: no
+    accept_hostkey: yes
+
+- name: Symlink the dotfiles
+  file:
+    src: "{{ item }}"
+    dest: "{{ home }}/{{ item | basename }}"
+    state: link
+  with_fileglob:
+    - ".*"
+
+- name: Ensure the code folder exists and has the right permissions
+  file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"

@@ -1,46 +1,45 @@
+- name: Ensure llvm is installed
+  homebrew: name=llvm state=present
+
 - name: Ensure the C++ homebrew packages are installed
   homebrew:
     name: ["{{ item }}"]
     state: present
   with_items: "{{ homebrew_packages }}"
 
-- name: Ensure llvm is installed
-  homebrew: name=llvm state=present
+# - name: Ensure the llvm project is cloned
+#   # to build clangd and clang-format:
+#   # cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" ../llvm
+#   git:
+#     repo: git@github.com:llvm/llvm-project.git
+#     version: master
+#     dest: "{{ home }}/llvm"
+#     update: no
+#     accept_hostkey: yes
 
-- name: Ensure the llvm project is cloned
-  # to build clangd and clang-format:
-  # cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" ../llvm
-  git:
-    repo: git@github.com:llvm/llvm-project.git
-    version: master
-    dest: "{{ home }}/llvm"
-    update: no
-    accept_hostkey: yes
-  when: is_home
+# - name: Symlink clangd
+#   file:
+#     src: "{{ item }}"
+#     dest: /usr/local/bin/clangd
+#     state: link
+#   become: yes
+#   become_user: "{{ user }}"
+#   with_first_found:
+#     - files:
+#       - "{{ home }}/llvm/build/bin/clangd"
+#       - /usr/local/Cellar/llvm/7.0.1/bin/clangd
 
-- name: Symlink clangd
-  file:
-    src: "{{ item }}"
-    dest: /usr/local/bin/clangd
-    state: link
-  become: yes
-  become_user: "{{ user }}"
-  with_first_found:
-    - files:
-      - "{{ home }}/llvm/build/bin/clangd"
-      - /usr/local/Cellar/llvm/7.0.1/bin/clangd
-
-- name: Symlink clang-format
-  file:
-    src: "{{ item }}"
-    dest: /usr/local/bin/clang-format
-    state: link
-  become: yes
-  become_user: "{{ user }}"
-  with_first_found:
-    - files:
-      - "{{ home }}/llvm/build/bin/clang-format"
-      - /usr/local/Cellar/llvm/7.0.1/bin/clang-format
+# - name: Symlink clang-format
+#   file:
+#     src: "{{ item }}"
+#     dest: /usr/local/bin/clang-format
+#     state: link
+#   become: yes
+#   become_user: "{{ user }}"
+#   with_first_found:
+#     - files:
+#       - "{{ home }}/llvm/build/bin/clang-format"
+#       - /usr/local/Cellar/llvm/7.0.1/bin/clang-format
 
 - name: Symlink the C++ dotfiles
   file:
@@ -51,18 +50,16 @@
   become_user: "{{ user }}"
   with_fileglob:
     - ".*"
-  when: is_home
 
-- name: Symlink the debugger python scripts to Python 2.7 site-packages
-  file:
-    src: "{{ item }}"
-    dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
-    state: link
-  become: yes
-  become_user: root
-  with_fileglob:
-    - "*dbinit.py"
-  when: is_home
+# - name: Symlink the debugger python scripts to Python 2.7 site-packages
+#   file:
+#     src: "{{ item }}"
+#     dest: "/Library/Python/2.7/site-packages/{{ item | basename }}"
+#     state: link
+#   become: yes
+#   become_user: root
+#   with_fileglob:
+#     - "*dbinit.py"
 
 - name: Ensure xcpretty is installed for Objective-C
   gem: name=xcpretty state=present

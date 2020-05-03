@@ -2,36 +2,37 @@
 
 # ===
 
-.PHONY: start
-start: ## runs ansible to configure the system
-	@ansible-playbook main.yml
+.PHONY: dotfiles
+dotfiles: ## configures the dotfiles
+	@ansible-playbook main.yml --tags 'dotfiles'
 
-.PHONY: vim
-vim: ## runs ansible to configure vim only
-	@ansible-playbook vim.yml
+.PHONY: apps
+apps: ## installs the applications
+	@ansible-playbook main.yml --tags 'apps'
 
-.PHONY: pull
-pull: ## pulls the changes for the vim, scripts, language servers and dotfiles repos
-	@echo '- Updating the dotfiles repo'
-	@git pull
-	@echo '- Updating the vim repo'
-	@cd $$HOME/vim && git pull
-	@echo '- Updating the ranger repo'
-	@cd $$HOME/ranger && git pull
-	@echo '- Updating the scripts repo'
-	@cd $$HOME/scripts && git pull
-	@echo '- Updating the language servers repo'
-	@cd $$HOME/language-servers && git pull
-	@echo '- Updating the navi repo'
-	@cd $$HOME/navi && git pull
-	@echo '- Updating the cheats repo'
-	@cd $$HOME/cheats && git pull
+.PHONY: cpp
+cpp: ## sets up c++
+	@ansible-playbook main.yml --tags 'cpp'
 
-.PHONY: code-tree
-code-tree: ## saves a text file of the code folder structure in the dropbox folder
-	@mkdir -p ~/Dropbox/code-tree
-	@cd ~/code && \
-		tree -L 2 > ~/Dropbox/code-tree/`uname -n`.txt
+.PHONY: erlang
+erlang: ## sets up erlang and elixir
+	@ansible-playbook main.yml --tags 'erlang'
+
+.PHONY: haskell
+haskell: ## sets up haskell
+	@ansible-playbook main.yml --tags 'haskell'
+
+.PHONY: java
+java: ## sets up java
+	@ansible-playbook main.yml --tags 'java'
+
+.PHONY: javascript
+javascript: ## sets up javascript
+	@ansible-playbook main.yml --tags 'javascript'
+
+.PHONY: python
+python: ## sets up python
+	@ansible-playbook main.yml --tags 'python'
 
 # ==
 

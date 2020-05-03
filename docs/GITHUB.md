@@ -1,4 +1,4 @@
-## Set up SSH access to GitHub
+## Set up access to GitHub
 
 1. Generate a ssh key: `ssh-keygen -t rsa -b 4096 -C "info@gasparrey.com"`
 
@@ -19,3 +19,10 @@ Host *
 
 6. [Add the key to github](https://github.com/settings/keys) / [Add the key to bitbucket](https://bitbucket.org/account/user/Emigre/ssh-keys/)
 
+7. Edit `~/.gituser` with the git user name and email
+
+```
+[user]
+  name = <name>
+  email = <email>
+```

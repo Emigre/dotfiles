@@ -1,9 +1,0 @@
-# vim: filetype=muttrc
-
-source ~/.mutt/settings.muttrc
-
-# Default account
-source ~/.mutt/account.com.gmail.gaspartrek
-
-# Colour scheme
-source ~/.mutt/colours.muttrc
