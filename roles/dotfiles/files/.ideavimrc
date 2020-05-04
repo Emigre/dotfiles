@@ -1,0 +1,65 @@
+" Emulated Vim plugins: 
+"   vim-easymotion
+"   vim-surround
+"   vim-multiple-cursors
+"   vim-commentary
+"   argtextobj.vim
+"   vim-textobj-entire
+"   ReplaceWithRegister
+
+" Show all the provided actions via `:actionlist`
+
+" Settings
+" --------
+
+" Use system clipboard
+set clipboard=unnamedplus
+
+" Do not highlight searches by default
+set nohlsearch
+
+" Ignore case of searches
+set ignorecase
+
+" Highlight dynamically as pattern is typed
+set incsearch
+
+" Keys
+" ----
+
+" Leader key is Space
+let mapleader = ' '
+
+" Enable or disable highlight of searches
+map <silent> § :set hlsearch!<cr>
+
+" Refresh .ideavimrc config
+nnoremap ± :source ~/.ideavimrc<CR>
+
+" Git
+nnoremap <Leader>g :action Annotate<CR>
+
+" Makes j and k do a page up and down
+nnoremap j <C-d>
+vnoremap j <C-d>
+nnoremap k <C-u>
+vnoremap k <C-u>
+
+" Copies the file path
+nnoremap <leader>p :action CopyFileReference<CR>
+
+" Shows the file structure
+nnoremap <Leader>f :action FileStructurePopup<CR>
+
+" Closes the file
+nnoremap q :q<CR>
+
+" Close other tabs
+nnoremap Q :action CloseAllEditorsButActive<CR>
+
+" Save the file
+nnoremap s :w<CR>
+
+" Navigates the tabs
+nnoremap h gT
+nnoremap l gt
