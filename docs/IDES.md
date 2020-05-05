@@ -1,5 +1,7 @@
 ## Sublime Text
 
+In the View menu, select Hide minimap.
+
 Add these to the keymap settings to turn off auto-closing of brackets and quotes:
 
 ```json
@@ -25,6 +27,25 @@ Add these to the settings:
 ```
 
 ## JetBrains IDEs
+
+```
++-------------+
+| ± reload    |
+| § highlight |
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|Q close      |W            |E            |R            |T            |Y            |U            |I            |O            |P            |[            |]            |
+|M-Q cls othr |             |             |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
+|             |             |             |             |             |             |             |             |             |_-P path     |             |             |
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' go source  |\            |
+|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |C-; prev err |             |             |
+|             |             |             |_-F struct   |             |             |             |             |             |             |             |             |
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
+|             |             |             |             |             |             |C-M prj open |             |             |             |
+|             |             |             |             |             |             |             |             |             |             |
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+```
 
 Install the following plugins via Preferences > Plugins:
 - IdeaVim
@@ -61,7 +82,10 @@ In Preferences:
 		- Select Ensure an empty line at the end of a file on Save
 		- Appearance:
 			- Deselect Show line numbers
+			- Deselect Show hard wrap and visual guides
 			- Deselect Show intention bulb
+		- Code Folding:
+			- Deselect any code folding
 		- Gutter Icons:
 			- Deselect Show gutter icons
 		- Breadcrumbs:
