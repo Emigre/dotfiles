@@ -1,5 +1,7 @@
 ## Sublime Text
 
+Symlink `subl` if necessary: `ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
+
 In the View menu, select Hide minimap.
 
 Add these to the keymap settings to turn off auto-closing of brackets and quotes:
