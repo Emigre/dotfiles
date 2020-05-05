@@ -37,7 +37,7 @@ nmap f :action KJumpAction.Word1<CR>
 
 " Jump to errors
 nmap ; :action GotoNextError<CR>
-nmap <C-;> :action GotoPreviousError<CR>
+nmap ' :action GotoPreviousError<CR>
 
 " Enable or disable highlight of searches
 map <silent> § :set hlsearch!<cr>
@@ -85,7 +85,7 @@ nnoremap l gt
 " TODO: quick definition
 " TODO: switch between header and implementation
 " TODO: recent files (cmd + e)
-nnoremap ' :action EditSource<CR> " Jump to source
+nnoremap <C-;> :action EditSource<CR> " Jump to source
 
 nnoremap <Leader>su :action ShowUsages<CR> " also available: FindUsages
 nnoremap <Leader>si :action GotoImplementation<CR>

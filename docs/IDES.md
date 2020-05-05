@@ -39,8 +39,8 @@ Add these to the settings:
 |M-Q cls othr |             |             |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
 |             |             |             |             |             |             |             |             |             |_-P path     |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' go source  |\            |
-|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |C-; prev err |             |             |
+|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
+|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |C-; go src   |             |             |
 |             |             |             |_-F struct   |             |             |             |             |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
