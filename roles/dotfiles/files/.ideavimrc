@@ -1,4 +1,4 @@
-" Emulated Vim plugins: 
+" Emulated Vim plugins:
 "   vim-easymotion
 "   vim-surround
 "   vim-multiple-cursors
@@ -11,6 +11,9 @@
 
 " Settings
 " --------
+
+" Leader key is Space
+let mapleader = ' '
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -27,8 +30,12 @@ set incsearch
 " Keys
 " ----
 
-" Leader key is Space
-let mapleader = ' '
+" KJump plugin
+nmap f :action KJumpAction.Word1<CR>
+
+" Jump to errors
+nmap ; :action GotoNextError<CR>
+nmap ' :action GotoPreviousError<CR>
 
 " Enable or disable highlight of searches
 map <silent> § :set hlsearch!<cr>

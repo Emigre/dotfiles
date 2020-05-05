@@ -28,8 +28,9 @@ Add these to the settings:
 
 Install the following plugins via Preferences > Plugins:
 - IdeaVim
-- IdeaVim-EasyMotion
-- AceJump
+- KJump
+
+In Preferences > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
 - Go To File: Ctrl-P
@@ -51,6 +52,7 @@ In the Project Tool:
 
 In Preferences:
 - Editor:
+	- Inlay Hints: Deselect 'Show hints for' so none are selected
 	- Vim emulation:
 		- Set handler for Ctrlp-P, Ctrl-F, etc. to IDE
 	- General:
