@@ -22,5 +22,6 @@ In the Preferences section:
 		- Deselect the rest
 	- In Address Bar, deselect all
 	- In Permissions, ensure that Block pop-up windows and the rest are selected
+		- In the Notifications Settings, select Block new requests asking to allow notifications
 	- In Firefox Data Collection and Use, do not allow
 
