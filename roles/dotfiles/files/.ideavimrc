@@ -27,13 +27,15 @@ set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
 
+" Disable bells
+set novisualbell
+set noerrorbells
+
 " Keys
 " ----
 
 " KJump plugin
 nmap f :action KJumpAction.Word1<CR>
-
-" Show project window would be: ActivateProjectToolWindow
 
 " Jump to errors
 nmap ; :action GotoNextError<CR>

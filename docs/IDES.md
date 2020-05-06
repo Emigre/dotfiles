@@ -36,7 +36,7 @@ Add these to the settings:
 | § highlight |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Q close      |W            |E            |R            |T            |Y            |U            |I            |O            |P            |[            |]            |
-|M-Q cls othr |             |             |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
+|M-Q cls othr |             |C-E recent   |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
 |             |             |             |             |             |             |             |             |             |_-P path     |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
@@ -53,17 +53,24 @@ Install the following plugins via Preferences > Plugins:
 - IdeaVim
 - KJump
 
-In Preferences > KJump set the background color to #ff286e17
+In Preferences > Other Settings > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
-- Go To File: Ctrl-P
-- Project: Ctrl-F
 - Focus Editor: Ctrl-[
-- Jump to Source: Ctrl-M
 - Find in Path: Ctrl-A
+- Recent Files: Ctrl-E
+- Project: Ctrl-F
+- Jump to Source: Ctrl-M
+- Go To File: Ctrl-P
 - Replace: Ctrl-S
 
 For each one of these, in Editor > Vim emulation, set the handler to IDE
+
+In Help > Edit Custom Properties, write these:
+
+```
+ide.find.enter.as.ok=true
+```
 
 In the menu bar:
 - View > Appearance:
@@ -71,13 +78,13 @@ In the menu bar:
 
 In the Project Tool:
 	- Move the tool to the right side
-	- Select 'Always Select Opened File'
+	- Do NOT select 'Always Select Opened File' or 'Open Files With Single Click'
 
 In Preferences:
+- Appearance & Behaviour:
+	- File Colors: Remove all  the local colors from the Local colors list
 - Editor:
 	- Inlay Hints: Deselect 'Show hints for' so none are selected
-	- Vim emulation:
-		- Set handler for Ctrlp-P, Ctrl-F, etc. to IDE
 	- General:
 		- Select Strip trailing spaces on Save for All
 		- Select Delete trailing spaces on caret line
@@ -94,18 +101,19 @@ In Preferences:
 			- Deselect Show breadcrumbs
 		- Editor Tabs:
 			- Select Open new tabs at the end
-			- Select Use small fonts for labels
 			- Select Mark modified
 	- Code Editing
 		- Uncheck 'Highlight Usages of element at caret'
 	- Code Scheme > General:
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
-		- Weak Warning: effect underwaved #9876AA
+		- Weak Warning: effect underwaved #9876AA, error stripe mark #564A66
 		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F
 - Version Control > File Status Colors:
-		- Deleted / Deleted from filesystem: #D5756C
+		- Deleted: #D5756C
+		- Deleted from filesystem: #D5756C
 		- Ignored: #666666
-		- Renamed / Unknown: #6897BB
+		- Renamed: #6897BB
+		- Unknown: #D5756C
 - Languages & Frameworks:
 	- Markdown:
 		- Default Layout: Editor only
