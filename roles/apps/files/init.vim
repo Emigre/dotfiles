@@ -172,5 +172,14 @@ nmap K <Plug>MoveMotionPlug
 xmap K <Plug>MoveMotionXPlug
 nmap KK <Plug>MoveMotionLinePlug
 
+" Save
+nnoremap <silent> s :w<CR>
+
+" makes j and k do a page up and down
+nnoremap j <C-d>
+vnoremap j <C-d>
+nnoremap k <C-u>
+vnoremap k <C-u>
+
 " editorconfig
 let g:EditorConfig_max_line_indicator = "none"

@@ -3,7 +3,6 @@ homebrew_upgrade: no
 homebrew_taps:
   - homebrew/cask
   - homebrew/cask-fonts
-  - homebrew/cask-versions
 
 homebrew_packages:
   - ack
