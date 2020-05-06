@@ -45,6 +45,11 @@ if ! [ -n "$TMUX" ]; then
   # Swift
   export SOURCEKIT_TOOLCHAIN_PATH='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/'
 
+  # Haskell
+  export PATH="/usr/local/opt/ghc@8.6/bin:$PATH"
+  # For compilers to find ghc@8.6 you may need to set:
+  #  export LDFLAGS="-L/usr/local/opt/ghc@8.6/lib"
+
   # AWS
   export AWS_SDK_LOAD_CONFIG="true"
   # export AWS_DEFAULT_PROFILE=...
