@@ -108,6 +108,7 @@ In Preferences:
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
 		- Weak Warning: effect underwaved #9876AA, error stripe mark #564A66
 		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F
+		- TODO defaults: effect underwaved #6897BB, error stripe mark #0977AB, no background, no foreground
 - Version Control > File Status Colors:
 		- Deleted: #D5756C
 		- Deleted from filesystem: #D5756C
