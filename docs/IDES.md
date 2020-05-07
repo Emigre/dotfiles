@@ -39,8 +39,8 @@ Add these to the settings:
 |M-Q cls othr |             |C-E recent   |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
 |             |             |             |             |             |             |             |             |             |_-P path     |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
-|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |C-; go src   |             |             |
+|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; go src     |' nxt err    |\            |
+|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |             |M-' prev err |             |
 |             |             |             |_-F struct   |             |             |             |             |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
@@ -53,16 +53,18 @@ Install the following plugins via Preferences > Plugins:
 - IdeaVim
 - KJump
 
+IdeaVim includes: vim-easymotion, vim-surround, vim-multiple-cursors, vim-commentary, argtextobj.vim, vim-textobj-entire and ReplaceWithRegister. Show all the IDE actions via `:actionlist`.
+
 In Preferences > Other Settings > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
 - Focus Editor: Ctrl-[
-- Find in Path: Ctrl-A
-- Recent Files: Ctrl-E
+- Recent Files: Ctrl-E, remove the default
 - Project: Ctrl-F
+- Find in Path: Ctrl-J
+- Replace: Ctrl-K
 - Jump to Source: Ctrl-M
-- Go To File: Ctrl-P
-- Replace: Ctrl-S
+- Go To File: Ctrl-P, remove the default
 
 For each one of these, in Editor > Vim emulation, set the handler to IDE
 
@@ -89,6 +91,7 @@ In Preferences:
 		- Select Strip trailing spaces on Save for All
 		- Select Delete trailing spaces on caret line
 		- Select Ensure an empty line at the end of a file on Save
+		- Deselect Highlight lines with whitespace-only modifications with a different color
 		- Appearance:
 			- Deselect Show line numbers
 			- Deselect Show hard wrap and visual guides
@@ -105,6 +108,7 @@ In Preferences:
 	- Code Editing
 		- Uncheck 'Highlight Usages of element at caret'
 	- Code Scheme > General:
+		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
 		- Weak Warning: effect underwaved #9876AA, error stripe mark #564A66
 		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F

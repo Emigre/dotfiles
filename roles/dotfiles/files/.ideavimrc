@@ -1,79 +1,33 @@
-" Emulated Vim plugins:
-"   vim-easymotion
-"   vim-surround
-"   vim-multiple-cursors
-"   vim-commentary
-"   argtextobj.vim
-"   vim-textobj-entire
-"   ReplaceWithRegister
 
-" Show all the provided actions via `:actionlist`
-
-" Settings
-" --------
-
-" Leader key is Space
 let mapleader = ' '
-
-" Use system clipboard
 set clipboard=unnamedplus
-
-" Do not highlight searches by default
 set nohlsearch
-
-" Ignore case of searches
 set ignorecase
-
-" Highlight dynamically as pattern is typed
 set incsearch
-
-" Disable bells
 set novisualbell
 set noerrorbells
 
-" Keys
-" ----
-
-" KJump plugin
-nmap f :action KJumpAction.Word1<CR>
-
-" Jump to errors
-nmap ; :action GotoNextError<CR>
-nmap ' :action GotoPreviousError<CR>
-
-" Enable or disable highlight of searches
-map <silent> § :set hlsearch!<cr>
-
-" Refresh .ideavimrc config
-nnoremap ± :source ~/.ideavimrc<CR>
-
-" Git
-nnoremap <Leader>g :action Annotate<CR>
-
-" Makes j and k do a page up and down
 nnoremap j <C-d>
 vnoremap j <C-d>
 nnoremap k <C-u>
 vnoremap k <C-u>
-
-" Copies the file path
-nnoremap <leader>p :action CopyFileReference<CR>
-
-" Shows the file structure
-nnoremap <Leader>f :action FileStructurePopup<CR>
-
-" Closes the file
-nnoremap q :q<CR>
-
-" Close other tabs
-nnoremap Q :action CloseAllEditorsButActive<CR>
-
-" Save the file
-nnoremap s :w<CR>
-
-" Navigates the tabs
 nnoremap h gT
 nnoremap l gt
+
+nnoremap § :set hlsearch!<cr>
+nnoremap ± :source ~/.ideavimrc<CR>
+nnoremap q :q<CR>
+nnoremap Q :action CloseAllEditorsButActive<CR>
+nnoremap s :w<CR>
+
+nnoremap <leader>g :action Annotate<CR>
+nnoremap <leader>p :action CopyFileReference<CR>
+nnoremap <leader>f :action FileStructurePopup<CR>
+
+nnoremap f :action KJumpAction.Word1<CR>
+nnoremap ' :action GotoNextError<CR>
+nnoremap " :action GotoPreviousError<CR>
+nnoremap ; :action EditSource<CR>
 
 " Navigation and search
 " TODO: quick documentation <--- popup
@@ -87,7 +41,6 @@ nnoremap l gt
 " TODO: quick definition
 " TODO: switch between header and implementation
 " TODO: recent files (cmd + e)
-nnoremap <C-;> :action EditSource<CR> " Jump to source
 
 nnoremap <Leader>su :action ShowUsages<CR> " also available: FindUsages
 nnoremap <Leader>si :action GotoImplementation<CR>
