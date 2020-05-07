@@ -4,6 +4,8 @@
   - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
   - Check 'Save changes to folder when iTerm2 quits'
   - Check 'Applications in terminal may access clipboard'
+- In Preferences > Appearance
+  - In General, select the 'Minimal' Theme
 - In Preferences > Profiles
   - In the 'Window' menu, select 'Full-Height Left of Screen' in the 'Style' selector
   - In the profile 'Keys'
