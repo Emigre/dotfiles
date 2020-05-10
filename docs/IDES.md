@@ -1,33 +1,3 @@
-## Sublime Text
-
-Symlink `subl` if necessary: `ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
-
-In the View menu, select Hide minimap.
-
-Add these to the keymap settings to turn off auto-closing of brackets and quotes:
-
-```json
-[
-	{ "keys": ["("], "command": "insert", "args": {"characters": "("} },
-	{ "keys": [")"], "command": "insert", "args": {"characters": ")"} },
-	{ "keys": ["["], "command": "insert", "args": {"characters": "["} },
-	{ "keys": ["]"], "command": "insert", "args": {"characters": "]"} },
-	{ "keys": ["{"], "command": "insert", "args": {"characters": "{"} },
-	{ "keys": ["}"], "command": "insert", "args": {"characters": "}"} },
-	{ "keys": ["'"], "command": "insert", "args": {"characters": "'"} },
-	{ "keys": ["\""], "command": "insert", "args": {"characters": "\""} }
-]
-```
-
-Add these to the settings:
-
-```json
-{
-	"trim_trailing_white_space_on_save": true,
-	"ensure_newline_at_eof_on_save": false
-}
-```
-
 ## JetBrains IDEs
 
 ```
@@ -49,24 +19,26 @@ Add these to the settings:
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 ```
 
-Install the following plugins via Preferences > Plugins:
-- IdeaVim
-- KJump
+1. Install each IDE with brew (`brew cask install clion`, `brew cask install intellij-idea`, `brew cask install appcode`...).
 
-IdeaVim includes: vim-easymotion, vim-surround, vim-multiple-cursors, vim-commentary, argtextobj.vim, vim-textobj-entire and ReplaceWithRegister. Show all the IDE actions via `:actionlist`.
+2. In Preferences > Plugins install `IdeaVim`, `KJump` and `File Watchers`
+
+3. Check the [code analysis, formatting and linting table](docs/CODE.md) to install plugins and tools for each language.
+
+### Preferences
 
 In Preferences > Other Settings > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
 - Focus Editor: Ctrl-[
-- Recent Files: Ctrl-E, remove the default
+- Recent Files: Ctrl-O, remove the default, and leave the handler set to Vim
 - Project: Ctrl-F
 - Find in Path: Ctrl-J
 - Replace: Ctrl-K
 - Jump to Source: Ctrl-M
 - Go To File: Ctrl-P, remove the default
 
-For each one of these, in Editor > Vim emulation, set the handler to IDE
+For each one of these except for 'Recent Files', in Editor > Vim emulation, set the handler to IDE
 
 In Help > Edit Custom Properties, write these:
 
@@ -105,14 +77,18 @@ In Preferences:
 		- Editor Tabs:
 			- Select Open new tabs at the end
 			- Select Mark modified
+		- Smart Keys:
+			- Deselect 'Insert paired brackets' and 'Insert pair quote'
 	- Code Editing
 		- Uncheck 'Highlight Usages of element at caret'
 	- Code Scheme > General:
 		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
 		- Weak Warning: effect underwaved #9876AA, error stripe mark #564A66
+		- Unknown symbol: effect underwaved #9876AA, error stripe mark #564A66
+		- Unused symbol: effect underwaved #9876AA, error stripe mark #564A66
 		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F
-		- TODO defaults: effect underwaved #6897BB, error stripe mark #0977AB, no background, no foreground
+		- TODO defaults: no effect, no background, no foreground, no stripe mark
 - Version Control > File Status Colors:
 		- Deleted: #D5756C
 		- Deleted from filesystem: #D5756C
@@ -122,3 +98,33 @@ In Preferences:
 - Languages & Frameworks:
 	- Markdown:
 		- Default Layout: Editor only
+
+## Sublime Text
+
+Symlink `subl` if necessary: `ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
+
+In the View menu, select Hide minimap.
+
+Add these to the keymap settings to turn off auto-closing of brackets and quotes:
+
+```json
+[
+	{ "keys": ["("], "command": "insert", "args": {"characters": "("} },
+	{ "keys": [")"], "command": "insert", "args": {"characters": ")"} },
+	{ "keys": ["["], "command": "insert", "args": {"characters": "["} },
+	{ "keys": ["]"], "command": "insert", "args": {"characters": "]"} },
+	{ "keys": ["{"], "command": "insert", "args": {"characters": "{"} },
+	{ "keys": ["}"], "command": "insert", "args": {"characters": "}"} },
+	{ "keys": ["'"], "command": "insert", "args": {"characters": "'"} },
+	{ "keys": ["\""], "command": "insert", "args": {"characters": "\""} }
+]
+```
+
+Add these to the settings:
+
+```json
+{
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": false
+}
+```

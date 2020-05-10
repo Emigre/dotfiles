@@ -6,6 +6,6 @@
 
 3. In the dotfiles folder and run `make dotfiles` and then `make apps` to install the software
 
-4. Run other targets in the dotfiles folder to configure programming languages as needed, then install the IDEs: `brew cask install clion`, `brew cask install intellij-idea`, `brew cask install appcode`, etc. Check the [code analysis, formatting and linting](docs/CODE.md) table for other requirements for each language
+4. Manually set up [the system preferences](docs/OSX.md), [Firefox](docs/FIREFOX.md) and [iTerm](docs/ITERM.md)
 
-5. Manually set up: [OSX system preferences](docs/OSX.md) / [Firefox](docs/FIREFOX.md) / [iTerm](docs/ITERM.md) / [IDEs and editors](docs/IDES.md)
+5. Run other targets in the dotfiles folder to configure each desired programming languages, and then [configure IDEs, editors and tools](docs/IDES.md)
