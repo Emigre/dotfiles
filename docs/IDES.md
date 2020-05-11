@@ -31,7 +31,7 @@ In Preferences > Other Settings > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
 - Focus Editor: Ctrl-[
-- Recent Files: Ctrl-O, remove the default, and leave the handler set to Vim
+- Recent Files: Ctrl-O, leve the default (Ctrl-E), and leave the handler set to Vim
 - Project: Ctrl-F
 - Find in Path: Ctrl-J
 - Replace: Ctrl-K
@@ -84,9 +84,7 @@ In Preferences:
 	- Code Scheme > General:
 		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
-		- Weak Warning: effect underwaved #9876AA, error stripe mark #564A66
-		- Unknown symbol: effect underwaved #9876AA, error stripe mark #564A66
-		- Unused symbol: effect underwaved #9876AA, error stripe mark #564A66
+		- Weak Warning: effect underwaved #9876AA, no stripe mark
 		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F
 		- TODO defaults: no effect, no background, no foreground, no stripe mark
 - Version Control > File Status Colors:
@@ -94,7 +92,7 @@ In Preferences:
 		- Deleted from filesystem: #D5756C
 		- Ignored: #666666
 		- Renamed: #6897BB
-		- Unknown: #D5756C
+		- Unknown: #909090
 - Languages & Frameworks:
 	- Markdown:
 		- Default Layout: Editor only
