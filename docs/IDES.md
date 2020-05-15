@@ -3,19 +3,18 @@
 ```
 +-------------+
 | ± reload    |
-| § highlight |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|Q close      |W            |E            |R            |T            |Y            |U            |I            |O            |P            |[            |]            |
-|M-Q cls othr |             |C-E recent   |             |             |             |             |             |             |C-P ctrlp    |C-[ hide prj |             |
-|             |             |             |             |             |             |             |             |             |_-P path     |             |             |
+|Q close      |W            |E            |R go related |T s type doc |Y            |U            |I            |O            |P            |[            |]            |
+|M-Q cls othr |             |C-E recent   |             |M-T s ty inf |             |M-U prev brk |             |             |C-P ctrlp    |C-[ hide prj |             |
+|             |_-W s params |_-E s error  |_-R s implem |_-T s ty def |_-Y go...    |_-U/u go use |_-I nxt splt |_-O split    |_-P/p path   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|A            |S save       |D            |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; go src     |' nxt err    |\            |
-|C-A fnd path |C-S replace  |             |C-F view prj |_-G annotate |             |             |             |             |             |M-' prev err |             |
-|             |             |             |_-F struct   |             |             |             |             |             |             |             |             |
+|A            |S save       |D delete     |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
+|             |M-S nxt brk  |             |             |             |             |             |M-K cut      |             |_-; go decl  |             |             |
+|_-A find     |_-S replace  |_-D go tree  |_-F struct   |_-G annotate |_-H hghlght  |             |             |             |_-: go src   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
-|             |             |             |             |             |             |C-M prj open |             |             |             |
 |             |             |             |             |             |             |             |             |             |             |
+|_-Z refac... |_-X code...  |_-C comment  |_-V git...   |_-B build... |             |             |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 ```
 
@@ -30,13 +29,10 @@
 In Preferences > Other Settings > KJump set the background color to #ff286e17
 
 Set these keys in Preferences > Keymap:
-- Focus Editor: Ctrl-[
-- Recent Files: Ctrl-O, leve the default (Ctrl-E), and leave the handler set to Vim
-- Project: Ctrl-F
-- Find in Path: Ctrl-J
-- Replace: Ctrl-K
-- Jump to Source: Ctrl-M
 - Go To File: Ctrl-P, remove the default
+- Recent Files: Ctrl-O, leve the default (Ctrl-E), and leave the handler set to Vim
+- Focus Editor: Ctrl-[ (to exit the project window)
+- Jump to Source: Ctrl-M (to open file in the project window)
 
 For each one of these except for 'Recent Files', in Editor > Vim emulation, set the handler to IDE
 
@@ -79,9 +75,12 @@ In Preferences:
 			- Select Mark modified
 		- Smart Keys:
 			- Deselect 'Insert paired brackets' and 'Insert pair quote'
+			- HTML/CSS:
+				- Deselect everything
 	- Code Editing
-		- Uncheck 'Highlight Usages of element at caret'
-	- Code Scheme > General:
+		- For 'The Next Error goes through', select 'All problems'
+	- Color Scheme > General:
+		- Matched brance: no background
 		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
 		- Weak Warning: effect underwaved #9876AA, no stripe mark

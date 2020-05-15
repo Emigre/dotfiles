@@ -13,127 +13,128 @@ nnoremap k <C-u>
 vnoremap k <C-u>
 nnoremap h gT
 nnoremap l gt
+nnoremap S }
+vnoremap S }
+nnoremap U {
+vnoremap U {
 
-nnoremap § :set hlsearch!<cr>
 nnoremap ± :source ~/.ideavimrc<CR>
-nnoremap q :q<CR>
-nnoremap Q :action CloseAllEditorsButActive<CR>
-nnoremap s :w<CR>
+vnoremap ± :source ~/.ideavimrc<CR>
 
-nnoremap <leader>g :action Annotate<CR>
-nnoremap <leader>p :action CopyFileReference<CR>
+nnoremap Q :action CloseAllEditorsButActive<CR>
+vnoremap Q :action CloseAllEditorsButActive<CR>
+nnoremap q :q<CR>
+vnoremap q :q<CR>
+nnoremap s :w<CR>
+vnoremap s :w<CR>
+
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap K x
+vnoremap K x
+
+nnoremap <leader>a :action FindInPath<CR>
+nnoremap <leader>c :action CommentByLineComment<CR>
+vnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>d :action SelectInProjectView<CR>
 nnoremap <leader>f :action FileStructurePopup<CR>
+nnoremap <leader>g :action Annotate<CR>
+nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>i :action NextSplitter<CR>
+nnoremap <leader>m :action ShowIntentionActions<CR>
+nnoremap <leader>o :action SplitVertically<CR>
+nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
+nnoremap <leader>P :action CopyFileReference<CR>
+nnoremap <leader>s :action Replace<CR>
+
+" Navigation
 
 nnoremap f :action KJumpAction.Word1<CR>
-nnoremap ' :action GotoNextError<CR>
-nnoremap " :action GotoPreviousError<CR>
-nnoremap ; :action EditSource<CR>
+nnoremap ' :action GotoPreviousError<CR>
+nnoremap ; :action GotoNextError<CR>
 
-" Navigation and search
-" TODO: quick documentation <--- popup
-" TODO: quick definition <--- detailed window
-" TODO: quick type definition ...?
-" TODO: parameter info ...?
-" TODO: go to declaration or usages
-" TODO: go to definition(s)
-" TODO: go to type declaration
-" TODO: go to super definition
-" TODO: quick definition
-" TODO: switch between header and implementation
-" TODO: recent files (cmd + e)
+nnoremap <leader>; :action GotoDeclaration<CR>
+nnoremap <leader>: :action EditSource<CR>
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>U :action ShowUsages<CR>
 
-nnoremap <Leader>su :action ShowUsages<CR> " also available: FindUsages
-nnoremap <Leader>si :action GotoImplementation<CR>
-nnoremap <Leader>ss :action GotoSuperMethod<CR>
-nnoremap <Leader>sd :action QuickImplementations<CR>
-nnoremap <Leader>st :action GotoTypeDeclaration<CR>
-nnoremap <Leader>se :action ShowErrorDescription<CR>
+nnoremap <Leader>yi :action GotoImplementation<CR>
+nnoremap <Leader>ys :action GotoSuperMethod<CR>
+nnoremap <Leader>yt :action GotoTypeDeclaration<CR>
+
+nnoremap <Leader>yh :action TypeHierarchy<CR>
+nnoremap <Leader>ym :action MethodHierarchy<CR>
+nnoremap <Leader>yc :action CallHierarchy<CR>
+nnoremap <Leader>yu :action ShowUmlDiagramPopup<CR>
+
+" Type info
+
+nnoremap t :action QuickJavaDoc<CR>
+nnoremap T :action ExpressionTypeInfo<CR>
+nnoremap r :action GotoRelated<CR>
+
+nnoremap <leader>t :action QuickTypeDefinition<CR>
+nnoremap <leader>r :action QuickImplementations<CR>
+nnoremap <leader>e :action ShowErrorDescription<CR>
+nnoremap <leader>w :action ParameterInfo<CR>
 
 " Build and debug
-" nnoremap <Leader>Bp :action ViewBreakpoints<CR>
-" nnoremap <Leader>bP :action EditBreakpoint<CR>
-" nnoremap <Leader>bp :action ToggleLineBreakpoint<CR>
-" nnoremap <Leader>bB :action Compile<CR>
-" nnoremap <Leader>bb :action CompileDirty<CR>
-" nnoremap <Leader>bm :action Maven.ExecuteGoal<CR>
-" nnoremap <Leader>bM :action ActivateMavenProjectsToolWindow<CR>
-" nnoremap <Leader>bx :action RunClass<CR>
-" nnoremap <Leader>bX :action DebugClass<CR>
-" nnoremap <Leader>br :action Run<CR>
-" nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
-" nnoremap <Leader>bd :action Debug<CR>
-" nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
-" nnoremap <Leader>bc :action CreateRunConfiguration<CR>
-" nnoremap <Leader>bC :action editRunConfigurations<CR>
+nnoremap <Leader>bB :action Compile<CR>
+nnoremap <Leader>bC :action editRunConfigurations<CR>
+nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
+nnoremap <Leader>bM :action ActivateMavenProjectsToolWindow<CR>
+nnoremap <Leader>bP :action EditBreakpoint<CR>
+nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
+nnoremap <Leader>bX :action DebugClass<CR>
+nnoremap <Leader>bb :action CompileDirty<CR>
+nnoremap <Leader>bc :action CreateRunConfiguration<CR>
+nnoremap <Leader>bd :action Debug<CR>
+nnoremap <Leader>bk :action ViewBreakpoints<CR>
+nnoremap <Leader>bm :action Maven.ExecuteGoal<CR>
+nnoremap <Leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>br :action Run<CR>
+nnoremap <Leader>bx :action RunClass<CR>
 
 " Version control actions
-" nnoremap ]v :action VcsShowNextChangeMarker<CR>
-" nnoremap [v :action VcsShowPrevChangeMarker<CR>
-" nnoremap <Leader>vd :action VcsShowCurrentChangeMarker<CR>
-" nnoremap <Leader>vr :action Vcs.RollbackChangedLines<CR>
+nnoremap <Leader>vd :action VcsShowCurrentChangeMarker<CR>
+nnoremap <Leader>vr :action Vcs.RollbackChangedLines<CR>
 " nnoremap <Leader>vu :action Vcs.UpdateProject<CR>
 " nnoremap <Leader>vp :action Vcs.Push<CR>
-" nnoremap <Leader>vc :action Vcs.QuickListPopupAction<CR>
-" nnoremap <Leader>vb :action Git.Branches<CR>
-" nnoremap <Leader>vv :action ActivateVersionControlToolWindow<CR>
-" nnoremap <Leader>va :set norelativenumber<CR>:action Annotate<CR>
+nnoremap <Leader>vc :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>vb :action Git.Branches<CR>
+nnoremap <Leader>vv :action ActivateVersionControlToolWindow<CR>
 
-" Extract actions
-" nnoremap <Leader>ei :action ExtractInterface<CR>
-" nnoremap <Leader>es :action ExtractSuperclass<CR>
-" nnoremap <Leader>en :action ExtractClass<CR>
-" nnoremap <Leader>em :action ExtractMethod<CR>
-" vnoremap <Leader>em <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractMethod<CR>
-" nnoremap <Leader>ev :action IntroduceVariable<CR>
-" vnoremap <Leader>ev <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<CR>
-" nnoremap <Leader>ef :action IntroduceField<CR>
-" vnoremap <Leader>ef <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<CR>
-" nnoremap <Leader>ep :action IntroduceParameter<CR>
-" vnoremap <Leader>ep <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceParameter<CR>
-" nnoremap <Leader>ec :action IntroduceConstant<CR>
-" vnoremap <Leader>ec <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceConstant<CR>
+" Extract and generate
+nnoremap <Leader>xi :action ExtractInterface<CR>
+nnoremap <Leader>xs :action ExtractSuperclass<CR>
+nnoremap <Leader>xn :action ExtractClass<CR>
+nnoremap <Leader>xm :action ExtractMethod<CR>
+nnoremap <Leader>xv :action IntroduceVariable<CR>
+nnoremap <Leader>xf :action IntroduceField<CR>
+nnoremap <Leader>xp :action IntroduceParameter<CR>
+nnoremap <Leader>xc :action IntroduceConstant<CR>
 
-" Refactoring actions
-" nnoremap <Leader>ri :action Inline<CR>
-" nnoremap <Leader>rr :action RenameElement<CR>i
-" nnoremap <Leader>rj :action MemberPushDown<CR>
-" nnoremap <Leader>rk :action MemberPullUp<CR>
-" nnoremap <Leader>rs :action ChangeSignature<CR>
-" nnoremap <Leader>rd :action SafeDelete<CR>
-" nnoremap <Leader>rm :action Move<CR>
-" nnoremap <Leader>rc :action CopyElement<CR>
+nnoremap <Leader>xE :action GenerateEquals<CR>
+nnoremap <Leader>xG :action GenerateGetter<CR>
+nnoremap <Leader>xS :action GenerateSetter<CR>
+nnoremap <Leader>xA :action GenerateGetterAndSetter<CR>
+nnoremap <Leader>xC :action GenerateConstructor<CR>
+nnoremap <Leader>xT :action Actions.ActionsPlugin.GenerateToString<CR>
+nnoremap <Leader>xO :action OverrideMethods<CR>
+nnoremap <Leader>xI :action ImplementMethods<CR>
+nnoremap <Leader>xD :action DelegateMethods<CR>
 
-" Fix actions
-" nnoremap <Leader>ff :action ReformatCode<CR>
-" vnoremap <Leader>ff <Esc>gvhh:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ReformatCode<CR>gv
-" nnoremap <Leader>fi :action OptimizeImports<CR>
-" nnoremap <Leader>fa :action ShowIntentionActions<CR><Esc>
-
-" Hierarchy actions
-" nnoremap <Leader>hh :action TypeHierarchy<CR>
-" nnoremap <Leader>hm :action MethodHierarchy<CR>
-" nnoremap <Leader>hc :action CallHierarchy<CR>
-" nnoremap <Leader>hd :action ShowUmlDiagramPopup<CR>
-
-" Generate actions
-" nnoremap <Leader>ge :action GenerateEquals<CR>
-" nnoremap <Leader>gg :action GenerateGetter<CR>
-" nnoremap <Leader>gs :action GenerateSetter<CR>
-" nnoremap <Leader>ga :action GenerateGetterAndSetter<CR>
-" nnoremap <Leader>gc :action GenerateConstructor<CR>
-" nnoremap <Leader>gt :action Actions.ActionsPlugin.GenerateToString<CR>
-" nnoremap <Leader>go :action OverrideMethods<CR>
-" nnoremap <Leader>gi :action ImplementMethods<CR>
-" nnoremap <Leader>gd :action DelegateMethods<CR>
-
-" Bookmarks
-" nnoremap <Leader>m :action ToggleBookmarkWithMnemonic<CR>
-" nnoremap <Leader>' :action ShowBookmarks<CR>
-" nnoremap <Leader>` :action ShowBookmarks<CR>
-" nnoremap ]b :action GotoNextBookmark<CR>
-" nnoremap [b :action GotoPreviousBookmark<CR>
-
-" Comments
-" nnoremap gcc :action CommentByLineComment<CR>
-" vnoremap gc :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<CR>gv
-" nnoremap gcap vap:<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action CommentByLineComment<CR>gv
+" Refactor and fix
+nnoremap <Leader>zl :action Inline<CR>
+nnoremap <Leader>zr :action RenameElement<CR>
+nnoremap <Leader>zj :action MemberPushDown<CR>
+nnoremap <Leader>zk :action MemberPullUp<CR>
+nnoremap <Leader>zs :action ChangeSignature<CR>
+nnoremap <Leader>zd :action SafeDelete<CR>
+nnoremap <Leader>zm :action Move<CR>
+nnoremap <Leader>zc :action CopyElement<CR>
+nnoremap <Leader>zf :action ReformatCode<CR>
+nnoremap <Leader>zi :action OptimizeImports<CR>
+nnoremap <Leader>zn :action ShowIntentionActions<CR><Esc>
