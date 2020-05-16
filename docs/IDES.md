@@ -82,9 +82,9 @@ In Preferences:
 	- Color Scheme > General:
 		- Matched brance: no background
 		- Caret row: no background
-		- Warning: no effect, error stripe mark #9876AA, background #564A66, foreground #2B2E2F
+		- Warning: no effect, error stripe mark #9876AA, background #3B3A54
 		- Weak Warning: effect underwaved #9876AA, no stripe mark
-		- Error: no effect, error stripe mark #9E2927, background #803F43, foreground #2B2E2F
+		- Error: no effect, error stripe mark #9E2927, background #45262D
 		- TODO defaults: no effect, no background, no foreground, no stripe mark
 - Version Control > File Status Colors:
 		- Deleted: #D5756C
