@@ -7,7 +7,7 @@ Install the following extensions:
 In the Preferences section:
 
 - Home:
-	- Set Homepage to Firefox Home (Default)
+	- Set Homepage to Custom URL `https://app.raindrop.io/`
 	- Set New Tabs to Blank Page
 	- Unselect everything except Web search for Firefox Home Content
 - Search:
