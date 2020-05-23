@@ -6,7 +6,7 @@
 | Elixir                      | ?                            | ?                                  | ?                                         |
 | Haskell                     | ?                            | ?                                  | ?                                         |
 | Java                        | ?                            | ?                                  | ?                                         |
-| JavaScript and TypeScript   | TypesScript (IntelliJ)       | Prettier plugin, JS GraphQL plugin | Eslint (IntelliJ)                         |
+| JavaScript and TypeScript   | (IntelliJ uses tsc)          | Prettier plugin, JS GraphQL plugin | (Intellij uses eslint)                    |
 | Kotlin                      | ?                            | ?                                  | ?                                         |
 | Python                      | ?                            | ?                                  | ?                                         |
 | Scheme                      | ?                            | ?                                  | ?                                         |

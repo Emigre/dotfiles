@@ -1,52 +1,56 @@
-## JetBrains IDEs
+## JetBrains IDEs
 
 ```
 +-------------+
 | ± reload    |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Q close      |W            |E            |R go related |T s type doc |Y            |U            |I            |O            |P            |[            |]            |
-|M-Q cls othr |             |C-E recent   |             |M-T s ty inf |             |M-U prev brk |             |             |C-P ctrlp    |C-[ hide prj |             |
-|             |_-W s params |_-E s error  |_-R s implem |_-T s ty def |_-Y go...    |_-U/u go use |_-I nxt splt |_-O split    |_-P/p path   |             |             |
+|M-Q cls othr |             |C-E recent   |M-R go struc |M-T s ty inf |             |M-U prev brk |             |             |C-P ctrlp    |C-[ hide prj |             |
+|             |_-W s params |_-E s error  |_-R s implem |_-T s ty def |             |_-U/u go use |_-I nxt splt |_-O split    |_-P/p path   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|A            |S save       |D delete     |F kjump      |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
+|A            |S save       |D delete     |F jump       |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
 |             |M-S nxt brk  |             |             |             |             |             |M-K cut      |             |_-; go decl  |             |             |
-|_-A find     |_-S replace  |_-D go tree  |_-F struct   |_-G annotate |_-H hghlght  |             |             |             |_-: go src   |             |             |
+|_-A find     |_-S replace  |_-D go tree  |_-F nav bar  |_-G/g git    |_-H highlght |_-Y go...    |             |             |_-: go src   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
 |             |             |             |             |             |             |             |             |             |             |
-|_-Z refac... |_-X code...  |_-C comment  |_-V git...   |_-B build... |             |             |             |             |             |
+|_-Z refac... |_-X code...  |_-C comment  |             |_-B build... |             |_-M/m menu   |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 ```
 
 1. Install each IDE with brew (`brew cask install clion`, `brew cask install intellij-idea`, `brew cask install appcode`...).
 
-2. In Preferences > Plugins install `IdeaVim`, `KJump` and `File Watchers`
+2. In Preferences > Plugins install `IdeaVim`, `AceJump` and `File Watchers`
 
-3. Check the [code analysis, formatting and linting table](docs/CODE.md) to install plugins and tools for each language.
+3. Check the [code analysis, formatting and linting table](CODE.md) to install plugins and tools for each language.
 
-### Preferences
+### Preferences
 
-In Preferences > Other Settings > KJump set the background color to #ff286e17
+Set these keys in Preferences > Keymap and the default in Editor > Vim emulation:
 
-Set these keys in Preferences > Keymap:
-- Go To File: Ctrl-P, remove the default
-- Recent Files: Ctrl-O, leve the default (Ctrl-E), and leave the handler set to Vim
-- Focus Editor: Ctrl-[ (to exit the project window)
-- Jump to Source: Ctrl-M (to open file in the project window)
-
-For each one of these except for 'Recent Files', in Editor > Vim emulation, set the handler to IDE
-
-In Help > Edit Custom Properties, write these:
-
-```
-ide.find.enter.as.ok=true
-```
+| Action                                                            | Key            | Handler   | Notes                               |
+|:------------------------------------------------------------------|:---------------|:----------|:------------------------------------|
+| Editor Actions > Cut up to Line End                               | ---            | ---       | Remove ^K                           |
+| Editor Actions > Down                                             | Ctrl-J         | IDE       | Remove ^N                           |
+| Editor Actions > Enter                                            | Ctrl-M         | Vim       |                                     |
+| Editor Actions > Escape                                           | Ctrl-[         | Vim       |                                     |
+| Editor Actions > Focus Editor                                     | Ctrl-[         | Vim       |                                     |
+| Editor Actions > Left                                             | Ctrl-H         | IDE       | Remove ^B                           |
+| Editor Actions > Right                                            | Ctrl-L         | IDE       | Remove ^F                           |
+| Editor Actions > Up                                               | Ctrl-K         | IDE       |                                     |
+| Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
+| Main menu > View > Jump to Source                                 | Ctrl-M         | IDE       |                                     |
+| Main menu > View > Recent Files                                   | Ctrl-O, Ctrl-E | Vim, IDE  | Remove ⌘E                           |
+| Main menu > View > Recent Locations                               | Ctrl-Shift-E   | IDE       | Remove ⇧⌘E                          |
+| Main menu > View > Toggle Changed Only Files                      | Ctrl-E         | IDE       | Remove ⌘E                           |
+| Main menu > Window > Active Tool Window > Hide Active Tool Window | ---            | ---       | Remove ⇧Esc                         |
 
 In the menu bar:
 - View > Appearance:
 	- Disable Tool Window Bars
 
 In the Project Tool:
+	- Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
 	- Move the tool to the right side
 	- Do NOT select 'Always Select Opened File' or 'Open Files With Single Click'
 
@@ -56,7 +60,7 @@ In Preferences:
 - Editor:
 	- Inlay Hints: Deselect 'Show hints for' so none are selected
 	- General:
-		- Select Strip trailing spaces on Save for All
+		- Strip trailing spaces on Save: select 'All'
 		- Select Delete trailing spaces on caret line
 		- Select Ensure an empty line at the end of a file on Save
 		- Deselect Highlight lines with whitespace-only modifications with a different color
@@ -81,11 +85,11 @@ In Preferences:
 		- For 'The Next Error goes through', select 'All problems'
 	- Color Scheme > General:
 		- Matched brance: no background
+		- TODO defaults: no effect, no background, no foreground, no stripe mark
 		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #3B3A54
 		- Weak Warning: effect underwaved #9876AA, no stripe mark
 		- Error: no effect, error stripe mark #9E2927, background #45262D
-		- TODO defaults: no effect, no background, no foreground, no stripe mark
 - Version Control > File Status Colors:
 		- Deleted: #D5756C
 		- Deleted from filesystem: #D5756C
@@ -95,8 +99,16 @@ In Preferences:
 - Languages & Frameworks:
 	- Markdown:
 		- Default Layout: Editor only
+- Tools:
+	- AceJump:
+		- Jump mode color: #34E210
+		- Tag background color: #208C0A
+		- Tag foreground color: #34E210
+		- Text highlight color: #286E17
 
-## Sublime Text
+AceJump v3.6.1 can't save colors, see (#226)[https://github.com/acejump/AceJump/issues/226]. Follow [CHANGELOG](https://github.com/acejump/AceJump/blob/master/CHANGES.md) for releases.
+
+## Sublime Text
 
 Symlink `subl` if necessary: `ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
 

@@ -1,4 +1,3 @@
-
 let mapleader = ' '
 set clipboard=unnamedplus
 set nohlsearch
@@ -28,30 +27,38 @@ vnoremap q :q<CR>
 nnoremap s :w<CR>
 vnoremap s :w<CR>
 
+" uses the default delete as cut
+nnoremap K d
+nnoremap KK Vx
+vnoremap K x
+
+" do not cut when deleting with d
 nnoremap d "_d
 vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
-nnoremap K x
-vnoremap K x
 
 nnoremap <leader>a :action FindInPath<CR>
 nnoremap <leader>c :action CommentByLineComment<CR>
 vnoremap <leader>c :action CommentByLineComment<CR>
 nnoremap <leader>d :action SelectInProjectView<CR>
-nnoremap <leader>f :action FileStructurePopup<CR>
+nnoremap <leader>f :action ShowNavBar<CR>
 nnoremap <leader>g :action Annotate<CR>
+nnoremap <leader>G :action ActivateVersionControlToolWindow<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>i :action NextSplitter<CR>
 nnoremap <leader>m :action ShowIntentionActions<CR>
+nnoremap <leader>M :action ShowPopupMenu<CR>
 nnoremap <leader>o :action SplitVertically<CR>
-nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
 nnoremap <leader>P :action CopyFileReference<CR>
+nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
+nnoremap <leader>q :action HideActiveWindow<CR>
+nnoremap <leader>Q :action HideAllWindows<CR>
 nnoremap <leader>s :action Replace<CR>
 
 " Navigation
 
-nnoremap f :action KJumpAction.Word1<CR>
+map f :action AceAction<CR>
 nnoremap ' :action GotoPreviousError<CR>
 nnoremap ; :action GotoNextError<CR>
 
@@ -60,20 +67,20 @@ nnoremap <leader>: :action EditSource<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>U :action ShowUsages<CR>
 
-nnoremap <Leader>yi :action GotoImplementation<CR>
-nnoremap <Leader>ys :action GotoSuperMethod<CR>
-nnoremap <Leader>yt :action GotoTypeDeclaration<CR>
-
-nnoremap <Leader>yh :action TypeHierarchy<CR>
-nnoremap <Leader>ym :action MethodHierarchy<CR>
-nnoremap <Leader>yc :action CallHierarchy<CR>
-nnoremap <Leader>yu :action ShowUmlDiagramPopup<CR>
+nnoremap <Leader>jc :action CallHierarchy<CR>
+nnoremap <Leader>jh :action TypeHierarchy<CR>
+nnoremap <Leader>ji :action GotoImplementation<CR>
+nnoremap <Leader>jm :action MethodHierarchy<CR>
+nnoremap <Leader>js :action GotoSuperMethod<CR>
+nnoremap <Leader>jt :action GotoTypeDeclaration<CR>
+nnoremap <Leader>ju :action ShowUmlDiagramPopup<CR>
 
 " Type info
 
 nnoremap t :action QuickJavaDoc<CR>
 nnoremap T :action ExpressionTypeInfo<CR>
 nnoremap r :action GotoRelated<CR>
+nnoremap R :action FileStructurePopup<CR>
 
 nnoremap <leader>t :action QuickTypeDefinition<CR>
 nnoremap <leader>r :action QuickImplementations<CR>
@@ -81,32 +88,24 @@ nnoremap <leader>e :action ShowErrorDescription<CR>
 nnoremap <leader>w :action ParameterInfo<CR>
 
 " Build and debug
+
 nnoremap <Leader>bB :action Compile<CR>
-nnoremap <Leader>bC :action editRunConfigurations<CR>
-nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
-nnoremap <Leader>bM :action ActivateMavenProjectsToolWindow<CR>
-nnoremap <Leader>bP :action EditBreakpoint<CR>
-nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
-nnoremap <Leader>bX :action DebugClass<CR>
 nnoremap <Leader>bb :action CompileDirty<CR>
 nnoremap <Leader>bc :action CreateRunConfiguration<CR>
+nnoremap <Leader>bC :action editRunConfigurations<CR>
+nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
 nnoremap <Leader>bd :action Debug<CR>
 nnoremap <Leader>bk :action ViewBreakpoints<CR>
-nnoremap <Leader>bm :action Maven.ExecuteGoal<CR>
+nnoremap <Leader>bL :action DebugClass<CR>
+nnoremap <Leader>bl :action RunClass<CR>
+nnoremap <Leader>bm :action NavBarToolBar<CR>
+nnoremap <Leader>bP :action EditBreakpoint<CR>
 nnoremap <Leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
 nnoremap <Leader>br :action Run<CR>
-nnoremap <Leader>bx :action RunClass<CR>
-
-" Version control actions
-nnoremap <Leader>vd :action VcsShowCurrentChangeMarker<CR>
-nnoremap <Leader>vr :action Vcs.RollbackChangedLines<CR>
-" nnoremap <Leader>vu :action Vcs.UpdateProject<CR>
-" nnoremap <Leader>vp :action Vcs.Push<CR>
-nnoremap <Leader>vc :action Vcs.QuickListPopupAction<CR>
-nnoremap <Leader>vb :action Git.Branches<CR>
-nnoremap <Leader>vv :action ActivateVersionControlToolWindow<CR>
 
 " Extract and generate
+
 nnoremap <Leader>xi :action ExtractInterface<CR>
 nnoremap <Leader>xs :action ExtractSuperclass<CR>
 nnoremap <Leader>xn :action ExtractClass<CR>
@@ -127,6 +126,7 @@ nnoremap <Leader>xI :action ImplementMethods<CR>
 nnoremap <Leader>xD :action DelegateMethods<CR>
 
 " Refactor and fix
+
 nnoremap <Leader>zl :action Inline<CR>
 nnoremap <Leader>zr :action RenameElement<CR>
 nnoremap <Leader>zj :action MemberPushDown<CR>
