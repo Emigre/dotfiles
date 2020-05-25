@@ -9,3 +9,5 @@
 4. Manually set up [the system preferences](docs/OSX.md), [Firefox](docs/FIREFOX.md) and [iTerm](docs/ITERM.md)
 
 5. Run other targets in the dotfiles folder to configure each desired programming languages, and then [configure IDEs, editors and tools](docs/IDES.md)
+
+6. If necessary install other applications that have not had their installation automated, like the Adobe Creative Suite, Steam or Unity
