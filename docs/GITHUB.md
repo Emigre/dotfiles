@@ -19,7 +19,7 @@ Host *
 
 6. [Add the key to github](https://github.com/settings/keys) / [Add the key to bitbucket](https://bitbucket.org/account/user/Emigre/ssh-keys/)
 
-7. Edit `~/.gituser` with the git user name and email
+7. Create `~/.gituser` with the git user name and email
 
 ```
 [user]
