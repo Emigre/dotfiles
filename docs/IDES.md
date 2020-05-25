@@ -36,6 +36,7 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Editor Actions > Escape                                           | Ctrl-[         | Vim       |                                     |
 | Editor Actions > Focus Editor                                     | Ctrl-[         | Vim       |                                     |
 | Editor Actions > Left                                             | Ctrl-H         | IDE       | Remove ^B                           |
+| Editor Actions > Move Caret to Line End                           | ---            | ---       | Remove ^E                           |
 | Editor Actions > Right                                            | Ctrl-L         | IDE       | Remove ^F                           |
 | Editor Actions > Up                                               | Ctrl-K         | IDE       |                                     |
 | Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
