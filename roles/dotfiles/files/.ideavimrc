@@ -54,7 +54,7 @@ nnoremap <leader>P :action CopyFileReference<CR>
 nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
 nnoremap <leader>q :action HideActiveWindow<CR>
 nnoremap <leader>Q :action HideAllWindows<CR>
-nnoremap <leader>s :action Replace<CR>
+nnoremap <leader>s :%s/
 
 " Navigation
 

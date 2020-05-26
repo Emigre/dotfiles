@@ -9,8 +9,8 @@
 |             |_-W s params |_-E s error  |_-R s implem |_-T s ty def |             |_-U/u go use |_-I nxt splt |_-O split    |_-P/p path   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |A            |S save       |D delete     |F jump       |G            |H prev tab   |J pgdown     |K pgup       |L nxt tab    |; nxt err    |' prev err   |\            |
-|             |M-S nxt brk  |             |             |             |             |             |M-K cut      |             |_-; go decl  |             |             |
-|_-A find     |_-S replace  |_-D go tree  |_-F nav bar  |_-G/g git    |_-H highlght |_-Y go...    |             |             |_-: go src   |             |             |
+|             |M-S nxt brk  |             |C-F search   |             |             |             |M-K cut      |             |_-; go decl  |             |             |
+|_-A find     |_-S %s/      |_-D go tree  |_-F nav bar  |_-G/g git    |_-H highlght |_-Y go...    |             |             |_-: go src   |             |             |
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |Z            |X            |C            |V            |B            |N            |M            |,<           |.>           |/?           |
 |             |             |             |             |             |             |             |             |             |             |
@@ -38,9 +38,11 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Editor Actions > Left                                             | Ctrl-H         | IDE       | Remove ^B                           |
 | Editor Actions > Move Caret to Line End                           | ---            | ---       | Remove ^E                           |
 | Editor Actions > Right                                            | Ctrl-L         | IDE       | Remove ^F                           |
+| Editor Actions > Tab                                              | Ctrl-I         | IDE       | Unassign from others                |
 | Editor Actions > Up                                               | Ctrl-K         | IDE       |                                     |
+| Main menu > Navigate > Search Everywhere                          | Ctrl-F         | IDE       |                                     |
 | Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
-| Main menu > View > Jump to Source                                 | Ctrl-M         | IDE       |                                     |
+| Main menu > View > Jump to Source                                 | Ctrl-M         | Vim       |                                     |
 | Main menu > View > Recent Files                                   | Ctrl-O, Ctrl-E | Vim, IDE  | Remove ⌘E                           |
 | Main menu > View > Recent Locations                               | Ctrl-Shift-E   | IDE       | Remove ⇧⌘E                          |
 | Main menu > View > Toggle Changed Only Files                      | Ctrl-E         | IDE       | Remove ⌘E                           |
