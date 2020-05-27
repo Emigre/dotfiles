@@ -5,6 +5,7 @@ set ignorecase
 set incsearch
 set novisualbell
 set noerrorbells
+set ideajoin
 
 nnoremap j <C-d>
 vnoremap j <C-d>
