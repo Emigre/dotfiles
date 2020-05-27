@@ -23,11 +23,6 @@
 
 # Neovim
 
-- name: Ensure the .config folder exists and has the right permissions
-  file: "path={{ home }}/.config state=directory mode=0755 owner={{ user }}"
-  become: yes
-  become_user: "{{ user }}"
-
 - name: Ensure the .vim folder exists and has the right permissions
   file: "path={{ home }}/.vim state=directory mode=0755 owner={{ user }}"
   become: yes

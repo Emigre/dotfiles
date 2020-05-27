@@ -42,3 +42,13 @@
   file: "path={{ home }}/code state=directory mode=0755 owner={{ user }}"
   become: yes
   become_user: "{{ user }}"
+
+- name: Ensure the .local folder exists and has the right permissions
+  file: "path={{ home }}/.local state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Ensure the .config folder exists and has the right permissions
+  file: "path={{ home }}/.config state=directory mode=0755 owner={{ user }}"
+  become: yes
+  become_user: "{{ user }}"

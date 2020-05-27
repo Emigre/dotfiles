@@ -18,10 +18,6 @@ cpp: ## sets up c++
 erlang: ## sets up erlang and elixir
 	@ansible-playbook main.yml --tags 'erlang'
 
-.PHONY: haskell
-haskell: ## sets up haskell
-	@ansible-playbook main.yml --tags 'haskell'
-
 .PHONY: java
 java: ## sets up java
 	@ansible-playbook main.yml --tags 'java'

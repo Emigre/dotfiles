@@ -7,7 +7,6 @@
     - { role: cpp, tags: 'cpp' }
     - { role: dotfiles, tags: 'dotfiles' }
     - { role: erlang, tags: 'erlang' }
-    - { role: haskell, tags: 'haskell' }
     - { role: java, tags: 'java' }
     - { role: javascript, tags: 'javascript' }
     - { role: python, tags: 'python' }
