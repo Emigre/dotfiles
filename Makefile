@@ -18,10 +18,6 @@ cpp: ## sets up c++
 erlang: ## sets up erlang and elixir
 	@ansible-playbook main.yml --tags 'erlang'
 
-.PHONY: java
-java: ## sets up java
-	@ansible-playbook main.yml --tags 'java'
-
 .PHONY: javascript
 javascript: ## sets up javascript
 	@ansible-playbook main.yml --tags 'javascript'

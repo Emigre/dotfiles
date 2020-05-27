@@ -1,8 +1,0 @@
-- name: Ensure Java is installed with homebrew cask
-  homebrew_cask: name=java state=present
-
-- name: Ensure the Java homebrew packages are installed
-  homebrew:
-    name: ["{{ item }}"]
-    state: present
-  with_items: "{{ homebrew_packages }}"
