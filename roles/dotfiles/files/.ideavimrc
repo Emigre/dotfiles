@@ -38,7 +38,6 @@ vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
 
-nnoremap <leader>a :action FindInPath<CR>
 nnoremap <leader>c :action CommentByLineComment<CR>
 vnoremap <leader>c :action CommentByLineComment<CR>
 nnoremap <leader>d :action SelectInProjectView<CR>
