@@ -14,10 +14,6 @@ apps: ## installs the applications
 cpp: ## sets up c++
 	@ansible-playbook main.yml --tags 'cpp'
 
-.PHONY: erlang
-erlang: ## sets up erlang and elixir
-	@ansible-playbook main.yml --tags 'erlang'
-
 .PHONY: javascript
 javascript: ## sets up javascript
 	@ansible-playbook main.yml --tags 'javascript'

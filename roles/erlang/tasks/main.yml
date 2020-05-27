@@ -1,5 +1,0 @@
-- name: Ensure Erlang is installed
-  homebrew: name=erlang state=present
-
-- name: Ensure Elixir is installed
-  homebrew: name=elixir state=present

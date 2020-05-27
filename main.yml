@@ -6,6 +6,5 @@
     - { role: apps, tags: 'apps' }
     - { role: cpp, tags: 'cpp' }
     - { role: dotfiles, tags: 'dotfiles' }
-    - { role: erlang, tags: 'erlang' }
     - { role: javascript, tags: 'javascript' }
     - { role: python, tags: 'python' }

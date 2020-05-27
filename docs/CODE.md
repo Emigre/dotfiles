@@ -2,10 +2,10 @@
 
 |                             | IDE      | code analysis and completion   | autoformat                         | lint                                      |
 |:----------------------------|:---------|:-------------------------------|:-----------------------------------|:------------------------------------------|
-| C and C++                   | CLion    | ?                              | ?                                  | ?                                         |
-| JavaScript and TypeScript   | IntelliJ | tsc (IDE), js graphql (plugin) | prettier (plugin)                  | eslint (IDE)                              |
+| C++                         | CLion    | ?                              | ?                                  | ?                                         |
 | Python                      | PyCharm  | ?                              | ?                                  | ?                                         |
-| Swift and Objective-C       | AppCode  | ?                              | ?                                  | ?                                         |
+| Swift / Objective-C         | AppCode  | ?                              | ?                                  | ?                                         |
+| TypeScript                  | IntelliJ | tsc (IDE), js graphql (plugin) | prettier (plugin)                  | eslint (IDE)                              |
 
 In Preferences > Tools > File Watchers add all files that need to be formatted on save, such as Typescript, Typescript JSX and Javascript for Prettier. For each, in 'Scope' select 'Current File'.
 
