@@ -31,7 +31,7 @@ In Preferences > Tools > File Watchers for every file type that needs to be form
 - In Working direectory write `$FileDir$`
 - Uncheck 'Auto-save edited files to trigger the watcher'
 
-### IntelliJ
+### IntelliJ / WebStorm
 
 |                              | TypeScript                                           |
 |:-----------------------------|:-----------------------------------------------------|
