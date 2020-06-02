@@ -113,8 +113,6 @@ In Preferences:
 		- Tag foreground color: #34E210
 		- Text highlight color: #286E17
 
-AceJump v3.6.1 can't save colors, see (#226)[https://github.com/acejump/AceJump/issues/226]. Follow [CHANGELOG](https://github.com/acejump/AceJump/blob/master/CHANGES.md) for releases.
-
 ## Sublime Text
 
 Symlink `subl` if necessary: `ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`
