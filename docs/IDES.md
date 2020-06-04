@@ -21,7 +21,7 @@
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 ```
 
-1. Install each IDE with brew (`brew cask install clion`, `brew cask install appcode`, `brew cask install intellij-idea`, `brew cask install webstorm`...).
+1. Install each IDE with brew (`brew cask install clion`, `brew cask install appcode`, `brew cask install webstorm`, `brew cask install intellij-idea`...).
 
 2. In Preferences > Plugins install `IdeaVim`, `AceJump` and `File Watchers`
 
@@ -37,11 +37,11 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Editor Actions > Down                                             | Ctrl-J         | IDE       | Remove ^N                           |
 | Editor Actions > Enter                                            | Ctrl-M         | Vim       |                                     |
 | Editor Actions > Escape                                           | Ctrl-[         | Vim       |                                     |
-| Editor Actions > Focus Editor                                     | Ctrl-[         | Vim       |                                     |
-| Editor Actions > Left                                             | Ctrl-H         | IDE       | Remove ^B                           |
+| Editor Actions > Focus Editor                                     | Ctrl-I         | Vim       |                                     |
+| Editor Actions > Left                                             | Ctrl-H         | Vim       | Remove ^B                           |
 | Editor Actions > Move Caret to Line End                           | ---            | ---       | Remove ^E                           |
 | Editor Actions > Right                                            | Ctrl-L         | IDE       | Remove ^F                           |
-| Editor Actions > Tab                                              | Ctrl-I         | IDE       | Unassign from others                |
+| Editor Actions > Tab                                              | Ctrl-I         | Vim       |                                     |
 | Editor Actions > Up                                               | Ctrl-K         | IDE       |                                     |
 | Main menu > Edit > Find > Find in Path                            | Ctrl-Cmd-F     | IDE       | Remove ⇧⌘F and unassign from others |
 | Main menu > Navigate > Search Everywhere                          | Ctrl-F         | IDE       |                                     |
@@ -50,7 +50,7 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Main menu > View > Recent Files                                   | Ctrl-O, Ctrl-E | Vim, IDE  | Remove ⌘E                           |
 | Main menu > View > Recent Locations                               | Ctrl-Shift-E   | IDE       | Remove ⇧⌘E                          |
 | Main menu > View > Toggle Changed Only Files                      | Ctrl-E         | IDE       | Remove ⌘E                           |
-| Main menu > Window > Active Tool Window > Hide Active Tool Window | ---            | ---       | Remove ⇧Esc                         |
+| Main menu > Window > Active Tool Window > Hide Active Tool Window | Ctrl-[         | Vim       | Remove ⇧Esc                         |
 
 In the menu bar:
 - View > Appearance:
@@ -59,11 +59,14 @@ In the menu bar:
 In the Project Tool:
 	- Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
 	- Move the tool to the right side
-	- Do NOT select 'Always Select Opened File' or 'Open Files With Single Click'
+	- Do NOT select 'Open Files With Single Click'
+	- Do Select 'Always Select Opened File'
 
 In Preferences:
-- Appearance & Behaviour:
+- Appearance & Behavior:
 	- File Colors: Remove all  the local colors from the Local colors list
+	- Appearance:
+		- Select 'Always show full path in window header'
 - Editor:
 	- Inlay Hints: Deselect 'Show hints for' so none are selected
 	- General:
@@ -71,6 +74,8 @@ In Preferences:
 		- Select Delete trailing spaces on caret line
 		- Select Ensure an empty line at the end of a file on Save
 		- Deselect Highlight lines with whitespace-only modifications with a different color
+		- Auto import:
+			- Deselect all
 		- Appearance:
 			- Deselect Show line numbers
 			- Deselect Show hard wrap and visual guides
@@ -90,6 +95,7 @@ In Preferences:
 				- Deselect everything
 	- Code Editing
 		- For 'The Next Error goes through', select 'All problems'
+	- Font: Set 'Size' 12 and 'Line spacing' 1.1
 	- Color Scheme > General:
 		- Matched brance: no background
 		- TODO defaults: no effect, no background, no foreground, no stripe mark
@@ -105,13 +111,16 @@ In Preferences:
 		- Unknown: #909090
 - Languages & Frameworks:
 	- Markdown:
-		- Default Layout: Editor only
+		- Default Layout: Editor and preview
 - Tools:
 	- AceJump:
 		- Jump mode color: #34E210
 		- Tag background color: #208C0A
 		- Tag foreground color: #34E210
 		- Text highlight color: #286E17
+
+After a 'Find in Path' command, in the ocurrences tool window:
+- In 'Group by' sleect 'Package'
 
 ## Sublime Text
 

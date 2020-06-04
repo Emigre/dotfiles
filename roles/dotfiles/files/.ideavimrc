@@ -39,10 +39,12 @@ vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
 
-nnoremap <leader>c :action CommentByLineComment<CR>
-vnoremap <leader>c :action CommentByLineComment<CR>
-nnoremap <leader>d :action SelectInProjectView<CR>
-nnoremap <leader>f :action ShowNavBar<CR>
+" comment
+nnoremap <leader>c<Space> :action CommentByLineComment<CR>
+vnoremap <leader>c<Space> :action CommentByLineComment<CR>
+nnoremap <leader>cc :action CommentByLineComment<CR>
+vnoremap <leader>cc :action CommentByBlockComment<CR>
+
 nnoremap <leader>g :action Annotate<CR>
 nnoremap <leader>G :action ActivateVersionControlToolWindow<CR>
 nnoremap <leader>h :set hlsearch!<CR>
@@ -52,22 +54,28 @@ nnoremap <leader>M :action ShowPopupMenu<CR>
 nnoremap <leader>o :action SplitVertically<CR>
 nnoremap <leader>P :action CopyFileReference<CR>
 nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
-nnoremap <leader>q :action HideActiveWindow<CR>
-nnoremap <leader>Q :action HideAllWindows<CR>
 nnoremap <leader>s :%s/
 
 " Navigation
 
+nnoremap <leader>d :action HideAllWindows<CR>
+nnoremap <leader>D :action SelectInProjectView<CR>
+
+nnoremap <leader>f :action ShowNavBar<CR>
+nnoremap <leader>F :action ActivateFindToolWindow<CR>
+
 map f :action AceAction<CR>
+
+" Code navigation
+
 nnoremap ' :action GotoPreviousError<CR>
 nnoremap ; :action GotoNextError<CR>
 
 nnoremap <leader>; :action GotoDeclaration<CR>
 nnoremap <leader>: :action EditSource<CR>
-nnoremap <leader>u :action FindUsages<CR>
-nnoremap <leader>U :action ShowUsages<CR>
 
 nnoremap <Leader>jc :action CallHierarchy<CR>
+nnoremap <Leader>jf :action FileStructurePopup<CR>
 nnoremap <Leader>jh :action TypeHierarchy<CR>
 nnoremap <Leader>ji :action GotoImplementation<CR>
 nnoremap <Leader>jm :action MethodHierarchy<CR>
@@ -78,12 +86,12 @@ nnoremap <Leader>ju :action ShowUmlDiagramPopup<CR>
 " Type info
 
 nnoremap t :action QuickJavaDoc<CR>
-nnoremap T :action ExpressionTypeInfo<CR>
-nnoremap r :action GotoRelated<CR>
-nnoremap R :action FileStructurePopup<CR>
+nnoremap T :action QuickTypeDefinition<CR>
 
-nnoremap <leader>t :action QuickTypeDefinition<CR>
+nnoremap r :action GotoRelated<CR>
+nnoremap R :action FindUsages<CR>
 nnoremap <leader>r :action QuickImplementations<CR>
+
 nnoremap <leader>e :action ShowErrorDescription<CR>
 nnoremap <leader>w :action ParameterInfo<CR>
 
