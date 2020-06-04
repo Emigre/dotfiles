@@ -21,7 +21,7 @@
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 ```
 
-1. Install each IDE with brew (`brew cask install clion`, `brew cask install appcode`, `brew cask install webstorm`, `brew cask install intellij-idea`...).
+1. Install each IDE with brew (`brew cask install clion`, `brew cask install appcode`, `brew cask install webstorm`, `brew cask install intellij-idea`, `brew cask install pycharm`...).
 
 2. In Preferences > Plugins install `IdeaVim`, `AceJump` and `File Watchers`
 

@@ -57,3 +57,11 @@ In Preferences > Editor > Inspections: disable the 'JavaScript and TypScript' an
 | code linting                 | ---                                                  |
 
 To setup the language server, install the `Intellij-LSP` plugin and compile and install `ghcide` with `stack`. Locate the `ghcide` executable for hs files in the LSP preferences window and set `--lsp` as a parameter.
+
+### PyCharm
+
+|                              | Python                                               |
+|:-----------------------------|:-----------------------------------------------------|
+| code analysis and completion | ?                                                    |
+| auto format                  | ?                                                    |
+| code linting                 | ?                                                    |
