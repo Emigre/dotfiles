@@ -58,9 +58,9 @@ In the menu bar:
 
 In the Project Tool:
 	- Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
+	- Select or unselect 'Show Excluded Files' to show or hide those folders in the Project Files Tool Window
 	- Move the tool to the right side
-	- Do NOT select 'Open Files With Single Click'
-	- Do Select 'Always Select Opened File'
+	- Do NOT select 'Open Files With Single Click' nor 'Always Select Opened File'
 
 In Preferences:
 - Appearance & Behavior:

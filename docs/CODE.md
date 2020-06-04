@@ -31,7 +31,7 @@ In Preferences > Tools > File Watchers for every file type that needs to be form
 - In Working direectory write `$FileDir$`
 - Uncheck 'Auto-save edited files to trigger the watcher'
 
-### IntelliJ / WebStorm
+### WebStorm
 
 |                              | TypeScript                                           |
 |:-----------------------------|:-----------------------------------------------------|
@@ -47,3 +47,13 @@ In Preferences > Tools > File Watchers for every file type that needs to be form
 - Keep the defaults, the program should be `$ProjectFileDir$/node_modules/.bin/prettier`
 
 In Preferences > Editor > Inspections: disable the 'JavaScript and TypScript' and 'Proofreading' inspections and change all 'Warning' and 'Error' inspections to 'Weak Warning'.
+
+### IntelliJ
+
+|                              | Haskell                                              |
+|:-----------------------------|:-----------------------------------------------------|
+| code analysis and completion | ghcide                                               |
+| auto format                  | ---                                                  |
+| code linting                 | ---                                                  |
+
+To setup the language server, install the `Intellij-LSP` plugin and compile and install `ghcide` with `stack`. Locate the `ghcide` executable for hs files in the LSP preferences window and set `--lsp` as a parameter.
