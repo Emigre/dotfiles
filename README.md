@@ -1,6 +1,6 @@
 # Dotfiles
 
-1. Install [homebrew](https://brew.sh/) and then git, Ansible, Firefox and Caffeine with it: `brew cask install git ansible firefox caffeine`. In Firefox, install and log in to the LastPass and Raindrop extensions
+1. Install [homebrew](https://brew.sh/) and then git, Ansible and Firefox with it: `brew cask install git ansible firefox`. In Firefox, install and log in to the LastPass and Raindrop extensions
 
 2. [Configure access to GitHub](docs/GITHUB.md), clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git $HOME/dotfiles`
 

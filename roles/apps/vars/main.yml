@@ -26,7 +26,6 @@ homebrew_packages:
   - wget
 
 homebrew_cask_apps:
-  - caffeine
   - discord
   - dropbox
   - evernote
