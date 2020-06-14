@@ -85,8 +85,8 @@ nnoremap <Leader>ju :action ShowUmlDiagramPopup<CR>
 
 " Type info
 
-nnoremap t :action QuickJavaDoc<CR>
-nnoremap T :action QuickTypeDefinition<CR>
+nnoremap t :action QuickTypeDefinition<CR>
+nnoremap T :action QuickJavaDoc<CR>
 
 nnoremap r :action GotoRelated<CR>
 nnoremap R :action FindUsages<CR>
