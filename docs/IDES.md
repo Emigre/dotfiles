@@ -48,7 +48,7 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
 | Main menu > View > Jump to Source                                 | Ctrl-M         | Vim       |                                     |
 | Main menu > View > Recent Files                                   | Ctrl-O, Ctrl-E | Vim, IDE  | Remove ⌘E                           |
-| Main menu > View > Recent Locations                               | Ctrl-Shift-E   | IDE       | Remove ⇧⌘E                          |
+| Main menu > View > Recent Locations                               | Ctrl-Shift-E   | ---       | Remove ⇧⌘E                          |
 | Main menu > View > Toggle Changed Only Files                      | Ctrl-E         | IDE       | Remove ⌘E                           |
 | Main menu > Window > Active Tool Window > Hide Active Tool Window | Ctrl-[         | Vim       | Remove ⇧Esc                         |
 
@@ -57,18 +57,20 @@ In the menu bar:
 	- Disable Tool Window Bars
 
 In the Project Tool:
-	- Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
-	- Select or unselect 'Show Excluded Files' to show or hide those folders in the Project Files Tool Window
-	- Move the tool to the right side
-	- Do NOT select 'Open Files With Single Click' nor 'Always Select Opened File'
+- Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
+- Select or unselect 'Show Excluded Files' to show or hide those folders in the Project Files Tool Window
+- Move the tool to the right side
+- Do NOT select 'Open Files With Single Click' nor 'Always Select Opened File'
 
 In Preferences:
 - Appearance & Behavior:
-	- File Colors: Remove all  the local colors from the Local colors list
+	- File Colors:
+		- Remove all  the local colors from the Local colors list
 	- Appearance:
 		- Select 'Always show full path in window header'
 - Editor:
-	- Inlay Hints: Deselect 'Show hints for' so none are selected
+	- Inlay Hints:
+		- Deselect 'Show hints for' so none are selected
 	- General:
 		- Strip trailing spaces on Save: select 'All'
 		- Select Delete trailing spaces on caret line
@@ -92,35 +94,37 @@ In Preferences:
 		- Smart Keys:
 			- Deselect 'Insert paired brackets' and 'Insert pair quote'
 			- HTML/CSS:
-				- Deselect everything
+				- Deselect everything except Simultaneous tag editing
 	- Code Editing
 		- For 'The Next Error goes through', select 'All problems'
 	- Font: Set 'Size' 12 and 'Line spacing' 1.1
 	- Color Scheme > General:
-		- Matched brance: no background
+		- Matched brace: no background
 		- TODO defaults: no effect, no background, no foreground, no stripe mark
 		- Caret row: no background
 		- Warning: no effect, error stripe mark #9876AA, background #3B3A54
 		- Weak Warning: effect underwaved #9876AA, no stripe mark
 		- Error: no effect, error stripe mark #9E2927, background #45262D
 - Version Control > File Status Colors:
-		- Deleted: #D5756C
-		- Deleted from filesystem: #D5756C
-		- Ignored: #666666
-		- Renamed: #6897BB
-		- Unknown: #909090
+	- Deleted: #D5756C
+	- Deleted from filesystem: #D5756C
+	- Ignored: #666666
+	- Renamed: #6897BB
+	- Unknown: #909090
 - Languages & Frameworks:
 	- Markdown:
-		- Default Layout: Editor and preview
+		- Default Layout: Editor only
 - Tools:
 	- AceJump:
 		- Jump mode color: #34E210
 		- Tag background color: #208C0A
 		- Tag foreground color: #34E210
 		- Text highlight color: #286E17
+	- Web Browsers:
+		- Disable Show browser popup in the editor
 
 After a 'Find in Path' command, in the ocurrences tool window:
-- In 'Group by' sleect 'Package'
+- In 'Group by' select 'Package'
 
 ## Sublime Text
 
