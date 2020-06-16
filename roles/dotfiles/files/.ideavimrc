@@ -58,8 +58,8 @@ nnoremap <leader>s :%s/
 
 " Navigation
 
-nnoremap <leader>d :action HideAllWindows<CR>
-nnoremap <leader>D :action SelectInProjectView<CR>
+nnoremap <leader>d :action SelectInProjectView<CR>
+nnoremap <leader>D :action HideAllWindows<CR>
 
 nnoremap <leader>f :action ShowNavBar<CR>
 nnoremap <leader>F :action ActivateFindToolWindow<CR>
