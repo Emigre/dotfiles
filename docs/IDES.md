@@ -42,19 +42,19 @@ Set these keys in Preferences > Keymap and the default in Editor > Vim emulation
 | Editor Actions > Move Caret to Line End                           | ---            | ---       | Remove ^E                           |
 | Editor Actions > Right                                            | Ctrl-L         | IDE       | Remove ^F                           |
 | Editor Actions > Tab                                              | Ctrl-I         | Vim       |                                     |
-| Editor Actions > Up                                               | Ctrl-K         | IDE       |                                     |
+| Editor Actions > Up                                               | Ctrl-K         | IDE       | Remove ^P                           |
 | Main menu > Edit > Find > Find in Path                            | Ctrl-G         | IDE       | Remove ⇧⌘F and unassign from others |
-| Main menu > Navigate > Search Everywhere                          | Ctrl-F         | IDE       |                                     |
-| Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
 | Main menu > View > Jump to Source                                 | Ctrl-M         | Vim       |                                     |
 | Main menu > View > Recent Files                                   | Ctrl-O, Ctrl-E | Vim, IDE  | Remove ⌘E                           |
-| Main menu > View > Recent Locations                               | Ctrl-Shift-E   | ---       | Remove ⇧⌘E                          |
+| Main menu > View > Recent Locations                               | Cmd-Ctrl-E     | ---       | Remove ⇧⌘E                          |
 | Main menu > View > Toggle Changed Only Files                      | Ctrl-E         | IDE       | Remove ⌘E                           |
+| Main menu > Navigate > Search Everywhere                          | Ctrl-F         | IDE       |                                     |
+| Main menu > Navigate > Go To File                                 | Ctrl-P         | IDE       | Remove ⇧⌘O and unassign from others |
 | Main menu > Window > Active Tool Window > Hide Active Tool Window | Ctrl-[         | Vim       | Remove ⇧Esc                         |
 
 In the menu bar:
 - View > Appearance:
-	- Disable Tool Window Bars
+	- Disable Tool Window Bars, Status Bar and Navigation Bar
 
 In the Project Tool:
 - Right click and 'Mark Directory as Excluded' any folder that should not be searched in (coverage, build...)
