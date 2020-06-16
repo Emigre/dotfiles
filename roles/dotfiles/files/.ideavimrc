@@ -75,12 +75,13 @@ nnoremap <leader>; :action GotoDeclaration<CR>
 nnoremap <leader>: :action EditSource<CR>
 
 nnoremap <Leader>jc :action CallHierarchy<CR>
+nnoremap <Leader>jd :action GotoTypeDeclaration<CR>
 nnoremap <Leader>jf :action FileStructurePopup<CR>
 nnoremap <Leader>jh :action TypeHierarchy<CR>
 nnoremap <Leader>ji :action GotoImplementation<CR>
 nnoremap <Leader>jm :action MethodHierarchy<CR>
 nnoremap <Leader>js :action GotoSuperMethod<CR>
-nnoremap <Leader>jt :action GotoTypeDeclaration<CR>
+nnoremap <Leader>jt :action GotoTest<CR>
 nnoremap <Leader>ju :action ShowUmlDiagramPopup<CR>
 
 " Type info
