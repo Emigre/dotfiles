@@ -3,7 +3,7 @@ set clipboard=unnamedplus
 set nohlsearch
 set ignorecase
 set incsearch
-set novisualbell
+set visualbell
 set noerrorbells
 set ideajoin
 
