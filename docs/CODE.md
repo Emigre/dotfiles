@@ -25,7 +25,7 @@ In Preferences > Tools > File Watchers for every file type that needs to be form
 - Give it a name
 - In 'File type', select the file type
 - In 'Scope' select 'Current File'
-- In 'Program' write `/usr/local/bin/clang-format`
+- In 'Program' write `/usr/local/opt/llvm/bin/clang-format` (installed by brew) or `/usr/local/bin/clang-format`
 - In 'Arguments' write `-style=file -i $FileName$`
 - In Output paths to refresh write `$FileName$`
 - In Working direectory write `$FileDir$`
