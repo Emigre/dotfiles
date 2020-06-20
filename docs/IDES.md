@@ -105,6 +105,8 @@ In Preferences:
 		- Warning: no effect, error stripe mark #9876AA, background #3B3A54
 		- Weak Warning: effect underwaved #9876AA, no stripe mark
 		- Error: no effect, error stripe mark #9E2927, background #45262D
+	- Inspections:
+		- Disable 'Proofreading'
 - Version Control > File Status Colors:
 	- Deleted: #D5756C
 	- Deleted from filesystem: #D5756C
