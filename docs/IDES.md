@@ -82,6 +82,8 @@ In Preferences:
 			- Deselect Show line numbers
 			- Deselect Show hard wrap and visual guides
 			- Deselect Show intention bulb
+		- Code Completion:
+			- Disable Machine Learning-Assisted Completion if it helps performance (?)
 		- Code Folding:
 			- Deselect any code folding
 		- Gutter Icons:

@@ -28,18 +28,14 @@ vnoremap q :q<CR>
 nnoremap s :w<CR>
 vnoremap s :w<CR>
 
-" uses the default delete as cut
 nnoremap K d
 nnoremap KK Vx
 vnoremap K x
-
-" do not cut when deleting with d
 nnoremap d "_d
 vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
 
-" comment
 nnoremap <leader>c<Space> :action CommentByLineComment<CR>
 vnoremap <leader>c<Space> :action CommentByLineComment<CR>
 nnoremap <leader>cc :action CommentByLineComment<CR>
@@ -47,16 +43,18 @@ vnoremap <leader>cc :action CommentByBlockComment<CR>
 
 nnoremap <leader>g :action Annotate<CR>
 nnoremap <leader>G :action ActivateVersionControlToolWindow<CR>
-nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>i :action NextSplitter<CR>
-nnoremap <leader>m :action ShowIntentionActions<CR>
-nnoremap <leader>M :action ShowPopupMenu<CR>
+nnoremap <leader>m :action ShowPopupMenu<CR>
+nnoremap <leader>n :set hlsearch!<CR>
 nnoremap <leader>o :action SplitVertically<CR>
 nnoremap <leader>P :action CopyFileReference<CR>
 nnoremap <leader>p :action CopyPathFromRepositoryRootProvider<CR>
 nnoremap <leader>s :%s/
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Navigation
+
+map f :action AceAction<CR>
 
 nnoremap <leader>d :action SelectInProjectView<CR>
 nnoremap <leader>D :action HideAllWindows<CR>
@@ -64,12 +62,17 @@ nnoremap <leader>D :action HideAllWindows<CR>
 nnoremap <leader>f :action ShowNavBar<CR>
 nnoremap <leader>F :action ActivateFindToolWindow<CR>
 
-map f :action AceAction<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Code navigation
 
+nnoremap r :action ShowIntentionActions<CR>
+nnoremap R :action FindUsages<CR>
+
 nnoremap ' :action GotoPreviousError<CR>
 nnoremap ; :action GotoNextError<CR>
+
+nnoremap <leader>h :action GotoRelated<CR>
 
 nnoremap <leader>; :action GotoDeclaration<CR>
 nnoremap <leader>: :action EditSource<CR>
@@ -84,34 +87,43 @@ nnoremap <Leader>js :action GotoSuperMethod<CR>
 nnoremap <Leader>jt :action GotoTest<CR>
 nnoremap <Leader>ju :action ShowUmlDiagramPopup<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Type info
 
 nnoremap t :action QuickJavaDoc<CR>
 nnoremap T :action QuickTypeDefinition<CR>
 
-nnoremap r :action GotoRelated<CR>
-nnoremap R :action FindUsages<CR>
-nnoremap <leader>r :action QuickImplementations<CR>
-
 nnoremap <leader>e :action ShowErrorDescription<CR>
+nnoremap <leader>r :action QuickImplementations<CR>
 nnoremap <leader>w :action ParameterInfo<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Build and debug
 
-nnoremap <Leader>bB :action Compile<CR>
-nnoremap <Leader>bb :action CompileDirty<CR>
+nnoremap <Leader>bm :action NavBarToolBar<CR>
+
+nnoremap <Leader>bb :action Build<CR>
+nnoremap <Leader>bB :action BuildMenu<CR>
+
+nnoremap <Leader>br :action Run<CR>
+nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
+
+nnoremap <Leader>bd :action Debug<CR>
+nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
+
+nnoremap <Leader>bk :action ViewBreakpoints<CR>
+nnoremap <Leader>bp :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>bP :action EditBreakpoint<CR>
+
 nnoremap <Leader>bc :action CreateRunConfiguration<CR>
 nnoremap <Leader>bC :action editRunConfigurations<CR>
-nnoremap <Leader>bD :action ChooseDebugConfiguration<CR>
-nnoremap <Leader>bd :action Debug<CR>
-nnoremap <Leader>bk :action ViewBreakpoints<CR>
-nnoremap <Leader>bL :action DebugClass<CR>
+
 nnoremap <Leader>bl :action RunClass<CR>
-nnoremap <Leader>bm :action NavBarToolBar<CR>
-nnoremap <Leader>bP :action EditBreakpoint<CR>
-nnoremap <Leader>bp :action ToggleLineBreakpoint<CR>
-nnoremap <Leader>bR :action ChooseRunConfiguration<CR>
-nnoremap <Leader>br :action Run<CR>
+nnoremap <Leader>bL :action DebugClass<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Extract and generate
 
@@ -134,7 +146,9 @@ nnoremap <Leader>xO :action OverrideMethods<CR>
 nnoremap <Leader>xI :action ImplementMethods<CR>
 nnoremap <Leader>xD :action DelegateMethods<CR>
 
-" Refactor and fix
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Refactor
 
 nnoremap <Leader>zl :action Inline<CR>
 nnoremap <Leader>zr :action RenameElement<CR>
@@ -146,4 +160,3 @@ nnoremap <Leader>zm :action Move<CR>
 nnoremap <Leader>zc :action CopyElement<CR>
 nnoremap <Leader>zf :action ReformatCode<CR>
 nnoremap <Leader>zi :action OptimizeImports<CR>
-nnoremap <Leader>zn :action ShowIntentionActions<CR><Esc>

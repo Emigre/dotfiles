@@ -1,9 +1,12 @@
 alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
-alias n="$HOME/navi/navi"
 alias tree='tree -I "node_modules|build|target|dist|bin"'
-alias vi='nvim'
-alias vim='nvim'
+
+alias vi="XDG_CONFIG_HOME=$HOME/vim nvim"
+alias vim="XDG_CONFIG_HOME=$HOME/vim nvim"
+alias nvim="XDG_CONFIG_HOME=$HOME/vim nvim"
+
+alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
 
 # Ensure the xterm ctrl-arrow combinations function
 bindkey "\e[1;5C" forward-word
