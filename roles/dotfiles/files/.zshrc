@@ -8,6 +8,8 @@ alias nvim="XDG_CONFIG_HOME=$HOME/vim nvim"
 
 alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
 
+alias ranger="python3 $HOME/vim/ranger/ranger.py"
+
 # Ensure the xterm ctrl-arrow combinations function
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
