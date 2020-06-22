@@ -7,9 +7,10 @@ if ! [ -n "$TMUX" ]; then
   # of .zshenv, but also sets SHELL as /bin/sh
   # so the value has to be set to /bin/zsh here as a default
   export SHELL='/bin/zsh'
-  export EDITOR='/usr/local/bin/nvim'
+  export EDITOR='nvim'
 
   export PATH="$PATH:$HOME/.local/bin"
+  export PATH="$PATH:$HOME/vim/scripts"
 
   # LaTeX
   export PATH="$PATH:/Library/Tex/textbin"
