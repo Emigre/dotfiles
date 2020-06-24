@@ -10,6 +10,6 @@
 
 5. Run other targets in the dotfiles folder to configure each desired programming language
 
-6. Clone the [vim repo](https://github.com/Emigre/vim) and configure Neovim following the instructions in the README, or follow [this document](docs/IDES.md) to configure the IDEs
+6. Clone the [vim repo](https://github.com/Emigre/vim) and configure Neovim following the instructions in the README
 
 7. If necessary install other applications that have not had their installation automated, like the Adobe Creative Suite, Steam or Unity
