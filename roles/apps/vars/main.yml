@@ -6,6 +6,7 @@ homebrew_taps:
 
 homebrew_packages:
   - ack
+  - ag
   - ansible
   - arp-scan
   - carthage
