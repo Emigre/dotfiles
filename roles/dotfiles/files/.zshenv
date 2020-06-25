@@ -47,6 +47,7 @@ if ! [ -n "$TMUX" ]; then
 
   # Haskell
   export PATH="/usr/local/opt/ghc@8.6/bin:$PATH"
+  export PATH="$PATH:$HOME/.cabal/bin"
   # For compilers to find ghc@8.6 you may need to set:
   #  export LDFLAGS="-L/usr/local/opt/ghc@8.6/lib"
 
