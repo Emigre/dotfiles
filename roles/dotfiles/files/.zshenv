@@ -16,7 +16,7 @@ if ! [ -n "$TMUX" ]; then
   export PATH="$PATH:/Library/Tex/textbin"
 
   # C++
-  export OF_ROOT="$HOME/code/cpp/openFrameworks"
+  export OF_ROOT="$HOME/code/openframeworks"
 
   # Java
   export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home'
