@@ -7,6 +7,7 @@
 - In Preferences > Appearance
   - In General, select the 'Minimal' Theme
 - In Preferences > Profiles
+  - Terminal, disable 'Enable Mouse Reporting'
   - In the 'Window' menu, select 'Full-Height Left of Screen' in the 'Style' selector
   - In the profile 'Keys'
     - Ensure that the 'xterm Defaults' preset is on
@@ -15,4 +16,6 @@
   - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
 - In Preferences > Pointer
   - Remove the defaults
+- In Preferences > Advanced
+  - Scroll wheel sends arrow keys when in alternate screen mode
 - In the iTerm2 menu, select 'Make iTerm2 Default Term'
