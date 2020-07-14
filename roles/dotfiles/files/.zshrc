@@ -8,7 +8,12 @@ alias nvim="XDG_CONFIG_HOME=$HOME/vim nvim"
 alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
 alias ranger="python3 $HOME/vim/ranger/ranger.py"
 
+function create() {
+  grep -m 1 -i "^$1" ~/vim/gists | awk -F"," '{print "curl -# " $3 " -w \"\n\" > " $2}' | bash
+}
+
 alias cm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+
 alias tsx='npx tsc -p tsconfig.json --pretty'
 alias tst='npx jest'
 
