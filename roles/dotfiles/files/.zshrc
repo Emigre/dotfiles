@@ -9,6 +9,7 @@ alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
 alias ranger="python3 $HOME/vim/ranger/ranger.py"
 
 alias tscheck='npx tsc -p tsconfig.json --pretty'
+alias cm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 
 # Ensure the xterm ctrl-arrow combinations function
 bindkey "\e[1;5C" forward-word
