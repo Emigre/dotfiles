@@ -12,8 +12,9 @@
   - In the profile 'Keys'
     - Ensure that the 'xterm Defaults' preset is on
     - Ensure that both option keys are mapped to Esc+
-- In Preferences > Keys
-  - Set `Command` + `K` and `Command` + `R` to 'Ignore' in 'Key Mappings'
+- In Preferences > Keys > Key Bindings
+  - Set-up the terminal to use Command plus h, j, k, l as 'Send text with Vim special characters', with '\<M-h>' and so on as the value
+  - Set Command plus R to 'Ignore'
 - In Preferences > Pointer
   - Remove the defaults
 - In Preferences > Advanced
