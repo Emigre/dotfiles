@@ -7,11 +7,7 @@ alias vim="XDG_CONFIG_HOME=$HOME/vim nvim"
 alias nvim="XDG_CONFIG_HOME=$HOME/vim nvim"
 alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
 alias ranger="python3 $HOME/vim/ranger/ranger.py"
-
-function create() {
-  if [ $# -eq 0 ]; then; cat ~/vim/gists | awk -F"," '{ print "- " $1 }' | sort; return; fi
-  grep -m 1 -i "^$1" ~/vim/gists | awk -F"," '{print "curl -# " $3 " -w \"\n\" > " $2}' | bash
-}
+alias create="$HOME/vim/create/create"
 
 alias cm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
 
