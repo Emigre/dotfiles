@@ -5,6 +5,7 @@
 ## System Preferences
 
 - In Keyboard
+  - Under Keyboard check 'Use F1, F2, etc. keys as standard function keys'
   - Click on 'Modifier Keys...' and Select '^ Control' for the 'Caps Lock Key'
   - Under Shortcuts uncheck 'Mission Control'
 - In Trackpad
