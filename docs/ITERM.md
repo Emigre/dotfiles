@@ -7,13 +7,13 @@
 - In Preferences > Appearance
   - In General, select the 'Minimal' Theme
 - In Preferences > Profiles
-  - Terminal, disable 'Enable Mouse Reporting'
   - In the 'Window' menu, select 'Full-Height Left of Screen' in the 'Style' selector
   - In the profile 'Keys'
     - Ensure that the 'xterm Defaults' preset is on
     - Ensure that both option keys are mapped to Esc+
 - In Preferences > Keys > Key Bindings
-  - Set Command plus R to 'Ignore'
+  - Set Cmd + r and Cmd + k to 'Ignore'
+  - Delete Cmd + Up (Scroll One Line Up) and Cmd + Down (Scroll One Line Down)
 - In Preferences > Pointer
   - Remove the defaults
 - In Preferences > Advanced
