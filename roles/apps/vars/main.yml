@@ -13,6 +13,7 @@ homebrew_packages:
   - coreutils
   - git
   - hexedit
+  - ngrep
   - htop
   - httperf
   - jq
