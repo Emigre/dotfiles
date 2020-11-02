@@ -30,7 +30,6 @@ homebrew_packages:
 
 homebrew_cask_apps:
   - discord
-  - dropbox
   - evernote
   - expressvpn
   - firefox
@@ -40,6 +39,7 @@ homebrew_cask_apps:
   - keybase
   - mactex-no-gui
   - postman
+  - sync
   - skype
   - slack
   - sublime-text
