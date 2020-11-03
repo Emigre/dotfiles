@@ -29,7 +29,9 @@ homebrew_packages:
   - wget
 
 homebrew_cask_apps:
+  - cryptomator
   - discord
+  - dropbox
   - evernote
   - expressvpn
   - firefox
