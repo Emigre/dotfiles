@@ -30,6 +30,7 @@ homebrew_packages:
 
 homebrew_cask_apps:
   - cryptomator
+  - daisydisk
   - discord
   - dropbox
   - evernote
