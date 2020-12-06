@@ -1,7 +1,5 @@
 .DEFAULT_GOAL := help
 
-# ===
-
 .PHONY: dotfiles
 dotfiles: ## configures the dotfiles
 	@ansible-playbook main.yml --tags 'dotfiles'
@@ -9,20 +7,6 @@ dotfiles: ## configures the dotfiles
 .PHONY: apps
 apps: ## installs the applications
 	@ansible-playbook main.yml --tags 'apps'
-
-.PHONY: cpp
-cpp: ## sets up c++
-	@ansible-playbook main.yml --tags 'cpp'
-
-.PHONY: javascript
-javascript: ## sets up javascript
-	@ansible-playbook main.yml --tags 'javascript'
-
-.PHONY: python
-python: ## sets up python
-	@ansible-playbook main.yml --tags 'python'
-
-# ==
 
 .PHONY: help
 help: ## parse jobs and descriptions from this Makefile

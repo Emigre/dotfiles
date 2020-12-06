@@ -3,8 +3,5 @@
   vars_files:
     - vars/common.yml
   roles:
-    - { role: apps, tags: 'apps' }
-    - { role: cpp, tags: 'cpp' }
-    - { role: dotfiles, tags: 'dotfiles' }
-    - { role: javascript, tags: 'javascript' }
-    - { role: python, tags: 'python' }
+    - { role: apps, tags: "apps" }
+    - { role: dotfiles, tags: "dotfiles" }

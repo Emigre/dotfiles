@@ -2,12 +2,10 @@ alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 
-alias vi="XDG_CONFIG_HOME=$HOME/vim nvim"
-alias vim="XDG_CONFIG_HOME=$HOME/vim nvim"
-alias nvim="XDG_CONFIG_HOME=$HOME/vim nvim"
-alias n="NAVI_PATH=$HOME/vim/navi/cheats $HOME/vim/navi/navi"
-alias ranger="python3 $HOME/vim/ranger/ranger.py"
-alias create="$HOME/vim/create/create"
+alias vi="XDG_CONFIG_HOME=$HOME/vim/config nvim"
+alias vim="XDG_CONFIG_HOME=$HOME/vim/config nvim"
+alias nvim="XDG_CONFIG_HOME=$HOME/vim/config nvim"
+
 alias hexedit='hexedit --color'
 
 alias cm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'

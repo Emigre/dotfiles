@@ -50,3 +50,18 @@ homebrew_cask_apps:
   - vlc
   - whatsapp
   - zoomus
+
+node_packages:
+  # - elm
+  # - flow-bin
+  # - flow-language-server
+  # - graphql-cli
+  # - ignite-cli
+  - live-server
+  # - node-inspect
+  # - nodemon
+  # - n
+  # - pkg
+  # - prettier
+  # - react-native-cli
+  # - swagger

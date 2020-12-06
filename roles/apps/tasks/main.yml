@@ -1,3 +1,5 @@
+# Neovim installed via https://github.com/Emigre/vim.git
+
 - name: Ensure configured taps are tapped
   homebrew_tap: "tap={{ item }} state=present"
   with_items: "{{ homebrew_taps }}"
@@ -13,4 +15,12 @@
     name: ["{{ item }}"]
   with_items: "{{ homebrew_cask_apps }}"
 
-# Neovim installed via https://github.com/Emigre/vim.git
+- name: Ensure Node.js is installed with homebrew
+  homebrew: name=node state=present
+
+- name: Ensure configured global node packages are installed
+  npm: "name={{ item }} state=present global=yes"
+  with_items: "{{ node_packages }}"
+
+- name: Ensure Python is installed
+  homebrew: name=python state=present
