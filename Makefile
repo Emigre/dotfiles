@@ -2,11 +2,11 @@
 
 .PHONY: dotfiles
 dotfiles: ## configures the dotfiles
-	@ansible-playbook main.yml --tags 'dotfiles'
+	@ansible-playbook -i localhost, dotfiles.yaml
 
 .PHONY: apps
 apps: ## installs the applications
-	@ansible-playbook main.yml --tags 'apps'
+	@ansible-playbook -i localhost, apps.yaml
 
 .PHONY: help
 help: ## parse jobs and descriptions from this Makefile
