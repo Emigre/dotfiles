@@ -1,7 +1,9 @@
 - name: Dotfiles configuration
   hosts: localhost
   connection: local
-  vars_files: _vars.yaml
+  vars:
+    user: "{{ lookup('env','USER') }}"
+    home: "{{ lookup('env','HOME') }}"
   tasks:
     - name: Ensure the dotfiles repo is cloned
       git:

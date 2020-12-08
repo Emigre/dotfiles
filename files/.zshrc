@@ -2,9 +2,9 @@ alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 alias less='less -R '
 alias tree='tree -I "node_modules|build|target|dist|bin"'
 
-alias vi="XDG_CONFIG_HOME=$HOME/vim/config nvim"
-alias vim="XDG_CONFIG_HOME=$HOME/vim/config nvim"
-alias nvim="XDG_CONFIG_HOME=$HOME/vim/config nvim"
+alias vi="XDG_CONFIG_HOME=$HOME/vim/.config nvim"
+alias vim="XDG_CONFIG_HOME=$HOME/vim/.config nvim"
+alias nvim="XDG_CONFIG_HOME=$HOME/vim/.config nvim"
 
 alias hexedit='hexedit --color'
 

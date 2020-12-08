@@ -1,7 +1,6 @@
 - name: Apps configuration
   hosts: localhost
   connection: local
-  vars_files: _vars.yaml
   tasks:
     # Neovim installed via https://github.com/Emigre/vim.git
 
