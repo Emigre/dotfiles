@@ -38,6 +38,7 @@ if ! [ -n "$TMUX" ]; then
 
   # Python
   export PIP_CONFIG_FILE="$HOME/.pip_conf"
+  export PATH="$PATH:/usr/local/anaconda3/bin"
 
   # Ruby
   export PATH="$PATH:$HOME/.rvm/bin"
