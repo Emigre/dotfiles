@@ -2,11 +2,11 @@
 
 1. Install [homebrew](https://brew.sh/) and then git, Ansible and Firefox with it: `brew cask install git ansible firefox`. In Firefox, install and log in to the LastPass and Raindrop extensions
 
-2. [Configure access to GitHub](docs/GITHUB.md), clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git $HOME/dotfiles`
+2. Configure access to GitHub, clone the dotfiles repo `git clone git@github.com:Emigre/dotfiles.git $HOME/dotfiles`
 
 3. In the dotfiles folder and run `make dotfiles` and then `make apps` to install the software
 
-4. Manually set up [the system preferences](docs/OSX.md), [Firefox](docs/FIREFOX.md) and [iTerm](docs/ITERM.md)
+4. Manually set up the system preferences, Firefox and iTerm
 
 5. Run other targets in the dotfiles folder to configure each desired programming language
 
@@ -70,23 +70,39 @@ Host *
 ## iTerm
 
 - In Preferences > General
-  - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
-  - Check 'Save changes to folder when iTerm2 quits'
-  - Check 'Applications in terminal may access clipboard'
+  - In Preferences
+    - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
+    - Check 'Save changes to folder when iTerm2 quits'
+  - In Selection
+    - Check 'Applications in terminal may access clipboard'
+  - In Closing
+    - Uncheck everything
 - In Preferences > Appearance
-  - In General, select the 'Minimal' Theme
+  - In General
+    - Select the 'Minimal' Theme
 - In Preferences > Profiles
-  - In the 'Window' menu, select 'Full-Height Left of Screen' in the 'Style' selector
-  - In the profile 'Keys'
+  - In General
+    - Set 'Send text at start' to `tmux attach -t init || tmux new -s init`
+  - In Colors
+    - Select the 'Dark Background' color preset
+    - Set 'Foreground' and 'Bold' to `00f900`, 'Cursor' to `07f91d` and 'Selection' to `004703`, or whatever looks good in the screen
+  - In Text
+    - Set 'Font' to `Meslo LG M`, size 10 or whatever looks good in the screen
+  - In Window
+    - In Settings for New Windows, set Columns to 180 and Rows to 40, or whatever looks good in the screen
+  - In Terminal
+    - Check 'Silence bell'
+  - In Keys
     - Ensure that the 'xterm Defaults' preset is on
     - Ensure that both option keys are mapped to Esc+
 - In Preferences > Keys > Key Bindings
   - Set Cmd + r and Cmd + k to 'Ignore'
-  - Delete Cmd + Up (Scroll One Line Up) and Cmd + Down (Scroll One Line Down)
+  - Delete Cmd + Up, Cmd + Down, Ctrl + Left and Ctrl + Right
 - In Preferences > Pointer
-  - Remove the defaults
+  - In Bindings
+    - Remove the defaults
 - In Preferences > Advanced
-  - Scroll wheel sends arrow keys when in alternate screen mode
+  - Set 'Scroll wheel sends arrow keys when in alternate screen mode' to 'Yes'
 - In the iTerm2 menu, select 'Make iTerm2 Default Term'
 
 ## OSX
