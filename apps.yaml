@@ -43,6 +43,7 @@
         name: ["{{ item }}"]
       with_items:
         - anaconda
+        - android-studio
         - cryptomator
         - daisydisk
         - discord
