@@ -1,4 +1,8 @@
 [include]
+  # example .gituser file...
+  # [user]
+  #   name = Name Surname
+  #   email = foo@bar.com
   path = ~/.gituser
 [alias]
   a = "add"
@@ -28,6 +32,9 @@
 [color]
   ui = true
 [core]
+  # Set up git to use the system vim instead of neovim, 
+  # so `.git/COMMIT_MESSAGE` files are not stored int the 
+  # jumplist when editing them.
   editor = "/usr/bin/vim"
   excludesfile = ~/.gitignore_global
   protectHFS = true

@@ -10,7 +10,6 @@ if ! [ -n "$TMUX" ]; then
   export EDITOR='/usr/bin/vim'
 
   export PATH="$PATH:$HOME/.local/bin"
-  export PATH="$PATH:$HOME/vim/scripts"
 
   # LaTeX
   export PATH="$PATH:/Library/Tex/textbin"

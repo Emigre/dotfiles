@@ -1,0 +1,37 @@
+## iTerm
+
+- In Preferences > General
+  - In Preferences
+    - Check 'Load preferences from a custom folder or URL' and set it to `~/.iterm2.d/`
+    - Check 'Save changes to folder when iTerm2 quits'
+  - In Selection
+    - Check 'Applications in terminal may access clipboard'
+  - In Closing
+    - Uncheck everything
+- In Preferences > Appearance
+  - In General
+    - Select the 'Minimal' Theme
+- In Preferences > Profiles
+  - In General
+    - Set 'Send text at start' to `tmux attach -t init || tmux new -s init`
+  - In Colors
+    - Select the 'Dark Background' color preset
+    - Set 'Foreground' and 'Bold' to `00f900`, 'Cursor' to `07f91d` and 'Selection' to `004703`, or whatever looks good in the screen
+  - In Text
+    - Set 'Font' to `Meslo LG M`, size 10 or whatever looks good in the screen
+  - In Window
+    - In Settings for New Windows, set Columns to 180 and Rows to 40, or whatever looks good in the screen
+  - In Terminal
+    - Check 'Silence bell'
+  - In Keys
+    - Ensure that the 'xterm Defaults' preset is on
+    - Ensure that both option keys are mapped to Esc+
+- In Preferences > Keys > Key Bindings
+  - Set Cmd + r and Cmd + k to 'Ignore'
+  - Delete Cmd + Up, Cmd + Down, Ctrl + Left and Ctrl + Right
+- In Preferences > Pointer
+  - In Bindings
+    - Remove the defaults
+- In Preferences > Advanced
+  - Set 'Scroll wheel sends arrow keys when in alternate screen mode' to 'Yes'
+- In the iTerm2 menu, select 'Make iTerm2 Default Term'
