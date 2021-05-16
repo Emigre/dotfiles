@@ -6,7 +6,6 @@
 dotfiles: ## configures the dotfiles
 	ln -s `pwd`/_gitconfig $$HOME/.gitconfig
 	ln -s `pwd`/_gitignore_global $$HOME/.gitignore_global
-	ln -s `pwd`/_inputrc $$HOME/.inputrc
 	ln -s `pwd`/_tmux.conf $$HOME/.tmux.conf
 	ln -s `pwd`/_zshenv $$HOME/.zshenv
 	ln -s `pwd`/_zshrc $$HOME/.zshrc

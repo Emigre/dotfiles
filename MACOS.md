@@ -8,7 +8,7 @@
 
 - In Keyboard
   - Click on 'Modifier Keys...' and Select '^ Control' for the 'Caps Lock Key'
-  - Under Shortcuts uncheck 'Mission Control'
+  - Under Shortcuts uncheck 'Mission Control', 'Move left a space', 'Move right a space' and 'Application windows'
 - In Trackpad
   - Enable 'Tap to click'
 - In Security & Privacy

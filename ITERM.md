@@ -23,9 +23,11 @@
     - In Settings for New Windows, set Columns to 180 and Rows to 40, or whatever looks good in the screen
   - In Terminal
     - Check 'Silence bell'
+    - Uncheck 'Flash visual bell'
   - In Keys
     - Ensure that the 'xterm Defaults' preset is on
-    - Ensure that both option keys are mapped to Esc+
+    - Ensure that both option keys are mapped to Esc+ 
+    - Uncheck both 'Apps can change this'
 - In Preferences > Keys > Key Bindings
   - Set Cmd + r and Cmd + k to 'Ignore'
   - Delete Cmd + Up, Cmd + Down, Ctrl + Left and Ctrl + Right
