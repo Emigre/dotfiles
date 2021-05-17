@@ -46,7 +46,6 @@ apps: ## installs the applications
 #	brew cask install evernote
 	brew cask install expressvpn
 	brew cask install firefox
-	brew install homebrew/cask-fonts/font-meslo-lg
 	brew cask install iterm2
 #	brew cask install keybase
 #	brew cask install mactex-no-gui
@@ -57,6 +56,8 @@ apps: ## installs the applications
 #	brew cask install the-unarchiver
 #	brew cask install vlc
 #	brew cask install zoomus
+	brew tap homebrew/cask-fonts
+	brew install font-meslo-lg-nerd-font
 
 # --------------------------------------------
 
