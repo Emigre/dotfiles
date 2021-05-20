@@ -18,7 +18,7 @@
     - Select the 'Dark Background' color preset
     - Set 'Foreground' and 'Bold' to `00f900`, 'Cursor' to `07f91d` and 'Selection' to `004703`, or whatever looks good in the screen
   - In Text
-    - Set 'Font' to `Meslo LG M`, size 10 or whatever looks good in the screen
+    - Set 'Font' to `Meslo LGMDZ Nerd Font`, size 12 or whatever looks good in the screen
   - In Window
     - In Settings for New Windows, set Columns to 180 and Rows to 40, or whatever looks good in the screen
   - In Terminal
@@ -26,7 +26,6 @@
     - Uncheck 'Flash visual bell'
   - In Keys
     - Ensure that the 'xterm Defaults' preset is on
-    - Ensure that both option keys are mapped to Esc+ 
     - Uncheck both 'Apps can change this'
 - In Preferences > Keys > Key Bindings
   - Set Cmd + r and Cmd + k to 'Ignore'
