@@ -18,13 +18,13 @@ apps: ## installs the applications
 #	brew install ack
 #	brew install ag
 #	brew install ansible
-#	brew install arp-scan
+	brew install arp-scan
 #	brew install carthage
 #	brew install coreutils
 	brew install git
-#	brew install hexedit
+	brew install hexedit
 #	brew install ngrep
-#	brew install htop
+	brew install htop
 #	brew install httperf
 #	brew install jq
 #	brew install lnav
@@ -32,11 +32,10 @@ apps: ## installs the applications
 #	brew install openssl
 #	brew install rlwrap
 #	brew install tcptrace
-#	brew install tcptraceroute
+	brew install tcptraceroute
 	brew install tmux
-#	brew install tree
-#	brew install watchman
-#	brew install wget
+	brew install tree
+	brew install wget
 #	brew cask install anaconda
 #	brew cask install android-studio
 	brew cask install cryptomator
