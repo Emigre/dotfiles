@@ -30,6 +30,7 @@ apps: ## installs the applications
 #	brew install lnav
 #	brew install nmap
 #	brew install openssl
+	brew install postgresql
 #	brew install rlwrap
 #	brew install tcptrace
 	brew install tcptraceroute
