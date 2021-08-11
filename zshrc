@@ -1,15 +1,8 @@
 # alias grep='grep -I --exclude-dir={\.git,node_modules,build,target,dist,bin}'
 # alias less='less -R '
 # alias tree='tree -I "node_modules|build|target|dist|bin"'
-
 # alias hexedit='hexedit --color'
-
 # alias cm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
-
-# alias tsx='npx tsc -p tsconfig.json --pretty'
-# alias tst='npx jest'
-
-alias lsp='(cd $HOME/nvim/language_servers && make)'
 
 # Ensure the xterm ctrl-arrow combinations function
 bindkey "\e[1;5C" forward-word

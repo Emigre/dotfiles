@@ -32,10 +32,6 @@
 [color]
   ui = true
 [core]
-  # Set up git to use the system vim instead of neovim, 
-  # so `.git/COMMIT_MESSAGE` files are not stored int the 
-  # jumplist when editing them.
-  editor = "/usr/bin/vim"
   excludesfile = ~/.gitignore_global
   protectHFS = true
   protectNTFS = true
