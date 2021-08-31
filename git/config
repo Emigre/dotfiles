@@ -32,7 +32,6 @@
 [color]
   ui = true
 [core]
-  excludesfile = ~/.gitignore_global
   protectHFS = true
   protectNTFS = true
 [credential]

@@ -1,25 +1,29 @@
 .DEFAULT_GOAL := dotfiles
 
-files := $(filter-out Makefile, $(wildcard *))
+config_folders := git kitty tmux
+
+zsh_files := zshenv zshrc
 
 define link_file
-	if [[ ! -f "$$HOME/.$(1)" ]]; then \
-		ln -s `pwd`/$(1) $$HOME/.$(1) ; \
+	if [[ ! -L "$(2)" ]] && [[ ! -d "$(2)" ]]; then \
+		ln -s "$(CURDIR)/$(1)" "$(2)"; \
 	else \
-		echo "... .$(1) already exists in the home folder"; \
+		echo "... $(2) already exists"; \
 	fi;
 endef
 
 define unlink_file
-	if [[ -L "$$HOME/.$(1)" ]]; then \
-		unlink $$HOME/.$(1); \
+	if [[ -L "$(1)" ]]; then \
+		unlink "$(1)"; \
 	fi;
 endef
 
 dotfiles:
-	@$(foreach file,$(files),$(call link_file,$(file)))
+	@$(foreach folder,$(config_folders),$(call link_file,$(folder),$$HOME/.config/$(folder)))
+	@$(foreach file,$(zsh_files),$(call link_file,$(file),$$HOME/.$(file)))
 	@echo 'Done'
 
 clean:
-	@$(foreach file,$(files),$(call unlink_file,$(file)))
+	@$(foreach folder,$(config_folders),$(call unlink_file,$$HOME/.config/$(folder)))
+	@$(foreach file,$(zsh_files),$(call unlink_file,$$HOME/.$(file)))
 	@echo 'Done'
