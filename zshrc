@@ -8,10 +8,6 @@
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
-# Ensure alt-arrow combinations work
-bindkey "\e[1;9C" forward-word
-bindkey "\e[1;9D" backward-word
-
 # Enable completion
 autoload -Uz compinit
 
@@ -24,4 +20,9 @@ if ! [ -n "$TMUX" ]; then
   fi
 else
   compinit -C
+fi
+
+# start tmux
+if ! [ -n "$TMUX" ]; then
+  tmux attach -t init || tmux new -s init
 fi
