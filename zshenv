@@ -11,6 +11,8 @@ if ! [ -n "$TMUX" ]; then
 
   export PATH="$PATH:$HOME/.local/bin"
 
+  export GPG_TTY=$(tty)
+
   # LaTeX
   # export PATH="$PATH:/Library/Tex/textbin"
 

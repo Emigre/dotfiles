@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := dotfiles
 
-config_folders := git kitty tmux
+config_folders := git kitty nvim tmux
 
 zsh_files := zshenv zshrc
 

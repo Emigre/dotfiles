@@ -1,9 +1,7 @@
 [include]
-  # example .gituser file...
-  # [user]
-  #   name = Name Surname
-  #   email = foo@bar.com
   path = ~/.gituser
+[commit]
+  gpgsign = true
 [alias]
   a = "add"
   b = "branch"
