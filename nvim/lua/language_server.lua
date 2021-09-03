@@ -38,7 +38,7 @@ require'lspconfig'.ghcide.setup{
 }
 
 -- python
-require'lspconfig'.pyls.setup{
+require'lspconfig'.pylsp.setup{
   on_attach=on_attach,
 }
 
