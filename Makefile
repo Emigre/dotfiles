@@ -19,6 +19,7 @@ define unlink_file
 endef
 
 dotfiles:
+	@mkdir -p $$HOME/.config/
 	@$(foreach folder,$(config_folders),$(call link_file,$(folder),$$HOME/.config/$(folder)))
 	@$(foreach file,$(zsh_files),$(call link_file,$(file),$$HOME/.$(file)))
 	@echo 'Done'
