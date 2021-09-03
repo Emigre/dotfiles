@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 # check if TMUX is not set to load env vars
 # this ensures that this is run only before loading tmux
 # I prefer not to put this in .zprofile as the env vars
@@ -7,11 +9,8 @@ if ! [ -n "$TMUX" ]; then
   # of .zshenv, but also sets SHELL as /bin/sh
   # so the value has to be set to /bin/zsh here as a default
   export SHELL='/bin/zsh'
-  export EDITOR='/usr/bin/vim'
 
   export PATH="$PATH:$HOME/.local/bin"
-
-  export GPG_TTY=$(tty)
 
   # LaTeX
   # export PATH="$PATH:/Library/Tex/textbin"
