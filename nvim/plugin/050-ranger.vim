@@ -30,7 +30,7 @@ let g:ranger_replace_netrw = 1
 " let g:ranger_choice_file = '/tmp/chosenfile'
 
 " Custom ranger command
-let g:ranger_command_override = '~/nvim/ranger/ranger.py'
+let g:ranger_command_override = '~/ranger/ranger.py'
 
 " ================================================
 
