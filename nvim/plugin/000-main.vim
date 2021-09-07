@@ -209,6 +209,13 @@ fun! WhatIsThisColour()
     \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
 endf
 
+fun! WhatIsThisSyntax()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endf
+
 fun! ShowAllColours()
   so $VIMRUNTIME/syntax/hitest.vim
 endf
@@ -427,6 +434,14 @@ let g:vim_markdown_folding_disabled = 1
 " disable conceal when in regular markdown files but allow
 " concealing in preview windows for the type info sysntax formatting
 au FileType markdown if &pvw == 1 | setlocal conceallevel=2 | else | setlocal conceallevel=0 | endif
+
+hi mkdHeading ctermfg=45
+hi htmlH1 ctermfg=45
+hi htmlH2 ctermfg=45
+hi htmlH3 ctermfg=45
+hi htmlH4 ctermfg=45
+hi htmlH5 ctermfg=45
+hi htmlH6 ctermfg=45
 
 " json
 " ----
