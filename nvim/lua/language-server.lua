@@ -1,27 +1,5 @@
 local nvim_lsp = require('lspconfig')
 
-vim.cmd('hi! LspDiagnosticsDefaultError guifg=#767676')
-vim.cmd('hi! LspDiagnosticsSignError guifg=#767676')
-
-vim.cmd('hi! LspDiagnosticsWarning guifg=#767676')
-vim.cmd('hi! LspDiagnosticsSignWarning guifg=#767676')
-
-vim.cmd('hi! LspDiagnosticsInformation guifg=#767676')
-vim.cmd('hi! LspDiagnosticsSignInformation guifg=#767676')
-
-vim.cmd('hi! LspDiagnosticsHint guifg=#767676')
-vim.cmd('hi! LspDiagnosticsSignHint guifg=#767676')
-
-vim.cmd [[
-  hi! DiagnosticErrorSymbol guisp=#bc6c4c guifg=#dc8c6c
-  hi! DiagnosticWarningSymbol guisp=#bc6c9c guifg=#bc8cbc
-
-  sign define LspDiagnosticsSignError text=░ texthl=DiagnosticErrorSymbol linehl= numhl=
-  sign define LspDiagnosticsSignWarning text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
-  sign define LspDiagnosticsSignInformation text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
-  sign define LspDiagnosticsSignHint text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
-]]
-
 -- uncomment to enable logging
 -- vim.lsp.set_log_level("debug")
 -- open logs with :lua vim.cmd('e'..vim.lsp.get_log_path())
@@ -31,37 +9,21 @@ local on_attach = function(client, bufnr)
   require'completion'.on_attach()
 end
 
--- clangd
-require'lspconfig'.clangd.setup{
-  cmd = { "clangd", "--background-index"  },
-  on_attach=on_attach,
-}
+nvim_lsp.clangd.setup{ cmd = { "clangd", "--background-index"  }, on_attach=on_attach }
 
--- ghcide
-require'lspconfig'.ghcide.setup{
-  on_attach=on_attach,
-}
+nvim_lsp.ghcide.setup{ on_attach=on_attach }
 
--- python
-require'lspconfig'.pylsp.setup{
-  on_attach=on_attach,
-}
+nvim_lsp.pylsp.setup{ on_attach=on_attach }
 
--- tsserver
-require'lspconfig'.tsserver.setup{
+-- debug command options: '--tsserver-log-file', vim.fn.expand('~/.cache/nvim/tsserver.log'), '--log-level', '4'
+nvim_lsp.tsserver.setup{
   cmd = { "typescript-language-server", "--stdio", "--tsserver-path", "node_modules/.bin/tsserver" },
   on_attach=on_attach,
 }
--- debug command options:
--- '--tsserver-log-file', vim.fn.expand('~/.cache/nvim/tsserver.log'), '--log-level', '4'
 
--- flow
-require'lspconfig'.flow.setup{
-  on_attach=on_attach,
-}
+nvim_lsp.flow.setup{ on_attach=on_attach }
 
--- diagnostics
-require'lspconfig'.diagnosticls.setup{
+nvim_lsp.diagnosticls.setup{
   cmd = { "diagnostic-languageserver", "--stdio" },
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   on_attach=on_attach,
@@ -106,3 +68,20 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+vim.cmd [[
+  hi! LspDiagnosticsDefaultError guifg=#767676
+  hi! LspDiagnosticsSignError guifg=#767676
+  hi! LspDiagnosticsWarning guifg=#767676
+  hi! LspDiagnosticsSignWarning guifg=#767676
+  hi! LspDiagnosticsInformation guifg=#767676
+  hi! LspDiagnosticsSignInformation guifg=#767676
+  hi! LspDiagnosticsHint guifg=#767676
+  hi! LspDiagnosticsSignHint guifg=#767676
+
+  hi! DiagnosticErrorSymbol guisp=#bc6c4c guifg=#dc8c6c
+  hi! DiagnosticWarningSymbol guisp=#bc6c9c guifg=#bc8cbc
+  sign define LspDiagnosticsSignError text=░ texthl=DiagnosticErrorSymbol linehl= numhl=
+  sign define LspDiagnosticsSignWarning text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+  sign define LspDiagnosticsSignInformation text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+  sign define LspDiagnosticsSignHint text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+]]

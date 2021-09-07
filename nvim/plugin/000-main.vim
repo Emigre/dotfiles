@@ -2,28 +2,6 @@
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
-set smartindent
-
-" Detect file type of C++ standard headers
-au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
-
-" Other filetypes
-au BufRead,BufNewFile *.tf,*.tfvars set ft=terraform
-
-" The width of a TAB is set to 4
-" Still it is a \t. It is just that
-" Vim will interpret it to be having
-" a width of 2
-set tabstop=4
-
-" Indents will have a width of 2
-set shiftwidth=2
-
-" Sets the number of columns for a TAB
-set softtabstop=2
-
-" Finally expand TABs to spaces
-set expandtab
 
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
@@ -56,21 +34,8 @@ fun! s:UpdateStatus()
   retu 'updated!'
 endf
 
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-
 set t_vb=
 au! GUIEnter * set vb t_vb=
-
-" Automatic commands
-if has('autocmd')
-  " Enable file type detection
-  filetype on
-  au BufNewFile,BufRead *.json setf json syntax=javascript
-  au BufNewFile,BufRead Jenkinsfile setf groovy
-  au BufNewFile,BufRead Dockerfile-dev setf dockerfile
-  au BufNewFile,BufRead Podfile setf ruby
-endif
 
 " Return indent (all whitespace at start of a line), converted from
 " tabs to spaces if what = 1, or from spaces to tabs otherwise.
@@ -347,26 +312,3 @@ hi htmlH6 guifg=#00d7ff
 " ----
 
 let g:vim_json_syntax_conceal = 0
-
-" gitgutter
-" ---------
-
-set updatetime=100
-let g:gitgutter_override_sign_column_highlight = 0
-
-set signcolumn=yes
-hi SignColumn guibg=NONE
-
-hi GitGutterAdd guifg=#00cd00
-hi GitGutterChange guifg=#00cdcd
-hi GitGutterDelete guifg=#ff0000
-hi GitGutterChangeDelete guifg=#ff0000
-
-let g:gitgutter_sign_added = '│'
-let g:gitgutter_sign_modified = '│'
-let g:gitgutter_sign_removed = '│'
-let g:gitgutter_sign_removed_first_line = '│'
-let g:gitgutter_sign_modified_removed = '│'
-
-let g:gitgutter_map_keys = 0
-
