@@ -1,3 +1,4 @@
+set termguicolors
 set autoread
 set ruler
 set rulerformat=%l,%c%=%P
@@ -76,20 +77,20 @@ endif
 " Set a character for the tabs
 set listchars=nbsp:␣,tab:\᠁\ "
 set list
-hi SpecialKey ctermfg=244
+hi SpecialKey guifg=#808080
 
 " bright green background for search matches when typing the search
-hi IncSearch cterm=NONE ctermbg=green
+hi IncSearch guibg=#87af87 gui=NONE
 
 " color for search matches across the file and selected item in the quickfix
-hi Search ctermfg=black ctermbg=108
-hi qfFileName ctermfg=109
+hi Search guifg=#000000 guibg=#87af87
+hi qfFileName guifg=#87afaf
 
 " Color of matching brackets
-hi MatchParen ctermbg=none ctermfg=green
+hi MatchParen guibg=NONE guifg=#00cd00
 
 " Color of floating window
-hi NormalFloat ctermfg=108 ctermbg=black
+hi NormalFloat guifg=#87af87 guibg=#000000
 
 " Set some commands that I often write in a wrong way by mistake
 command -bang Q q
@@ -435,13 +436,13 @@ let g:vim_markdown_folding_disabled = 1
 " concealing in preview windows for the type info sysntax formatting
 au FileType markdown if &pvw == 1 | setlocal conceallevel=2 | else | setlocal conceallevel=0 | endif
 
-hi mkdHeading ctermfg=45
-hi htmlH1 ctermfg=45
-hi htmlH2 ctermfg=45
-hi htmlH3 ctermfg=45
-hi htmlH4 ctermfg=45
-hi htmlH5 ctermfg=45
-hi htmlH6 ctermfg=45
+hi mkdHeading guifg=#00d7ff
+hi htmlH1 guifg=#00d7ff
+hi htmlH2 guifg=#00d7ff
+hi htmlH3 guifg=#00d7ff
+hi htmlH4 guifg=#00d7ff
+hi htmlH5 guifg=#00d7ff
+hi htmlH6 guifg=#00d7ff
 
 " json
 " ----
@@ -455,12 +456,12 @@ set updatetime=100
 let g:gitgutter_override_sign_column_highlight = 0
 
 set signcolumn=yes
-hi SignColumn ctermbg=237
+hi SignColumn guibg=NONE
 
-hi GitGutterAdd ctermfg=2
-hi GitGutterChange ctermfg=6
-hi GitGutterDelete ctermfg=9
-hi GitGutterChangeDelete ctermfg=9
+hi GitGutterAdd guifg=#00cd00
+hi GitGutterChange guifg=#00cdcd
+hi GitGutterDelete guifg=#ff0000
+hi GitGutterChangeDelete guifg=#ff0000
 
 let g:gitgutter_sign_added = '│'
 let g:gitgutter_sign_modified = '│'

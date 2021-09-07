@@ -34,7 +34,7 @@ endf
 " If set to 2 then a single click will open directory nodes, while a double
 " click will still be required for file nodes.
 " If set to 3 then a single click will open any node.
-let NERDTreeMouseMode = 2
+let NERDTreeMouseMode = 3
 
 let NERDTreeWinPos = 'right'
 let NERDTreeMinimalUI = 1
@@ -84,35 +84,33 @@ augroup nerdtreehidecwd
         \ | setlocal concealcursor=n
 augroup end
 
-hi NERDTreeDir ctermfg=34
-hi NERDTreeFile ctermfg=28
-hi NERDTreeExecFile ctermfg=29
-hi NERDTreeOpenable ctermfg=237
-hi NERDTreeClosable ctermfg=237
+hi NERDTreeDir guifg=#00af00
+hi NERDTreeFile guifg=#009900
+hi NERDTreeExecFile guifg=#00285f
+hi NERDTreeOpenable guifg=#3a3a3a
+hi NERDTreeClosable guifg=#3a3a3a
 
-hi CursorLine ctermfg=0 ctermbg=65
+hi CursorLine guifg=#000000 guibg=#5f875f
 
 hi! link NERDTreeDirSlash NERDTreeDir
 hi! link NERDTreeFlags NERDTreeDir
+
+" let g:NERDTreeDisableFileExtensionHighlight = 1
+let g:NERDTreeDisableExactMatchHighlight = 1
+" let g:NERDTreeDisablePatternMatchHighlight = 1
 
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
-let s:my_colour = '008787'
-
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['css'] = s:my_colour
-let g:NERDTreeExtensionHighlightColor['ini'] = s:my_colour
-let g:NERDTreeExtensionHighlightColor['yaml'] = s:my_colour
-let g:NERDTreeExtensionHighlightColor['yml'] = s:my_colour
+let g:NERDTreeExtensionHighlightColor = {}
+let g:NERDTreeExtensionHighlightColor['conf'] = '26a077'
+let g:NERDTreeExtensionHighlightColor['css'] = '26a077'
+let g:NERDTreeExtensionHighlightColor['ini'] = '26a077'
+let g:NERDTreeExtensionHighlightColor['lua'] = '268ca0'
+let g:NERDTreeExtensionHighlightColor['yaml'] = '26a077'
+let g:NERDTreeExtensionHighlightColor['yml'] = '26a077'
 
 let g:NERDTreeExactMatchHighlightColor = {}
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:my_colour
-let g:NERDTreeExactMatchHighlightColor['LICENSE'] = s:my_colour
-
-" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
-"
-" let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
-" let g:WebDevIconsDefaultFileSymbolColor = s:blue
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = '26a077'
+let g:NERDTreeExactMatchHighlightColor['LICENSE'] = '26a077'

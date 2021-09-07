@@ -1,16 +1,16 @@
 local nvim_lsp = require('lspconfig')
 
-vim.cmd('hi! LspDiagnosticsDefaultError ctermfg=243')
-vim.cmd('hi! LspDiagnosticsSignError ctermfg=243')
+vim.cmd('hi! LspDiagnosticsDefaultError guifg=#767676')
+vim.cmd('hi! LspDiagnosticsSignError guifg=#767676')
 
-vim.cmd('hi! LspDiagnosticsWarning ctermfg=243')
-vim.cmd('hi! LspDiagnosticsSignWarning ctermfg=243')
+vim.cmd('hi! LspDiagnosticsWarning guifg=#767676')
+vim.cmd('hi! LspDiagnosticsSignWarning guifg=#767676')
 
-vim.cmd('hi! LspDiagnosticsInformation ctermfg=243')
-vim.cmd('hi! LspDiagnosticsSignInformation ctermfg=243')
+vim.cmd('hi! LspDiagnosticsInformation guifg=#767676')
+vim.cmd('hi! LspDiagnosticsSignInformation guifg=#767676')
 
-vim.cmd('hi! LspDiagnosticsHint ctermfg=243')
-vim.cmd('hi! LspDiagnosticsSignHint ctermfg=243')
+vim.cmd('hi! LspDiagnosticsHint guifg=#767676')
+vim.cmd('hi! LspDiagnosticsSignHint guifg=#767676')
 
 vim.cmd('sign define LspDiagnosticsSignError text=░ texthl=SpellBad linehl= numhl=')
 vim.cmd('sign define LspDiagnosticsSignWarning text=░ texthl=SpellRare linehl= numhl=')

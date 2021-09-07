@@ -6,7 +6,7 @@ if exists("g:ctrl_user_command")
 endif
 
 " color to highlight matching segments of the path
-hi CtrlPMatch ctermfg=150
+hi CtrlPMatch guifg=#afd787
 
 let g:ctrlp_mruf_exclude='/private/*'
 
