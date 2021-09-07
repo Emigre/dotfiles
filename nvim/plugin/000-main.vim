@@ -1,18 +1,3 @@
-set termguicolors
-set autoread
-set ruler
-set rulerformat=%l,%c%=%P
-set noswapfile
-set nofoldenable
-
-" leader key
-let mapleader = "\<Space>"
-
-" colors
-colorscheme Zenburn
-
-syntax on
-
 " indentation
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -24,28 +9,6 @@ au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
 
 " Other filetypes
 au BufRead,BufNewFile *.tf,*.tfvars set ft=terraform
-
-" Syntax adjustments per filetype
-aug TabSettings
-  au!
-  au Filetype groovy setlocal ts=4 sts=4 sw=4 et
-  " fixes weird underline problem in the groovy syntax
-  au Filetype groovy syn clear groovyUserLabel
-  au Filetype java setlocal ts=4 sw=4 et
-  " also fixes weird underline problem in the java syntax
-  au Filetype java syn clear javaUserLabel
-  au FileType json syntax match Comment +\/\/.\+$+
-  au FileType make set noexpandtab sw=4 sts=4
-  au Filetype python setlocal ts=4 sts=4 sw=4 et
-  au Filetype swift setlocal ts=4 sts=4 sw=4 et
-  au Filetype objc setlocal ts=4 sts=4 sw=4 et
-  au Filetype objcpp setlocal ts=4 sts=4 sw=4 et
-  au Filetype tags setlocal ts=32
-  au Filetype tags setlocal nowrap
-  au Filetype xml setlocal ts=4 sts=4 sw=4 et
-  " fixes weird underline problem in the yaml syntax
-  au Filetype yaml syn clear yamlBlockCollectionItemStart
-aug END
 
 " The width of a TAB is set to 4
 " Still it is a \t. It is just that
@@ -62,11 +25,6 @@ set softtabstop=2
 " Finally expand TABs to spaces
 set expandtab
 
-" Paste mode. Reflowing comment blocks with gq needs nopaste.
-" http://stackoverflow.com/questions/8435808/reflowing-comment-blocks-with-vim
-" http://blog.ayaz.pk/2008/06/21/paste-mode-pasting-text-and-indenting-it-in-vim/
-set nopaste
-
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
 " see http://snk.tuxfamily.org/log/vim-256color-bce.html
@@ -74,33 +32,12 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" Set a character for the tabs
-set listchars=nbsp:␣,tab:\᠁\ "
-set list
-hi SpecialKey guifg=#808080
-
-" bright green background for search matches when typing the search
-hi IncSearch guibg=#87af87 gui=NONE
-
-" color for search matches across the file and selected item in the quickfix
-hi Search guifg=#000000 guibg=#87af87
-hi qfFileName guifg=#87afaf
-
-" Color of matching brackets
-hi MatchParen guibg=NONE guifg=#00cd00
-
-" Color of floating window
-hi NormalFloat guifg=#87af87 guibg=#000000
-
 " Set some commands that I often write in a wrong way by mistake
 command -bang Q q
 command -bang Qa qa
 command W w
 command -bang Wq wq
 command Ccl ccl
-
-set timeout         " Do time out on mappings and others
-set timeoutlen=2000 " Wait {num} ms before timing out a mapping
 
 " When you’re pressing Escape to leave insert mode in the terminal, it will by
 " default take a second or another keystroke to leave insert mode completely
@@ -121,47 +58,9 @@ endf
 
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
-" Allow backspace in insert mode
-set backspace=indent,eol,start
-" Optimize for fast terminal connections
-set ttyfast
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-if !has('nvim')
-  set esckeys
-endif
-" Do not highlight searches by default
-set nohlsearch
-" Ignore case of searches
-set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Enable mouse in all modes
-set mouse=a
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-" Set more characters for redraws
-set ttyfast
-" Disable all error bells
-set noerrorbells
-set noerrorbells
-set novisualbell
+
 set t_vb=
 au! GUIEnter * set vb t_vb=
-" Don’t show the intro message when starting Vim
-set shortmess=atI
-
-" tell vim to use an undo file
-set undofile
-
-" Centralize undo history
-if exists("&undodir")
-  set undodir=~/.local/share/nvim/undo
-endif
 
 " Automatic commands
 if has('autocmd')

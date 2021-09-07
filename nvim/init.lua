@@ -1,2 +1,4 @@
 require('plugins')
-require('language_server')
+require('colours')
+require('options')
+require('language-server')

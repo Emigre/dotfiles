@@ -12,10 +12,15 @@ vim.cmd('hi! LspDiagnosticsSignInformation guifg=#767676')
 vim.cmd('hi! LspDiagnosticsHint guifg=#767676')
 vim.cmd('hi! LspDiagnosticsSignHint guifg=#767676')
 
-vim.cmd('sign define LspDiagnosticsSignError text=░ texthl=SpellBad linehl= numhl=')
-vim.cmd('sign define LspDiagnosticsSignWarning text=░ texthl=SpellRare linehl= numhl=')
-vim.cmd('sign define LspDiagnosticsSignInformation text=░ texthl=SpellRare linehl= numhl=')
-vim.cmd('sign define LspDiagnosticsSignHint text=░ texthl=SpellRare linehl= numhl=')
+vim.cmd [[
+  hi! DiagnosticErrorSymbol guisp=#bc6c4c guifg=#dc8c6c
+  hi! DiagnosticWarningSymbol guisp=#bc6c9c guifg=#bc8cbc
+
+  sign define LspDiagnosticsSignError text=░ texthl=DiagnosticErrorSymbol linehl= numhl=
+  sign define LspDiagnosticsSignWarning text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+  sign define LspDiagnosticsSignInformation text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+  sign define LspDiagnosticsSignHint text=░ texthl=DiagnosticWarningSymbol linehl= numhl=
+]]
 
 -- uncomment to enable logging
 -- vim.lsp.set_log_level("debug")
