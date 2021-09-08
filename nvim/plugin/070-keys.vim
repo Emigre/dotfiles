@@ -52,15 +52,35 @@ au FileType git nnoremap <silent> <buffer> l <Nop>
 " ---
 nnoremap <leader>i :Include<space>
 
-" Buftabline
-" ----------
-nmap <silent> q :silent! Bclose<CR>
-nmap <silent> Q :BufOnly<CR>
-nnoremap <silent> l :bn<CR>
-nnoremap <silent> h :bp<CR>
-
 " LSP
 " ---
+
+fun! LSP__goToDefinition()
+  call Main__closeFloatingWindow()
+  lua vim.lsp.buf.definition()
+endfun
+
+fun! LSP__showTypeDefinition()
+  lua vim.lsp.buf.hover()
+endfun
+
+fun! LSP__showReferences()
+  call Main__closeFloatingWindow()
+  lua vim.lsp.buf.references()
+endfun
+
+fun! LSP__NextDiagnosticCycle()
+  lua vim.lsp.diagnostic.goto_next()
+endfun
+
+fun! LSP__PrevDiagnosticCycle()
+  lua vim.lsp.diagnostic.goto_prev()
+endfun
+
+fun! LSP__OpenDiagnostics()
+  lua vim.lsp.diagnostic.set_loclist()
+endfun
+
 nmap <C-j> :call LSP__NextDiagnosticCycle()<CR>
 nmap <C-k> :call LSP__PrevDiagnosticCycle()<CR>
 

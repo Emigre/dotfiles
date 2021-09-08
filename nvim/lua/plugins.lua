@@ -16,7 +16,6 @@ vim.fn["plug#"]('scrooloose/nerdtree')
 
 -- Buffer tabs
 vim.fn["plug#"]('ap/vim-buftabline')
-vim.fn["plug#"]('jlanzarotta/bufexplorer')
 
 -- Indentation lines
 vim.fn["plug#"]('Yggdroot/indentLine')

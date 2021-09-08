@@ -1,5 +1,23 @@
 local nvim_lsp = require('lspconfig')
 
+vim.g.completion_enable_fuzzy_match = 1
+vim.g.completion_matching_ignore_case = 1
+vim.g.completion_matching_strategy_list = { 'fuzzy', 'exact', 'substring' }
+vim.g.completion_trigger_keyword_length = 2
+
+vim.cmd [[
+  fun! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endf
+
+  inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<Tab>" : completion#trigger_completion()
+
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+]]
+
 -- uncomment to enable logging
 -- vim.lsp.set_log_level("debug")
 -- open logs with :lua vim.cmd('e'..vim.lsp.get_log_path())

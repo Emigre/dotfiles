@@ -8,20 +8,6 @@ function s:WipeBuffersWithoutFiles()
 endfunction
 command BWnex call s:WipeBuffersWithoutFiles()
 
-" buftabline
-" ----------
-
-let g:buftabline_indicators=1
-
-" colors for zenburn
-hi BufTabLineCurrent guifg=#3a3a3a guifg=#7f7f7f
-hi BufTabLineActive guibg=#303030 guifg=#7f7f7f
-hi BufTabLineHidden guibg=#262626 guifg=#7f7f7f
-hi BufTabLineFill guibg=#262626
-
-" bufexplorer
-" -----------
-
 " BufOnly.vim  -  Delete all the buffers except the current/named buffer.
 " Copyright November 2003 by Christian J. Robinson <infynity@onewest.net>
 " Distributed under the terms of the Vim license.  See ":help license".
@@ -30,12 +16,6 @@ hi BufTabLineFill guibg=#262626
 " Without any arguments the current buffer is kept.  With an argument the
 " buffer name/number supplied is kept.
 
-command! -nargs=? -complete=buffer -bang Bonly
-  \ :call BufOnly('<args>', '<bang>')
-command! -nargs=? -complete=buffer -bang BOnly
-  \ :call BufOnly('<args>', '<bang>')
-command! -nargs=? -complete=buffer -bang Bufonly
-  \ :call BufOnly('<args>', '<bang>')
 command! -nargs=? -complete=buffer -bang BufOnly
   \ :call BufOnly('<args>', '<bang>')
 

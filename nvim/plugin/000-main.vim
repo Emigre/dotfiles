@@ -3,13 +3,6 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 
-" disable Background Color Erase (BCE) so that color schemes
-" render properly when inside 256-color tmux and GNU screen.
-" see http://snk.tuxfamily.org/log/vim-256color-bce.html
-if &term =~ '256color'
-  set t_ut=
-endif
-
 " Set some commands that I often write in a wrong way by mistake
 command -bang Q q
 command -bang Qa qa
@@ -17,25 +10,9 @@ command W w
 command -bang Wq wq
 command Ccl ccl
 
-" When you’re pressing Escape to leave insert mode in the terminal, it will by
-" default take a second or another keystroke to leave insert mode completely
-" and update the statusline. This fixes that. I got this from:
-" https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
-if !has('gui_running')
-  set ttimeoutlen=10
-  aug FastEscape
-    au!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  aug END
-endif
-
 fun! s:UpdateStatus()
   retu 'updated!'
 endf
-
-set t_vb=
-au! GUIEnter * set vb t_vb=
 
 " Return indent (all whitespace at start of a line), converted from
 " tabs to spaces if what = 1, or from spaces to tabs otherwise.
@@ -268,17 +245,6 @@ let g:NERDCommentEmptyLines = 1
 " ----------
 
 let g:javascript_plugin_flow = 1
-
-" java
-" ----
-let java_highlight_functions = 1
-let java_highlight_all = 1
-
-hi link javaScopeDecl Statement
-hi link javaType Type
-hi link javaDocTags PreProc
-
-hi link javaExternal Statement
 
 " jsx
 " ---

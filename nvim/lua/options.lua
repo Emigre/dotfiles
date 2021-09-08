@@ -1,6 +1,7 @@
 vim.opt.autoread = true
 vim.opt.backspace = 'indent,eol,start' -- allow backspace in insert mode
 vim.opt.clipboard = 'unnamed' -- use the OS clipboard by default (on versions compiled with `+clipboard`)
+vim.opt.completeopt = 'menuone,noinsert,noselect'
 vim.opt.errorbells = false
 vim.opt.expandtab = true -- use spaces for tabs in insert mode
 vim.opt.foldenable = false
@@ -17,7 +18,7 @@ vim.opt.paste = false
 vim.opt.ruler = true
 vim.opt.rulerformat = '%l,%c%=%P'
 vim.opt.shiftwidth = 2
-vim.opt.shortmess = 'atI' -- don't show intro message
+vim.opt.shortmess = 'atIc'
 vim.opt.signcolumn = 'yes'
 vim.opt.smartindent = true
 vim.opt.softtabstop = 2
@@ -35,6 +36,7 @@ vim.opt.wildmenu = true -- enhance command-line completion
 
 vim.g.mapleader = ' '
 
+-- colours
 vim.cmd [[
   syntax enable
   colorscheme zenburn

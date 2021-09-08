@@ -1,4 +1,7 @@
 require('plugins')
 require('options')
 require('language-server')
+require('neoformat')
 require('gitgutter')
+require('buftabline')
+require('keymaps')
