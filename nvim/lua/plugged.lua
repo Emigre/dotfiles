@@ -1,6 +1,6 @@
-vim.o.compatible = false
-vim.bo.modeline = false
-vim.o.filetype = 'off'
+vim.opt.compatible = false
+vim.opt.modeline = false
+vim.opt.filetype = 'off'
 
 vim.fn["plug#begin"]('~/.config/nvim/plugged')
 
